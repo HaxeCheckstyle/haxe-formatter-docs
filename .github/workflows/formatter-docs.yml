@@ -30,10 +30,14 @@ jobs:
         mkdir -p docs/samples/sameline
         mkdir -p docs/samples/lineends
         mkdir -p docs/samples/whitespace
+        mkdir -p site/css
+        mkdir -p site/js
     - name: Build Site
       run: npx haxe build.hxml
     - name: Copy JQuery
       run: cp node_modules/jquery/dist/jquery.min.js site/js/
+    - name: Copy JQuery
+      run: npx sass css/formatter-docs.scss site/css/formatter-docs.css
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
