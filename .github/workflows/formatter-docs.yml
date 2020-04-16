@@ -36,7 +36,7 @@ jobs:
       run: npx haxe build.hxml
     - name: Copy JQuery
       run: cp node_modules/jquery/dist/jquery.min.js site/js/
-    - name: Copy JQuery
+    - name: Run Sass
       run: npx sass css/formatter-docs.scss site/css/formatter-docs.css
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
