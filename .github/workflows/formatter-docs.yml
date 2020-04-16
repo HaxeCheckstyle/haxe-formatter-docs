@@ -1,0 +1,41 @@
+name: Haxe-Formatter-Docs
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+  schedule:
+    - cron: '15 23 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Formatter sources
+      uses: actions/checkout@v1
+    - name: Use Node.js 10
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10
+    - name: Run npm install
+      run: npm ci
+    - name: Run lix download
+      run: npx lix download
+    - name: Prepare
+      run: |
+        mkdir -p docs/samples/lineends
+        mkdir -p docs/samples/sameline
+        mkdir -p docs/samples/lineends
+        mkdir -p docs/samples/whitespace
+    - name: Build Site
+      run: npx haxe build.hxml
+    - name: Copy JQuery
+      run: cp node_modules/jquery/dist/jquery.min.js site/js/
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site

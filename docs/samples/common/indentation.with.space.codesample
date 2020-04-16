@@ -1,0 +1,23 @@
+indentation character takes a string that is either any number of (literal) spaces (e.g. `␣␣`, `␣␣␣␣`, etc.) or the text `tab` for indentation with tabs
+
+---
+
+{
+    "indentation": {
+        "character": "    "
+    }
+}
+
+---
+
+indentation.character = text
+
+---
+
+class Main {
+    public function new () {}
+
+    public function foo (param1:Int) {
+		trace(param1);
+	}
+}

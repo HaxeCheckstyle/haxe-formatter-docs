@@ -1,0 +1,33 @@
+probably the most searched for option of formatter :)
+
+Note: `lineEnds.leftCurly` affects all left curlies, there are specialised options for
+different curly places (e.g. `lineEnds.blockCurly`, `lineEnds.objectLiteralCurly`, etc.)
+
+---
+
+{
+    "lineEnds": {
+        "leftCurly": "both",
+		"emptyCurly": "break"
+    }
+}
+
+---
+
+lineEnds.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
+lineEnds.emptyCurly = combo,formatter.config.EmptyCurlyPolicy
+
+---
+
+class Main {
+    public function new () {}
+
+    public function foo (param1:Int) {
+		trace(param1);
+		var obj = {
+			x:100,
+			y:100,
+			z:100
+			};
+	}
+}

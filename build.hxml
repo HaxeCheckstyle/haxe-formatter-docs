@@ -1,0 +1,15 @@
+-cp src
+
+-lib hxparse
+-lib haxeparser
+-lib json2object
+-lib tokentree
+-lib formatter
+-lib markdown
+-lib jQueryExtern
+
+-D js-es=6
+
+-js site/js/formatter-docs.js
+
+-main Main

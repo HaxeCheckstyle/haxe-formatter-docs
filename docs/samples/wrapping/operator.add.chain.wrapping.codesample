@@ -1,0 +1,31 @@
+wrapping of +/- chains
+
+Note: `equalNumber` is not implemented yet
+
+---
+
+{
+	"wrapping": {
+		"opAddSubChain": {
+			"defaultWrap": "fillLine",
+			"defaultLocation": "beforeLast",
+			"rules": []
+		}
+	}
+}
+
+---
+
+wrapping.opAddSubChain.defaultWrap = combo,formatter.config.WrapConfig.WrappingType
+wrapping.opAddSubChain.defaultLocation = combo,formatter.config.WrapConfig.WrappingLocation
+
+---
+
+class Main {
+	static function main() {
+				return
+                       1 * ((this[0] * this[5] - this[4] * this[1]) * (this[10] * this[15] - this[14] * this[11]) - (this[0] * this[9] - this[8] * this[1]) * (this[6] * this[15] - this[14] * this[7]) +
+                               (this[0] * this[13] - this[12] * this[1]) * (this[6] * this[11] - this[10] * this[7]) + (this[4] * this[9] - this[8] * this[5]) * (this[2] * this[15] - this[14] * this[3]) - (this[4] * this[13] - this[12] * this[5]) * (this[2] * this[11] - this[10] * this[3]) +
+                                       (this[8] * this[13] - this[12] * this[9]) * (this[2] * this[7] - this[6] * this[3]));
+	}
+}

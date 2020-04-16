@@ -1,0 +1,53 @@
+wrapping large amounts of case patterns
+
+Note: `equalNumber` is not implemented yet
+
+---
+
+{
+	"wrapping": {
+		"casePattern": {
+			"defaultWrap": "fillLine",
+			"defaultLocation": "beforeLast"
+		}
+	}
+}
+
+---
+
+wrapping.casePattern.defaultWrap = combo,formatter.config.WrapConfig.WrappingType
+wrapping.casePattern.defaultLocation = combo,formatter.config.WrapConfig.WrappingLocation
+
+---
+
+class Main {
+	static function main() {
+		switch (part.toLowerCase()) {
+			case "__halt_compiler" | "abstract" | "and" | "array" | "as" | "break" | "callable" | "case" | "catch" | "class" | "clone" | "const"
+				| "continue" | "declare" | "default" | "die" | "do" | "echo" | "else" | "elseif" | "empty" | "enddeclare" | "endfor" | "endforeach" | "endif"
+				| "endswitch" | "endwhile" | "eval" | "exit" | "extends" | "final" | "finally" | "for" | "foreach" | "function" | "global" | "goto" | "if"
+				| "implements" | "include" | "include_once" | "instanceof" | "insteadof" | "interface" | "isset" | "list" | "namespace" | "new" | "or"
+				| "print" | "private" | "protected" | "public" | "require" | "require_once" | "return" | "static" | "switch" | "throw" | "trait" | "try"
+				| "unset" | "use" | "var" | "while" | "xor" | "yield" | "__class__" | "__dir__" | "__file__" | "__function__" | "__line__" | "__method__"
+				| "__trait__" | "__namespace__" | "int" | "float" | "bool" | "string" | "true" | "false" | "null" | "parent" | "void" | "iterable" | "object":
+				part += '_hx';
+			case "__halt_compiler", "abstract", "and", "array", "as", "break", "callable", "case", "catch", "class", "clone", "const", "continue", "declare"
+				, "default", "die", "do", "echo", "else", "elseif", "empty", "enddeclare", "endfor", "endforeach", "endif", "endswitch", "endwhile", "eval"
+				, "exit", "extends", "final", "finally", "for", "foreach", "function", "global", "goto", "if", "implements", "include", "include_once"
+				, "instanceof", "insteadof", "interface", "isset", "list", "namespace", "new", "or", "print", "private", "protected", "public", "require"
+				, "require_once", "return", "static", "switch", "throw", "trait", "try", "unset", "use", "var", "while", "xor", "yield", "__class__"
+				, "__dir__", "__file__", "__function__", "__line__", "__method__", "__trait__", "__namespace__", "int", "float", "bool", "string", "true"
+				, "false", "null", "parent", "void", "iterable", "object":
+				part += '_hx';
+			case "__halt_compiler", "abstract" | "and", "array" | "as", "break" | "callable", "case" | "catch", "class" | "clone", "const" | "continue"
+				, "declare" | "default", "die" | "do", "echo" | "else", "elseif" | "empty", "enddeclare" | "endfor", "endforeach" | "endif", "endswitch"
+				| "endwhile", "eval" | "exit", "extends" | "final", "finally" | "for", "foreach" | "function", "global" | "goto", "if" | "implements"
+				, "include" | "include_once", "instanceof" | "insteadof", "interface" | "isset", "list" | "namespace", "new" | "or", "print" | "private"
+				, "protected" | "public", "require" | "require_once", "return" | "static", "switch" | "throw", "trait" | "try", "unset" | "use", "var"
+				| "while", "xor" | "yield", "__class__" | "__dir__", "__file__" | "__function__", "__line__" | "__method__", "__trait__" | "__namespace__"
+				, "int" | "float", "bool" | "string", "true" | "false", "null" | "parent", "void" | "iterable", "object":
+				part += '_hx';
+			case _:
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"haxe.configurations": [
+		["display.hxml"]
+	],
+	"[haxe]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"haxecheckstyle.sourceFolders": [
+		"src",
+		"schema",
+		"test"
+	],
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": false
+	},
+	"coverage-gutters.showLineCoverage": true,
+	"coverage-gutters.showRulerCoverage": false,
+	"coverage-gutters.partialHighlightDark": "rgba(120, 120, 120, 0.75)"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "formatter-docs",
+  "version": "1.0.0",
+  "description": "Documentation for Haxe Formatter https://github.com/HaxeCheckstyle/haxe-formatter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaxeCheckstyle/formatter-docs.git"
+  },
+  "keywords": [
+    "haxe",
+    "formatter",
+    "documentation"
+  ],
+  "author": {
+    "name": "Alexander Blum",
+    "email": "Alexander.Blum@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/HaxeCheckstyle/formatter-docs/issues"
+  },
+  "dependencies": {
+    "jquery": ""
+  },
+  "devDependencies": {
+    "lix": "^15.8.11",
+    "sass": ""
+  },
+  "homepage": "https://github.com/HaxeCheckstyle/formatter-docs#readme"
+}
