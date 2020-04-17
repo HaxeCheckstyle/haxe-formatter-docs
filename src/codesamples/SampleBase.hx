@@ -74,9 +74,9 @@ class SampleBase {
 		var fieldPath:String = element.data("field-path");
 		element = new JQuery('input[data-field-path="$fieldPath"]');
 		element.prop("checked", !element.prop("checked"));
-		var value:String = "false";
+		var value:Bool = false;
 		if (element.is(":checked")) {
-			value = "true";
+			value = true;
 		}
 		new JQuery('label[data-field-path="$fieldPath"]').text(value);
 		applyConfigValue(fieldPath, value);
