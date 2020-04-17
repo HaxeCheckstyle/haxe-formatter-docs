@@ -10,7 +10,8 @@ Note: `equalNumber` is not implemented yet
 			"defaultWrap": "onePerLine",
 			"defaultLocation": "afterLast",
 			"rules": []
-		}
+		},
+		"maxLineLength": 100
 	}
 }
 
@@ -18,6 +19,7 @@ Note: `equalNumber` is not implemented yet
 
 wrapping.methodChain.defaultWrap = combo,formatter.config.WrappingType
 wrapping.methodChain.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.maxLineLength = number
 
 ---
 

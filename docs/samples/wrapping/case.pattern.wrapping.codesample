@@ -9,7 +9,8 @@ Note: `equalNumber` is not implemented yet
 		"casePattern": {
 			"defaultWrap": "fillLine",
 			"defaultLocation": "beforeLast"
-		}
+		},
+		"maxLineLength": 100
 	}
 }
 
@@ -17,6 +18,7 @@ Note: `equalNumber` is not implemented yet
 
 wrapping.casePattern.defaultWrap = combo,formatter.config.WrappingType
 wrapping.casePattern.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.maxLineLength = number
 
 ---
 

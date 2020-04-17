@@ -12,7 +12,8 @@ Note: `equalNumber` is not implemented yet
 		"arrayWrap":  {
 			"defaultWrap": "fillLine",
 			"defaultLocation": "afterLast"
-		}
+		},
+		"maxLineLength": 100
 	}
 }
 
@@ -21,6 +22,7 @@ Note: `equalNumber` is not implemented yet
 wrapping.arrayMatrixWrap = combo,formatter.config.ArrayMatrixWrap
 wrapping.arrayWrap.defaultWrap = combo,formatter.config.WrappingType
 wrapping.arrayWrap.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.maxLineLength = number
 
 ---
 
