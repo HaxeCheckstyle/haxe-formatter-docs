@@ -196,42 +196,9 @@ class json2object_reader_BaseParser {
 	loadJsonNumber(f,pos,variable) {
 		this.onIncorrectType(pos,variable);
 	}
-	loadJsonUInt(f,pos,variable,value) {
-		var uint = 0;
-		f = StringTools.trim(f);
-		var neg = f.charAt(0) == "-";
-		if(neg) {
-			f = HxOverrides.substr(f,1,null);
-		}
-		var hex = StringTools.startsWith(f,"0x");
-		if(hex) {
-			f = HxOverrides.substr(f,2,null);
-		}
-		var base = hex ? 16 : 10;
-		var pow = 1;
-		var i = f.length - 1;
-		while(i >= 0) {
-			var cur = hex ? Std.parseInt("0x" + f.charAt(i)) : Std.parseInt(f.charAt(i));
-			if(cur == null) {
-				this.onIncorrectType(pos,variable);
-				return value;
-			}
-			uint = uint + pow * cur;
-			pow *= base;
-			--i;
-		}
-		return uint;
-	}
 	loadJsonInt(f,pos,variable,value) {
 		if(Std.parseInt(f) != null && Std.parseInt(f) == parseFloat(f)) {
 			return Std.parseInt(f);
-		}
-		this.onIncorrectType(pos,variable);
-		return value;
-	}
-	loadJsonFloat(f,pos,variable,value) {
-		if(Std.parseInt(f) != null) {
-			return parseFloat(f);
 		}
 		this.onIncorrectType(pos,variable);
 		return value;
@@ -278,15 +245,6 @@ class json2object_reader_BaseParser {
 			var _1 = ((_) instanceof js__$Boot_HaxeError) ? _.val : _;
 		}
 		return defaultValue;
-	}
-	loadObjectFieldReflect(loadJsonFn,field,name,assigned) {
-		try {
-			this.value[name] = loadJsonFn(field.value,field.name);
-			this.mapSet(assigned,name,true);
-		} catch( _ ) {
-			haxe_CallStack.lastException = _;
-			var _1 = ((_) instanceof js__$Boot_HaxeError) ? _.val : _;
-		}
 	}
 	objectSetupAssign(assigned,keys,values) {
 		var _g = 0;
@@ -419,9 +377,6 @@ class JsonParser_$112 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["beforeLast","afterLast"],"beforeLast");
 	}
-	getAuto() {
-		return new JsonParser_$112([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_112"] = JsonParser_$112;
 JsonParser_$112.__name__ = "JsonParser_112";
@@ -447,9 +402,6 @@ class JsonParser_$114 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["onePerLine","onePerLineAfterFirst","equalNumber","fillLine","fillLineWithLeadingBreak","noWrap","keep"],"onePerLine");
 	}
-	getAuto() {
-		return new JsonParser_$114([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_114"] = JsonParser_$114;
 JsonParser_$114.__name__ = "JsonParser_114";
@@ -473,9 +425,6 @@ class JsonParser_$116 extends json2object_reader_BaseParser {
 	}
 	loadJsonArray(a,pos,variable) {
 		this.value = this.loadJsonArrayValue(a,($_=new JsonParser_$118(this.errors,this.putils,2),$bind($_,$_.loadJson)),variable);
-	}
-	getAuto() {
-		return new JsonParser_$116([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_116"] = JsonParser_$116;
@@ -551,9 +500,6 @@ class JsonParser_$119 extends json2object_reader_BaseParser {
 	}
 	loadJsonArray(a,pos,variable) {
 		this.value = this.loadJsonArrayValue(a,($_=new JsonParser_$122(this.errors,this.putils,2),$bind($_,$_.loadJson)),variable);
-	}
-	getAuto() {
-		return new JsonParser_$119([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_119"] = JsonParser_$119;
@@ -637,9 +583,6 @@ class JsonParser_$120 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["onePerLine","onePerLineAfterFirst","equalNumber","fillLine","fillLineWithLeadingBreak","noWrap","keep"],"onePerLine");
 	}
-	getAuto() {
-		return new JsonParser_$120([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_120"] = JsonParser_$120;
 JsonParser_$120.__name__ = "JsonParser_120";
@@ -710,9 +653,6 @@ class JsonParser_$123 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["itemCount >= n","itemCount <= n","anyItemLength >= n","anyItemLength <= n","totalItemLength >= n","totalItemLength <= n","lineLength >= n","lineLength <= n","hasMultilineItems","exceedsMaxLineLength"],"itemCount >= n");
 	}
-	getAuto() {
-		return new JsonParser_$123([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_123"] = JsonParser_$123;
 JsonParser_$123.__name__ = "JsonParser_123";
@@ -737,9 +677,6 @@ class JsonParser_$125 extends json2object_reader_BaseParser {
 	}
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["none","before","noneBefore","onlyBefore","after","onlyAfter","noneAfter","around"],"none");
-	}
-	getAuto() {
-		return new JsonParser_$125([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_125"] = JsonParser_$125;
@@ -823,9 +760,6 @@ class JsonParser_$155 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["same","next","keep"],"same");
 	}
-	getAuto() {
-		return new JsonParser_$155([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_155"] = JsonParser_$155;
 JsonParser_$155.__name__ = "JsonParser_155";
@@ -899,9 +833,6 @@ class JsonParser_$164 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["none","after"],"none");
 	}
-	getAuto() {
-		return new JsonParser_$164([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_164"] = JsonParser_$164;
 JsonParser_$164.__name__ = "JsonParser_164";
@@ -926,9 +857,6 @@ class JsonParser_$166 extends json2object_reader_BaseParser {
 	}
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["noBreak","break"],"noBreak");
-	}
-	getAuto() {
-		return new JsonParser_$166([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_166"] = JsonParser_$166;
@@ -955,9 +883,6 @@ class JsonParser_$168 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["none","after","before","both"],"none");
 	}
-	getAuto() {
-		return new JsonParser_$168([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_168"] = JsonParser_$168;
 JsonParser_$168.__name__ = "JsonParser_168";
@@ -982,9 +907,6 @@ class JsonParser_$170 extends json2object_reader_BaseParser {
 	}
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["none","after","afterLast","forceAfterLast"],"none");
-	}
-	getAuto() {
-		return new JsonParser_$170([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_170"] = JsonParser_$170;
@@ -1011,9 +933,6 @@ class JsonParser_$174 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["none","before","after","both"],"none");
 	}
-	getAuto() {
-		return new JsonParser_$174([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_174"] = JsonParser_$174;
 JsonParser_$174.__name__ = "JsonParser_174";
@@ -1038,9 +957,6 @@ class JsonParser_$176 extends json2object_reader_BaseParser {
 	}
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["none","after"],"none");
-	}
-	getAuto() {
-		return new JsonParser_$176([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_176"] = JsonParser_$176;
@@ -1117,9 +1033,6 @@ class JsonParser_$180 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = s;
 	}
-	getAuto() {
-		return new JsonParser_$180([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_180"] = JsonParser_$180;
 JsonParser_$180.__name__ = "JsonParser_180";
@@ -1144,9 +1057,6 @@ class JsonParser_$182 extends json2object_reader_BaseParser {
 	}
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["fixedZero","fixedZeroIncrease","fixedZeroIncreaseBlocks","aligned","alignedNestedIncrease","alignedIncrease","alignedDecrease"],"fixedZero");
-	}
-	getAuto() {
-		return new JsonParser_$182([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_182"] = JsonParser_$182;
@@ -1173,9 +1083,6 @@ class JsonParser_$184 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["all","firstLevelPackage","secondLevelPackage","thirdLevelPackage","fourthLevelPackage","fifthLevelPackage","fullPackage"],"all");
 	}
-	getAuto() {
-		return new JsonParser_$184([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_184"] = JsonParser_$184;
 JsonParser_$184.__name__ = "JsonParser_184";
@@ -1200,9 +1107,6 @@ class JsonParser_$186 extends json2object_reader_BaseParser {
 	}
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["keep","remove"],"keep");
-	}
-	getAuto() {
-		return new JsonParser_$186([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_186"] = JsonParser_$186;
@@ -1229,9 +1133,6 @@ class JsonParser_$190 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["ignore","none","one"],"ignore");
 	}
-	getAuto() {
-		return new JsonParser_$190([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_190"] = JsonParser_$190;
 JsonParser_$190.__name__ = "JsonParser_190";
@@ -1256,9 +1157,6 @@ class JsonParser_$206 extends json2object_reader_BaseParser {
 	}
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["keep","one","none"],"keep");
-	}
-	getAuto() {
-		return new JsonParser_$206([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_206"] = JsonParser_$206;
@@ -2143,9 +2041,6 @@ class JsonParser_$62 extends json2object_reader_BaseParser {
 	loadJsonBool(b,pos,variable) {
 		this.value = b;
 	}
-	getAuto() {
-		return new JsonParser_$62([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_62"] = JsonParser_$62;
 JsonParser_$62.__name__ = "JsonParser_62";
@@ -2169,9 +2064,6 @@ class JsonParser_$66 extends json2object_reader_BaseParser {
 	}
 	loadJsonArray(a,pos,variable) {
 		this.value = this.loadJsonArrayValue(a,($_=new JsonParser_$77(this.errors,this.putils,2),$bind($_,$_.loadJson)),variable);
-	}
-	getAuto() {
-		return new JsonParser_$66([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
 	}
 }
 $hxClasses["JsonParser_66"] = JsonParser_$66;
@@ -2272,9 +2164,6 @@ class JsonParser_$77 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = s;
 	}
-	getAuto() {
-		return new JsonParser_$77([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_77"] = JsonParser_$77;
 JsonParser_$77.__name__ = "JsonParser_77";
@@ -2351,9 +2240,6 @@ class JsonParser_$84 extends json2object_reader_BaseParser {
 	loadJsonString(s,pos,variable) {
 		this.value = this.loadString(s,pos,variable,["noMatrixWrap","matrixWrapNoAlign","matrixWrapWithAlign"],"noMatrixWrap");
 	}
-	getAuto() {
-		return new JsonParser_$84([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_84"] = JsonParser_$84;
 JsonParser_$84.__name__ = "JsonParser_84";
@@ -2378,9 +2264,6 @@ class JsonParser_$96 extends json2object_reader_BaseParser {
 	loadJsonNumber(f,pos,variable) {
 		this.value = this.loadJsonInt(f,pos,variable,this.value);
 	}
-	getAuto() {
-		return new JsonParser_$96([],this.putils,0).loadJson(new hxjsonast_Json(hxjsonast_JsonValue.JNull,new hxjsonast_Position("",0,1)));
-	}
 }
 $hxClasses["JsonParser_96"] = JsonParser_$96;
 JsonParser_$96.__name__ = "JsonParser_96";
@@ -2388,20 +2271,6 @@ JsonParser_$96.__super__ = json2object_reader_BaseParser;
 Object.assign(JsonParser_$96.prototype, {
 	__class__: JsonParser_$96
 });
-class Lambda {
-	static exists(it,f) {
-		var x = $getIterator(it);
-		while(x.hasNext()) {
-			var x1 = x.next();
-			if(f(x1)) {
-				return true;
-			}
-		}
-		return false;
-	}
-}
-$hxClasses["Lambda"] = Lambda;
-Lambda.__name__ = "Lambda";
 class Main {
 	static main() {
 		var doc = new codesamples_WhitespaceSamples();
@@ -2883,31 +2752,6 @@ class Type {
 }
 $hxClasses["Type"] = Type;
 Type.__name__ = "Type";
-class byte__$ByteData_ByteData_$Impl_$ {
-	static get_length(this1) {
-		return this1.length;
-	}
-	static readByte(this1,i) {
-		return this1.b[i];
-	}
-	static _new(data) {
-		var this1 = data;
-		return this1;
-	}
-	static ofString(s) {
-		var this1 = haxe_io_Bytes.ofString(s);
-		return this1;
-	}
-	static ofBytes(b) {
-		var this1 = b;
-		return this1;
-	}
-	static readString(this1,pos,len) {
-		return this1.getString(pos,len);
-	}
-}
-$hxClasses["byte._ByteData.ByteData_Impl_"] = byte__$ByteData_ByteData_$Impl_$;
-byte__$ByteData_ByteData_$Impl_$.__name__ = "byte._ByteData.ByteData_Impl_";
 class codesamples_SampleBase {
 	buildDocSamplePage(container,codeSampleName,docText,configText,configFields,fieldDef,codeSample) {
 		var content = "<h1>" + StringTools.replace(codeSampleName,"."," ") + "</h1>\n";
@@ -3095,7 +2939,7 @@ class codesamples_SampleBase {
 				lines.push(indent + "},");
 				break;
 			default:
-				console.log("src/codesamples/SampleBase.hx:188:","unhandled" + typeof(field));
+				console.log("src/codesamples/SampleBase.hx:189:","unhandled" + typeof(field));
 			}
 		}
 		if(lines.length > 0) {
@@ -3206,7 +3050,7 @@ class codesamples_IndentationSamples extends codesamples_SampleBase {
 		super();
 	}
 	trailing_whitespace(container) {
-		this.buildDocSamplePage(container,"trailing.whitespace","","{\n\t\"indentation\": {\n\t\t\"trailingWhitespace\": true\n\t}\n}",[{ id : "indentation.trailingWhitespace", type : codesamples_config_ConfigFieldType.Bool}],"","package my.pack;\nimport haxe.Json;\nusing StringTools;\n\nclass Main {\n\tpublic static function test1() {\n\t\ttrace(i);\n\n\t\tif (true) {\n\t\t\ttrace(\"true\");\n\n\t\t\ttrace(\"true\");\n\t\t}\n\t\telse\n\t\t{\n\t\t\ttrace(\"false\");\n\n\t\t\ttrace(\"false\");\n\t\t}\n\n\t\ttrace(i);\n\t}\n\n\tpublic static function test2()\n\t\ttrace(i);\n}\n\ntypedef MyType = Array<Main>;\n");
+		this.buildDocSamplePage(container,"trailing.whitespace","adds whitespace to empty lines by copying indentation from previous line","{\n\t\"indentation\": {\n\t\t\"trailingWhitespace\": true\n\t}\n}",[{ id : "indentation.trailingWhitespace", type : codesamples_config_ConfigFieldType.Bool}],"","package my.pack;\nimport haxe.Json;\nusing StringTools;\n\nclass Main {\n\tpublic static function test1() {\n\t\ttrace(i);\n\n\t\tif (true) {\n\t\t\ttrace(\"true\");\n\n\t\t\ttrace(\"true\");\n\t\t}\n\t\telse\n\t\t{\n\t\t\ttrace(\"false\");\n\n\t\t\ttrace(\"false\");\n\t\t}\n\n\t\ttrace(i);\n\t}\n\n\tpublic static function test2()\n\t\ttrace(i);\n}\n\ntypedef MyType = Array<Main>;\n");
 	}
 }
 $hxClasses["codesamples.IndentationSamples"] = codesamples_IndentationSamples;
@@ -3243,6 +3087,9 @@ Object.assign(codesamples_SamelineSamples.prototype, {
 class codesamples_WhitespaceSamples extends codesamples_SampleBase {
 	constructor() {
 		super();
+	}
+	function_parens(container) {
+		this.buildDocSamplePage(container,"function.parens","","{\n    \"whitespace\": {\n        \"parenConfig\": {\n            \"funcParamParens\": {\n                \"openingPolicy\": \"before\",\n                \"closingPolicy\": \"none\",\n                \"removeInnerWhenEmpty\": true\n            },\n\t\t\t\"anonFuncParamParens\": {\n                \"openingPolicy\": \"none\",\n                \"closingPolicy\": \"onlyAfter\",\n                \"removeInnerWhenEmpty\": true\n\t\t\t}\n        }\n    }\n}",[{ id : "whitespace.parenConfig.funcParamParens.openingPolicy", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)])},{ id : "whitespace.parenConfig.funcParamParens.closingPolicy", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)])},{ id : "whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty", type : codesamples_config_ConfigFieldType.Bool},{ id : "whitespace.parenConfig.anonFuncParamParens.openingPolicy", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)])},{ id : "whitespace.parenConfig.anonFuncParamParens.closingPolicy", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)])},{ id : "whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty", type : codesamples_config_ConfigFieldType.Bool}],"","class Main {\n    function new () {}\n\n\tfunction test(param1:Int,param2:Array<String>, callback:(index:Int)->String, callback2:()->String) {\n\t\tparam2.push(callback(param1));\n\t}\n}\n");
 	}
 }
 $hxClasses["codesamples.WhitespaceSamples"] = codesamples_WhitespaceSamples;
@@ -3281,32 +3128,6 @@ var codesamples_config_ConfigFieldType = $hxEnums["codesamples.config.ConfigFiel
 	,Text: {_hx_index:3,__enum__:"codesamples.config.ConfigFieldType",toString:$estr}
 };
 class formatter_FormatStats {
-	static reset() {
-		formatter_FormatStats.totalFiles = 0;
-		formatter_FormatStats.successFiles = 0;
-		formatter_FormatStats.failedFiles = 0;
-		formatter_FormatStats.disabledFiles = 0;
-		formatter_FormatStats.totalLinesOrig = 0;
-		formatter_FormatStats.totalLinesFormatted = 0;
-	}
-	static incSuccess() {
-		formatter_FormatStats.totalFiles++;
-		formatter_FormatStats.successFiles++;
-	}
-	static incFailed() {
-		formatter_FormatStats.totalFiles++;
-		formatter_FormatStats.failedFiles++;
-	}
-	static incDisabled() {
-		formatter_FormatStats.totalFiles++;
-		formatter_FormatStats.disabledFiles++;
-	}
-	static addOrigLines(count) {
-		formatter_FormatStats.totalLinesOrig += count;
-	}
-	static addFormattedLines(count) {
-		formatter_FormatStats.totalLinesFormatted += count;
-	}
 }
 $hxClasses["formatter.FormatStats"] = formatter_FormatStats;
 formatter_FormatStats.__name__ = "formatter.FormatStats";
@@ -3375,22 +3196,6 @@ class formatter_Formatter {
 			var e1 = ((e) instanceof js__$Boot_HaxeError) ? e.val : e;
 			var callstack = haxe_CallStack.toString(haxe_CallStack.exceptionStack());
 			return formatter_Result.Failure(Std.string(e1) + "\n" + callstack + "\n\n");
-		}
-	}
-	static main() {
-		var result = formatter_Formatter.format(formatter_FormatterInput.Code(" trace ( 'foo' ) ; "),new formatter_config_Config(),null,tokentree_TokenTreeEntryPoint.EXPRESSION_LEVEL);
-		switch(result._hx_index) {
-		case 0:
-			var formattedCode = result.formattedCode;
-			window.console.log("Success: " + formattedCode);
-			break;
-		case 1:
-			var errorMessage = result.errorMessage;
-			window.console.log("Failed to format: " + errorMessage);
-			break;
-		case 2:
-			window.console.log("Formatting disabled");
-			break;
 		}
 	}
 }
@@ -4321,19 +4126,6 @@ class formatter_codedata_TokenList {
 			info.spacesAfter = 1;
 		}
 	}
-	spacesAfter(token,count) {
-		if(token.index < 0) {
-			return;
-		}
-		var info = this.tokens[token.index];
-		if(info == null) {
-			return;
-		}
-		info.spacesAfter = count;
-		if(info.whitespaceAfter == formatter_codedata_WhitespaceAfterType.None && count > 0) {
-			info.whitespaceAfter = formatter_codedata_WhitespaceAfterType.Space;
-		}
-	}
 	spacesBefore(token,count) {
 		if(token.index < 0) {
 			return;
@@ -5212,9 +5004,6 @@ class formatter_marker_Indenter {
 	}
 	setParsedCode(parsedCode) {
 		this.parsedCode = parsedCode;
-	}
-	makeIndent(token) {
-		return this.makeIndentString(this.calcIndent(token));
 	}
 	makeIndentString(count) {
 		return StringTools.lpad("",this.config.character,this.config.character.length * count);
@@ -6189,17 +5978,11 @@ class formatter_marker_MarkerBase {
 	getPreviousToken(token) {
 		return this.parsedCode.tokenList.getPreviousToken(token);
 	}
-	getTokenInfo(token) {
-		return this.parsedCode.tokenList.getTokenAt(token.index);
-	}
 	getTokenAt(index) {
 		return this.parsedCode.tokenList.getTokenAt(index);
 	}
 	whitespace(token,where) {
 		this.parsedCode.tokenList.whitespace(token,where);
-	}
-	spacesAfter(token,count) {
-		this.parsedCode.tokenList.spacesAfter(token,count);
 	}
 	spacesBefore(token,count) {
 		this.parsedCode.tokenList.spacesBefore(token,count);
@@ -13150,16 +12933,6 @@ var haxe_macro_Unop = $hxEnums["haxe.macro.Unop"] = { __ename__ : true, __constr
 	,OpNeg: {_hx_index:3,__enum__:"haxe.macro.Unop",toString:$estr}
 	,OpNegBits: {_hx_index:4,__enum__:"haxe.macro.Unop",toString:$estr}
 };
-var haxe_macro_ComplexType = $hxEnums["haxe.macro.ComplexType"] = { __ename__ : true, __constructs__ : ["TPath","TFunction","TAnonymous","TParent","TExtend","TOptional","TNamed","TIntersection"]
-	,TPath: ($_=function(p) { return {_hx_index:0,p:p,__enum__:"haxe.macro.ComplexType",toString:$estr}; },$_.__params__ = ["p"],$_)
-	,TFunction: ($_=function(args,ret) { return {_hx_index:1,args:args,ret:ret,__enum__:"haxe.macro.ComplexType",toString:$estr}; },$_.__params__ = ["args","ret"],$_)
-	,TAnonymous: ($_=function(fields) { return {_hx_index:2,fields:fields,__enum__:"haxe.macro.ComplexType",toString:$estr}; },$_.__params__ = ["fields"],$_)
-	,TParent: ($_=function(t) { return {_hx_index:3,t:t,__enum__:"haxe.macro.ComplexType",toString:$estr}; },$_.__params__ = ["t"],$_)
-	,TExtend: ($_=function(p,fields) { return {_hx_index:4,p:p,fields:fields,__enum__:"haxe.macro.ComplexType",toString:$estr}; },$_.__params__ = ["p","fields"],$_)
-	,TOptional: ($_=function(t) { return {_hx_index:5,t:t,__enum__:"haxe.macro.ComplexType",toString:$estr}; },$_.__params__ = ["t"],$_)
-	,TNamed: ($_=function(n,t) { return {_hx_index:6,n:n,t:t,__enum__:"haxe.macro.ComplexType",toString:$estr}; },$_.__params__ = ["n","t"],$_)
-	,TIntersection: ($_=function(tl) { return {_hx_index:7,tl:tl,__enum__:"haxe.macro.ComplexType",toString:$estr}; },$_.__params__ = ["tl"],$_)
-};
 class haxe_macro_Printer {
 	constructor(tabString) {
 		if(tabString == null) {
@@ -13310,98 +13083,6 @@ var haxeparser_Keyword = $hxEnums["haxeparser.Keyword"] = { __ename__ : true, __
 	,KwdMacro: {_hx_index:40,__enum__:"haxeparser.Keyword",toString:$estr}
 	,KwdFinal: {_hx_index:41,__enum__:"haxeparser.Keyword",toString:$estr}
 };
-class haxeparser_KeywordPrinter {
-	static toString(kwd) {
-		switch(kwd._hx_index) {
-		case 0:
-			return "function";
-		case 1:
-			return "class";
-		case 2:
-			return "var";
-		case 3:
-			return "if";
-		case 4:
-			return "else";
-		case 5:
-			return "while";
-		case 6:
-			return "do";
-		case 7:
-			return "for";
-		case 8:
-			return "break";
-		case 9:
-			return "continue";
-		case 10:
-			return "return";
-		case 11:
-			return "extends";
-		case 12:
-			return "implements";
-		case 13:
-			return "import";
-		case 14:
-			return "switch";
-		case 15:
-			return "case";
-		case 16:
-			return "default";
-		case 17:
-			return "static";
-		case 18:
-			return "public";
-		case 19:
-			return "private";
-		case 20:
-			return "try";
-		case 21:
-			return "catch";
-		case 22:
-			return "new";
-		case 23:
-			return "this";
-		case 24:
-			return "throw";
-		case 25:
-			return "extern";
-		case 26:
-			return "enum";
-		case 27:
-			return "interface";
-		case 28:
-			return "untyped";
-		case 29:
-			return "cast";
-		case 30:
-			return "override";
-		case 31:
-			return "typedef";
-		case 32:
-			return "dynamic";
-		case 33:
-			return "package";
-		case 34:
-			return "inline";
-		case 35:
-			return "using";
-		case 36:
-			return "null";
-		case 37:
-			return "true";
-		case 38:
-			return "false";
-		case 39:
-			return "abstract";
-		case 40:
-			return "macro";
-		case 41:
-			return "final";
-		}
-	}
-}
-$hxClasses["haxeparser.KeywordPrinter"] = haxeparser_KeywordPrinter;
-haxeparser_KeywordPrinter.__name__ = "haxeparser.KeywordPrinter";
 var haxeparser_TokenDef = $hxEnums["haxeparser.TokenDef"] = { __ename__ : true, __constructs__ : ["Kwd","Const","Sharp","Dollar","Unop","Binop","Comment","CommentLine","IntInterval","Semicolon","Dot","DblDot","Arrow","Comma","BkOpen","BkClose","BrOpen","BrClose","POpen","PClose","Question","At","Eof"]
 	,Kwd: ($_=function(k) { return {_hx_index:0,k:k,__enum__:"haxeparser.TokenDef",toString:$estr}; },$_.__params__ = ["k"],$_)
 	,Const: ($_=function(c) { return {_hx_index:1,c:c,__enum__:"haxeparser.TokenDef",toString:$estr}; },$_.__params__ = ["c"],$_)
@@ -13506,9 +13187,6 @@ class haxeparser_TokenDefPrinter {
 			return "<eof>";
 		}
 	}
-	static print(def) {
-		return haxeparser_TokenDefPrinter.toString(def);
-	}
 }
 $hxClasses["haxeparser.TokenDefPrinter"] = haxeparser_TokenDefPrinter;
 haxeparser_TokenDefPrinter.__name__ = "haxeparser.TokenDefPrinter";
@@ -13528,38 +13206,6 @@ Object.assign(haxeparser_Token.prototype, {
 	,tok: null
 	,pos: null
 });
-var haxeparser_TypeDef = $hxEnums["haxeparser.TypeDef"] = { __ename__ : true, __constructs__ : ["EClass","EEnum","EAbstract","EImport","ETypedef","EUsing"]
-	,EClass: ($_=function(d) { return {_hx_index:0,d:d,__enum__:"haxeparser.TypeDef",toString:$estr}; },$_.__params__ = ["d"],$_)
-	,EEnum: ($_=function(d) { return {_hx_index:1,d:d,__enum__:"haxeparser.TypeDef",toString:$estr}; },$_.__params__ = ["d"],$_)
-	,EAbstract: ($_=function(a) { return {_hx_index:2,a:a,__enum__:"haxeparser.TypeDef",toString:$estr}; },$_.__params__ = ["a"],$_)
-	,EImport: ($_=function(sl,mode) { return {_hx_index:3,sl:sl,mode:mode,__enum__:"haxeparser.TypeDef",toString:$estr}; },$_.__params__ = ["sl","mode"],$_)
-	,ETypedef: ($_=function(d) { return {_hx_index:4,d:d,__enum__:"haxeparser.TypeDef",toString:$estr}; },$_.__params__ = ["d"],$_)
-	,EUsing: ($_=function(path) { return {_hx_index:5,path:path,__enum__:"haxeparser.TypeDef",toString:$estr}; },$_.__params__ = ["path"],$_)
-};
-var haxeparser_ClassFlag = $hxEnums["haxeparser.ClassFlag"] = { __ename__ : true, __constructs__ : ["HInterface","HExtern","HPrivate","HFinal","HExtends","HImplements"]
-	,HInterface: {_hx_index:0,__enum__:"haxeparser.ClassFlag",toString:$estr}
-	,HExtern: {_hx_index:1,__enum__:"haxeparser.ClassFlag",toString:$estr}
-	,HPrivate: {_hx_index:2,__enum__:"haxeparser.ClassFlag",toString:$estr}
-	,HFinal: {_hx_index:3,__enum__:"haxeparser.ClassFlag",toString:$estr}
-	,HExtends: ($_=function(t) { return {_hx_index:4,t:t,__enum__:"haxeparser.ClassFlag",toString:$estr}; },$_.__params__ = ["t"],$_)
-	,HImplements: ($_=function(t) { return {_hx_index:5,t:t,__enum__:"haxeparser.ClassFlag",toString:$estr}; },$_.__params__ = ["t"],$_)
-};
-var haxeparser_AbstractFlag = $hxEnums["haxeparser.AbstractFlag"] = { __ename__ : true, __constructs__ : ["APrivAbstract","AFromType","AToType","AIsType","AExtern"]
-	,APrivAbstract: {_hx_index:0,__enum__:"haxeparser.AbstractFlag",toString:$estr}
-	,AFromType: ($_=function(ct) { return {_hx_index:1,ct:ct,__enum__:"haxeparser.AbstractFlag",toString:$estr}; },$_.__params__ = ["ct"],$_)
-	,AToType: ($_=function(ct) { return {_hx_index:2,ct:ct,__enum__:"haxeparser.AbstractFlag",toString:$estr}; },$_.__params__ = ["ct"],$_)
-	,AIsType: ($_=function(ct) { return {_hx_index:3,ct:ct,__enum__:"haxeparser.AbstractFlag",toString:$estr}; },$_.__params__ = ["ct"],$_)
-	,AExtern: {_hx_index:4,__enum__:"haxeparser.AbstractFlag",toString:$estr}
-};
-var haxeparser_EnumFlag = $hxEnums["haxeparser.EnumFlag"] = { __ename__ : true, __constructs__ : ["EPrivate","EExtern"]
-	,EPrivate: {_hx_index:0,__enum__:"haxeparser.EnumFlag",toString:$estr}
-	,EExtern: {_hx_index:1,__enum__:"haxeparser.EnumFlag",toString:$estr}
-};
-var haxeparser_ImportMode = $hxEnums["haxeparser.ImportMode"] = { __ename__ : true, __constructs__ : ["INormal","IAsName","IAll"]
-	,INormal: {_hx_index:0,__enum__:"haxeparser.ImportMode",toString:$estr}
-	,IAsName: ($_=function(s) { return {_hx_index:1,s:s,__enum__:"haxeparser.ImportMode",toString:$estr}; },$_.__params__ = ["s"],$_)
-	,IAll: {_hx_index:2,__enum__:"haxeparser.ImportMode",toString:$estr}
-};
 var haxeparser_LexerErrorMsg = $hxEnums["haxeparser.LexerErrorMsg"] = { __ename__ : true, __constructs__ : ["UnterminatedString","UnterminatedRegExp","UnclosedComment","UnterminatedEscapeSequence","InvalidEscapeSequence","UnknownEscapeSequence","UnclosedCode"]
 	,UnterminatedString: {_hx_index:0,__enum__:"haxeparser.LexerErrorMsg",toString:$estr}
 	,UnterminatedRegExp: {_hx_index:1,__enum__:"haxeparser.LexerErrorMsg",toString:$estr}
@@ -13591,9 +13237,6 @@ class hxparse_Lexer {
 		this.input = input;
 		this.source = sourceName;
 		this.pos = 0;
-	}
-	curPos() {
-		return new hxparse_Position(this.source,this.pos - this.current.length,this.pos);
 	}
 	token(ruleset) {
 		if(this.pos == this.input.length) {
@@ -13880,9 +13523,6 @@ class hxparse_LexEngine {
 		}
 		return nodes;
 	}
-	node(pid) {
-		return new hxparse__$LexEngine_Node(this.uid++,pid);
-	}
 	initNode(p,finalId,pid) {
 		switch(p._hx_index) {
 		case 0:
@@ -13921,9 +13561,6 @@ class hxparse_LexEngine {
 			var p3 = p.p;
 			return this.initNode(p3,finalId,pid);
 		}
-	}
-	static single(c) {
-		return [new hxparse__$LexEngine_CharRange(c,c)];
 	}
 	static parse(pattern) {
 		var this1 = haxe_io_Bytes.ofString(pattern);
@@ -14492,9 +14129,6 @@ class hxparse_Position {
 			return "" + this.psource + ":" + linePos.lineMin + ": characters " + linePos.posMin + "-" + linePos.posMax;
 		}
 	}
-	static union(p1,p2) {
-		return new hxparse_Position(p1.psource,p1.pmin < p2.pmin ? p1.pmin : p2.pmin,p1.pmax > p2.pmax ? p1.pmax : p2.pmax);
-	}
 }
 $hxClasses["hxparse.Position"] = hxparse_Position;
 hxparse_Position.__name__ = "hxparse.Position";
@@ -14513,9 +14147,6 @@ class haxeparser_HaxeLexer extends hxparse_Lexer {
 	}
 	static mk(lexer,td) {
 		return new haxeparser_Token(td,haxeparser_HaxeLexer.mkPos(new hxparse_Position(lexer.source,lexer.pos - lexer.current.length,lexer.pos)));
-	}
-	static unescapePos(pos,index,length) {
-		return { file : pos.file, min : pos.min + index, max : pos.min + index + length};
 	}
 	static unescape(s,pos) {
 		var b_b = "";
@@ -14919,90 +14550,12 @@ class hxjsonast_Parser {
 			return buf.b;
 		}
 	}
-	parseNumber(c) {
-		var start = this.pos - 1;
-		var minus = c == 45;
-		var digit = !minus;
-		var zero = c == 48;
-		var point = false;
-		var e = false;
-		var pm = false;
-		var end = false;
-		while(true) {
-			switch(this.source.charCodeAt(this.pos++)) {
-			case 43:case 45:
-				if(!e || pm) {
-					this.invalidNumber(start);
-				}
-				digit = false;
-				pm = true;
-				break;
-			case 46:
-				if(minus || point) {
-					this.invalidNumber(start);
-				}
-				digit = false;
-				point = true;
-				break;
-			case 48:
-				if(zero && !point) {
-					this.invalidNumber(start);
-				}
-				if(minus) {
-					minus = false;
-					zero = true;
-				}
-				digit = true;
-				break;
-			case 49:case 50:case 51:case 52:case 53:case 54:case 55:case 56:case 57:
-				if(zero && !point) {
-					this.invalidNumber(start);
-				}
-				if(minus) {
-					minus = false;
-				}
-				digit = true;
-				zero = false;
-				break;
-			case 69:case 101:
-				if(minus || zero || e) {
-					this.invalidNumber(start);
-				}
-				digit = false;
-				e = true;
-				break;
-			default:
-				if(!digit) {
-					this.invalidNumber(start);
-				}
-				this.pos--;
-				end = true;
-			}
-			if(end) {
-				break;
-			}
-		}
-		var s = HxOverrides.substr(this.source,start,this.pos - start);
-		return new hxjsonast_Json(hxjsonast_JsonValue.JNumber(s),new hxjsonast_Position(this.filename,start,this.pos));
-	}
-	nextChar() {
-		return this.source.charCodeAt(this.pos++);
-	}
-	mk(pos,value) {
-		return new hxjsonast_Json(value,pos);
-	}
-	mkPos(min,max) {
-		return new hxjsonast_Position(this.filename,min,max);
-	}
 	invalidChar() {
 		this.pos--;
 		throw new js__$Boot_HaxeError(new hxjsonast_Error("Invalid character: " + this.source.charAt(this.pos),new hxjsonast_Position(this.filename,this.pos,this.pos + 1)));
 	}
 	invalidNumber(start) {
 		throw new js__$Boot_HaxeError(new hxjsonast_Error("Invalid number: " + this.source.substring(start,this.pos),new hxjsonast_Position(this.filename,start,this.pos)));
-	}
-	static parse(source,filename) {
-		return new hxjsonast_Parser(source,filename).parseRec();
 	}
 }
 $hxClasses["hxjsonast.Parser"] = hxjsonast_Parser;
@@ -15028,26 +14581,9 @@ Object.assign(hxjsonast_Position.prototype, {
 	,min: null
 	,max: null
 });
-class hxparse__$LexEngine_Transition {
-	constructor(chars) {
-		this.chars = chars;
-	}
-	toString() {
-		return Std.string(this.chars);
-	}
-}
-$hxClasses["hxparse._LexEngine.Transition"] = hxparse__$LexEngine_Transition;
-hxparse__$LexEngine_Transition.__name__ = "hxparse._LexEngine.Transition";
-Object.assign(hxparse__$LexEngine_Transition.prototype, {
-	__class__: hxparse__$LexEngine_Transition
-	,chars: null
-});
 class hxparse_ParserError {
 	constructor(pos) {
 		this.pos = pos;
-	}
-	toString() {
-		return "Parser error";
 	}
 }
 $hxClasses["hxparse.ParserError"] = hxparse_ParserError;
@@ -15056,10 +14592,6 @@ Object.assign(hxparse_ParserError.prototype, {
 	__class__: hxparse_ParserError
 	,pos: null
 });
-class hxparse_RuleBuilderImpl {
-}
-$hxClasses["hxparse.RuleBuilderImpl"] = hxparse_RuleBuilderImpl;
-hxparse_RuleBuilderImpl.__name__ = "hxparse.RuleBuilderImpl";
 class hxparse_State {
 	constructor() {
 		this.finalId = -1;
@@ -15106,44 +14638,6 @@ Object.assign(js__$Boot_HaxeError.prototype, {
 	__class__: js__$Boot_HaxeError
 	,val: null
 });
-class js_jquery_JqEltsIterator {
-	constructor(j) {
-		this.i = 0;
-		this.j = j;
-	}
-	hasNext() {
-		return this.i < this.j.length;
-	}
-	next() {
-		return $(this.j[this.i++]);
-	}
-}
-$hxClasses["js.jquery.JqEltsIterator"] = js_jquery_JqEltsIterator;
-js_jquery_JqEltsIterator.__name__ = "js.jquery.JqEltsIterator";
-Object.assign(js_jquery_JqEltsIterator.prototype, {
-	__class__: js_jquery_JqEltsIterator
-	,j: null
-	,i: null
-});
-class js_jquery_JqIterator {
-	constructor(j) {
-		this.i = 0;
-		this.j = j;
-	}
-	hasNext() {
-		return this.i < this.j.length;
-	}
-	next() {
-		return this.j[this.i++];
-	}
-}
-$hxClasses["js.jquery.JqIterator"] = js_jquery_JqIterator;
-js_jquery_JqIterator.__name__ = "js.jquery.JqIterator";
-Object.assign(js_jquery_JqIterator.prototype, {
-	__class__: js_jquery_JqIterator
-	,j: null
-	,i: null
-});
 var json2object_Error = $hxEnums["json2object.Error"] = { __ename__ : true, __constructs__ : ["IncorrectType","IncorrectEnumValue","InvalidEnumConstructor","UninitializedVariable","UnknownVariable","ParserError"]
 	,IncorrectType: ($_=function(variable,expected,pos) { return {_hx_index:0,variable:variable,expected:expected,pos:pos,__enum__:"json2object.Error",toString:$estr}; },$_.__params__ = ["variable","expected","pos"],$_)
 	,IncorrectEnumValue: ($_=function(value,expected,pos) { return {_hx_index:1,value:value,expected:expected,pos:pos,__enum__:"json2object.Error",toString:$estr}; },$_.__params__ = ["value","expected","pos"],$_)
@@ -15152,10 +14646,6 @@ var json2object_Error = $hxEnums["json2object.Error"] = { __ename__ : true, __co
 	,UnknownVariable: ($_=function(variable,pos) { return {_hx_index:4,variable:variable,pos:pos,__enum__:"json2object.Error",toString:$estr}; },$_.__params__ = ["variable","pos"],$_)
 	,ParserError: ($_=function(message,pos) { return {_hx_index:5,message:message,pos:pos,__enum__:"json2object.Error",toString:$estr}; },$_.__params__ = ["message","pos"],$_)
 };
-class json2object_JsonParser {
-}
-$hxClasses["json2object.JsonParser"] = json2object_JsonParser;
-json2object_JsonParser.__name__ = "json2object.JsonParser";
 class json2object_PositionUtils {
 	constructor(content) {
 		this.linesInfo = [];
@@ -15231,9 +14721,6 @@ class json2object_PositionUtils {
 		}
 		return pos;
 	}
-	revert(position) {
-		return new hxjsonast_Position(position.file,position.min - 1,position.max - 1);
-	}
 }
 $hxClasses["json2object.PositionUtils"] = json2object_PositionUtils;
 json2object_PositionUtils.__name__ = "json2object.PositionUtils";
@@ -15267,9 +14754,6 @@ class markdown_ElementNode {
 		this.children = children;
 		this.attributes = new haxe_ds_StringMap();
 	}
-	isEmpty() {
-		return this.children == null;
-	}
 	accept(visitor) {
 		if(visitor.visitElementBefore(this)) {
 			var _g = 0;
@@ -15284,9 +14768,6 @@ class markdown_ElementNode {
 	}
 	static empty(tag) {
 		return new markdown_ElementNode(tag,null);
-	}
-	static withTag(tag) {
-		return new markdown_ElementNode(tag,[]);
 	}
 	static text(tag,text) {
 		return new markdown_ElementNode(tag,[new markdown_TextNode(text)]);
@@ -15322,9 +14803,6 @@ class markdown_BlockParser {
 		this.document = document;
 		this.pos = 0;
 	}
-	get_current() {
-		return this.lines[this.pos];
-	}
 	get_next() {
 		if(this.pos >= this.lines.length - 1) {
 			return null;
@@ -15333,9 +14811,6 @@ class markdown_BlockParser {
 	}
 	advance() {
 		this.pos++;
-	}
-	get_isDone() {
-		return this.pos >= this.lines.length;
 	}
 	matches(ereg) {
 		if(this.pos >= this.lines.length) {
@@ -15372,17 +14847,6 @@ class markdown_BlockSyntax {
 	}
 	parse(parser) {
 		return null;
-	}
-	parseChildLines(parser) {
-		var childLines = [];
-		while(parser.pos < parser.lines.length) {
-			if(!this.get_pattern().match(parser.lines[parser.pos])) {
-				break;
-			}
-			childLines.push(this.get_pattern().matched(1));
-			parser.advance();
-		}
-		return childLines;
 	}
 	static get_syntaxes() {
 		if(markdown_BlockSyntax.syntaxes == null) {
@@ -16528,9 +15992,6 @@ class tokentree_TokenStream {
 	clearTempStore() {
 		this.tempStore = [];
 	}
-	error(s) {
-		throw new js__$Boot_HaxeError(this.formatCurrentPos() + ": " + s);
-	}
 	formatCurrentPos() {
 		var pos = this.tokens[this.current].pos;
 		return new hxparse_Position(pos.file,pos.min,pos.max).format(this.bytes);
@@ -16648,12 +16109,6 @@ class tokentree_TokenStream {
 			return null;
 		}
 		return this.tokens[this.current].pos;
-	}
-	rewind() {
-		if(this.current <= 0) {
-			return;
-		}
-		this.current--;
 	}
 	getStreamIndex() {
 		return this.current;
@@ -16853,22 +16308,6 @@ class tokentree_TokenTree extends haxeparser_Token {
 		}
 		return Type.enumEq(tokenDef,this.tok);
 	}
-	isComment() {
-		if(this.tok == null) {
-			return false;
-		}
-		var _g = this.tok;
-		switch(_g._hx_index) {
-		case 6:
-			var _g2 = _g.s;
-			return true;
-		case 7:
-			var _g1 = _g.s;
-			return true;
-		default:
-			return false;
-		}
-	}
 	isCIdent() {
 		if(this.tok == null) {
 			return false;
@@ -17033,30 +16472,6 @@ class tokentree_TokenTree extends haxeparser_Token {
 		}
 		return false;
 	}
-	printTokenTree(prefix) {
-		if(prefix == null) {
-			prefix = "";
-		}
-		var buf_b = "";
-		var tokString = "" + Std.string(this.tok);
-		if(this.inserted) {
-			tokString = "*** " + tokString + " ***";
-		}
-		if(this.tok != null) {
-			buf_b += Std.string("" + prefix + tokString + "\t\t\t\t" + Std.string(this.getPos()));
-		}
-		if(this.children == null) {
-			return buf_b;
-		}
-		var _g = 0;
-		var _g1 = this.children;
-		while(_g < _g1.length) {
-			var child = _g1[_g];
-			++_g;
-			buf_b += Std.string("\n" + prefix + child.printTokenTree(prefix + "  "));
-		}
-		return buf_b;
-	}
 }
 $hxClasses["tokentree.TokenTree"] = tokentree_TokenTree;
 tokentree_TokenTree.__name__ = "tokentree.TokenTree";
@@ -17083,12 +16498,6 @@ var tokentree_FilterResult = $hxEnums["tokentree.FilterResult"] = { __ename__ : 
 	,GO_DEEPER: {_hx_index:3,__enum__:"tokentree.FilterResult",toString:$estr}
 };
 class tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$ {
-	static get_token(this1) {
-		return this1;
-	}
-	static access(tok) {
-		return tok;
-	}
 	static parent(this1) {
 		if(this1 != null) {
 			return this1.parent;
@@ -17096,26 +16505,9 @@ class tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$ {
 			return null;
 		}
 	}
-	static findParent(this1,predicate) {
-		var parent = tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.parent(this1);
-		while(parent != null && parent.tok != null) {
-			if(predicate(parent)) {
-				return parent;
-			}
-			parent = tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.parent(parent);
-		}
-		return null;
-	}
 	static previousSibling(this1) {
 		if(this1 != null) {
 			return this1.previousSibling;
-		} else {
-			return null;
-		}
-	}
-	static nextSibling(this1) {
-		if(this1 != null) {
-			return this1.nextSibling;
 		} else {
 			return null;
 		}
@@ -17179,29 +16571,12 @@ class tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$ {
 			return null;
 		}
 	}
-	static isComment(this1) {
-		if(this1 != null && this1.isComment()) {
-			return this1;
-		} else {
-			return null;
-		}
-	}
 	static isCIdent(this1) {
 		if(this1 != null && this1.isCIdent()) {
 			return this1;
 		} else {
 			return null;
 		}
-	}
-	static or(this1,other) {
-		if(this1 != null) {
-			return this1;
-		} else {
-			return other;
-		}
-	}
-	static exists(this1) {
-		return this1 != null;
 	}
 }
 $hxClasses["tokentree._TokenTreeAccessHelper.TokenTreeAccessHelper_Impl_"] = tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$;
@@ -17435,30 +16810,6 @@ class tokentree_utils_FieldUtils {
 			return tokentree_utils_TokenPropertyAccess.DEFAULT;
 		}
 	}
-	static isOperatorFunction(functionToken) {
-		return Lambda.exists(tokentree_utils_TokenTreeCheckUtils.getMetadata(functionToken),function(meta) {
-			var _g = meta.tok;
-			if(_g._hx_index == 1) {
-				var _g1 = _g.c;
-				if(_g1._hx_index == 3) {
-					switch(_g1.s) {
-					case "arrayAccess":
-						return true;
-					case "op":
-						return true;
-					case "resolve":
-						return true;
-					default:
-						return false;
-					}
-				} else {
-					return false;
-				}
-			} else {
-				return false;
-			}
-		});
-	}
 }
 $hxClasses["tokentree.utils.FieldUtils"] = tokentree_utils_FieldUtils;
 tokentree_utils_FieldUtils.__name__ = "tokentree.utils.FieldUtils";
@@ -17481,22 +16832,6 @@ var tokentree_utils_TokenPropertyAccess = $hxEnums["tokentree.utils.TokenPropert
 	,NEVER: {_hx_index:5,__enum__:"tokentree.utils.TokenPropertyAccess",toString:$estr}
 };
 class tokentree_utils_TokenTreeCheckUtils {
-	static isImportMult(token) {
-		var _g = token.tok;
-		switch(_g._hx_index) {
-		case 5:
-			if(_g.op._hx_index == 1) {
-				return tokentree_utils_TokenTreeCheckUtils.isImport(token.parent);
-			} else {
-				return false;
-			}
-			break;
-		case 10:
-			return tokentree_utils_TokenTreeCheckUtils.isImport(token.parent);
-		default:
-			return false;
-		}
-	}
 	static isImport(token) {
 		var parent = token;
 		while(parent != null) {
@@ -17648,32 +16983,6 @@ class tokentree_utils_TokenTreeCheckUtils {
 			return false;
 		}
 	}
-	static isUnaryLeftSided(tok) {
-		var child = tok.getFirstChild();
-		if(child == null) {
-			return false;
-		}
-		var _g = child.tok;
-		switch(_g._hx_index) {
-		case 0:
-			switch(_g.k._hx_index) {
-			case 23:
-				return true;
-			case 40:
-				return true;
-			default:
-				return false;
-			}
-			break;
-		case 1:
-			var _g1 = _g.c;
-			return true;
-		case 18:
-			return true;
-		default:
-			return false;
-		}
-	}
 	static isTernary(token) {
 		if(token == null) {
 			return false;
@@ -17773,47 +17082,6 @@ class tokentree_utils_TokenTreeCheckUtils {
 		}
 		return false;
 	}
-	static isTypeStructure(typedefToken) {
-		var afterAssign = tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.firstChild(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.firstOf(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.isCIdent(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.firstChild(typedefToken)),haxeparser_TokenDef.Binop(haxe_macro_Binop.OpAssign)));
-		if(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.is(afterAssign,haxeparser_TokenDef.BrOpen) == null) {
-			return tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.firstOf(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.isCIdent(afterAssign),haxeparser_TokenDef.Binop(haxe_macro_Binop.OpAnd)) != null;
-		} else {
-			return true;
-		}
-	}
-	static isTypeEnum(enumToken) {
-		if(!enumToken.is(haxeparser_TokenDef.Kwd(haxeparser_Keyword.KwdEnum))) {
-			return false;
-		}
-		if(tokentree_utils_TokenTreeCheckUtils.isTypeEnumAbstract(enumToken)) {
-			return false;
-		}
-		if(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.is(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.parent(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.is(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.parent(enumToken),haxeparser_TokenDef.DblDot)),haxeparser_TokenDef.At) != null) {
-			return false;
-		}
-		return true;
-	}
-	static isTypeMacroClass(classToken) {
-		if(classToken.is(haxeparser_TokenDef.Kwd(haxeparser_Keyword.KwdClass))) {
-			return tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.is(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.parent(classToken),haxeparser_TokenDef.Kwd(haxeparser_Keyword.KwdMacro)) != null;
-		} else {
-			return false;
-		}
-	}
-	static isBrOpenAnonTypeOrTypedef(token) {
-		switch(tokentree_utils_TokenTreeCheckUtils.getBrOpenType(token)._hx_index) {
-		case 0:
-			return false;
-		case 1:
-			return true;
-		case 2:
-			return false;
-		case 3:
-			return true;
-		case 4:
-			return false;
-		}
-	}
 	static getName(token) {
 		if(token == null) {
 			return null;
@@ -17877,81 +17145,6 @@ class tokentree_utils_TokenTreeCheckUtils {
 			}
 			break;
 		default:
-			return false;
-		}
-	}
-	static getMetadata(declToken) {
-		var ident = tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.isCIdent(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.firstChild(declToken));
-		if(ident == null || !ident.hasChildren()) {
-			return [];
-		}
-		var _this = ident.children;
-		var result = new Array(_this.length);
-		var _g = 0;
-		var _g1 = _this.length;
-		while(_g < _g1) {
-			var i = _g++;
-			result[i] = tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.firstChild(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.is(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.firstChild(tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.is(_this[i],haxeparser_TokenDef.At)),haxeparser_TokenDef.DblDot));
-		}
-		var _g2 = [];
-		var _g11 = 0;
-		var _g21 = result;
-		while(_g11 < _g21.length) {
-			var v = _g21[_g11];
-			++_g11;
-			if(v != null) {
-				_g2.push(v);
-			}
-		}
-		return _g2;
-	}
-	static getDocComment(declToken) {
-		var access = declToken;
-		while(true) {
-			access = tokentree__$TokenTreeAccessHelper_TokenTreeAccessHelper_$Impl_$.previousSibling(access);
-			if(access == null) {
-				return null;
-			}
-			var _g = access.tok;
-			switch(_g._hx_index) {
-			case 6:
-				var _g2 = _g.s;
-				return access;
-			case 7:
-				var _g1 = _g.s;
-				continue;
-			default:
-				return null;
-			}
-		}
-	}
-	static isModifier(keyword) {
-		if(keyword == null) {
-			return false;
-		}
-		var _g = keyword.tok;
-		if(_g._hx_index == 0) {
-			switch(_g.k._hx_index) {
-			case 17:
-				return true;
-			case 18:
-				return true;
-			case 19:
-				return true;
-			case 25:
-				return true;
-			case 30:
-				return true;
-			case 32:
-				return true;
-			case 34:
-				return true;
-			case 40:
-				return true;
-			default:
-				return false;
-			}
-		} else {
 			return false;
 		}
 	}
@@ -18375,25 +17568,6 @@ class tokentree_utils_TokenTreeCheckUtils {
 			parent = parent.parent;
 		}
 		return false;
-	}
-	static isDeprecated(declToken) {
-		return Lambda.exists(tokentree_utils_TokenTreeCheckUtils.getMetadata(declToken),function(meta) {
-			var _g = meta.tok;
-			if(_g._hx_index == 1) {
-				var _g1 = _g.c;
-				if(_g1._hx_index == 3) {
-					if(_g1.s == "deprecated") {
-						return true;
-					} else {
-						return false;
-					}
-				} else {
-					return false;
-				}
-			} else {
-				return false;
-			}
-		});
 	}
 	static getArrowType(token) {
 		if(token == null) {
@@ -21464,8 +20638,6 @@ class tokentree_walk_WalkWhile {
 }
 $hxClasses["tokentree.walk.WalkWhile"] = tokentree_walk_WalkWhile;
 tokentree_walk_WalkWhile.__name__ = "tokentree.walk.WalkWhile";
-function $iterator(o) { if( o instanceof Array ) return function() { return HxOverrides.iter(o); }; return typeof(o.iterator) == 'function' ? $bind(o,o.iterator) : o.iterator; }
-function $getIterator(o) { if( o instanceof Array ) return HxOverrides.iter(o); else return o.iterator(); }
 function $bind(o,m) { if( m == null ) return null; if( m.__id__ == null ) m.__id__ = $global.$haxeUID++; var f; if( o.hx__closures__ == null ) o.hx__closures__ = {}; else f = o.hx__closures__[m.__id__]; if( f == null ) { f = m.bind(o); o.hx__closures__[m.__id__] = f; } return f; }
 $global.$haxeUID |= 0;
 $hxClasses["Math"] = Math;
@@ -21485,52 +20657,15 @@ js_Boot.__toStr = ({ }).toString;
 Object.defineProperty(js__$Boot_HaxeError.prototype,"message",{ get : function() {
 	return String(this.val);
 }});
-var typeofJQuery = typeof($);
-if(typeofJQuery != "undefined" && $.fn != null) {
-	$.fn.elements = function() {
-		return new js_jquery_JqEltsIterator(this);
-	};
-}
-var typeofJQuery = typeof($);
-if(typeofJQuery != "undefined" && $.fn != null) {
-	$.fn.iterator = function() {
-		return new js_jquery_JqIterator(this);
-	};
-}
 codesamples_CommonSamples.__meta__ = { obj : { sectionName : ["Common samples"]}, fields : { allman_curlies : { codeSampleName : ["allman.curlies"]}, haxe_flixel_style : { codeSampleName : ["haxe.flixel.style"]}, indentation_with_space : { codeSampleName : ["indentation.with.space"]}}};
 codesamples_EmptylinesSamples.__meta__ = { obj : { sectionName : ["Emptylines samples"]}, fields : { import_and_using_emptylines : { codeSampleName : ["import.and.using.emptylines"]}}};
 codesamples_IndentationSamples.__meta__ = { obj : { sectionName : ["Indentation samples"]}, fields : { trailing_whitespace : { codeSampleName : ["trailing.whitespace"]}}};
 codesamples_LineendsSamples.__meta__ = { obj : { sectionName : ["Lineends samples"]}};
 codesamples_SamelineSamples.__meta__ = { obj : { sectionName : ["Sameline samples"]}, fields : { blockless_function_body : { codeSampleName : ["blockless.function.body"]}}};
-codesamples_WhitespaceSamples.__meta__ = { obj : { sectionName : ["Whitespace samples"]}};
+codesamples_WhitespaceSamples.__meta__ = { obj : { sectionName : ["Whitespace samples"]}, fields : { function_parens : { codeSampleName : ["function.parens"]}}};
 codesamples_WrappingSamples.__meta__ = { obj : { sectionName : ["Wrapping samples"]}, fields : { array_matrix_wrapping : { codeSampleName : ["array.matrix.wrapping"]}, case_pattern_wrapping : { codeSampleName : ["case.pattern.wrapping"]}, method_chain_wrapping : { codeSampleName : ["method.chain.wrapping"]}, operator_add_chain_wrapping : { codeSampleName : ["operator.add.chain.wrapping"]}}};
-formatter_FormatStats.totalFiles = 0;
-formatter_FormatStats.successFiles = 0;
-formatter_FormatStats.failedFiles = 0;
-formatter_FormatStats.disabledFiles = 0;
 formatter_FormatStats.totalLinesOrig = 0;
 formatter_FormatStats.totalLinesFormatted = 0;
-formatter_Formatter.FORMATTER_JSON = "hxformat.json";
-formatter_codedata_CodeLines.FORMATTER_OFF = " @formatter:off";
-formatter_codedata_CodeLines.FORMATTER_ON = " @formatter:on";
-formatter_codedata_ParsedCode.BAD_OFFSET = "Bad offset";
-formatter_codedata_TokenList.BAD_OFFSET = "Bad offset";
-formatter_codedata_TokenList.NEWLINE_TO_SPACE = "Newline -> Space";
-formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.None = "none";
-formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.Before = "before";
-formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.NoneBefore = "noneBefore";
-formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.OnlyBefore = "onlyBefore";
-formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.After = "after";
-formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.OnlyAfter = "onlyAfter";
-formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.NoneAfter = "noneAfter";
-formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.Around = "around";
-formatter_marker_MarkEmptyLines.FINAL = "final";
-formatter_marker_MarkLineEnds.SHARP_IF = "if";
-formatter_marker_MarkLineEnds.SHARP_ELSE_IF = "elseif";
-formatter_marker_MarkLineEnds.SHARP_ELSE = "else";
-formatter_marker_MarkLineEnds.SHARP_END = "end";
-formatter_marker_MarkLineEnds.SHARP_ERROR = "error";
-hxparse_LexEngine.MAX_CODE = 255;
 hxparse_LexEngine.EMPTY = [];
 hxparse_LexEngine.ALL_CHARS = [new hxparse__$LexEngine_CharRange(0,255)];
 haxeparser_HaxeLexer.keywords = (function($this) {
@@ -21876,10 +21011,6 @@ haxeparser_HaxeLexer.keywords = (function($this) {
 	return $r;
 }(this));
 haxeparser_HaxeLexer.buf = new StringBuf();
-haxeparser_HaxeLexer.ident = "_*[a-z][a-zA-Z0-9_]*|_+|_+[0-9][_a-zA-Z0-9]*";
-haxeparser_HaxeLexer.sharp_ident = "[a-z_][a-zA-Z0-9_]*(\\.[a-z_][a-zA-Z0-9_]*)*";
-haxeparser_HaxeLexer.idtype = "_*[A-Z][a-zA-Z0-9_]*";
-haxeparser_HaxeLexer.integer = "([1-9][0-9]*)|0";
 haxeparser_HaxeLexer.tok = hxparse_Lexer.buildRuleset([{ rule : "", func : function(lexer) {
 	return haxeparser_HaxeLexer.mk(lexer,haxeparser_TokenDef.Eof);
 }},{ rule : "[\r\n\t ]+", func : function(lexer1) {
@@ -22241,14 +21372,6 @@ haxeparser_HaxeLexer.regexp = hxparse_Lexer.buildRuleset([{ rule : "\\\\/", func
 haxeparser_HaxeLexer.regexp_options = hxparse_Lexer.buildRuleset([{ rule : "[gimsu]*", func : function(lexer) {
 	return { pmax : new hxparse_Position(lexer.source,lexer.pos - lexer.current.length,lexer.pos).pmax, opt : lexer.current};
 }}],"regexp_options");
-haxeparser_HaxeLexer.sharp_token = hxparse_Lexer.buildRuleset([{ rule : "[a-z_][a-zA-Z0-9_]*(\\.[a-z_][a-zA-Z0-9_]*)*", func : function(lexer) {
-	return haxeparser_HaxeLexer.mk(lexer,haxeparser_TokenDef.Const(haxe_macro_Constant.CIdent(lexer.current)));
-}},{ rule : "[\r\n\t ]+", func : function(lexer1) {
-	return lexer1.token(haxeparser_HaxeLexer.sharp_token);
-}},{ rule : "[.]*", func : function(lexer2) {
-	return lexer2.token(haxeparser_HaxeLexer.tok);
-}}],"sharp_token");
-haxeparser_HaxeLexer.generatedRulesets = [haxeparser_HaxeLexer.tok,haxeparser_HaxeLexer.string,haxeparser_HaxeLexer.string2,haxeparser_HaxeLexer.codeString,haxeparser_HaxeLexer.comment,haxeparser_HaxeLexer.regexp,haxeparser_HaxeLexer.regexp_options,haxeparser_HaxeLexer.sharp_token];
 markdown_BlockSyntax.RE_EMPTY = new EReg("^([ \\t]*)$","");
 markdown_BlockSyntax.RE_SETEXT = new EReg("^((=+)|(-+))$","");
 markdown_BlockSyntax.RE_HEADER = new EReg("^(#{1,6})(.*?)( +#* *)?$","");
@@ -22266,8 +21389,6 @@ markdown_HtmlRenderer.attributeOrder = ["src","alt"];
 markdown_LinkSyntax.linkPattern = "\\](?:(" + "\\s?\\[([^\\]]*)\\]" + "|" + "\\s?\\(([^ )]+)(?:[ ]*\"([^\"]+)\"|)\\)" + ")|)";
 markdown_ImgSyntax.linkPattern = "\\](?:(" + "\\s?\\[([^\\]]*)\\]" + "|" + "\\s?\\(([^ )]+)(?:[ ]*\"([^\"]+)\"|)\\)" + ")|)";
 markdown_InlineParser.defaultSyntaxes = [new markdown_AutolinkSyntaxWithoutBrackets(),new markdown_TextSyntax(" {2,}\n","<br />\n"),new markdown_TextSyntax("\\s*[A-Za-z0-9]+"),new markdown_AutolinkSyntax(),new markdown_LinkSyntax(),new markdown_ImgSyntax(),new markdown_TextSyntax(" \\* "),new markdown_TextSyntax(" _ "),new markdown_TextSyntax("&[#a-zA-Z0-9]*;"),new markdown_TextSyntax("&","&amp;"),new markdown_TextSyntax("<(?:!--[ ]*|/)?\\w+.*?>"),new markdown_TextSyntax("<","&lt;"),new markdown_TagSyntax("\\*\\*","strong"),new markdown_TagSyntax("__","strong"),new markdown_TagSyntax("\\*","em"),new markdown_TagSyntax("\\b_","em","_\\b"),new markdown_CodeSyntax("``\\s?((?:.|\\n)*?)\\s?``"),new markdown_CodeSyntax("`([^`]*)`")];
-tokentree_TokenStream.NO_MORE_TOKENS = "no more tokens";
 tokentree_TokenStream.MODE = tokentree_TokenStreamMode.STRICT;
-tokentree_TokenTree.MAX_LEVEL = 9999;
 Main.main();
 })(typeof window != "undefined" ? window : typeof global != "undefined" ? global : typeof self != "undefined" ? self : this);
