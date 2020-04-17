@@ -2975,9 +2975,9 @@ class codesamples_SampleBase {
 		var fieldPath = element.data("field-path");
 		element = $("input[data-field-path=\"" + fieldPath + "\"]");
 		element.prop("checked",!element.prop("checked"));
-		var value = "false";
+		var value = false;
 		if(element.is(":checked")) {
-			value = "true";
+			value = true;
 		}
 		$("label[data-field-path=\"" + fieldPath + "\"]").text(value);
 		this.applyConfigValue(fieldPath,value);
