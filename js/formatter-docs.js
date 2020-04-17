@@ -2758,7 +2758,7 @@ class codesamples_SampleBase {
 		this.currentSampleConfig = JSON.parse(configText);
 		content += "<div id=\"configWrapper\">";
 		content += "<div id=\"docContainer\">" + Markdown.markdownToHtml(docText) + "</div>";
-		content += "<div id=\"configContainer\">hxformat.json<br /><pre id=\"config\">" + this.buildConfigHtml(this.currentSampleConfig,configFields) + "</pre></div>";
+		content += "<div id=\"configContainer\"><div id=\"configHeader\">hxformat.json<button id=\"btnDownload\">Download</button></div>" + ("<pre id=\"config\">" + this.buildConfigHtml(this.currentSampleConfig,configFields) + "</pre></div>");
 		content += "</div>";
 		this.currentConfig = new formatter_config_Config();
 		this.currentCodeSample = codeSample;
@@ -2806,6 +2806,7 @@ class codesamples_SampleBase {
 		$(".config-field-number").change($bind(this,this.onChangeNumber));
 		$(".config-field-text").change($bind(this,this.onChangeText));
 		$("#codeSample").change($bind(this,this.onChangeCodeSample));
+		$("#btnDownload").click($bind(this,this.onDownload));
 	}
 	onChangeCombo(event) {
 		var element = $(event.target);
@@ -2856,10 +2857,31 @@ class codesamples_SampleBase {
 		this.codeWasModified = true;
 		this.updateFormat();
 	}
+	onDownload(event) {
+		var copyConfig = JSON.parse(JSON.stringify(this.currentSampleConfig));
+		var _g = new haxe_iterators_MapKeyValueIterator(this.configFieldValues);
+		while(_g.hasNext()) {
+			var _g1 = _g.next();
+			var fieldPath = _g1.key;
+			var values = _g1.value;
+			if(values.userValue == null) {
+				continue;
+			}
+			this.setConfigFieldValue(copyConfig,fieldPath,values.userValue);
+		}
+		var jsonText = JSON.stringify(copyConfig,null,"  ");
+		var blob = new Blob([jsonText],{ type : "application/json;charset=utf-8"});
+		var hxformatUrl = URL.createObjectURL(blob);
+		$("#downloadLink").attr({ "download" : "hxformat.json", "href" : hxformatUrl})[0].click();
+		URL.revokeObjectURL(hxformatUrl);
+	}
 	applyConfigValue(fieldPath,value) {
+		this.setConfigFieldValue(this.currentConfig,fieldPath,value);
+		window.console.info("setting " + fieldPath + " = " + Std.string(value));
+	}
+	setConfigFieldValue(object,fieldPath,value) {
 		var parts = fieldPath.split(".");
 		var fieldName = parts.pop();
-		var object = this.currentConfig;
 		var _g = 0;
 		while(_g < parts.length) {
 			var part = parts[_g];
@@ -2869,7 +2891,6 @@ class codesamples_SampleBase {
 		object[fieldName] = value;
 		var _this = this.configFieldValues;
 		(__map_reserved[fieldPath] != null ? _this.getReserved(fieldPath) : _this.h[fieldPath]).userValue = value;
-		window.console.info("setting " + fieldPath + " = " + Std.string(value));
 	}
 	getConfigFieldValue(object,fieldPath) {
 		var parts = fieldPath.split(".");
@@ -2939,7 +2960,7 @@ class codesamples_SampleBase {
 				lines.push(indent + "},");
 				break;
 			default:
-				console.log("src/codesamples/SampleBase.hx:189:","unhandled" + typeof(field));
+				console.log("src/codesamples/SampleBase.hx:218:","unhandled" + typeof(field));
 			}
 		}
 		if(lines.length > 0) {
@@ -12641,9 +12662,22 @@ class haxe_IMap {
 $hxClasses["haxe.IMap"] = haxe_IMap;
 haxe_IMap.__name__ = "haxe.IMap";
 haxe_IMap.__isInterface__ = true;
+Object.assign(haxe_IMap.prototype, {
+	__class__: haxe_IMap
+	,get: null
+	,keys: null
+});
 class haxe_ds_IntMap {
 	constructor() {
 		this.h = { };
+	}
+	get(key) {
+		return this.h[key];
+	}
+	keys() {
+		var a = [];
+		for( var key in this.h ) (this.h.hasOwnProperty(key) ? a.push(key | 0) : null);
+		return HxOverrides.iter(a);
 	}
 }
 $hxClasses["haxe.ds.IntMap"] = haxe_ds_IntMap;
@@ -12711,6 +12745,12 @@ Object.assign(haxe_ds__$List_ListNode.prototype, {
 class haxe_ds_StringMap {
 	constructor() {
 		this.h = { };
+	}
+	get(key) {
+		if(__map_reserved[key] != null) {
+			return this.getReserved(key);
+		}
+		return this.h[key];
 	}
 	setReserved(key,value) {
 		if(this.rh == null) {
@@ -12889,6 +12929,26 @@ var haxe_io_Error = $hxEnums["haxe.io.Error"] = { __ename__ : true, __constructs
 	,OutsideBounds: {_hx_index:2,__enum__:"haxe.io.Error",toString:$estr}
 	,Custom: ($_=function(e) { return {_hx_index:3,e:e,__enum__:"haxe.io.Error",toString:$estr}; },$_.__params__ = ["e"],$_)
 };
+class haxe_iterators_MapKeyValueIterator {
+	constructor(map) {
+		this.map = map;
+		this.keys = map.keys();
+	}
+	hasNext() {
+		return this.keys.hasNext();
+	}
+	next() {
+		var key = this.keys.next();
+		return { value : this.map.get(key), key : key};
+	}
+}
+$hxClasses["haxe.iterators.MapKeyValueIterator"] = haxe_iterators_MapKeyValueIterator;
+haxe_iterators_MapKeyValueIterator.__name__ = "haxe.iterators.MapKeyValueIterator";
+Object.assign(haxe_iterators_MapKeyValueIterator.prototype, {
+	__class__: haxe_iterators_MapKeyValueIterator
+	,map: null
+	,keys: null
+});
 var haxe_macro_StringLiteralKind = $hxEnums["haxe.macro.StringLiteralKind"] = { __ename__ : true, __constructs__ : ["DoubleQuotes","SingleQuotes"]
 	,DoubleQuotes: {_hx_index:0,__enum__:"haxe.macro.StringLiteralKind",toString:$estr}
 	,SingleQuotes: {_hx_index:1,__enum__:"haxe.macro.StringLiteralKind",toString:$estr}
