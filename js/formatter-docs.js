@@ -18856,6 +18856,8 @@ class tokentree_walk_WalkFinal {
 				switch(_g.k._hx_index) {
 				case 0:
 					return;
+				case 1:
+					return;
 				case 17:case 18:case 19:case 25:case 30:case 32:case 34:case 40:
 					stream.consumeToTempStore();
 					break;
