@@ -11,7 +11,7 @@ Note: `equalNumber` is not implemented yet
 			"defaultLocation": "afterLast",
 			"rules": []
 		},
-		"maxLineLength": 100
+		"maxLineLength": 110
 	}
 }
 
