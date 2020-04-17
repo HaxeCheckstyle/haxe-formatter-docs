@@ -27,9 +27,6 @@ jobs:
     - name: Prepare
       run: |
         mkdir -p docs/samples/lineends
-        mkdir -p docs/samples/sameline
-        mkdir -p docs/samples/lineends
-        mkdir -p docs/samples/whitespace
         mkdir -p site/css
         mkdir -p site/js
     - name: Build Site

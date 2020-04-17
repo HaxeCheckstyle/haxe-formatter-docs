@@ -11,6 +11,7 @@ import haxe.Json;
 import codesamples.config.ConfigField;
 import codesamples.config.ConfigFieldValues;
 
+@:keepSub
 class SampleBase {
 	var currentConfig:Null<Config>;
 	var currentSampleConfig:Any;

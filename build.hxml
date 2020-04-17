@@ -9,6 +9,7 @@
 -lib jQueryExtern
 
 -D js-es=6
+-dce full
 
 -js site/js/formatter-docs.js
 

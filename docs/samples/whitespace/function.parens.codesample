@@ -1,0 +1,40 @@
+
+
+---
+
+{
+    "whitespace": {
+        "parenConfig": {
+            "funcParamParens": {
+                "openingPolicy": "before",
+                "closingPolicy": "none",
+                "removeInnerWhenEmpty": true
+            },
+			"anonFuncParamParens": {
+                "openingPolicy": "none",
+                "closingPolicy": "onlyAfter",
+                "removeInnerWhenEmpty": true
+			}
+        }
+    }
+}
+
+---
+
+whitespace.parenConfig.funcParamParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.funcParamParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty = bool
+
+whitespace.parenConfig.anonFuncParamParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.anonFuncParamParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty = bool
+
+---
+
+class Main {
+    function new () {}
+
+	function test(param1:Int,param2:Array<String>, callback:(index:Int)->String, callback2:()->String) {
+		param2.push(callback(param1));
+	}
+}

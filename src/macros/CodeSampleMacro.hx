@@ -1,5 +1,6 @@
 package macros;
 
+import haxe.Json;
 import haxe.ds.ArraySort;
 #if macro
 import haxe.io.Path;
@@ -42,6 +43,9 @@ class CodeSampleMacro {
 		var codeSample:String = segments[3];
 		var codeSampleName:String = new haxe.io.Path(fileName).file;
 		var configFields:ExprOf<Array<ConfigField>> = parseFields(fieldDef);
+
+		// test JSON parse, to make sure samples have no syntax errors
+		Json.parse(config);
 
 		var r:EReg = ~/[^_a-zA-Z0-9]/g;
 		var fieldName:String = r.replace(codeSampleName, "_");

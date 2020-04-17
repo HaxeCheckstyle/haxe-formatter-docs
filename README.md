@@ -5,9 +5,6 @@ git clone https://github.com/HaxeCheckstyle/haxe-formatter-docs
 npm i
 npx lix download
 mkdir -p docs/samples/lineends
-mkdir -p docs/samples/sameline
-mkdir -p docs/samples/lineends
-mkdir -p docs/samples/whitespace
 mkdir -p site/css
 mkdir -p site/js
 npx haxe build.hxml
