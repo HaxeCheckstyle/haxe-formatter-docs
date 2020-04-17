@@ -1,5 +1,8 @@
 package codesamples;
 
+import js.html.LinkElement;
+import js.html.URL;
+import js.html.Blob;
 import js.Browser;
 import js.jquery.Event;
 import js.Lib;
@@ -27,7 +30,8 @@ class SampleBase {
 
 		content += '<div id="configWrapper">';
 		content += '<div id="docContainer">${Markdown.markdownToHtml(docText)}</div>';
-		content += '<div id="configContainer">hxformat.json<br /><pre id="config">${buildConfigHtml(currentSampleConfig, configFields)}</pre></div>';
+		content += '<div id="configContainer"><div id="configHeader">hxformat.json<button id="btnDownload">Download</button></div>'
+			+ '<pre id="config">${buildConfigHtml(currentSampleConfig, configFields)}</pre></div>';
 		content += '</div>';
 
 		currentConfig = new Config();
@@ -60,6 +64,7 @@ class SampleBase {
 		new JQuery(".config-field-number").change(onChangeNumber);
 		new JQuery(".config-field-text").change(onChangeText);
 		new JQuery("#codeSample").change(onChangeCodeSample);
+		new JQuery("#btnDownload").click(onDownload);
 	}
 
 	function onChangeCombo(event:Event) {
@@ -118,16 +123,40 @@ class SampleBase {
 		updateFormat();
 	}
 
+	function onDownload(event:Event) {
+		var copyConfig:Any = Json.parse(Json.stringify(currentSampleConfig));
+
+		for (fieldPath => values in configFieldValues) {
+			if (values.userValue == null) {
+				continue;
+			}
+			setConfigFieldValue(copyConfig, fieldPath, values.userValue);
+		}
+		var jsonText:String = Json.stringify(copyConfig, "  ");
+		var blob:Any = new Blob([jsonText], {
+			type: "application/json;charset=utf-8"
+		});
+		var hxformatUrl:Any = URL.createObjectURL(blob);
+		new JQuery("#downloadLink").attr({
+			'download': "hxformat.json",
+			'href': hxformatUrl
+		})[0].click();
+		URL.revokeObjectURL(hxformatUrl);
+	}
+
 	function applyConfigValue(fieldPath:String, value:Dynamic) {
+		setConfigFieldValue(currentConfig, fieldPath, value);
+		Browser.console.info('setting $fieldPath = $value');
+	}
+
+	function setConfigFieldValue(object:Any, fieldPath:String, value:Dynamic) {
 		var parts:Array<String> = fieldPath.split(".");
 		var fieldName:String = parts.pop();
-		var object:Any = currentConfig;
 		for (part in parts) {
 			object = Reflect.field(object, part);
 		}
 		Reflect.setField(object, fieldName, value);
 		configFieldValues.get(fieldPath).userValue = value;
-		Browser.console.info('setting $fieldPath = $value');
 	}
 
 	function getConfigFieldValue(object:Any, fieldPath:String):String {

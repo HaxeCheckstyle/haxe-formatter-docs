@@ -37,6 +37,16 @@ select {
 	box-shadow: 2px 2px 5px 2px #1e1e1e;
 }
 
+button {
+	background-color: #1e1e1e;
+	color: #eeeeee;
+	border: 1px solid #3c3c3c;
+}
+
+#downloadLink {
+	display: none;
+}
+
 #docContainer {
 	display: flex;
 	width: 100%;
@@ -109,6 +119,11 @@ select {
 				pre {
 					color: #989898;
 					margin: 0;
+				}
+
+				#configHeader {
+					display: flex;
+					justify-content: space-between;
 				}
 			}
 
