@@ -1,5 +1,6 @@
 package macros;
 
+import haxe.ds.ArraySort;
 #if macro
 import haxe.io.Path;
 import haxe.macro.Context;
@@ -143,6 +144,7 @@ class CodeSampleMacro {
 			}
 			files.push(Path.join([path, item]));
 		}
+		ArraySort.sort(files, (s1, s2) -> (s1 == s2) ? 0 : ((s1 < s2) ? -1 : 1));
 		return files;
 	}
 

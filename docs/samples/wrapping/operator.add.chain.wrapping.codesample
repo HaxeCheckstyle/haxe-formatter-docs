@@ -16,8 +16,8 @@ Note: `equalNumber` is not implemented yet
 
 ---
 
-wrapping.opAddSubChain.defaultWrap = combo,formatter.config.WrapConfig.WrappingType
-wrapping.opAddSubChain.defaultLocation = combo,formatter.config.WrapConfig.WrappingLocation
+wrapping.opAddSubChain.defaultWrap = combo,formatter.config.WrappingType
+wrapping.opAddSubChain.defaultLocation = combo,formatter.config.WrappingLocation
 
 ---
 

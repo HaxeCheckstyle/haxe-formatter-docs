@@ -1,0 +1,38 @@
+`keep` tries to keep linebreaks from input source
+
+---
+
+{
+	"sameLine": {
+		"functionBody": "same",
+		"anonFunctionBody": "same"
+	}
+}
+
+---
+
+sameLine.functionBody = combo,formatter.config.SameLinePolicy
+sameLine.anonFunctionBody = combo,formatter.config.SameLinePolicy
+
+---
+
+class Main {
+	public static function test1() {
+		// input has linebreaks
+		[1, 2, 3].map(function()
+			trace(i));
+	}
+
+	// input has linebreaks
+	public static function test2()
+		[1, 2, 3].map(function()
+			trace(i));
+
+	public static function test3() {
+		// input has no linebreaks
+		[1, 2, 3].map(function() trace(i));
+	}
+
+	// input has no linebreaks
+	public static function test4() [1, 2, 3].map(function() trace(i))
+}

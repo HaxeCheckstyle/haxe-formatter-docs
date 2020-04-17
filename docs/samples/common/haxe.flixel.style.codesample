@@ -1,0 +1,56 @@
+formatter configuration used by HaxeFlixel
+
+
+---
+
+
+{
+	"lineEnds": {
+		"leftCurly": "both",
+		"rightCurly": "both",
+		"objectLiteralCurly": {
+			"leftCurly": "after"
+		}
+	},
+	"sameLine": {
+		"ifElse": "next",
+		"doWhile": "next",
+		"tryBody": "next",
+		"tryCatch": "next"
+	}
+}
+
+---
+
+lineEnds.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
+lineEnds.rightCurly = combo,formatter.config.RightCurlyLineEndPolicy
+lineEnds.objectLiteralCurly.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
+sameLine.ifElse = combo,formatter.config.SameLinePolicy
+sameLine.doWhile = combo,formatter.config.SameLinePolicy
+sameLine.tryBody = combo,formatter.config.SameLinePolicy
+sameLine.tryCatch = combo,formatter.config.SameLinePolicy
+
+---
+
+class Main {
+    public function new () {}
+
+    public function foo (param1:Int) {
+		var obj = {
+			x:100,
+			y:100
+			};
+
+		do {
+			something();
+		} while (true);
+
+		if (true) {
+			something();
+		} else {
+			doNothing();
+		}
+
+		try	somethingRisky(); catch (e:Excpetion)
+	}
+}

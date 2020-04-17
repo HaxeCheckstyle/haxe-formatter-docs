@@ -1,5 +1,6 @@
 package codesamples;
 
+import js.Browser;
 import js.jquery.Event;
 import js.Lib;
 import js.Syntax;
@@ -15,6 +16,7 @@ class SampleBase {
 	var currentSampleConfig:Any;
 	var currentCodeSample:Null<String>;
 	var configFieldValues:Map<String, ConfigFieldValues>;
+	var codeWasModified:Bool;
 
 	public function buildDocSamplePage(container:String, codeSampleName:String, docText:String, configText:String, configFields:Array<ConfigField>,
 			fieldDef:String, codeSample:String) {
@@ -29,6 +31,7 @@ class SampleBase {
 
 		currentConfig = new Config();
 		currentCodeSample = codeSample;
+		codeWasModified = false;
 
 		configFieldValues = new Map<String, ConfigFieldValues>();
 		for (field in configFields) {
@@ -84,9 +87,9 @@ class SampleBase {
 		var element:JQuery = new JQuery(event.target);
 		var fieldPath:String = element.data("field-path");
 
-		var value:String = "false";
+		var value:Bool = false;
 		if (element.is(":checked")) {
-			value = "true";
+			value = true;
 		}
 		new JQuery('label[data-field-path="$fieldPath"]').text(value);
 		applyConfigValue(fieldPath, value);
@@ -110,10 +113,11 @@ class SampleBase {
 	}
 
 	function onChangeCodeSample(event:Event) {
+		codeWasModified = true;
 		updateFormat();
 	}
 
-	function applyConfigValue(fieldPath:String, value:String) {
+	function applyConfigValue(fieldPath:String, value:Dynamic) {
 		var parts:Array<String> = fieldPath.split(".");
 		var fieldName:String = parts.pop();
 		var object:Any = currentConfig;
@@ -122,6 +126,7 @@ class SampleBase {
 		}
 		Reflect.setField(object, fieldName, value);
 		configFieldValues.get(fieldPath).userValue = value;
+		Browser.console.info('setting $fieldPath = $value');
 	}
 
 	function getConfigFieldValue(object:Any, fieldPath:String):String {
@@ -137,11 +142,15 @@ class SampleBase {
 	function updateFormat() {
 		var codeElement:JQuery = new JQuery("#codeSample");
 		var codeSample:String = codeElement.val();
+		if (!codeWasModified) {
+			codeSample = currentCodeSample;
+		}
 		var result:Result = Formatter.format(Code(codeSample), currentConfig);
 		switch (result) {
 			case Success(formattedCode):
 				codeElement.val(formattedCode);
-			case Failure(_):
+			case Failure(errorMessage):
+				Browser.console.info('format failed: $errorMessage');
 			case Disabled:
 		}
 	}

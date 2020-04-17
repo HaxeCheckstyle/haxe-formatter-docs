@@ -4,6 +4,7 @@ import js.jquery.Event;
 import js.jquery.JQuery;
 import codesamples.CommonSamples;
 import codesamples.EmptylinesSamples;
+import codesamples.IndentationSamples;
 import codesamples.LineendsSamples;
 import codesamples.SamelineSamples;
 import codesamples.WhitespaceSamples;
@@ -20,6 +21,7 @@ class Navigation {
 		content += '<ul class="sections">\n';
 		content += buildNavigationsection(CommonSamples);
 		content += buildNavigationsection(EmptylinesSamples);
+		content += buildNavigationsection(IndentationSamples);
 		content += buildNavigationsection(LineendsSamples);
 		content += buildNavigationsection(SamelineSamples);
 		content += buildNavigationsection(WhitespaceSamples);

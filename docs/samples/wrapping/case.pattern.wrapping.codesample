@@ -15,8 +15,8 @@ Note: `equalNumber` is not implemented yet
 
 ---
 
-wrapping.casePattern.defaultWrap = combo,formatter.config.WrapConfig.WrappingType
-wrapping.casePattern.defaultLocation = combo,formatter.config.WrapConfig.WrappingLocation
+wrapping.casePattern.defaultWrap = combo,formatter.config.WrappingType
+wrapping.casePattern.defaultLocation = combo,formatter.config.WrappingLocation
 
 ---
 

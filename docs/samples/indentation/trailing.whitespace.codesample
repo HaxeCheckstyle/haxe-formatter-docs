@@ -1,0 +1,44 @@
+
+
+---
+
+{
+	"indentation": {
+		"trailingWhitespace": true
+	}
+}
+
+---
+
+indentation.trailingWhitespace = bool
+
+---
+
+package my.pack;
+import haxe.Json;
+using StringTools;
+
+class Main {
+	public static function test1() {
+		trace(i);
+
+		if (true) {
+			trace("true");
+
+			trace("true");
+		}
+		else
+		{
+			trace("false");
+
+			trace("false");
+		}
+
+		trace(i);
+	}
+
+	public static function test2()
+		trace(i);
+}
+
+typedef MyType = Array<Main>;

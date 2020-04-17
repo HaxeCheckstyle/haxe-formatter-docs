@@ -16,8 +16,8 @@ Note: `equalNumber` is not implemented yet
 
 ---
 
-wrapping.methodChain.defaultWrap = combo,formatter.config.WrapConfig.WrappingType
-wrapping.methodChain.defaultLocation = combo,formatter.config.WrapConfig.WrappingLocation
+wrapping.methodChain.defaultWrap = combo,formatter.config.WrappingType
+wrapping.methodChain.defaultLocation = combo,formatter.config.WrappingLocation
 
 ---
 
