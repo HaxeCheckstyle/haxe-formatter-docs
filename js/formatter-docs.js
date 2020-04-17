@@ -2536,6 +2536,7 @@ class Navigation {
 		content += "<ul class=\"sections\">\n";
 		content += this.buildNavigationsection(codesamples_CommonSamples);
 		content += this.buildNavigationsection(codesamples_EmptylinesSamples);
+		content += this.buildNavigationsection(codesamples_IndentationSamples);
 		content += this.buildNavigationsection(codesamples_LineendsSamples);
 		content += this.buildNavigationsection(codesamples_SamelineSamples);
 		content += this.buildNavigationsection(codesamples_WhitespaceSamples);
@@ -2917,6 +2918,7 @@ class codesamples_SampleBase {
 		content += "</div>";
 		this.currentConfig = new formatter_config_Config();
 		this.currentCodeSample = codeSample;
+		this.codeWasModified = false;
 		this.configFieldValues = new haxe_ds_StringMap();
 		var _g = 0;
 		while(_g < configFields.length) {
@@ -2984,9 +2986,9 @@ class codesamples_SampleBase {
 	onChangeBool(event) {
 		var element = $(event.target);
 		var fieldPath = element.data("field-path");
-		var value = "false";
+		var value = false;
 		if(element.is(":checked")) {
-			value = "true";
+			value = true;
 		}
 		$("label[data-field-path=\"" + fieldPath + "\"]").text(value);
 		this.applyConfigValue(fieldPath,value);
@@ -3007,6 +3009,7 @@ class codesamples_SampleBase {
 		this.updateFormat();
 	}
 	onChangeCodeSample(event) {
+		this.codeWasModified = true;
 		this.updateFormat();
 	}
 	applyConfigValue(fieldPath,value) {
@@ -3022,6 +3025,7 @@ class codesamples_SampleBase {
 		object[fieldName] = value;
 		var _this = this.configFieldValues;
 		(__map_reserved[fieldPath] != null ? _this.getReserved(fieldPath) : _this.h[fieldPath]).userValue = value;
+		window.console.info("setting " + fieldPath + " = " + Std.string(value));
 	}
 	getConfigFieldValue(object,fieldPath) {
 		var parts = fieldPath.split(".");
@@ -3037,6 +3041,9 @@ class codesamples_SampleBase {
 	updateFormat() {
 		var codeElement = $("#codeSample");
 		var codeSample = codeElement.val();
+		if(!this.codeWasModified) {
+			codeSample = this.currentCodeSample;
+		}
 		var result = formatter_Formatter.format(formatter_FormatterInput.Code(codeSample),this.currentConfig);
 		switch(result._hx_index) {
 		case 0:
@@ -3044,7 +3051,8 @@ class codesamples_SampleBase {
 			codeElement.val(formattedCode);
 			break;
 		case 1:
-			var _g = result.errorMessage;
+			var errorMessage = result.errorMessage;
+			window.console.info("format failed: " + errorMessage);
 			break;
 		case 2:
 			break;
@@ -3087,7 +3095,7 @@ class codesamples_SampleBase {
 				lines.push(indent + "},");
 				break;
 			default:
-				console.log("src/codesamples/SampleBase.hx:179:","unhandled" + typeof(field));
+				console.log("src/codesamples/SampleBase.hx:188:","unhandled" + typeof(field));
 			}
 		}
 		if(lines.length > 0) {
@@ -3157,6 +3165,7 @@ Object.assign(codesamples_SampleBase.prototype, {
 	,currentSampleConfig: null
 	,currentCodeSample: null
 	,configFieldValues: null
+	,codeWasModified: null
 });
 class codesamples_CommonSamples extends codesamples_SampleBase {
 	constructor() {
@@ -3164,6 +3173,9 @@ class codesamples_CommonSamples extends codesamples_SampleBase {
 	}
 	allman_curlies(container) {
 		this.buildDocSamplePage(container,"allman.curlies","probably the most searched for option of formatter :)\n\nNote: `lineEnds.leftCurly` affects all left curlies, there are specialised options for\ndifferent curly places (e.g. `lineEnds.blockCurly`, `lineEnds.objectLiteralCurly`, etc.)","{\n    \"lineEnds\": {\n        \"leftCurly\": \"both\",\n\t\t\"emptyCurly\": \"break\"\n    }\n}",[{ id : "lineEnds.leftCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)])},{ id : "lineEnds.emptyCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)])}],"","class Main {\n    public function new () {}\n\n    public function foo (param1:Int) {\n\t\ttrace(param1);\n\t\tvar obj = {\n\t\t\tx:100,\n\t\t\ty:100,\n\t\t\tz:100\n\t\t\t};\n\t}\n}\n");
+	}
+	haxe_flixel_style(container) {
+		this.buildDocSamplePage(container,"haxe.flixel.style","formatter configuration used by HaxeFlixel\n","\n{\n\t\"lineEnds\": {\n\t\t\"leftCurly\": \"both\",\n\t\t\"rightCurly\": \"both\",\n\t\t\"objectLiteralCurly\": {\n\t\t\t\"leftCurly\": \"after\"\n\t\t}\n\t},\n\t\"sameLine\": {\n\t\t\"ifElse\": \"next\",\n\t\t\"doWhile\": \"next\",\n\t\t\"tryBody\": \"next\",\n\t\t\"tryCatch\": \"next\"\n\t}\n}",[{ id : "lineEnds.leftCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)])},{ id : "lineEnds.rightCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)])},{ id : "lineEnds.objectLiteralCurly.leftCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)])},{ id : "sameLine.ifElse", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])},{ id : "sameLine.doWhile", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])},{ id : "sameLine.tryBody", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])},{ id : "sameLine.tryCatch", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])}],"","class Main {\n    public function new () {}\n\n    public function foo (param1:Int) {\n\t\tvar obj = {\n\t\t\tx:100,\n\t\t\ty:100\n\t\t\t};\n\n\t\tdo {\n\t\t\tsomething();\n\t\t} while (true);\n\n\t\tif (true) {\n\t\t\tsomething();\n\t\t} else {\n\t\t\tdoNothing();\n\t\t}\n\n\t\ttry\tsomethingRisky(); catch (e:Excpetion)\n\t}\n}\n");
 	}
 	indentation_with_space(container) {
 		this.buildDocSamplePage(container,"indentation.with.space","indentation character takes a string that is either any number of (literal) spaces (e.g. `␣␣`, `␣␣␣␣`, etc.) or the text `tab` for indentation with tabs","{\n    \"indentation\": {\n        \"character\": \"    \"\n    }\n}",[{ id : "indentation.character", type : codesamples_config_ConfigFieldType.Text}],"","class Main {\n    public function new () {}\n\n    public function foo (param1:Int) {\n\t\ttrace(param1);\n\t}\n}\n");
@@ -3189,6 +3201,20 @@ codesamples_EmptylinesSamples.__super__ = codesamples_SampleBase;
 Object.assign(codesamples_EmptylinesSamples.prototype, {
 	__class__: codesamples_EmptylinesSamples
 });
+class codesamples_IndentationSamples extends codesamples_SampleBase {
+	constructor() {
+		super();
+	}
+	trailing_whitespace(container) {
+		this.buildDocSamplePage(container,"trailing.whitespace","","{\n\t\"indentation\": {\n\t\t\"trailingWhitespace\": true\n\t}\n}",[{ id : "indentation.trailingWhitespace", type : codesamples_config_ConfigFieldType.Bool}],"","package my.pack;\nimport haxe.Json;\nusing StringTools;\n\nclass Main {\n\tpublic static function test1() {\n\t\ttrace(i);\n\n\t\tif (true) {\n\t\t\ttrace(\"true\");\n\n\t\t\ttrace(\"true\");\n\t\t}\n\t\telse\n\t\t{\n\t\t\ttrace(\"false\");\n\n\t\t\ttrace(\"false\");\n\t\t}\n\n\t\ttrace(i);\n\t}\n\n\tpublic static function test2()\n\t\ttrace(i);\n}\n\ntypedef MyType = Array<Main>;\n");
+	}
+}
+$hxClasses["codesamples.IndentationSamples"] = codesamples_IndentationSamples;
+codesamples_IndentationSamples.__name__ = "codesamples.IndentationSamples";
+codesamples_IndentationSamples.__super__ = codesamples_SampleBase;
+Object.assign(codesamples_IndentationSamples.prototype, {
+	__class__: codesamples_IndentationSamples
+});
 class codesamples_LineendsSamples extends codesamples_SampleBase {
 	constructor() {
 		super();
@@ -3203,6 +3229,9 @@ Object.assign(codesamples_LineendsSamples.prototype, {
 class codesamples_SamelineSamples extends codesamples_SampleBase {
 	constructor() {
 		super();
+	}
+	blockless_function_body(container) {
+		this.buildDocSamplePage(container,"blockless.function.body","`keep` tries to keep linebreaks from input source","{\n\t\"sameLine\": {\n\t\t\"functionBody\": \"same\",\n\t\t\"anonFunctionBody\": \"same\"\n\t}\n}",[{ id : "sameLine.functionBody", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])},{ id : "sameLine.anonFunctionBody", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])}],"","class Main {\n\tpublic static function test1() {\n\t\t// input has linebreaks\n\t\t[1, 2, 3].map(function()\n\t\t\ttrace(i));\n\t}\n\n\t// input has linebreaks\n\tpublic static function test2()\n\t\t[1, 2, 3].map(function()\n\t\t\ttrace(i));\n\n\tpublic static function test3() {\n\t\t// input has no linebreaks\n\t\t[1, 2, 3].map(function() trace(i));\n\t}\n\n\t// input has no linebreaks\n\tpublic static function test4() [1, 2, 3].map(function() trace(i))\n}\n");
 	}
 }
 $hxClasses["codesamples.SamelineSamples"] = codesamples_SamelineSamples;
@@ -3226,14 +3255,17 @@ class codesamples_WrappingSamples extends codesamples_SampleBase {
 	constructor() {
 		super();
 	}
-	operator_add_chain_wrapping(container) {
-		this.buildDocSamplePage(container,"operator.add.chain.wrapping","wrapping of +/- chains\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"opAddSubChain\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"beforeLast\",\n\t\t\t\"rules\": []\n\t\t}\n\t}\n}",[{ id : "wrapping.opAddSubChain.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.opAddSubChain.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])}],"","class Main {\n\tstatic function main() {\n\t\t\t\treturn\n                       1 * ((this[0] * this[5] - this[4] * this[1]) * (this[10] * this[15] - this[14] * this[11]) - (this[0] * this[9] - this[8] * this[1]) * (this[6] * this[15] - this[14] * this[7]) +\n                               (this[0] * this[13] - this[12] * this[1]) * (this[6] * this[11] - this[10] * this[7]) + (this[4] * this[9] - this[8] * this[5]) * (this[2] * this[15] - this[14] * this[3]) - (this[4] * this[13] - this[12] * this[5]) * (this[2] * this[11] - this[10] * this[3]) +\n                                       (this[8] * this[13] - this[12] * this[9]) * (this[2] * this[7] - this[6] * this[3]));\n\t}\n}\n");
+	array_matrix_wrapping(container) {
+		this.buildDocSamplePage(container,"array.matrix.wrapping","wrapping arrays in matrix layout\n\narray wrapping only works on arrays that have an equal number of elements per line, so your input source code should already have a matrix shape\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"arrayMatrixWrap\": \"matrixWrapWithAlign\",\n\t\t\"arrayWrap\":  {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"afterLast\"\n\t\t}\n\t}\n}",[{ id : "wrapping.arrayMatrixWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noMatrixWrap" , String),js_Boot.__cast("matrixWrapNoAlign" , String),js_Boot.__cast("matrixWrapWithAlign" , String)])},{ id : "wrapping.arrayWrap.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.arrayWrap.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])}],"","class Main {\n\tstatic function main() {\n\t\tsampleMapArray = [\n\t\t\t0, 1, 0, 1,\n\t\t\t1, 1, 1, 1,\n\t\t\t1, 0, 0, 1\n\t\t];\n\t\treturn [\n\t\t\t-1.0, -1.0, 0, 0,\n\t\t\t1.0, -1.0, 1, 0,\n\t\t\t-1.0,  1.0, 0, 1,\n\t\t\t1.0, -1.0, 1, 0,\n\t\t\t1.0,  1.0, 1, 1,\n\t\t\t-1.0,  1.0, 0, 1\n\t\t];\n\n\t\treturn [xAxis.x, yAxis.x, zAxis.x, 0,\n\t\t\txAxis.y, yAxis.y, zAxis.y, 0,\n\t\t\txAxis.z, yAxis.z, zAxis.z, 0,\n\t\t\t0,       0,       0,       1];\n\n\t\trotation =  [1, 0, 0, 0,\n\t\t\t0, Math.cos(alpha), -Math.sin(alpha),  0,\n\t\t\t0, Math.sin(alpha), Math.cos(alpha),   0,\n\t\t\t0, 0, 0, 1];\n\n\t\trotation =  [Math.cos(alpha), 0, Math.sin(alpha), 0,\n\t\t\t0, 1, 0,  0,\n\t\t\t-Math.sin(alpha), 0, Math.cos(alpha),   0,\n\t\t\t0, 0, 0, 1];\n\t}\n\n\tstatic var offsetAutoTile:Array<Int> =\n\t\t[\n\t\t\t0, 0, 0, 0, 2, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t11, 11, 0, 0, 13, 13, 0, 14, 0, 0, 0, 0, 18, 18, 0, 19,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t51, 51, 0, 0, 53, 53, 0, 54, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t62, 62, 0, 0, 64, 64, 0, 65, 0, 0, 0, 0, 69, 69, 0, 70,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t86, 86, 0, 0, 88, 88, 0, 89, 0, 0, 0, 0, 93, 93, 0, 94,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 159, 0, 0, 0, 162, 0, 163, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 172, 0, 0, 0, 175, 0, 176, 0, 0, 0, 0, 0, 181, 0, 182,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 199, 0, 0, 0, 202, 0, 203, 0, 0, 0, 0, 0, 208, 0, 209\n\t\t];\n}\n");
+	}
+	case_pattern_wrapping(container) {
+		this.buildDocSamplePage(container,"case.pattern.wrapping","wrapping large amounts of case patterns\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"casePattern\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"beforeLast\"\n\t\t}\n\t}\n}",[{ id : "wrapping.casePattern.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.casePattern.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])}],"","class Main {\n\tstatic function main() {\n\t\tswitch (part.toLowerCase()) {\n\t\t\tcase \"__halt_compiler\" | \"abstract\" | \"and\" | \"array\" | \"as\" | \"break\" | \"callable\" | \"case\" | \"catch\" | \"class\" | \"clone\" | \"const\"\n\t\t\t\t| \"continue\" | \"declare\" | \"default\" | \"die\" | \"do\" | \"echo\" | \"else\" | \"elseif\" | \"empty\" | \"enddeclare\" | \"endfor\" | \"endforeach\" | \"endif\"\n\t\t\t\t| \"endswitch\" | \"endwhile\" | \"eval\" | \"exit\" | \"extends\" | \"final\" | \"finally\" | \"for\" | \"foreach\" | \"function\" | \"global\" | \"goto\" | \"if\"\n\t\t\t\t| \"implements\" | \"include\" | \"include_once\" | \"instanceof\" | \"insteadof\" | \"interface\" | \"isset\" | \"list\" | \"namespace\" | \"new\" | \"or\"\n\t\t\t\t| \"print\" | \"private\" | \"protected\" | \"public\" | \"require\" | \"require_once\" | \"return\" | \"static\" | \"switch\" | \"throw\" | \"trait\" | \"try\"\n\t\t\t\t| \"unset\" | \"use\" | \"var\" | \"while\" | \"xor\" | \"yield\" | \"__class__\" | \"__dir__\" | \"__file__\" | \"__function__\" | \"__line__\" | \"__method__\"\n\t\t\t\t| \"__trait__\" | \"__namespace__\" | \"int\" | \"float\" | \"bool\" | \"string\" | \"true\" | \"false\" | \"null\" | \"parent\" | \"void\" | \"iterable\" | \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\", \"and\", \"array\", \"as\", \"break\", \"callable\", \"case\", \"catch\", \"class\", \"clone\", \"const\", \"continue\", \"declare\"\n\t\t\t\t, \"default\", \"die\", \"do\", \"echo\", \"else\", \"elseif\", \"empty\", \"enddeclare\", \"endfor\", \"endforeach\", \"endif\", \"endswitch\", \"endwhile\", \"eval\"\n\t\t\t\t, \"exit\", \"extends\", \"final\", \"finally\", \"for\", \"foreach\", \"function\", \"global\", \"goto\", \"if\", \"implements\", \"include\", \"include_once\"\n\t\t\t\t, \"instanceof\", \"insteadof\", \"interface\", \"isset\", \"list\", \"namespace\", \"new\", \"or\", \"print\", \"private\", \"protected\", \"public\", \"require\"\n\t\t\t\t, \"require_once\", \"return\", \"static\", \"switch\", \"throw\", \"trait\", \"try\", \"unset\", \"use\", \"var\", \"while\", \"xor\", \"yield\", \"__class__\"\n\t\t\t\t, \"__dir__\", \"__file__\", \"__function__\", \"__line__\", \"__method__\", \"__trait__\", \"__namespace__\", \"int\", \"float\", \"bool\", \"string\", \"true\"\n\t\t\t\t, \"false\", \"null\", \"parent\", \"void\", \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\" | \"and\", \"array\" | \"as\", \"break\" | \"callable\", \"case\" | \"catch\", \"class\" | \"clone\", \"const\" | \"continue\"\n\t\t\t\t, \"declare\" | \"default\", \"die\" | \"do\", \"echo\" | \"else\", \"elseif\" | \"empty\", \"enddeclare\" | \"endfor\", \"endforeach\" | \"endif\", \"endswitch\"\n\t\t\t\t| \"endwhile\", \"eval\" | \"exit\", \"extends\" | \"final\", \"finally\" | \"for\", \"foreach\" | \"function\", \"global\" | \"goto\", \"if\" | \"implements\"\n\t\t\t\t, \"include\" | \"include_once\", \"instanceof\" | \"insteadof\", \"interface\" | \"isset\", \"list\" | \"namespace\", \"new\" | \"or\", \"print\" | \"private\"\n\t\t\t\t, \"protected\" | \"public\", \"require\" | \"require_once\", \"return\" | \"static\", \"switch\" | \"throw\", \"trait\" | \"try\", \"unset\" | \"use\", \"var\"\n\t\t\t\t| \"while\", \"xor\" | \"yield\", \"__class__\" | \"__dir__\", \"__file__\" | \"__function__\", \"__line__\" | \"__method__\", \"__trait__\" | \"__namespace__\"\n\t\t\t\t, \"int\" | \"float\", \"bool\" | \"string\", \"true\" | \"false\", \"null\" | \"parent\", \"void\" | \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase _:\n\t\t}\n\t}\n}\n");
 	}
 	method_chain_wrapping(container) {
 		this.buildDocSamplePage(container,"method.chain.wrapping","wrapping chains of method calls\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"methodChain\": {\n\t\t\t\"defaultWrap\": \"onePerLine\",\n\t\t\t\"defaultLocation\": \"afterLast\",\n\t\t\t\"rules\": []\n\t\t}\n\t}\n}",[{ id : "wrapping.methodChain.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.methodChain.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])}],"","class Main {\n\tfunction main() {\n\t\towner.addEntity().addEntity().addEntity().addEntity().addEntity();\n\t\towner.addEntity() // test\n\t\t\t.addEntity().addEntity().addEntity().addEntity();\n\t\towner // test\n\t\t\t.addEntity().addEntity().addEntity().addEntity().addEntity();\n\t\towner.addEntity().addEntity().addEntity().addEntity().addEntity(); // test\n\t\towner.addEntity() // test\n\t\t\t.addEntity() // test\n\t\t\t.addEntity() // test\n\t\t\t.addEntity() // test\n\t\t\t.addEntity(); // test\n\n\t\tnew Entity() // test\n\t\t\t.addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(new PointerTap()); // test\n\t\tnew Entity().addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(new PointerTap()); // test\n\t\tnew Entity().addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(new PointerTap());\n\t\tnew Entity() // test\n\t\t\t.addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE)) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE)) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE)) // test\n\t\t\t.addComponent(new PointerTap()); // test\n\t}\n}\n");
 	}
-	case_pattern_wrapping(container) {
-		this.buildDocSamplePage(container,"case.pattern.wrapping","wrapping large amounts of case patterns\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"casePattern\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"beforeLast\"\n\t\t}\n\t}\n}",[{ id : "wrapping.casePattern.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.casePattern.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])}],"","class Main {\n\tstatic function main() {\n\t\tswitch (part.toLowerCase()) {\n\t\t\tcase \"__halt_compiler\" | \"abstract\" | \"and\" | \"array\" | \"as\" | \"break\" | \"callable\" | \"case\" | \"catch\" | \"class\" | \"clone\" | \"const\"\n\t\t\t\t| \"continue\" | \"declare\" | \"default\" | \"die\" | \"do\" | \"echo\" | \"else\" | \"elseif\" | \"empty\" | \"enddeclare\" | \"endfor\" | \"endforeach\" | \"endif\"\n\t\t\t\t| \"endswitch\" | \"endwhile\" | \"eval\" | \"exit\" | \"extends\" | \"final\" | \"finally\" | \"for\" | \"foreach\" | \"function\" | \"global\" | \"goto\" | \"if\"\n\t\t\t\t| \"implements\" | \"include\" | \"include_once\" | \"instanceof\" | \"insteadof\" | \"interface\" | \"isset\" | \"list\" | \"namespace\" | \"new\" | \"or\"\n\t\t\t\t| \"print\" | \"private\" | \"protected\" | \"public\" | \"require\" | \"require_once\" | \"return\" | \"static\" | \"switch\" | \"throw\" | \"trait\" | \"try\"\n\t\t\t\t| \"unset\" | \"use\" | \"var\" | \"while\" | \"xor\" | \"yield\" | \"__class__\" | \"__dir__\" | \"__file__\" | \"__function__\" | \"__line__\" | \"__method__\"\n\t\t\t\t| \"__trait__\" | \"__namespace__\" | \"int\" | \"float\" | \"bool\" | \"string\" | \"true\" | \"false\" | \"null\" | \"parent\" | \"void\" | \"iterable\" | \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\", \"and\", \"array\", \"as\", \"break\", \"callable\", \"case\", \"catch\", \"class\", \"clone\", \"const\", \"continue\", \"declare\"\n\t\t\t\t, \"default\", \"die\", \"do\", \"echo\", \"else\", \"elseif\", \"empty\", \"enddeclare\", \"endfor\", \"endforeach\", \"endif\", \"endswitch\", \"endwhile\", \"eval\"\n\t\t\t\t, \"exit\", \"extends\", \"final\", \"finally\", \"for\", \"foreach\", \"function\", \"global\", \"goto\", \"if\", \"implements\", \"include\", \"include_once\"\n\t\t\t\t, \"instanceof\", \"insteadof\", \"interface\", \"isset\", \"list\", \"namespace\", \"new\", \"or\", \"print\", \"private\", \"protected\", \"public\", \"require\"\n\t\t\t\t, \"require_once\", \"return\", \"static\", \"switch\", \"throw\", \"trait\", \"try\", \"unset\", \"use\", \"var\", \"while\", \"xor\", \"yield\", \"__class__\"\n\t\t\t\t, \"__dir__\", \"__file__\", \"__function__\", \"__line__\", \"__method__\", \"__trait__\", \"__namespace__\", \"int\", \"float\", \"bool\", \"string\", \"true\"\n\t\t\t\t, \"false\", \"null\", \"parent\", \"void\", \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\" | \"and\", \"array\" | \"as\", \"break\" | \"callable\", \"case\" | \"catch\", \"class\" | \"clone\", \"const\" | \"continue\"\n\t\t\t\t, \"declare\" | \"default\", \"die\" | \"do\", \"echo\" | \"else\", \"elseif\" | \"empty\", \"enddeclare\" | \"endfor\", \"endforeach\" | \"endif\", \"endswitch\"\n\t\t\t\t| \"endwhile\", \"eval\" | \"exit\", \"extends\" | \"final\", \"finally\" | \"for\", \"foreach\" | \"function\", \"global\" | \"goto\", \"if\" | \"implements\"\n\t\t\t\t, \"include\" | \"include_once\", \"instanceof\" | \"insteadof\", \"interface\" | \"isset\", \"list\" | \"namespace\", \"new\" | \"or\", \"print\" | \"private\"\n\t\t\t\t, \"protected\" | \"public\", \"require\" | \"require_once\", \"return\" | \"static\", \"switch\" | \"throw\", \"trait\" | \"try\", \"unset\" | \"use\", \"var\"\n\t\t\t\t| \"while\", \"xor\" | \"yield\", \"__class__\" | \"__dir__\", \"__file__\" | \"__function__\", \"__line__\" | \"__method__\", \"__trait__\" | \"__namespace__\"\n\t\t\t\t, \"int\" | \"float\", \"bool\" | \"string\", \"true\" | \"false\", \"null\" | \"parent\", \"void\" | \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase _:\n\t\t}\n\t}\n}\n");
+	operator_add_chain_wrapping(container) {
+		this.buildDocSamplePage(container,"operator.add.chain.wrapping","wrapping of +/- chains\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"opAddSubChain\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"beforeLast\",\n\t\t\t\"rules\": []\n\t\t}\n\t}\n}",[{ id : "wrapping.opAddSubChain.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.opAddSubChain.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])}],"","class Main {\n\tstatic function main() {\n\t\t\t\treturn\n                       1 * ((this[0] * this[5] - this[4] * this[1]) * (this[10] * this[15] - this[14] * this[11]) - (this[0] * this[9] - this[8] * this[1]) * (this[6] * this[15] - this[14] * this[7]) +\n                               (this[0] * this[13] - this[12] * this[1]) * (this[6] * this[11] - this[10] * this[7]) + (this[4] * this[9] - this[8] * this[5]) * (this[2] * this[15] - this[14] * this[3]) - (this[4] * this[13] - this[12] * this[5]) * (this[2] * this[11] - this[10] * this[3]) +\n                                       (this[8] * this[13] - this[12] * this[9]) * (this[2] * this[7] - this[6] * this[3]));\n\t}\n}\n");
 	}
 }
 $hxClasses["codesamples.WrappingSamples"] = codesamples_WrappingSamples;
@@ -21465,12 +21497,13 @@ if(typeofJQuery != "undefined" && $.fn != null) {
 		return new js_jquery_JqIterator(this);
 	};
 }
-codesamples_CommonSamples.__meta__ = { obj : { sectionName : ["Common samples"]}, fields : { allman_curlies : { codeSampleName : ["allman.curlies"]}, indentation_with_space : { codeSampleName : ["indentation.with.space"]}}};
+codesamples_CommonSamples.__meta__ = { obj : { sectionName : ["Common samples"]}, fields : { allman_curlies : { codeSampleName : ["allman.curlies"]}, haxe_flixel_style : { codeSampleName : ["haxe.flixel.style"]}, indentation_with_space : { codeSampleName : ["indentation.with.space"]}}};
 codesamples_EmptylinesSamples.__meta__ = { obj : { sectionName : ["Emptylines samples"]}, fields : { import_and_using_emptylines : { codeSampleName : ["import.and.using.emptylines"]}}};
+codesamples_IndentationSamples.__meta__ = { obj : { sectionName : ["Indentation samples"]}, fields : { trailing_whitespace : { codeSampleName : ["trailing.whitespace"]}}};
 codesamples_LineendsSamples.__meta__ = { obj : { sectionName : ["Lineends samples"]}};
-codesamples_SamelineSamples.__meta__ = { obj : { sectionName : ["Sameline samples"]}};
+codesamples_SamelineSamples.__meta__ = { obj : { sectionName : ["Sameline samples"]}, fields : { blockless_function_body : { codeSampleName : ["blockless.function.body"]}}};
 codesamples_WhitespaceSamples.__meta__ = { obj : { sectionName : ["Whitespace samples"]}};
-codesamples_WrappingSamples.__meta__ = { obj : { sectionName : ["Wrapping samples"]}, fields : { operator_add_chain_wrapping : { codeSampleName : ["operator.add.chain.wrapping"]}, method_chain_wrapping : { codeSampleName : ["method.chain.wrapping"]}, case_pattern_wrapping : { codeSampleName : ["case.pattern.wrapping"]}}};
+codesamples_WrappingSamples.__meta__ = { obj : { sectionName : ["Wrapping samples"]}, fields : { array_matrix_wrapping : { codeSampleName : ["array.matrix.wrapping"]}, case_pattern_wrapping : { codeSampleName : ["case.pattern.wrapping"]}, method_chain_wrapping : { codeSampleName : ["method.chain.wrapping"]}, operator_add_chain_wrapping : { codeSampleName : ["operator.add.chain.wrapping"]}}};
 formatter_FormatStats.totalFiles = 0;
 formatter_FormatStats.successFiles = 0;
 formatter_FormatStats.failedFiles = 0;
