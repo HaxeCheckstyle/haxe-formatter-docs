@@ -34,15 +34,13 @@ class CodeSampleMacro {
 		var nl = "\r?\n";
 		var reg = new EReg('$nl$nl---$nl$nl', "g");
 		var segments = reg.split(content);
-		if (segments.length != 4) {
+		if (segments.length != 3) {
 			throw 'invalid docsample format for: $fileName';
 		}
 		var doc:String = segments[0];
 		var config:String = segments[1];
-		var fieldDef:String = segments[2];
-		var codeSample:String = segments[3];
+		var codeSample:String = segments[2];
 		var codeSampleName:String = new haxe.io.Path(fileName).file;
-		var configFields:ExprOf<Array<ConfigField>> = parseFields(fieldDef);
 
 		// test JSON parse, to make sure samples have no syntax errors
 		Json.parse(config);
@@ -70,13 +68,16 @@ class CodeSampleMacro {
 			expr: EConst(CString(config)),
 			pos: Context.currentPos()
 		});
-		paramExprs.push(configFields);
 		paramExprs.push({
 			expr: EConst(CString("")),
 			pos: Context.currentPos()
 		});
 		paramExprs.push({
 			expr: EConst(CString(codeSample)),
+			pos: Context.currentPos()
+		});
+		paramExprs.push({
+			expr: EConst(CIdent("configFieldRegistry")),
 			pos: Context.currentPos()
 		});
 
@@ -94,6 +95,10 @@ class CodeSampleMacro {
 		};
 
 		var stringCP:ComplexType = TPath({pack: [], name: "String"});
+		var registryCP:ComplexType = TPath({
+			pack: ["codesamples", "config"],
+			name: "ConfigFieldRegistry"
+		});
 
 		var functionExpr:Function = {
 			ret: null,
@@ -102,6 +107,10 @@ class CodeSampleMacro {
 				{
 					type: stringCP,
 					name: "container"
+				},
+				{
+					type: registryCP,
+					name: "configFieldRegistry"
 				}
 			]
 		};
@@ -150,113 +159,6 @@ class CodeSampleMacro {
 		}
 		ArraySort.sort(files, (s1, s2) -> (s1 == s2) ? 0 : ((s1 < s2) ? -1 : 1));
 		return files;
-	}
-
-	static function parseFields(fieldDef:String):ExprOf<Array<ConfigField>> {
-		var fieldConfigs:Array<ExprOf<ConfigField>> = [];
-
-		for (def in fieldDef.split("\n")) {
-			var parts:Array<String> = def.split("=");
-			if (parts.length != 2) {
-				continue;
-			}
-			var type:Null<ExprOf<ConfigFieldType>> = null;
-			var typePart:String = parts[1].trim();
-			if (typePart.startsWith("combo")) {
-				var comboParts:Array<String> = parts[1].split(",");
-				if (comboParts.length != 2) {
-					continue;
-				}
-
-				type = {
-					expr: ECall(makeEFieldExpr("codesamples.config.ConfigFieldType", "Combo"), [getAllEnumValues(comboParts[1].trim())]),
-					pos: Context.currentPos()
-				}
-			}
-			if (typePart.startsWith("number")) {
-				type = macro codesamples.config.ConfigFieldType.Number;
-			}
-			if (typePart.startsWith("bool")) {
-				type = macro codesamples.config.ConfigFieldType.Bool;
-			}
-			if (typePart.startsWith("text")) {
-				type = macro codesamples.config.ConfigFieldType.Text;
-			}
-
-			if (type == null) {
-				continue;
-			}
-			var fieldId:String = parts[0].trim();
-			fieldConfigs.push({
-				expr: EObjectDecl([
-					{
-						field: "id",
-						expr: {
-							expr: EConst(CString(fieldId)),
-							pos: Context.currentPos()
-						}
-					},
-					{
-						field: "type",
-						expr: type
-					}
-				]),
-				pos: Context.currentPos()
-			});
-		}
-		return {
-			expr: EArrayDecl(fieldConfigs),
-			pos: Context.currentPos()
-		};
-	}
-
-	static function getAllEnumValues(typePath:String):Expr {
-		var type = Context.getType(typePath);
-		var stringCP:ComplexType = TPath({pack: [], name: "String"});
-
-		switch (type.follow()) {
-			case TAbstract(_.get() => ab, _) if (ab.meta.has(":enum")):
-				var valueExprs:Array<Expr> = [];
-				for (field in ab.impl.get().statics.get()) {
-					if (field.meta.has(":enum") && field.meta.has(":impl")) {
-						valueExprs.push({
-							expr: ECast(makeEFieldExpr(typePath, field.name), stringCP),
-							pos: Context.currentPos()
-						});
-					}
-				}
-				return {
-					expr: EArrayDecl(valueExprs),
-					pos: Context.currentPos()
-				};
-			default:
-				throw new Error(type.toString() + " should be @:enum abstract", null);
-		}
-		return null;
-	}
-
-	static function makeEFieldExpr(enumName:String, fieldName:String):Expr {
-		var parts:Array<String> = enumName.split(".");
-		var efieldExpr:Null<Expr> = null;
-		for (part in parts) {
-			if (efieldExpr == null) {
-				efieldExpr = {
-					expr: EConst(CIdent(part)),
-					pos: Context.currentPos()
-				};
-			} else {
-				efieldExpr = {
-					expr: EField(efieldExpr, part),
-					pos: Context.currentPos()
-				};
-			}
-		}
-		efieldExpr = {
-			expr: EField(efieldExpr, fieldName),
-			pos: Context.currentPos()
-		};
-
-		return efieldExpr;
 	}
 	#end
 }

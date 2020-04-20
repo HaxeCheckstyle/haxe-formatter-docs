@@ -1,3 +1,4 @@
+import codesamples.config.ConfigFieldRegistry;
 import haxe.rtti.Meta;
 import js.Browser;
 import js.jquery.Event;
@@ -11,7 +12,10 @@ import codesamples.WhitespaceSamples;
 import codesamples.WrappingSamples;
 
 class Navigation {
+	var configFieldRegistry:ConfigFieldRegistry;
+
 	public function new() {
+		configFieldRegistry = new ConfigFieldRegistry();
 		buildNavigation();
 	}
 
@@ -76,7 +80,7 @@ class Navigation {
 			new JQuery("#content").html("");
 			return;
 		}
-		Reflect.callMethod(instance, field, ["#content"]);
+		Reflect.callMethod(instance, field, ["#content", configFieldRegistry]);
 
 		new JQuery(".sectionEntries li").removeClass("active");
 		new JQuery(".sectionEntries li").filter('[data-class-name="$className"]').filter('[data-field-name="$fieldName"]').addClass("active");

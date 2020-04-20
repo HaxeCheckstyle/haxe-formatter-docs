@@ -15,11 +15,6 @@ see [haxeflixel style sample](#codesamples.CommonSamples.haxeflixel_style)
 
 ---
 
-lineEnds.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
-lineEnds.emptyCurly = combo,formatter.config.EmptyCurlyPolicy
-
----
-
 class Main {
     public function new () {}
 

@@ -17,13 +17,6 @@ goes great with VSCode's organise imports code action
 
 ---
 
-emptyLines.importAndUsing.betweenImportsLevel = combo,formatter.config.EmptyLinesConfig.BetweenImportsEmptyLinesLevel
-emptyLines.importAndUsing.betweenImports = number
-emptyLines.importAndUsing.beforeUsing = number
-emptyLines.maxAnywhereInFile = number
-
----
-
 package formatter.marker;
 
 import haxe.Int64;

@@ -21,16 +21,6 @@
 
 ---
 
-whitespace.parenConfig.funcParamParens.openingPolicy = combo,formatter.config.WhitespacePolicy
-whitespace.parenConfig.funcParamParens.closingPolicy = combo,formatter.config.WhitespacePolicy
-whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty = bool
-
-whitespace.parenConfig.anonFuncParamParens.openingPolicy = combo,formatter.config.WhitespacePolicy
-whitespace.parenConfig.anonFuncParamParens.closingPolicy = combo,formatter.config.WhitespacePolicy
-whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty = bool
-
----
-
 class Main {
     function new () {}
 

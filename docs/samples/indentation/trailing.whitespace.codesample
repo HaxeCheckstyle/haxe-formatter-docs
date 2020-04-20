@@ -10,10 +10,6 @@ adds whitespace to empty lines by copying indentation from previous line
 
 ---
 
-indentation.trailingWhitespace = bool
-
----
-
 package my.pack;
 import haxe.Json;
 using StringTools;

@@ -10,10 +10,6 @@ indentation character takes a string that is either any number of (literal) spac
 
 ---
 
-indentation.character = text
-
----
-
 class Main {
     public function new () {}
 

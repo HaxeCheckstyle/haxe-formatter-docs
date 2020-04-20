@@ -22,16 +22,6 @@ formatter configuration used by HaxeFlixel
 
 ---
 
-lineEnds.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
-lineEnds.rightCurly = combo,formatter.config.RightCurlyLineEndPolicy
-lineEnds.objectLiteralCurly.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
-sameLine.ifElse = combo,formatter.config.SameLinePolicy
-sameLine.doWhile = combo,formatter.config.SameLinePolicy
-sameLine.tryBody = combo,formatter.config.SameLinePolicy
-sameLine.tryCatch = combo,formatter.config.SameLinePolicy
-
----
-
 class Main {
     public function new () {}
 

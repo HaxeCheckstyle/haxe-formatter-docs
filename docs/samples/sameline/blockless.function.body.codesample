@@ -11,11 +11,6 @@
 
 ---
 
-sameLine.functionBody = combo,formatter.config.SameLinePolicy
-sameLine.anonFunctionBody = combo,formatter.config.SameLinePolicy
-
----
-
 class Main {
 	public static function test1() {
 		// input has linebreaks

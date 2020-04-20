@@ -1,0 +1,183 @@
+emptyLines.finalNewline = bool
+emptyLines.maxAnywhereInFile = number
+emptyLines.beforePackage = number
+emptyLines.afterPackage = number
+emptyLines.betweenTypes = number
+emptyLines.betweenSingleLineTypes = number
+emptyLines.afterFileHeaderComment = number
+emptyLines.betweenMultilineComments = number
+emptyLines.lineCommentsBetweenTypes = combo,formatter.config.LineCommentEmptyLinePolicy
+emptyLines.lineCommentsBetweenFunctions = combo,formatter.config.LineCommentEmptyLinePolicy
+emptyLines.beforeRightCurly = combo,formatter.config.KeepEmptyLinesPolicy
+emptyLines.afterLeftCurly = combo,formatter.config.KeepEmptyLinesPolicy
+emptyLines.afterReturn = combo,formatter.config.KeepEmptyLinesPolicy
+emptyLines.beforeBlocks = combo,formatter.config.KeepEmptyLinesPolicy
+emptyLines.afterBlocks = combo,formatter.config.KeepEmptyLinesPolicy
+
+emptyLines.importAndUsing.betweenImports = number
+emptyLines.importAndUsing.betweenImportsLevel = combo,formatter.config.BetweenImportsEmptyLinesLevel
+emptyLines.importAndUsing.beforeUsing = number
+emptyLines.importAndUsing.beforeType = number
+
+indentation.conditionalPolicy = combo,formatter.config.ConditionalIndentationPolicy
+indentation.character = text
+indentation.tabWidth = number
+indentation.trailingWhitespace = bool
+indentation.indentObjectLiteral = bool
+indentation.indentComplexValueExpressions = bool
+indentation.indentCaseLabels = bool
+
+lineEnds.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
+lineEnds.rightCurly = combo,formatter.config.RightCurlyLineEndPolicy
+lineEnds.emptyCurly = combo,formatter.config.EmptyCurlyPolicy
+
+lineEnds.blockCurly.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
+lineEnds.blockCurly.rightCurly = combo,formatter.config.RightCurlyLineEndPolicy
+lineEnds.blockCurly.emptyCurly = combo,formatter.config.EmptyCurlyPolicy
+lineEnds.anonFunctionCurly.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
+lineEnds.anonFunctionCurly.rightCurly = combo,formatter.config.RightCurlyLineEndPolicy
+lineEnds.anonFunctionCurly.emptyCurly = combo,formatter.config.EmptyCurlyPolicy
+lineEnds.anonTypeCurly.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
+lineEnds.anonTypeCurly.rightCurly = combo,formatter.config.RightCurlyLineEndPolicy
+lineEnds.anonTypeCurly.emptyCurly = combo,formatter.config.EmptyCurlyPolicy
+lineEnds.objectLiteralCurly.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
+lineEnds.objectLiteralCurly.rightCurly = combo,formatter.config.RightCurlyLineEndPolicy
+lineEnds.objectLiteralCurly.emptyCurly = combo,formatter.config.EmptyCurlyPolicy
+lineEnds.typedefCurly.leftCurly = combo,formatter.config.LeftCurlyLineEndPolicy
+lineEnds.typedefCurly.rightCurly = combo,formatter.config.RightCurlyLineEndPolicy
+lineEnds.typedefCurly.emptyCurly = combo,formatter.config.EmptyCurlyPolicy
+
+sameLine.ifBody = combo,formatter.config.SameLinePolicy
+sameLine.elseBody = combo,formatter.config.SameLinePolicy
+sameLine.ifElse = combo,formatter.config.SameLinePolicy
+sameLine.elseIf = combo,formatter.config.SameLinePolicy
+sameLine.expressionIf = combo,formatter.config.SameLinePolicy
+sameLine.expressionIfWithBlocks = bool
+sameLine.forBody = combo,formatter.config.SameLinePolicy
+sameLine.whileBody = combo,formatter.config.SameLinePolicy
+sameLine.doWhileBody = combo,formatter.config.SameLinePolicy
+sameLine.doWhile = combo,formatter.config.SameLinePolicy
+sameLine.tryBody = combo,formatter.config.SameLinePolicy
+sameLine.catchBody = combo,formatter.config.SameLinePolicy
+sameLine.caseBody = combo,formatter.config.SameLinePolicy
+sameLine.tryCatch = combo,formatter.config.SameLinePolicy
+sameLine.expressionCase = combo,formatter.config.SameLinePolicy
+sameLine.expressionTry = combo,formatter.config.SameLinePolicy
+sameLine.functionBody = combo,formatter.config.SameLinePolicy
+sameLine.anonFunctionBody = combo,formatter.config.SameLinePolicy
+sameLine.returnBody = combo,formatter.config.SameLinePolicy
+sameLine.returnBodySingleLine = combo,formatter.config.SameLinePolicy
+sameLine.untypedBody = combo,formatter.config.SameLinePolicy
+
+whitespace.parenConfig.metadataParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.metadataParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.metadataParens.removeInnerWhenEmpty = bool
+whitespace.parenConfig.funcParamParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.funcParamParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty = bool
+whitespace.parenConfig.anonFuncParamParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.anonFuncParamParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty = bool
+whitespace.parenConfig.callParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.callParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.callParens.removeInnerWhenEmpty = bool
+whitespace.parenConfig.conditionParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.conditionParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.conditionParens.removeInnerWhenEmpty = bool
+whitespace.parenConfig.forLoopParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.forLoopParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty = bool
+whitespace.parenConfig.expressionParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.expressionParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.expressionParens.removeInnerWhenEmpty = bool
+
+whitespace.bracesConfig.blockBraces.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.blockBraces.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty = bool
+whitespace.bracesConfig.typedefBraces.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.typedefBraces.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.typedefBraces.removeInnerWhenEmpty = bool
+whitespace.bracesConfig.anonTypeBraces.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.anonTypeBraces.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.anonTypeBraces.removeInnerWhenEmpty = bool
+whitespace.bracesConfig.objectLiteralBraces.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.objectLiteralBraces.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.objectLiteralBraces.removeInnerWhenEmpty = bool
+whitespace.bracesConfig.unknownBraces.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.unknownBraces.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.bracesConfig.unknownBraces.removeInnerWhenEmpty = bool
+
+whitespace.openingBracketPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.closingBracketPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.typeParamOpenPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.typeParamClosePolicy = combo,formatter.config.WhitespacePolicy
+whitespace.typeExtensionPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.commaPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.dotPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.colonPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.caseColonPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.objectFieldColonPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.typeHintColonPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.typeCheckColonPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.ternaryPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.semicolonPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.ifPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.doPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.whilePolicy = combo,formatter.config.WhitespacePolicy
+whitespace.forPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.switchPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.tryPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.catchPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.binopPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.intervalPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.arrowFunctionsPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.functionTypeHaxe3Policy = combo,formatter.config.WhitespacePolicy
+whitespace.functionTypeHaxe4Policy = combo,formatter.config.WhitespacePolicy
+
+whitespace.compressSuccessiveParenthesis = bool
+whitespace.formatStringInterpolation = bool
+whitespace.addLineCommentSpace = bool
+
+wrapping.maxLineLength = number
+wrapping.arrayMatrixWrap = combo,formatter.config.ArrayMatrixWrap
+wrapping.arrayWrap.defaultWrap = combo,formatter.config.WrappingType
+wrapping.arrayWrap.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.typeParameter.defaultWrap = combo,formatter.config.WrappingType
+wrapping.typeParameter.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.functionSignature.defaultWrap = combo,formatter.config.WrappingType
+wrapping.functionSignature.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.anonFunctionSignature.defaultWrap = combo,formatter.config.WrappingType
+wrapping.anonFunctionSignature.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.callParameter.defaultWrap = combo,formatter.config.WrappingType
+wrapping.callParameter.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.metadataCallParameter.defaultWrap = combo,formatter.config.WrappingType
+wrapping.metadataCallParameter.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.objectLiteral.defaultWrap = combo,formatter.config.WrappingType
+wrapping.objectLiteral.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.anonType.defaultWrap = combo,formatter.config.WrappingType
+wrapping.anonType.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.methodChain.defaultWrap = combo,formatter.config.WrappingType
+wrapping.methodChain.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.opBoolChain.defaultWrap = combo,formatter.config.WrappingType
+wrapping.opBoolChain.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.implementsExtends.defaultWrap = combo,formatter.config.WrappingType
+wrapping.implementsExtends.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.opAddSubChain.defaultWrap = combo,formatter.config.WrappingType
+wrapping.opAddSubChain.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.multiVar.defaultWrap = combo,formatter.config.WrappingType
+wrapping.multiVar.defaultLocation = combo,formatter.config.WrappingLocation
+
+wrapping.casePattern.defaultWrap = combo,formatter.config.WrappingType
+wrapping.casePattern.defaultLocation = combo,formatter.config.WrappingLocation

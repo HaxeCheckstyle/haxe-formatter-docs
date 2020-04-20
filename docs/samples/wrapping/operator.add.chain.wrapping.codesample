@@ -17,12 +17,6 @@ Note: `equalNumber` is not implemented yet
 
 ---
 
-wrapping.opAddSubChain.defaultWrap = combo,formatter.config.WrappingType
-wrapping.opAddSubChain.defaultLocation = combo,formatter.config.WrappingLocation
-wrapping.maxLineLength = number
-
----
-
 class Main {
 	static function main() {
 				return
