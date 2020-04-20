@@ -2273,7 +2273,6 @@ Object.assign(JsonParser_$96.prototype, {
 });
 class Main {
 	static main() {
-		var doc = new codesamples_WhitespaceSamples();
 		new Navigation();
 	}
 }
@@ -2398,6 +2397,7 @@ Object.assign(Link.prototype, {
 Math.__name__ = "Math";
 class Navigation {
 	constructor() {
+		this.configFieldRegistry = new codesamples_config_ConfigFieldRegistry();
 		this.buildNavigation();
 	}
 	buildNavigation() {
@@ -2457,7 +2457,7 @@ class Navigation {
 			$("#content").html("");
 			return;
 		}
-		field.apply(instance,["#content"]);
+		field.apply(instance,["#content",this.configFieldRegistry]);
 		$(".sectionEntries li").removeClass("active");
 		$(".sectionEntries li").filter("[data-class-name=\"" + className + "\"]").filter("[data-field-name=\"" + fieldName + "\"]").addClass("active");
 	}
@@ -2466,6 +2466,7 @@ $hxClasses["Navigation"] = Navigation;
 Navigation.__name__ = "Navigation";
 Object.assign(Navigation.prototype, {
 	__class__: Navigation
+	,configFieldRegistry: null
 });
 class Reflect {
 	static field(o,field) {
@@ -2753,60 +2754,42 @@ class Type {
 $hxClasses["Type"] = Type;
 Type.__name__ = "Type";
 class codesamples_SampleBase {
-	buildDocSamplePage(container,codeSampleName,docText,configText,configFields,fieldDef,codeSample) {
+	buildDocSamplePage(container,codeSampleName,docText,configText,fieldDef,codeSample,registry) {
 		var content = "<h1>" + StringTools.replace(codeSampleName,"."," ") + "</h1>\n";
-		this.currentSampleConfig = JSON.parse(configText);
+		this.configFieldRegistry = registry;
+		this.configFieldRegistry.setCurrentSampleConfig(configText);
 		content += "<div id=\"configWrapper\">";
 		content += "<div id=\"docContainer\">" + Markdown.markdownToHtml(docText) + "</div>";
-		content += "<div id=\"configContainer\"><div id=\"configHeader\">hxformat.json<button id=\"btnDownload\">Download</button></div>" + ("<pre id=\"config\">" + this.buildConfigHtml(this.currentSampleConfig,configFields) + "</pre></div>");
+		content += "<div id=\"configContainer\"><div id=\"configHeader\">hxformat.json" + "<div id=\"configButtons\"><button id=\"btnApply\">Apply</button>" + "<button id=\"btnEdit\">Edit</button><button id=\"btnDownload\">Download</button></div></div>" + ("<pre id=\"config\">" + this.configFieldRegistry.buildConfigHtml() + "</pre>") + ("<textarea id=\"configText\">" + this.configFieldRegistry.makeCustomConfig() + "</textarea></div>");
 		content += "</div>";
-		this.currentConfig = new formatter_config_Config();
 		this.currentCodeSample = codeSample;
 		this.codeWasModified = false;
-		this.configFieldValues = new haxe_ds_StringMap();
-		var _g = 0;
-		while(_g < configFields.length) {
-			var field = configFields[_g];
-			++_g;
-			var this1 = this.configFieldValues;
-			var key = field.id;
-			var value = { defaultValue : this.getConfigFieldValue(this.currentConfig,field.id)};
-			var _this = this1;
-			if(__map_reserved[key] != null) {
-				_this.setReserved(key,value);
-			} else {
-				_this.h[key] = value;
-			}
-		}
-		this.currentConfig.readConfigFromString(configText,"hxformat.json");
-		var _g1 = 0;
-		while(_g1 < configFields.length) {
-			var field1 = configFields[_g1];
-			++_g1;
-			var key1 = field1.id;
-			var _this1 = this.configFieldValues;
-			(__map_reserved[key1] != null ? _this1.getReserved(key1) : _this1.h[key1]).sampleValue = this.getConfigFieldValue(this.currentConfig,field1.id);
-		}
-		var result = formatter_Formatter.format(formatter_FormatterInput.Code(codeSample),this.currentConfig);
+		var result = formatter_Formatter.format(formatter_FormatterInput.Code(codeSample),this.configFieldRegistry.currentConfig);
 		switch(result._hx_index) {
 		case 0:
 			var formattedCode = result.formattedCode;
 			content += "<div id=\"codeSampleContainer\"><textarea id=\"codeSample\">" + formattedCode + "</textarea></div>";
 			break;
 		case 1:
-			var _g2 = result.errorMessage;
+			var _g = result.errorMessage;
 			break;
 		case 2:
 			break;
 		}
 		$(container).html(content);
+		this.installConfigEventHandler();
+		$("#codeSample").change($bind(this,this.onChangeCodeSample));
+		$("#btnDownload").click($bind(this,this.onDownloadConfig));
+		$("#btnApply").click($bind(this,this.onApplyConfig));
+		$("#btnEdit").click($bind(this,this.onEditConfig));
+		$("#configText").change($bind(this,this.onChangeConfig));
+	}
+	installConfigEventHandler() {
 		$(".config-field-combo").change($bind(this,this.onChangeCombo));
 		$(".config-field-bool").change($bind(this,this.onChangeBool));
 		$(".config-field-bool-label").click($bind(this,this.onClickBoolLabel));
 		$(".config-field-number").change($bind(this,this.onChangeNumber));
 		$(".config-field-text").change($bind(this,this.onChangeText));
-		$("#codeSample").change($bind(this,this.onChangeCodeSample));
-		$("#btnDownload").click($bind(this,this.onDownload));
 	}
 	onChangeCombo(event) {
 		var element = $(event.target);
@@ -2857,27 +2840,1185 @@ class codesamples_SampleBase {
 		this.codeWasModified = true;
 		this.updateFormat();
 	}
-	onDownload(event) {
-		var copyConfig = JSON.parse(JSON.stringify(this.currentSampleConfig));
-		var _g = new haxe_iterators_MapKeyValueIterator(this.configFieldValues);
-		while(_g.hasNext()) {
-			var _g1 = _g.next();
-			var fieldPath = _g1.key;
-			var values = _g1.value;
-			if(values.userValue == null) {
-				continue;
-			}
-			this.setConfigFieldValue(copyConfig,fieldPath,values.userValue);
-		}
-		var jsonText = JSON.stringify(copyConfig,null,"  ");
+	onDownloadConfig(event) {
+		var jsonText = this.configFieldRegistry.makeCustomConfig();
 		var blob = new Blob([jsonText],{ type : "application/json;charset=utf-8"});
 		var hxformatUrl = URL.createObjectURL(blob);
 		$("#downloadLink").attr({ "download" : "hxformat.json", "href" : hxformatUrl})[0].click();
 		URL.revokeObjectURL(hxformatUrl);
 	}
+	onEditConfig(event) {
+		$("#config").hide();
+		var textElement = $("#configText");
+		textElement.show();
+		textElement.val(this.configFieldRegistry.makeCustomConfig());
+		$("#btnEdit").hide();
+		$("#btnApply").show();
+	}
+	onApplyConfig(event) {
+		$("#config").show();
+		$("#configText").hide();
+		this.onChangeConfig(event);
+		$("#config").html(this.configFieldRegistry.buildConfigHtml());
+		$("#btnEdit").show();
+		$("#btnApply").hide();
+		this.updateFormat();
+		this.installConfigEventHandler();
+	}
+	onChangeConfig(event) {
+		var textElement = $("#configText");
+		var newConfigText = textElement.val();
+		try {
+			this.configFieldRegistry.setCurrentSampleConfig(newConfigText);
+		} catch( e ) {
+			haxe_CallStack.lastException = e;
+			var e1 = ((e) instanceof js__$Boot_HaxeError) ? e.val : e;
+		}
+		this.updateFormat();
+		textElement.val(this.configFieldRegistry.makeCustomConfig());
+	}
 	applyConfigValue(fieldPath,value) {
-		this.setConfigFieldValue(this.currentConfig,fieldPath,value);
+		this.configFieldRegistry.setFieldValue(fieldPath,value);
 		window.console.info("setting " + fieldPath + " = " + Std.string(value));
+	}
+	updateFormat() {
+		var codeElement = $("#codeSample");
+		var codeSample = codeElement.val();
+		if(!this.codeWasModified) {
+			codeSample = this.currentCodeSample;
+		}
+		var result = formatter_Formatter.format(formatter_FormatterInput.Code(codeSample),this.configFieldRegistry.currentConfig);
+		switch(result._hx_index) {
+		case 0:
+			var formattedCode = result.formattedCode;
+			codeElement.val(formattedCode);
+			break;
+		case 1:
+			var errorMessage = result.errorMessage;
+			window.console.info("format failed: " + errorMessage);
+			break;
+		case 2:
+			break;
+		}
+	}
+}
+$hxClasses["codesamples.SampleBase"] = codesamples_SampleBase;
+codesamples_SampleBase.__name__ = "codesamples.SampleBase";
+Object.assign(codesamples_SampleBase.prototype, {
+	__class__: codesamples_SampleBase
+	,currentCodeSample: null
+	,codeWasModified: null
+	,configFieldRegistry: null
+});
+class codesamples_CommonSamples extends codesamples_SampleBase {
+	constructor() {
+		super();
+	}
+	allman_curlies(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"allman.curlies","probably the most searched for option of formatter :)\n\nNote: `lineEnds.leftCurly` affects all left curlies, there are specialised options for\ndifferent curly places (e.g. `lineEnds.blockCurly`, `lineEnds.objectLiteralCurly`, etc.)\nsee [haxeflixel style sample](#codesamples.CommonSamples.haxeflixel_style)","{\n    \"lineEnds\": {\n        \"leftCurly\": \"both\",\n\t\t\"emptyCurly\": \"break\"\n    }\n}","","class Main {\n    public function new () {}\n\n    public function foo (param1:Int) {\n\t\ttrace(param1);\n\t\tvar obj = {\n\t\t\tx:100,\n\t\t\ty:100,\n\t\t\tz:100\n\t\t\t};\n\t}\n}\n",configFieldRegistry);
+	}
+	haxeflixel_style(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"haxeflixel.style","formatter configuration used by HaxeFlixel\n","\n{\n\t\"lineEnds\": {\n\t\t\"leftCurly\": \"both\",\n\t\t\"rightCurly\": \"both\",\n\t\t\"objectLiteralCurly\": {\n\t\t\t\"leftCurly\": \"after\"\n\t\t}\n\t},\n\t\"sameLine\": {\n\t\t\"ifElse\": \"next\",\n\t\t\"doWhile\": \"next\",\n\t\t\"tryBody\": \"next\",\n\t\t\"tryCatch\": \"next\"\n\t}\n}","","class Main {\n    public function new () {}\n\n    public function foo (param1:Int) {\n\t\tvar obj = {\n\t\t\tx:100,\n\t\t\ty:100\n\t\t\t};\n\n\t\tdo {\n\t\t\tsomething();\n\t\t} while (true);\n\n\t\tif (true) {\n\t\t\tsomething();\n\t\t} else {\n\t\t\tdoNothing();\n\t\t}\n\n\t\ttry\tsomethingRisky(); catch (e:Excpetion)\n\t}\n}\n",configFieldRegistry);
+	}
+	indentation_with_space(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"indentation.with.space","indentation character takes a string that is either any number of (literal) spaces (e.g. `␣␣`, `␣␣␣␣`, etc.) or the text `tab` for indentation with tabs","{\n    \"indentation\": {\n        \"character\": \"    \"\n    }\n}","","class Main {\n    public function new () {}\n\n    public function foo (param1:Int) {\n\t\ttrace(param1);\n\t}\n}\n",configFieldRegistry);
+	}
+}
+$hxClasses["codesamples.CommonSamples"] = codesamples_CommonSamples;
+codesamples_CommonSamples.__name__ = "codesamples.CommonSamples";
+codesamples_CommonSamples.__super__ = codesamples_SampleBase;
+Object.assign(codesamples_CommonSamples.prototype, {
+	__class__: codesamples_CommonSamples
+});
+class codesamples_EmptylinesSamples extends codesamples_SampleBase {
+	constructor() {
+		super();
+	}
+	import_and_using_emptylines(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"import.and.using.emptylines","showcases different empty lines settings for imports and using\n\ngoes great with VSCode's organise imports code action","{\n\t\"emptyLines\" : {\n\t\t\"importAndUsing\": {\n\t\t\t\"betweenImportsLevel\": \"firstLevelPackage\",\n\t\t\t\"betweenImports\": 1,\n\t\t\t\"beforeUsing\": 1\n\t\t},\n\t\t\"maxAnywhereInFile\": 1\n\t}\n}","","package formatter.marker;\n\nimport haxe.Int64;\nimport haxe.Json;\nimport haxe.macro.Expr;\nimport haxe.macro.ExprTools;\nimport formatter.codedata.CodeLine;\nimport formatter.codedata.CodeLines;\nimport formatter.codedata.data.Data;\nimport formatter.config.EmptyLinesConfig;\nimport formatter.marker.wrapping.marker.warpping.WrapBase;\nimport formatter.marker.wrapping.marker.warpping.WrapDefault;\nimport formatter.marker.wrapping.marker.indentation.Indenter;\nimport tokentree.utils.FieldUtils;\nusing haxe.Int64;\nusing haxe.Json;\nusing formatter.codedata.CodeLine;\nusing formatter.codedata.CodeLines;\nusing formatter.codedata.data.Data;\nusing formatter.config.EmptyLinesConfig;\nusing tokentree.utils.FieldUtils;\n#if php\nimport php.Lib;\nimport php.Web;\n#else\nimport sys.Lib;\n#end\nimport sys.FileSystem;\n#if !php\nimport sys.Lib;\n#else\nimport php.Lib;\nimport php.Web;\n#end\nimport sys.FileSystem;\n#if !php\nimport String;\n#end\n",configFieldRegistry);
+	}
+}
+$hxClasses["codesamples.EmptylinesSamples"] = codesamples_EmptylinesSamples;
+codesamples_EmptylinesSamples.__name__ = "codesamples.EmptylinesSamples";
+codesamples_EmptylinesSamples.__super__ = codesamples_SampleBase;
+Object.assign(codesamples_EmptylinesSamples.prototype, {
+	__class__: codesamples_EmptylinesSamples
+});
+class codesamples_IndentationSamples extends codesamples_SampleBase {
+	constructor() {
+		super();
+	}
+	trailing_whitespace(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"trailing.whitespace","adds whitespace to empty lines by copying indentation from previous line","{\n\t\"indentation\": {\n\t\t\"trailingWhitespace\": true\n\t}\n}","","package my.pack;\nimport haxe.Json;\nusing StringTools;\n\nclass Main {\n\tpublic static function test1() {\n\t\ttrace(i);\n\n\t\tif (true) {\n\t\t\ttrace(\"true\");\n\n\t\t\ttrace(\"true\");\n\t\t}\n\t\telse\n\t\t{\n\t\t\ttrace(\"false\");\n\n\t\t\ttrace(\"false\");\n\t\t}\n\n\t\ttrace(i);\n\t}\n\n\tpublic static function test2()\n\t\ttrace(i);\n}\n\ntypedef MyType = Array<Main>;\n",configFieldRegistry);
+	}
+}
+$hxClasses["codesamples.IndentationSamples"] = codesamples_IndentationSamples;
+codesamples_IndentationSamples.__name__ = "codesamples.IndentationSamples";
+codesamples_IndentationSamples.__super__ = codesamples_SampleBase;
+Object.assign(codesamples_IndentationSamples.prototype, {
+	__class__: codesamples_IndentationSamples
+});
+class codesamples_LineendsSamples extends codesamples_SampleBase {
+	constructor() {
+		super();
+	}
+}
+$hxClasses["codesamples.LineendsSamples"] = codesamples_LineendsSamples;
+codesamples_LineendsSamples.__name__ = "codesamples.LineendsSamples";
+codesamples_LineendsSamples.__super__ = codesamples_SampleBase;
+Object.assign(codesamples_LineendsSamples.prototype, {
+	__class__: codesamples_LineendsSamples
+});
+class codesamples_SamelineSamples extends codesamples_SampleBase {
+	constructor() {
+		super();
+	}
+	blockless_function_body(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"blockless.function.body","`keep` tries to keep linebreaks from input source","{\n\t\"sameLine\": {\n\t\t\"functionBody\": \"same\",\n\t\t\"anonFunctionBody\": \"same\"\n\t}\n}","","class Main {\n\tpublic static function test1() {\n\t\t// input has linebreaks\n\t\t[1, 2, 3].map(function()\n\t\t\ttrace(i));\n\t}\n\n\t// input has linebreaks\n\tpublic static function test2()\n\t\t[1, 2, 3].map(function()\n\t\t\ttrace(i));\n\n\tpublic static function test3() {\n\t\t// input has no linebreaks\n\t\t[1, 2, 3].map(function() trace(i));\n\t}\n\n\t// input has no linebreaks\n\tpublic static function test4() [1, 2, 3].map(function() trace(i))\n}\n",configFieldRegistry);
+	}
+}
+$hxClasses["codesamples.SamelineSamples"] = codesamples_SamelineSamples;
+codesamples_SamelineSamples.__name__ = "codesamples.SamelineSamples";
+codesamples_SamelineSamples.__super__ = codesamples_SampleBase;
+Object.assign(codesamples_SamelineSamples.prototype, {
+	__class__: codesamples_SamelineSamples
+});
+class codesamples_WhitespaceSamples extends codesamples_SampleBase {
+	constructor() {
+		super();
+	}
+	function_parens(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"function.parens","","{\n    \"whitespace\": {\n        \"parenConfig\": {\n            \"funcParamParens\": {\n                \"openingPolicy\": \"before\",\n                \"closingPolicy\": \"none\",\n                \"removeInnerWhenEmpty\": true\n            },\n\t\t\t\"anonFuncParamParens\": {\n                \"openingPolicy\": \"none\",\n                \"closingPolicy\": \"onlyAfter\",\n                \"removeInnerWhenEmpty\": true\n\t\t\t}\n        }\n    }\n}","","class Main {\n    function new () {}\n\n\tfunction test(param1:Int,param2:Array<String>, callback:(index:Int)->String, callback2:()->String) {\n\t\tparam2.push(callback(param1));\n\t}\n}\n",configFieldRegistry);
+	}
+}
+$hxClasses["codesamples.WhitespaceSamples"] = codesamples_WhitespaceSamples;
+codesamples_WhitespaceSamples.__name__ = "codesamples.WhitespaceSamples";
+codesamples_WhitespaceSamples.__super__ = codesamples_SampleBase;
+Object.assign(codesamples_WhitespaceSamples.prototype, {
+	__class__: codesamples_WhitespaceSamples
+});
+class codesamples_WrappingSamples extends codesamples_SampleBase {
+	constructor() {
+		super();
+	}
+	array_matrix_wrapping(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"array.matrix.wrapping","wrapping arrays in matrix layout\n\narray wrapping only works on arrays that have an equal number of elements per line, so your input source code should already have a matrix shape\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"arrayMatrixWrap\": \"matrixWrapWithAlign\",\n\t\t\"arrayWrap\":  {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"afterLast\"\n\t\t},\n\t\t\"maxLineLength\": 100\n\t}\n}","","class Main {\n\tstatic function main() {\n\t\tsampleMapArray = [\n\t\t\t0, 1, 0, 1,\n\t\t\t1, 1, 1, 1,\n\t\t\t1, 0, 0, 1\n\t\t];\n\t\treturn [\n\t\t\t-1.0, -1.0, 0, 0,\n\t\t\t1.0, -1.0, 1, 0,\n\t\t\t-1.0,  1.0, 0, 1,\n\t\t\t1.0, -1.0, 1, 0,\n\t\t\t1.0,  1.0, 1, 1,\n\t\t\t-1.0,  1.0, 0, 1\n\t\t];\n\n\t\treturn [xAxis.x, yAxis.x, zAxis.x, 0,\n\t\t\txAxis.y, yAxis.y, zAxis.y, 0,\n\t\t\txAxis.z, yAxis.z, zAxis.z, 0,\n\t\t\t0,       0,       0,       1];\n\n\t\trotation =  [1, 0, 0, 0,\n\t\t\t0, Math.cos(alpha), -Math.sin(alpha),  0,\n\t\t\t0, Math.sin(alpha), Math.cos(alpha),   0,\n\t\t\t0, 0, 0, 1];\n\n\t\trotation =  [Math.cos(alpha), 0, Math.sin(alpha), 0,\n\t\t\t0, 1, 0,  0,\n\t\t\t-Math.sin(alpha), 0, Math.cos(alpha),   0,\n\t\t\t0, 0, 0, 1];\n\t}\n\n\tstatic var offsetAutoTile:Array<Int> =\n\t\t[\n\t\t\t0, 0, 0, 0, 2, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t11, 11, 0, 0, 13, 13, 0, 14, 0, 0, 0, 0, 18, 18, 0, 19,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t51, 51, 0, 0, 53, 53, 0, 54, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t62, 62, 0, 0, 64, 64, 0, 65, 0, 0, 0, 0, 69, 69, 0, 70,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t86, 86, 0, 0, 88, 88, 0, 89, 0, 0, 0, 0, 93, 93, 0, 94,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 159, 0, 0, 0, 162, 0, 163, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 172, 0, 0, 0, 175, 0, 176, 0, 0, 0, 0, 0, 181, 0, 182,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 199, 0, 0, 0, 202, 0, 203, 0, 0, 0, 0, 0, 208, 0, 209\n\t\t];\n}\n",configFieldRegistry);
+	}
+	case_pattern_wrapping(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"case.pattern.wrapping","wrapping large amounts of case patterns\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"casePattern\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"beforeLast\"\n\t\t},\n\t\t\"maxLineLength\": 100\n\t}\n}","","class Main {\n\tstatic function main() {\n\t\tswitch (part.toLowerCase()) {\n\t\t\tcase \"__halt_compiler\" | \"abstract\" | \"and\" | \"array\" | \"as\" | \"break\" | \"callable\" | \"case\" | \"catch\" | \"class\" | \"clone\" | \"const\"\n\t\t\t\t| \"continue\" | \"declare\" | \"default\" | \"die\" | \"do\" | \"echo\" | \"else\" | \"elseif\" | \"empty\" | \"enddeclare\" | \"endfor\" | \"endforeach\" | \"endif\"\n\t\t\t\t| \"endswitch\" | \"endwhile\" | \"eval\" | \"exit\" | \"extends\" | \"final\" | \"finally\" | \"for\" | \"foreach\" | \"function\" | \"global\" | \"goto\" | \"if\"\n\t\t\t\t| \"implements\" | \"include\" | \"include_once\" | \"instanceof\" | \"insteadof\" | \"interface\" | \"isset\" | \"list\" | \"namespace\" | \"new\" | \"or\"\n\t\t\t\t| \"print\" | \"private\" | \"protected\" | \"public\" | \"require\" | \"require_once\" | \"return\" | \"static\" | \"switch\" | \"throw\" | \"trait\" | \"try\"\n\t\t\t\t| \"unset\" | \"use\" | \"var\" | \"while\" | \"xor\" | \"yield\" | \"__class__\" | \"__dir__\" | \"__file__\" | \"__function__\" | \"__line__\" | \"__method__\"\n\t\t\t\t| \"__trait__\" | \"__namespace__\" | \"int\" | \"float\" | \"bool\" | \"string\" | \"true\" | \"false\" | \"null\" | \"parent\" | \"void\" | \"iterable\" | \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\", \"and\", \"array\", \"as\", \"break\", \"callable\", \"case\", \"catch\", \"class\", \"clone\", \"const\", \"continue\", \"declare\"\n\t\t\t\t, \"default\", \"die\", \"do\", \"echo\", \"else\", \"elseif\", \"empty\", \"enddeclare\", \"endfor\", \"endforeach\", \"endif\", \"endswitch\", \"endwhile\", \"eval\"\n\t\t\t\t, \"exit\", \"extends\", \"final\", \"finally\", \"for\", \"foreach\", \"function\", \"global\", \"goto\", \"if\", \"implements\", \"include\", \"include_once\"\n\t\t\t\t, \"instanceof\", \"insteadof\", \"interface\", \"isset\", \"list\", \"namespace\", \"new\", \"or\", \"print\", \"private\", \"protected\", \"public\", \"require\"\n\t\t\t\t, \"require_once\", \"return\", \"static\", \"switch\", \"throw\", \"trait\", \"try\", \"unset\", \"use\", \"var\", \"while\", \"xor\", \"yield\", \"__class__\"\n\t\t\t\t, \"__dir__\", \"__file__\", \"__function__\", \"__line__\", \"__method__\", \"__trait__\", \"__namespace__\", \"int\", \"float\", \"bool\", \"string\", \"true\"\n\t\t\t\t, \"false\", \"null\", \"parent\", \"void\", \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\" | \"and\", \"array\" | \"as\", \"break\" | \"callable\", \"case\" | \"catch\", \"class\" | \"clone\", \"const\" | \"continue\"\n\t\t\t\t, \"declare\" | \"default\", \"die\" | \"do\", \"echo\" | \"else\", \"elseif\" | \"empty\", \"enddeclare\" | \"endfor\", \"endforeach\" | \"endif\", \"endswitch\"\n\t\t\t\t| \"endwhile\", \"eval\" | \"exit\", \"extends\" | \"final\", \"finally\" | \"for\", \"foreach\" | \"function\", \"global\" | \"goto\", \"if\" | \"implements\"\n\t\t\t\t, \"include\" | \"include_once\", \"instanceof\" | \"insteadof\", \"interface\" | \"isset\", \"list\" | \"namespace\", \"new\" | \"or\", \"print\" | \"private\"\n\t\t\t\t, \"protected\" | \"public\", \"require\" | \"require_once\", \"return\" | \"static\", \"switch\" | \"throw\", \"trait\" | \"try\", \"unset\" | \"use\", \"var\"\n\t\t\t\t| \"while\", \"xor\" | \"yield\", \"__class__\" | \"__dir__\", \"__file__\" | \"__function__\", \"__line__\" | \"__method__\", \"__trait__\" | \"__namespace__\"\n\t\t\t\t, \"int\" | \"float\", \"bool\" | \"string\", \"true\" | \"false\", \"null\" | \"parent\", \"void\" | \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase _:\n\t\t}\n\t}\n}\n",configFieldRegistry);
+	}
+	method_chain_wrapping(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"method.chain.wrapping","wrapping chains of method calls\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"methodChain\": {\n\t\t\t\"defaultWrap\": \"onePerLine\",\n\t\t\t\"defaultLocation\": \"afterLast\",\n\t\t\t\"rules\": []\n\t\t},\n\t\t\"maxLineLength\": 110\n\t}\n}","","class Main {\n\tfunction main() {\n\t\towner.addEntity().addEntity().addEntity().addEntity().addEntity();\n\t\towner.addEntity() // test\n\t\t\t.addEntity().addEntity().addEntity().addEntity();\n\t\towner // test\n\t\t\t.addEntity().addEntity().addEntity().addEntity().addEntity();\n\t\towner.addEntity().addEntity().addEntity().addEntity().addEntity(); // test\n\t\towner.addEntity() // test\n\t\t\t.addEntity() // test\n\t\t\t.addEntity() // test\n\t\t\t.addEntity() // test\n\t\t\t.addEntity(); // test\n\n\t\tnew Entity() // test\n\t\t\t.addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(new PointerTap()); // test\n\t\tnew Entity().addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(new PointerTap()); // test\n\t\tnew Entity().addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(new PointerTap());\n\t\tnew Entity() // test\n\t\t\t.addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE)) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE)) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE)) // test\n\t\t\t.addComponent(new PointerTap()); // test\n\t}\n}\n",configFieldRegistry);
+	}
+	operator_add_chain_wrapping(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"operator.add.chain.wrapping","wrapping of +/- chains\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"opAddSubChain\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"beforeLast\",\n\t\t\t\"rules\": []\n\t\t},\n\t\t\"maxLineLength\": 100\n\t}\n}","","class Main {\n\tstatic function main() {\n\t\t\t\treturn\n                       1 * ((this[0] * this[5] - this[4] * this[1]) * (this[10] * this[15] - this[14] * this[11]) - (this[0] * this[9] - this[8] * this[1]) * (this[6] * this[15] - this[14] * this[7]) +\n                               (this[0] * this[13] - this[12] * this[1]) * (this[6] * this[11] - this[10] * this[7]) + (this[4] * this[9] - this[8] * this[5]) * (this[2] * this[15] - this[14] * this[3]) - (this[4] * this[13] - this[12] * this[5]) * (this[2] * this[11] - this[10] * this[3]) +\n                                       (this[8] * this[13] - this[12] * this[9]) * (this[2] * this[7] - this[6] * this[3]));\n\t}\n}\n",configFieldRegistry);
+	}
+}
+$hxClasses["codesamples.WrappingSamples"] = codesamples_WrappingSamples;
+codesamples_WrappingSamples.__name__ = "codesamples.WrappingSamples";
+codesamples_WrappingSamples.__super__ = codesamples_SampleBase;
+Object.assign(codesamples_WrappingSamples.prototype, {
+	__class__: codesamples_WrappingSamples
+});
+class codesamples_config_ConfigFieldRegistry {
+	constructor() {
+		var _g = new haxe_ds_StringMap();
+		var value = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["emptyLines.finalNewline"] != null) {
+			_g.setReserved("emptyLines.finalNewline",value);
+		} else {
+			_g.h["emptyLines.finalNewline"] = value;
+		}
+		var value1 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.maxAnywhereInFile"] != null) {
+			_g.setReserved("emptyLines.maxAnywhereInFile",value1);
+		} else {
+			_g.h["emptyLines.maxAnywhereInFile"] = value1;
+		}
+		var value2 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.beforePackage"] != null) {
+			_g.setReserved("emptyLines.beforePackage",value2);
+		} else {
+			_g.h["emptyLines.beforePackage"] = value2;
+		}
+		var value3 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.afterPackage"] != null) {
+			_g.setReserved("emptyLines.afterPackage",value3);
+		} else {
+			_g.h["emptyLines.afterPackage"] = value3;
+		}
+		var value4 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.betweenTypes"] != null) {
+			_g.setReserved("emptyLines.betweenTypes",value4);
+		} else {
+			_g.h["emptyLines.betweenTypes"] = value4;
+		}
+		var value5 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.betweenSingleLineTypes"] != null) {
+			_g.setReserved("emptyLines.betweenSingleLineTypes",value5);
+		} else {
+			_g.h["emptyLines.betweenSingleLineTypes"] = value5;
+		}
+		var value6 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.afterFileHeaderComment"] != null) {
+			_g.setReserved("emptyLines.afterFileHeaderComment",value6);
+		} else {
+			_g.h["emptyLines.afterFileHeaderComment"] = value6;
+		}
+		var value7 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.betweenMultilineComments"] != null) {
+			_g.setReserved("emptyLines.betweenMultilineComments",value7);
+		} else {
+			_g.h["emptyLines.betweenMultilineComments"] = value7;
+		}
+		var value8 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("one" , String),js_Boot.__cast("none" , String)]);
+		if(__map_reserved["emptyLines.lineCommentsBetweenTypes"] != null) {
+			_g.setReserved("emptyLines.lineCommentsBetweenTypes",value8);
+		} else {
+			_g.h["emptyLines.lineCommentsBetweenTypes"] = value8;
+		}
+		var value9 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("one" , String),js_Boot.__cast("none" , String)]);
+		if(__map_reserved["emptyLines.lineCommentsBetweenFunctions"] != null) {
+			_g.setReserved("emptyLines.lineCommentsBetweenFunctions",value9);
+		} else {
+			_g.h["emptyLines.lineCommentsBetweenFunctions"] = value9;
+		}
+		var value10 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.beforeRightCurly"] != null) {
+			_g.setReserved("emptyLines.beforeRightCurly",value10);
+		} else {
+			_g.h["emptyLines.beforeRightCurly"] = value10;
+		}
+		var value11 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.afterLeftCurly"] != null) {
+			_g.setReserved("emptyLines.afterLeftCurly",value11);
+		} else {
+			_g.h["emptyLines.afterLeftCurly"] = value11;
+		}
+		var value12 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.afterReturn"] != null) {
+			_g.setReserved("emptyLines.afterReturn",value12);
+		} else {
+			_g.h["emptyLines.afterReturn"] = value12;
+		}
+		var value13 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.beforeBlocks"] != null) {
+			_g.setReserved("emptyLines.beforeBlocks",value13);
+		} else {
+			_g.h["emptyLines.beforeBlocks"] = value13;
+		}
+		var value14 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.afterBlocks"] != null) {
+			_g.setReserved("emptyLines.afterBlocks",value14);
+		} else {
+			_g.h["emptyLines.afterBlocks"] = value14;
+		}
+		var value15 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.importAndUsing.betweenImports"] != null) {
+			_g.setReserved("emptyLines.importAndUsing.betweenImports",value15);
+		} else {
+			_g.h["emptyLines.importAndUsing.betweenImports"] = value15;
+		}
+		var value16 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("all" , String),js_Boot.__cast("firstLevelPackage" , String),js_Boot.__cast("secondLevelPackage" , String),js_Boot.__cast("thirdLevelPackage" , String),js_Boot.__cast("fourthLevelPackage" , String),js_Boot.__cast("fifthLevelPackage" , String),js_Boot.__cast("fullPackage" , String)]);
+		if(__map_reserved["emptyLines.importAndUsing.betweenImportsLevel"] != null) {
+			_g.setReserved("emptyLines.importAndUsing.betweenImportsLevel",value16);
+		} else {
+			_g.h["emptyLines.importAndUsing.betweenImportsLevel"] = value16;
+		}
+		var value17 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.importAndUsing.beforeUsing"] != null) {
+			_g.setReserved("emptyLines.importAndUsing.beforeUsing",value17);
+		} else {
+			_g.h["emptyLines.importAndUsing.beforeUsing"] = value17;
+		}
+		var value18 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.importAndUsing.beforeType"] != null) {
+			_g.setReserved("emptyLines.importAndUsing.beforeType",value18);
+		} else {
+			_g.h["emptyLines.importAndUsing.beforeType"] = value18;
+		}
+		var value19 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("fixedZero" , String),js_Boot.__cast("fixedZeroIncrease" , String),js_Boot.__cast("fixedZeroIncreaseBlocks" , String),js_Boot.__cast("aligned" , String),js_Boot.__cast("alignedNestedIncrease" , String),js_Boot.__cast("alignedIncrease" , String),js_Boot.__cast("alignedDecrease" , String)]);
+		if(__map_reserved["indentation.conditionalPolicy"] != null) {
+			_g.setReserved("indentation.conditionalPolicy",value19);
+		} else {
+			_g.h["indentation.conditionalPolicy"] = value19;
+		}
+		var value20 = codesamples_config_ConfigFieldType.Text;
+		if(__map_reserved["indentation.character"] != null) {
+			_g.setReserved("indentation.character",value20);
+		} else {
+			_g.h["indentation.character"] = value20;
+		}
+		var value21 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["indentation.tabWidth"] != null) {
+			_g.setReserved("indentation.tabWidth",value21);
+		} else {
+			_g.h["indentation.tabWidth"] = value21;
+		}
+		var value22 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["indentation.trailingWhitespace"] != null) {
+			_g.setReserved("indentation.trailingWhitespace",value22);
+		} else {
+			_g.h["indentation.trailingWhitespace"] = value22;
+		}
+		var value23 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["indentation.indentObjectLiteral"] != null) {
+			_g.setReserved("indentation.indentObjectLiteral",value23);
+		} else {
+			_g.h["indentation.indentObjectLiteral"] = value23;
+		}
+		var value24 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["indentation.indentComplexValueExpressions"] != null) {
+			_g.setReserved("indentation.indentComplexValueExpressions",value24);
+		} else {
+			_g.h["indentation.indentComplexValueExpressions"] = value24;
+		}
+		var value25 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["indentation.indentCaseLabels"] != null) {
+			_g.setReserved("indentation.indentCaseLabels",value25);
+		} else {
+			_g.h["indentation.indentCaseLabels"] = value25;
+		}
+		var value26 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.leftCurly"] != null) {
+			_g.setReserved("lineEnds.leftCurly",value26);
+		} else {
+			_g.h["lineEnds.leftCurly"] = value26;
+		}
+		var value27 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.rightCurly"] != null) {
+			_g.setReserved("lineEnds.rightCurly",value27);
+		} else {
+			_g.h["lineEnds.rightCurly"] = value27;
+		}
+		var value28 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.emptyCurly",value28);
+		} else {
+			_g.h["lineEnds.emptyCurly"] = value28;
+		}
+		var value29 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.blockCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.blockCurly.leftCurly",value29);
+		} else {
+			_g.h["lineEnds.blockCurly.leftCurly"] = value29;
+		}
+		var value30 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.blockCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.blockCurly.rightCurly",value30);
+		} else {
+			_g.h["lineEnds.blockCurly.rightCurly"] = value30;
+		}
+		var value31 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.blockCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.blockCurly.emptyCurly",value31);
+		} else {
+			_g.h["lineEnds.blockCurly.emptyCurly"] = value31;
+		}
+		var value32 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.anonFunctionCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.anonFunctionCurly.leftCurly",value32);
+		} else {
+			_g.h["lineEnds.anonFunctionCurly.leftCurly"] = value32;
+		}
+		var value33 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.anonFunctionCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.anonFunctionCurly.rightCurly",value33);
+		} else {
+			_g.h["lineEnds.anonFunctionCurly.rightCurly"] = value33;
+		}
+		var value34 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.anonFunctionCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.anonFunctionCurly.emptyCurly",value34);
+		} else {
+			_g.h["lineEnds.anonFunctionCurly.emptyCurly"] = value34;
+		}
+		var value35 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.anonTypeCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.anonTypeCurly.leftCurly",value35);
+		} else {
+			_g.h["lineEnds.anonTypeCurly.leftCurly"] = value35;
+		}
+		var value36 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.anonTypeCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.anonTypeCurly.rightCurly",value36);
+		} else {
+			_g.h["lineEnds.anonTypeCurly.rightCurly"] = value36;
+		}
+		var value37 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.anonTypeCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.anonTypeCurly.emptyCurly",value37);
+		} else {
+			_g.h["lineEnds.anonTypeCurly.emptyCurly"] = value37;
+		}
+		var value38 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.objectLiteralCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.objectLiteralCurly.leftCurly",value38);
+		} else {
+			_g.h["lineEnds.objectLiteralCurly.leftCurly"] = value38;
+		}
+		var value39 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.objectLiteralCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.objectLiteralCurly.rightCurly",value39);
+		} else {
+			_g.h["lineEnds.objectLiteralCurly.rightCurly"] = value39;
+		}
+		var value40 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.objectLiteralCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.objectLiteralCurly.emptyCurly",value40);
+		} else {
+			_g.h["lineEnds.objectLiteralCurly.emptyCurly"] = value40;
+		}
+		var value41 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.typedefCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.typedefCurly.leftCurly",value41);
+		} else {
+			_g.h["lineEnds.typedefCurly.leftCurly"] = value41;
+		}
+		var value42 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.typedefCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.typedefCurly.rightCurly",value42);
+		} else {
+			_g.h["lineEnds.typedefCurly.rightCurly"] = value42;
+		}
+		var value43 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.typedefCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.typedefCurly.emptyCurly",value43);
+		} else {
+			_g.h["lineEnds.typedefCurly.emptyCurly"] = value43;
+		}
+		var value44 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.ifBody"] != null) {
+			_g.setReserved("sameLine.ifBody",value44);
+		} else {
+			_g.h["sameLine.ifBody"] = value44;
+		}
+		var value45 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.elseBody"] != null) {
+			_g.setReserved("sameLine.elseBody",value45);
+		} else {
+			_g.h["sameLine.elseBody"] = value45;
+		}
+		var value46 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.ifElse"] != null) {
+			_g.setReserved("sameLine.ifElse",value46);
+		} else {
+			_g.h["sameLine.ifElse"] = value46;
+		}
+		var value47 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.elseIf"] != null) {
+			_g.setReserved("sameLine.elseIf",value47);
+		} else {
+			_g.h["sameLine.elseIf"] = value47;
+		}
+		var value48 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.expressionIf"] != null) {
+			_g.setReserved("sameLine.expressionIf",value48);
+		} else {
+			_g.h["sameLine.expressionIf"] = value48;
+		}
+		var value49 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["sameLine.expressionIfWithBlocks"] != null) {
+			_g.setReserved("sameLine.expressionIfWithBlocks",value49);
+		} else {
+			_g.h["sameLine.expressionIfWithBlocks"] = value49;
+		}
+		var value50 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.forBody"] != null) {
+			_g.setReserved("sameLine.forBody",value50);
+		} else {
+			_g.h["sameLine.forBody"] = value50;
+		}
+		var value51 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.whileBody"] != null) {
+			_g.setReserved("sameLine.whileBody",value51);
+		} else {
+			_g.h["sameLine.whileBody"] = value51;
+		}
+		var value52 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.doWhileBody"] != null) {
+			_g.setReserved("sameLine.doWhileBody",value52);
+		} else {
+			_g.h["sameLine.doWhileBody"] = value52;
+		}
+		var value53 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.doWhile"] != null) {
+			_g.setReserved("sameLine.doWhile",value53);
+		} else {
+			_g.h["sameLine.doWhile"] = value53;
+		}
+		var value54 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.tryBody"] != null) {
+			_g.setReserved("sameLine.tryBody",value54);
+		} else {
+			_g.h["sameLine.tryBody"] = value54;
+		}
+		var value55 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.catchBody"] != null) {
+			_g.setReserved("sameLine.catchBody",value55);
+		} else {
+			_g.h["sameLine.catchBody"] = value55;
+		}
+		var value56 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.caseBody"] != null) {
+			_g.setReserved("sameLine.caseBody",value56);
+		} else {
+			_g.h["sameLine.caseBody"] = value56;
+		}
+		var value57 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.tryCatch"] != null) {
+			_g.setReserved("sameLine.tryCatch",value57);
+		} else {
+			_g.h["sameLine.tryCatch"] = value57;
+		}
+		var value58 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.expressionCase"] != null) {
+			_g.setReserved("sameLine.expressionCase",value58);
+		} else {
+			_g.h["sameLine.expressionCase"] = value58;
+		}
+		var value59 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.expressionTry"] != null) {
+			_g.setReserved("sameLine.expressionTry",value59);
+		} else {
+			_g.h["sameLine.expressionTry"] = value59;
+		}
+		var value60 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.functionBody"] != null) {
+			_g.setReserved("sameLine.functionBody",value60);
+		} else {
+			_g.h["sameLine.functionBody"] = value60;
+		}
+		var value61 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.anonFunctionBody"] != null) {
+			_g.setReserved("sameLine.anonFunctionBody",value61);
+		} else {
+			_g.h["sameLine.anonFunctionBody"] = value61;
+		}
+		var value62 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.returnBody"] != null) {
+			_g.setReserved("sameLine.returnBody",value62);
+		} else {
+			_g.h["sameLine.returnBody"] = value62;
+		}
+		var value63 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.returnBodySingleLine"] != null) {
+			_g.setReserved("sameLine.returnBodySingleLine",value63);
+		} else {
+			_g.h["sameLine.returnBodySingleLine"] = value63;
+		}
+		var value64 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.untypedBody"] != null) {
+			_g.setReserved("sameLine.untypedBody",value64);
+		} else {
+			_g.h["sameLine.untypedBody"] = value64;
+		}
+		var value65 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.metadataParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.metadataParens.openingPolicy",value65);
+		} else {
+			_g.h["whitespace.parenConfig.metadataParens.openingPolicy"] = value65;
+		}
+		var value66 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.metadataParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.metadataParens.closingPolicy",value66);
+		} else {
+			_g.h["whitespace.parenConfig.metadataParens.closingPolicy"] = value66;
+		}
+		var value67 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.metadataParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.metadataParens.removeInnerWhenEmpty",value67);
+		} else {
+			_g.h["whitespace.parenConfig.metadataParens.removeInnerWhenEmpty"] = value67;
+		}
+		var value68 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.funcParamParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.funcParamParens.openingPolicy",value68);
+		} else {
+			_g.h["whitespace.parenConfig.funcParamParens.openingPolicy"] = value68;
+		}
+		var value69 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.funcParamParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.funcParamParens.closingPolicy",value69);
+		} else {
+			_g.h["whitespace.parenConfig.funcParamParens.closingPolicy"] = value69;
+		}
+		var value70 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty",value70);
+		} else {
+			_g.h["whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty"] = value70;
+		}
+		var value71 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.anonFuncParamParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.anonFuncParamParens.openingPolicy",value71);
+		} else {
+			_g.h["whitespace.parenConfig.anonFuncParamParens.openingPolicy"] = value71;
+		}
+		var value72 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.anonFuncParamParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.anonFuncParamParens.closingPolicy",value72);
+		} else {
+			_g.h["whitespace.parenConfig.anonFuncParamParens.closingPolicy"] = value72;
+		}
+		var value73 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty",value73);
+		} else {
+			_g.h["whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty"] = value73;
+		}
+		var value74 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.callParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.callParens.openingPolicy",value74);
+		} else {
+			_g.h["whitespace.parenConfig.callParens.openingPolicy"] = value74;
+		}
+		var value75 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.callParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.callParens.closingPolicy",value75);
+		} else {
+			_g.h["whitespace.parenConfig.callParens.closingPolicy"] = value75;
+		}
+		var value76 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.callParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.callParens.removeInnerWhenEmpty",value76);
+		} else {
+			_g.h["whitespace.parenConfig.callParens.removeInnerWhenEmpty"] = value76;
+		}
+		var value77 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.conditionParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.conditionParens.openingPolicy",value77);
+		} else {
+			_g.h["whitespace.parenConfig.conditionParens.openingPolicy"] = value77;
+		}
+		var value78 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.conditionParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.conditionParens.closingPolicy",value78);
+		} else {
+			_g.h["whitespace.parenConfig.conditionParens.closingPolicy"] = value78;
+		}
+		var value79 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.conditionParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.conditionParens.removeInnerWhenEmpty",value79);
+		} else {
+			_g.h["whitespace.parenConfig.conditionParens.removeInnerWhenEmpty"] = value79;
+		}
+		var value80 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.forLoopParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.forLoopParens.openingPolicy",value80);
+		} else {
+			_g.h["whitespace.parenConfig.forLoopParens.openingPolicy"] = value80;
+		}
+		var value81 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.forLoopParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.forLoopParens.closingPolicy",value81);
+		} else {
+			_g.h["whitespace.parenConfig.forLoopParens.closingPolicy"] = value81;
+		}
+		var value82 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty",value82);
+		} else {
+			_g.h["whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty"] = value82;
+		}
+		var value83 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.expressionParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.expressionParens.openingPolicy",value83);
+		} else {
+			_g.h["whitespace.parenConfig.expressionParens.openingPolicy"] = value83;
+		}
+		var value84 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.expressionParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.expressionParens.closingPolicy",value84);
+		} else {
+			_g.h["whitespace.parenConfig.expressionParens.closingPolicy"] = value84;
+		}
+		var value85 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.expressionParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.expressionParens.removeInnerWhenEmpty",value85);
+		} else {
+			_g.h["whitespace.parenConfig.expressionParens.removeInnerWhenEmpty"] = value85;
+		}
+		var value86 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.blockBraces.openingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.blockBraces.openingPolicy",value86);
+		} else {
+			_g.h["whitespace.bracesConfig.blockBraces.openingPolicy"] = value86;
+		}
+		var value87 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.blockBraces.closingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.blockBraces.closingPolicy",value87);
+		} else {
+			_g.h["whitespace.bracesConfig.blockBraces.closingPolicy"] = value87;
+		}
+		var value88 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty",value88);
+		} else {
+			_g.h["whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty"] = value88;
+		}
+		var value89 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.typedefBraces.openingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.typedefBraces.openingPolicy",value89);
+		} else {
+			_g.h["whitespace.bracesConfig.typedefBraces.openingPolicy"] = value89;
+		}
+		var value90 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.typedefBraces.closingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.typedefBraces.closingPolicy",value90);
+		} else {
+			_g.h["whitespace.bracesConfig.typedefBraces.closingPolicy"] = value90;
+		}
+		var value91 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.bracesConfig.typedefBraces.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.bracesConfig.typedefBraces.removeInnerWhenEmpty",value91);
+		} else {
+			_g.h["whitespace.bracesConfig.typedefBraces.removeInnerWhenEmpty"] = value91;
+		}
+		var value92 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.anonTypeBraces.openingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.anonTypeBraces.openingPolicy",value92);
+		} else {
+			_g.h["whitespace.bracesConfig.anonTypeBraces.openingPolicy"] = value92;
+		}
+		var value93 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.anonTypeBraces.closingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.anonTypeBraces.closingPolicy",value93);
+		} else {
+			_g.h["whitespace.bracesConfig.anonTypeBraces.closingPolicy"] = value93;
+		}
+		var value94 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.bracesConfig.anonTypeBraces.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.bracesConfig.anonTypeBraces.removeInnerWhenEmpty",value94);
+		} else {
+			_g.h["whitespace.bracesConfig.anonTypeBraces.removeInnerWhenEmpty"] = value94;
+		}
+		var value95 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.objectLiteralBraces.openingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.objectLiteralBraces.openingPolicy",value95);
+		} else {
+			_g.h["whitespace.bracesConfig.objectLiteralBraces.openingPolicy"] = value95;
+		}
+		var value96 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.objectLiteralBraces.closingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.objectLiteralBraces.closingPolicy",value96);
+		} else {
+			_g.h["whitespace.bracesConfig.objectLiteralBraces.closingPolicy"] = value96;
+		}
+		var value97 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.bracesConfig.objectLiteralBraces.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.bracesConfig.objectLiteralBraces.removeInnerWhenEmpty",value97);
+		} else {
+			_g.h["whitespace.bracesConfig.objectLiteralBraces.removeInnerWhenEmpty"] = value97;
+		}
+		var value98 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.unknownBraces.openingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.unknownBraces.openingPolicy",value98);
+		} else {
+			_g.h["whitespace.bracesConfig.unknownBraces.openingPolicy"] = value98;
+		}
+		var value99 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.unknownBraces.closingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.unknownBraces.closingPolicy",value99);
+		} else {
+			_g.h["whitespace.bracesConfig.unknownBraces.closingPolicy"] = value99;
+		}
+		var value100 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.bracesConfig.unknownBraces.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.bracesConfig.unknownBraces.removeInnerWhenEmpty",value100);
+		} else {
+			_g.h["whitespace.bracesConfig.unknownBraces.removeInnerWhenEmpty"] = value100;
+		}
+		var value101 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.openingBracketPolicy"] != null) {
+			_g.setReserved("whitespace.openingBracketPolicy",value101);
+		} else {
+			_g.h["whitespace.openingBracketPolicy"] = value101;
+		}
+		var value102 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.closingBracketPolicy"] != null) {
+			_g.setReserved("whitespace.closingBracketPolicy",value102);
+		} else {
+			_g.h["whitespace.closingBracketPolicy"] = value102;
+		}
+		var value103 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.typeParamOpenPolicy"] != null) {
+			_g.setReserved("whitespace.typeParamOpenPolicy",value103);
+		} else {
+			_g.h["whitespace.typeParamOpenPolicy"] = value103;
+		}
+		var value104 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.typeParamClosePolicy"] != null) {
+			_g.setReserved("whitespace.typeParamClosePolicy",value104);
+		} else {
+			_g.h["whitespace.typeParamClosePolicy"] = value104;
+		}
+		var value105 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.typeExtensionPolicy"] != null) {
+			_g.setReserved("whitespace.typeExtensionPolicy",value105);
+		} else {
+			_g.h["whitespace.typeExtensionPolicy"] = value105;
+		}
+		var value106 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.commaPolicy"] != null) {
+			_g.setReserved("whitespace.commaPolicy",value106);
+		} else {
+			_g.h["whitespace.commaPolicy"] = value106;
+		}
+		var value107 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.dotPolicy"] != null) {
+			_g.setReserved("whitespace.dotPolicy",value107);
+		} else {
+			_g.h["whitespace.dotPolicy"] = value107;
+		}
+		var value108 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.colonPolicy"] != null) {
+			_g.setReserved("whitespace.colonPolicy",value108);
+		} else {
+			_g.h["whitespace.colonPolicy"] = value108;
+		}
+		var value109 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.caseColonPolicy"] != null) {
+			_g.setReserved("whitespace.caseColonPolicy",value109);
+		} else {
+			_g.h["whitespace.caseColonPolicy"] = value109;
+		}
+		var value110 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.objectFieldColonPolicy"] != null) {
+			_g.setReserved("whitespace.objectFieldColonPolicy",value110);
+		} else {
+			_g.h["whitespace.objectFieldColonPolicy"] = value110;
+		}
+		var value111 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.typeHintColonPolicy"] != null) {
+			_g.setReserved("whitespace.typeHintColonPolicy",value111);
+		} else {
+			_g.h["whitespace.typeHintColonPolicy"] = value111;
+		}
+		var value112 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.typeCheckColonPolicy"] != null) {
+			_g.setReserved("whitespace.typeCheckColonPolicy",value112);
+		} else {
+			_g.h["whitespace.typeCheckColonPolicy"] = value112;
+		}
+		var value113 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.ternaryPolicy"] != null) {
+			_g.setReserved("whitespace.ternaryPolicy",value113);
+		} else {
+			_g.h["whitespace.ternaryPolicy"] = value113;
+		}
+		var value114 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.semicolonPolicy"] != null) {
+			_g.setReserved("whitespace.semicolonPolicy",value114);
+		} else {
+			_g.h["whitespace.semicolonPolicy"] = value114;
+		}
+		var value115 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.ifPolicy"] != null) {
+			_g.setReserved("whitespace.ifPolicy",value115);
+		} else {
+			_g.h["whitespace.ifPolicy"] = value115;
+		}
+		var value116 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.doPolicy"] != null) {
+			_g.setReserved("whitespace.doPolicy",value116);
+		} else {
+			_g.h["whitespace.doPolicy"] = value116;
+		}
+		var value117 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.whilePolicy"] != null) {
+			_g.setReserved("whitespace.whilePolicy",value117);
+		} else {
+			_g.h["whitespace.whilePolicy"] = value117;
+		}
+		var value118 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.forPolicy"] != null) {
+			_g.setReserved("whitespace.forPolicy",value118);
+		} else {
+			_g.h["whitespace.forPolicy"] = value118;
+		}
+		var value119 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.switchPolicy"] != null) {
+			_g.setReserved("whitespace.switchPolicy",value119);
+		} else {
+			_g.h["whitespace.switchPolicy"] = value119;
+		}
+		var value120 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.tryPolicy"] != null) {
+			_g.setReserved("whitespace.tryPolicy",value120);
+		} else {
+			_g.h["whitespace.tryPolicy"] = value120;
+		}
+		var value121 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.catchPolicy"] != null) {
+			_g.setReserved("whitespace.catchPolicy",value121);
+		} else {
+			_g.h["whitespace.catchPolicy"] = value121;
+		}
+		var value122 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.binopPolicy"] != null) {
+			_g.setReserved("whitespace.binopPolicy",value122);
+		} else {
+			_g.h["whitespace.binopPolicy"] = value122;
+		}
+		var value123 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.intervalPolicy"] != null) {
+			_g.setReserved("whitespace.intervalPolicy",value123);
+		} else {
+			_g.h["whitespace.intervalPolicy"] = value123;
+		}
+		var value124 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.arrowFunctionsPolicy"] != null) {
+			_g.setReserved("whitespace.arrowFunctionsPolicy",value124);
+		} else {
+			_g.h["whitespace.arrowFunctionsPolicy"] = value124;
+		}
+		var value125 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.functionTypeHaxe3Policy"] != null) {
+			_g.setReserved("whitespace.functionTypeHaxe3Policy",value125);
+		} else {
+			_g.h["whitespace.functionTypeHaxe3Policy"] = value125;
+		}
+		var value126 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.functionTypeHaxe4Policy"] != null) {
+			_g.setReserved("whitespace.functionTypeHaxe4Policy",value126);
+		} else {
+			_g.h["whitespace.functionTypeHaxe4Policy"] = value126;
+		}
+		var value127 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.compressSuccessiveParenthesis"] != null) {
+			_g.setReserved("whitespace.compressSuccessiveParenthesis",value127);
+		} else {
+			_g.h["whitespace.compressSuccessiveParenthesis"] = value127;
+		}
+		var value128 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.formatStringInterpolation"] != null) {
+			_g.setReserved("whitespace.formatStringInterpolation",value128);
+		} else {
+			_g.h["whitespace.formatStringInterpolation"] = value128;
+		}
+		var value129 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.addLineCommentSpace"] != null) {
+			_g.setReserved("whitespace.addLineCommentSpace",value129);
+		} else {
+			_g.h["whitespace.addLineCommentSpace"] = value129;
+		}
+		var value130 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.maxLineLength"] != null) {
+			_g.setReserved("wrapping.maxLineLength",value130);
+		} else {
+			_g.h["wrapping.maxLineLength"] = value130;
+		}
+		var value131 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noMatrixWrap" , String),js_Boot.__cast("matrixWrapNoAlign" , String),js_Boot.__cast("matrixWrapWithAlign" , String)]);
+		if(__map_reserved["wrapping.arrayMatrixWrap"] != null) {
+			_g.setReserved("wrapping.arrayMatrixWrap",value131);
+		} else {
+			_g.h["wrapping.arrayMatrixWrap"] = value131;
+		}
+		var value132 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.defaultWrap"] != null) {
+			_g.setReserved("wrapping.arrayWrap.defaultWrap",value132);
+		} else {
+			_g.h["wrapping.arrayWrap.defaultWrap"] = value132;
+		}
+		var value133 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.defaultLocation"] != null) {
+			_g.setReserved("wrapping.arrayWrap.defaultLocation",value133);
+		} else {
+			_g.h["wrapping.arrayWrap.defaultLocation"] = value133;
+		}
+		var value134 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.typeParameter.defaultWrap"] != null) {
+			_g.setReserved("wrapping.typeParameter.defaultWrap",value134);
+		} else {
+			_g.h["wrapping.typeParameter.defaultWrap"] = value134;
+		}
+		var value135 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.typeParameter.defaultLocation"] != null) {
+			_g.setReserved("wrapping.typeParameter.defaultLocation",value135);
+		} else {
+			_g.h["wrapping.typeParameter.defaultLocation"] = value135;
+		}
+		var value136 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.functionSignature.defaultWrap"] != null) {
+			_g.setReserved("wrapping.functionSignature.defaultWrap",value136);
+		} else {
+			_g.h["wrapping.functionSignature.defaultWrap"] = value136;
+		}
+		var value137 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.functionSignature.defaultLocation"] != null) {
+			_g.setReserved("wrapping.functionSignature.defaultLocation",value137);
+		} else {
+			_g.h["wrapping.functionSignature.defaultLocation"] = value137;
+		}
+		var value138 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.defaultWrap"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.defaultWrap",value138);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.defaultWrap"] = value138;
+		}
+		var value139 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.defaultLocation"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.defaultLocation",value139);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.defaultLocation"] = value139;
+		}
+		var value140 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.callParameter.defaultWrap"] != null) {
+			_g.setReserved("wrapping.callParameter.defaultWrap",value140);
+		} else {
+			_g.h["wrapping.callParameter.defaultWrap"] = value140;
+		}
+		var value141 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.callParameter.defaultLocation"] != null) {
+			_g.setReserved("wrapping.callParameter.defaultLocation",value141);
+		} else {
+			_g.h["wrapping.callParameter.defaultLocation"] = value141;
+		}
+		var value142 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.defaultWrap"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.defaultWrap",value142);
+		} else {
+			_g.h["wrapping.metadataCallParameter.defaultWrap"] = value142;
+		}
+		var value143 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.defaultLocation"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.defaultLocation",value143);
+		} else {
+			_g.h["wrapping.metadataCallParameter.defaultLocation"] = value143;
+		}
+		var value144 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.defaultWrap"] != null) {
+			_g.setReserved("wrapping.objectLiteral.defaultWrap",value144);
+		} else {
+			_g.h["wrapping.objectLiteral.defaultWrap"] = value144;
+		}
+		var value145 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.defaultLocation"] != null) {
+			_g.setReserved("wrapping.objectLiteral.defaultLocation",value145);
+		} else {
+			_g.h["wrapping.objectLiteral.defaultLocation"] = value145;
+		}
+		var value146 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonType.defaultWrap"] != null) {
+			_g.setReserved("wrapping.anonType.defaultWrap",value146);
+		} else {
+			_g.h["wrapping.anonType.defaultWrap"] = value146;
+		}
+		var value147 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonType.defaultLocation"] != null) {
+			_g.setReserved("wrapping.anonType.defaultLocation",value147);
+		} else {
+			_g.h["wrapping.anonType.defaultLocation"] = value147;
+		}
+		var value148 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.methodChain.defaultWrap"] != null) {
+			_g.setReserved("wrapping.methodChain.defaultWrap",value148);
+		} else {
+			_g.h["wrapping.methodChain.defaultWrap"] = value148;
+		}
+		var value149 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.methodChain.defaultLocation"] != null) {
+			_g.setReserved("wrapping.methodChain.defaultLocation",value149);
+		} else {
+			_g.h["wrapping.methodChain.defaultLocation"] = value149;
+		}
+		var value150 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.defaultWrap"] != null) {
+			_g.setReserved("wrapping.opBoolChain.defaultWrap",value150);
+		} else {
+			_g.h["wrapping.opBoolChain.defaultWrap"] = value150;
+		}
+		var value151 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.defaultLocation"] != null) {
+			_g.setReserved("wrapping.opBoolChain.defaultLocation",value151);
+		} else {
+			_g.h["wrapping.opBoolChain.defaultLocation"] = value151;
+		}
+		var value152 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.defaultWrap"] != null) {
+			_g.setReserved("wrapping.implementsExtends.defaultWrap",value152);
+		} else {
+			_g.h["wrapping.implementsExtends.defaultWrap"] = value152;
+		}
+		var value153 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.defaultLocation"] != null) {
+			_g.setReserved("wrapping.implementsExtends.defaultLocation",value153);
+		} else {
+			_g.h["wrapping.implementsExtends.defaultLocation"] = value153;
+		}
+		var value154 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.defaultWrap"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.defaultWrap",value154);
+		} else {
+			_g.h["wrapping.opAddSubChain.defaultWrap"] = value154;
+		}
+		var value155 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.defaultLocation"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.defaultLocation",value155);
+		} else {
+			_g.h["wrapping.opAddSubChain.defaultLocation"] = value155;
+		}
+		var value156 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.multiVar.defaultWrap"] != null) {
+			_g.setReserved("wrapping.multiVar.defaultWrap",value156);
+		} else {
+			_g.h["wrapping.multiVar.defaultWrap"] = value156;
+		}
+		var value157 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.multiVar.defaultLocation"] != null) {
+			_g.setReserved("wrapping.multiVar.defaultLocation",value157);
+		} else {
+			_g.h["wrapping.multiVar.defaultLocation"] = value157;
+		}
+		var value158 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.casePattern.defaultWrap"] != null) {
+			_g.setReserved("wrapping.casePattern.defaultWrap",value158);
+		} else {
+			_g.h["wrapping.casePattern.defaultWrap"] = value158;
+		}
+		var value159 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.casePattern.defaultLocation"] != null) {
+			_g.setReserved("wrapping.casePattern.defaultLocation",value159);
+		} else {
+			_g.h["wrapping.casePattern.defaultLocation"] = value159;
+		}
+		this.configFields = _g;
+		this.currentConfig = new formatter_config_Config();
+		this.configFieldValues = new haxe_ds_StringMap();
+		var _g1 = new haxe_iterators_MapKeyValueIterator(this.configFields);
+		while(_g1.hasNext()) {
+			var _g11 = _g1.next();
+			var fieldPath = _g11.key;
+			var _ = _g11.value;
+			var this1 = this.configFieldValues;
+			var value160 = { defaultValue : this.getConfigFieldValue(this.currentConfig,fieldPath)};
+			var _this = this1;
+			if(__map_reserved[fieldPath] != null) {
+				_this.setReserved(fieldPath,value160);
+			} else {
+				_this.h[fieldPath] = value160;
+			}
+		}
+	}
+	setCurrentSampleConfig(text) {
+		if(text == null || text.length <= 0) {
+			text = "{}";
+		}
+		this.sampleConfigText = text;
+		this.sampleConfig = JSON.parse(text);
+		this.currentConfig.readConfigFromString(this.sampleConfigText,"hxformat.json");
+		var _g = new haxe_iterators_MapKeyValueIterator(this.configFields);
+		while(_g.hasNext()) {
+			var _g1 = _g.next();
+			var fieldPath = _g1.key;
+			var _ = _g1.value;
+			var _this = this.configFieldValues;
+			(__map_reserved[fieldPath] != null ? _this.getReserved(fieldPath) : _this.h[fieldPath]).sampleValue = this.getConfigFieldValue(this.currentConfig,fieldPath);
+		}
+	}
+	setFieldValue(fieldPath,value) {
+		this.setConfigFieldValue(this.currentConfig,fieldPath,value);
 	}
 	setConfigFieldValue(object,fieldPath,value) {
 		var parts = fieldPath.split(".");
@@ -2887,6 +4028,9 @@ class codesamples_SampleBase {
 			var part = parts[_g];
 			++_g;
 			object = Reflect.field(object,part);
+		}
+		if(object == null) {
+			return;
 		}
 		object[fieldName] = value;
 		var _this = this.configFieldValues;
@@ -2903,30 +4047,24 @@ class codesamples_SampleBase {
 		}
 		return Reflect.field(object,fieldName);
 	}
-	updateFormat() {
-		var codeElement = $("#codeSample");
-		var codeSample = codeElement.val();
-		if(!this.codeWasModified) {
-			codeSample = this.currentCodeSample;
+	makeCustomConfig() {
+		var copyConfig = JSON.parse(JSON.stringify(this.sampleConfig));
+		var _g = new haxe_iterators_MapKeyValueIterator(this.configFieldValues);
+		while(_g.hasNext()) {
+			var _g1 = _g.next();
+			var fieldPath = _g1.key;
+			var values = _g1.value;
+			if(values.userValue == null) {
+				continue;
+			}
+			this.setConfigFieldValue(copyConfig,fieldPath,values.userValue);
 		}
-		var result = formatter_Formatter.format(formatter_FormatterInput.Code(codeSample),this.currentConfig);
-		switch(result._hx_index) {
-		case 0:
-			var formattedCode = result.formattedCode;
-			codeElement.val(formattedCode);
-			break;
-		case 1:
-			var errorMessage = result.errorMessage;
-			window.console.info("format failed: " + errorMessage);
-			break;
-		case 2:
-			break;
-		}
+		return JSON.stringify(copyConfig,null,"  ");
 	}
-	buildConfigHtml(config,configFields) {
-		return "{\n" + this.buildConfigFields(config,configFields,"    ","") + "\n}\n";
+	buildConfigHtml() {
+		return "{\n" + this.buildConfigFields(this.sampleConfig,"    ","") + "\n}\n";
 	}
-	buildConfigFields(config,configFields,indent,fieldPath) {
+	buildConfigFields(config,indent,fieldPath) {
 		var lines = [];
 		var _g = 0;
 		var _g1 = Reflect.fields(config);
@@ -2940,7 +4078,7 @@ class codesamples_SampleBase {
 			}
 			switch(typeof(field)) {
 			case "boolean":case "number":case "string":
-				lines.push(indent + fieldName + ": " + this.buildFieldValue(field,newPath,configFields) + ",");
+				lines.push(indent + fieldName + ": " + this.buildFieldValue(field,newPath) + ",");
 				break;
 			case "object":
 				if(Array.isArray(field)) {
@@ -2950,17 +4088,17 @@ class codesamples_SampleBase {
 					var _g11 = arrayField.length;
 					while(_g2 < _g11) {
 						var index = _g2++;
-						lines.push(this.buildConfigFields(arrayField[index],configFields,indent + "    ",newPath + ("[" + index + "]")));
+						lines.push(this.buildConfigFields(arrayField[index],indent + "    ",newPath + ("[" + index + "]")));
 					}
 					lines.push(indent + "],");
 					continue;
 				}
 				lines.push(indent + fieldName + ": {");
-				lines.push(this.buildConfigFields(field,configFields,indent + "    ",newPath));
+				lines.push(this.buildConfigFields(field,indent + "    ",newPath));
 				lines.push(indent + "},");
 				break;
 			default:
-				console.log("src/codesamples/SampleBase.hx:218:","unhandled" + typeof(field));
+				console.log("src/codesamples/config/ConfigFieldRegistry.hx:116:","unhandled" + typeof(field));
 			}
 		}
 		if(lines.length > 0) {
@@ -2971,26 +4109,22 @@ class codesamples_SampleBase {
 		}
 		return lines.join("\n");
 	}
-	buildFieldValue(field,fieldPath,configFields) {
-		var _g = 0;
-		while(_g < configFields.length) {
-			var configField = configFields[_g];
-			++_g;
-			if(fieldPath != configField.id) {
-				continue;
-			}
-			return this.buildInputFieldValue(field,fieldPath,configField);
+	buildFieldValue(field,fieldPath) {
+		var _this = this.configFields;
+		if(__map_reserved[fieldPath] != null ? _this.existsReserved(fieldPath) : _this.h.hasOwnProperty(fieldPath)) {
+			return this.buildInputFieldValue(field,fieldPath);
 		}
-		var _g1 = Type.typeof(field);
-		if(_g1._hx_index == 6) {
-			var s = _g1.c;
+		var _g = Type.typeof(field);
+		if(_g._hx_index == 6) {
+			var s = _g.c;
 			return "\"" + Std.string(field) + "\"";
 		} else {
 			return "" + Std.string(field);
 		}
 	}
-	buildInputFieldValue(field,fieldPath,configField) {
-		var _g = configField.type;
+	buildInputFieldValue(field,fieldPath) {
+		var _this = this.configFields;
+		var _g = __map_reserved[fieldPath] != null ? _this.getReserved(fieldPath) : _this.h[fieldPath];
 		switch(_g._hx_index) {
 		case 0:
 			var abstractValues = _g.abstractValues;
@@ -3022,125 +4156,15 @@ class codesamples_SampleBase {
 		}
 	}
 }
-$hxClasses["codesamples.SampleBase"] = codesamples_SampleBase;
-codesamples_SampleBase.__name__ = "codesamples.SampleBase";
-Object.assign(codesamples_SampleBase.prototype, {
-	__class__: codesamples_SampleBase
-	,currentConfig: null
-	,currentSampleConfig: null
-	,currentCodeSample: null
+$hxClasses["codesamples.config.ConfigFieldRegistry"] = codesamples_config_ConfigFieldRegistry;
+codesamples_config_ConfigFieldRegistry.__name__ = "codesamples.config.ConfigFieldRegistry";
+Object.assign(codesamples_config_ConfigFieldRegistry.prototype, {
+	__class__: codesamples_config_ConfigFieldRegistry
+	,configFields: null
 	,configFieldValues: null
-	,codeWasModified: null
-});
-class codesamples_CommonSamples extends codesamples_SampleBase {
-	constructor() {
-		super();
-	}
-	allman_curlies(container) {
-		this.buildDocSamplePage(container,"allman.curlies","probably the most searched for option of formatter :)\n\nNote: `lineEnds.leftCurly` affects all left curlies, there are specialised options for\ndifferent curly places (e.g. `lineEnds.blockCurly`, `lineEnds.objectLiteralCurly`, etc.)\nsee [haxeflixel style sample](#codesamples.CommonSamples.haxeflixel_style)","{\n    \"lineEnds\": {\n        \"leftCurly\": \"both\",\n\t\t\"emptyCurly\": \"break\"\n    }\n}",[{ id : "lineEnds.leftCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)])},{ id : "lineEnds.emptyCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)])}],"","class Main {\n    public function new () {}\n\n    public function foo (param1:Int) {\n\t\ttrace(param1);\n\t\tvar obj = {\n\t\t\tx:100,\n\t\t\ty:100,\n\t\t\tz:100\n\t\t\t};\n\t}\n}\n");
-	}
-	haxeflixel_style(container) {
-		this.buildDocSamplePage(container,"haxeflixel.style","formatter configuration used by HaxeFlixel\n","\n{\n\t\"lineEnds\": {\n\t\t\"leftCurly\": \"both\",\n\t\t\"rightCurly\": \"both\",\n\t\t\"objectLiteralCurly\": {\n\t\t\t\"leftCurly\": \"after\"\n\t\t}\n\t},\n\t\"sameLine\": {\n\t\t\"ifElse\": \"next\",\n\t\t\"doWhile\": \"next\",\n\t\t\"tryBody\": \"next\",\n\t\t\"tryCatch\": \"next\"\n\t}\n}",[{ id : "lineEnds.leftCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)])},{ id : "lineEnds.rightCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)])},{ id : "lineEnds.objectLiteralCurly.leftCurly", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)])},{ id : "sameLine.ifElse", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])},{ id : "sameLine.doWhile", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])},{ id : "sameLine.tryBody", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])},{ id : "sameLine.tryCatch", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])}],"","class Main {\n    public function new () {}\n\n    public function foo (param1:Int) {\n\t\tvar obj = {\n\t\t\tx:100,\n\t\t\ty:100\n\t\t\t};\n\n\t\tdo {\n\t\t\tsomething();\n\t\t} while (true);\n\n\t\tif (true) {\n\t\t\tsomething();\n\t\t} else {\n\t\t\tdoNothing();\n\t\t}\n\n\t\ttry\tsomethingRisky(); catch (e:Excpetion)\n\t}\n}\n");
-	}
-	indentation_with_space(container) {
-		this.buildDocSamplePage(container,"indentation.with.space","indentation character takes a string that is either any number of (literal) spaces (e.g. `␣␣`, `␣␣␣␣`, etc.) or the text `tab` for indentation with tabs","{\n    \"indentation\": {\n        \"character\": \"    \"\n    }\n}",[{ id : "indentation.character", type : codesamples_config_ConfigFieldType.Text}],"","class Main {\n    public function new () {}\n\n    public function foo (param1:Int) {\n\t\ttrace(param1);\n\t}\n}\n");
-	}
-}
-$hxClasses["codesamples.CommonSamples"] = codesamples_CommonSamples;
-codesamples_CommonSamples.__name__ = "codesamples.CommonSamples";
-codesamples_CommonSamples.__super__ = codesamples_SampleBase;
-Object.assign(codesamples_CommonSamples.prototype, {
-	__class__: codesamples_CommonSamples
-});
-class codesamples_EmptylinesSamples extends codesamples_SampleBase {
-	constructor() {
-		super();
-	}
-	import_and_using_emptylines(container) {
-		this.buildDocSamplePage(container,"import.and.using.emptylines","showcases different empty lines settings for imports and using\n\ngoes great with VSCode's organise imports code action","{\n\t\"emptyLines\" : {\n\t\t\"importAndUsing\": {\n\t\t\t\"betweenImportsLevel\": \"firstLevelPackage\",\n\t\t\t\"betweenImports\": 1,\n\t\t\t\"beforeUsing\": 1\n\t\t},\n\t\t\"maxAnywhereInFile\": 1\n\t}\n}",[{ id : "emptyLines.importAndUsing.betweenImportsLevel", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("all" , String),js_Boot.__cast("firstLevelPackage" , String),js_Boot.__cast("secondLevelPackage" , String),js_Boot.__cast("thirdLevelPackage" , String),js_Boot.__cast("fourthLevelPackage" , String),js_Boot.__cast("fifthLevelPackage" , String),js_Boot.__cast("fullPackage" , String)])},{ id : "emptyLines.importAndUsing.betweenImports", type : codesamples_config_ConfigFieldType.Number},{ id : "emptyLines.importAndUsing.beforeUsing", type : codesamples_config_ConfigFieldType.Number},{ id : "emptyLines.maxAnywhereInFile", type : codesamples_config_ConfigFieldType.Number}],"","package formatter.marker;\n\nimport haxe.Int64;\nimport haxe.Json;\nimport haxe.macro.Expr;\nimport haxe.macro.ExprTools;\nimport formatter.codedata.CodeLine;\nimport formatter.codedata.CodeLines;\nimport formatter.codedata.data.Data;\nimport formatter.config.EmptyLinesConfig;\nimport formatter.marker.wrapping.marker.warpping.WrapBase;\nimport formatter.marker.wrapping.marker.warpping.WrapDefault;\nimport formatter.marker.wrapping.marker.indentation.Indenter;\nimport tokentree.utils.FieldUtils;\nusing haxe.Int64;\nusing haxe.Json;\nusing formatter.codedata.CodeLine;\nusing formatter.codedata.CodeLines;\nusing formatter.codedata.data.Data;\nusing formatter.config.EmptyLinesConfig;\nusing tokentree.utils.FieldUtils;\n#if php\nimport php.Lib;\nimport php.Web;\n#else\nimport sys.Lib;\n#end\nimport sys.FileSystem;\n#if !php\nimport sys.Lib;\n#else\nimport php.Lib;\nimport php.Web;\n#end\nimport sys.FileSystem;\n#if !php\nimport String;\n#end\n");
-	}
-}
-$hxClasses["codesamples.EmptylinesSamples"] = codesamples_EmptylinesSamples;
-codesamples_EmptylinesSamples.__name__ = "codesamples.EmptylinesSamples";
-codesamples_EmptylinesSamples.__super__ = codesamples_SampleBase;
-Object.assign(codesamples_EmptylinesSamples.prototype, {
-	__class__: codesamples_EmptylinesSamples
-});
-class codesamples_IndentationSamples extends codesamples_SampleBase {
-	constructor() {
-		super();
-	}
-	trailing_whitespace(container) {
-		this.buildDocSamplePage(container,"trailing.whitespace","adds whitespace to empty lines by copying indentation from previous line","{\n\t\"indentation\": {\n\t\t\"trailingWhitespace\": true\n\t}\n}",[{ id : "indentation.trailingWhitespace", type : codesamples_config_ConfigFieldType.Bool}],"","package my.pack;\nimport haxe.Json;\nusing StringTools;\n\nclass Main {\n\tpublic static function test1() {\n\t\ttrace(i);\n\n\t\tif (true) {\n\t\t\ttrace(\"true\");\n\n\t\t\ttrace(\"true\");\n\t\t}\n\t\telse\n\t\t{\n\t\t\ttrace(\"false\");\n\n\t\t\ttrace(\"false\");\n\t\t}\n\n\t\ttrace(i);\n\t}\n\n\tpublic static function test2()\n\t\ttrace(i);\n}\n\ntypedef MyType = Array<Main>;\n");
-	}
-}
-$hxClasses["codesamples.IndentationSamples"] = codesamples_IndentationSamples;
-codesamples_IndentationSamples.__name__ = "codesamples.IndentationSamples";
-codesamples_IndentationSamples.__super__ = codesamples_SampleBase;
-Object.assign(codesamples_IndentationSamples.prototype, {
-	__class__: codesamples_IndentationSamples
-});
-class codesamples_LineendsSamples extends codesamples_SampleBase {
-	constructor() {
-		super();
-	}
-}
-$hxClasses["codesamples.LineendsSamples"] = codesamples_LineendsSamples;
-codesamples_LineendsSamples.__name__ = "codesamples.LineendsSamples";
-codesamples_LineendsSamples.__super__ = codesamples_SampleBase;
-Object.assign(codesamples_LineendsSamples.prototype, {
-	__class__: codesamples_LineendsSamples
-});
-class codesamples_SamelineSamples extends codesamples_SampleBase {
-	constructor() {
-		super();
-	}
-	blockless_function_body(container) {
-		this.buildDocSamplePage(container,"blockless.function.body","`keep` tries to keep linebreaks from input source","{\n\t\"sameLine\": {\n\t\t\"functionBody\": \"same\",\n\t\t\"anonFunctionBody\": \"same\"\n\t}\n}",[{ id : "sameLine.functionBody", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])},{ id : "sameLine.anonFunctionBody", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)])}],"","class Main {\n\tpublic static function test1() {\n\t\t// input has linebreaks\n\t\t[1, 2, 3].map(function()\n\t\t\ttrace(i));\n\t}\n\n\t// input has linebreaks\n\tpublic static function test2()\n\t\t[1, 2, 3].map(function()\n\t\t\ttrace(i));\n\n\tpublic static function test3() {\n\t\t// input has no linebreaks\n\t\t[1, 2, 3].map(function() trace(i));\n\t}\n\n\t// input has no linebreaks\n\tpublic static function test4() [1, 2, 3].map(function() trace(i))\n}\n");
-	}
-}
-$hxClasses["codesamples.SamelineSamples"] = codesamples_SamelineSamples;
-codesamples_SamelineSamples.__name__ = "codesamples.SamelineSamples";
-codesamples_SamelineSamples.__super__ = codesamples_SampleBase;
-Object.assign(codesamples_SamelineSamples.prototype, {
-	__class__: codesamples_SamelineSamples
-});
-class codesamples_WhitespaceSamples extends codesamples_SampleBase {
-	constructor() {
-		super();
-	}
-	function_parens(container) {
-		this.buildDocSamplePage(container,"function.parens","","{\n    \"whitespace\": {\n        \"parenConfig\": {\n            \"funcParamParens\": {\n                \"openingPolicy\": \"before\",\n                \"closingPolicy\": \"none\",\n                \"removeInnerWhenEmpty\": true\n            },\n\t\t\t\"anonFuncParamParens\": {\n                \"openingPolicy\": \"none\",\n                \"closingPolicy\": \"onlyAfter\",\n                \"removeInnerWhenEmpty\": true\n\t\t\t}\n        }\n    }\n}",[{ id : "whitespace.parenConfig.funcParamParens.openingPolicy", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)])},{ id : "whitespace.parenConfig.funcParamParens.closingPolicy", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)])},{ id : "whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty", type : codesamples_config_ConfigFieldType.Bool},{ id : "whitespace.parenConfig.anonFuncParamParens.openingPolicy", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)])},{ id : "whitespace.parenConfig.anonFuncParamParens.closingPolicy", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)])},{ id : "whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty", type : codesamples_config_ConfigFieldType.Bool}],"","class Main {\n    function new () {}\n\n\tfunction test(param1:Int,param2:Array<String>, callback:(index:Int)->String, callback2:()->String) {\n\t\tparam2.push(callback(param1));\n\t}\n}\n");
-	}
-}
-$hxClasses["codesamples.WhitespaceSamples"] = codesamples_WhitespaceSamples;
-codesamples_WhitespaceSamples.__name__ = "codesamples.WhitespaceSamples";
-codesamples_WhitespaceSamples.__super__ = codesamples_SampleBase;
-Object.assign(codesamples_WhitespaceSamples.prototype, {
-	__class__: codesamples_WhitespaceSamples
-});
-class codesamples_WrappingSamples extends codesamples_SampleBase {
-	constructor() {
-		super();
-	}
-	array_matrix_wrapping(container) {
-		this.buildDocSamplePage(container,"array.matrix.wrapping","wrapping arrays in matrix layout\n\narray wrapping only works on arrays that have an equal number of elements per line, so your input source code should already have a matrix shape\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"arrayMatrixWrap\": \"matrixWrapWithAlign\",\n\t\t\"arrayWrap\":  {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"afterLast\"\n\t\t},\n\t\t\"maxLineLength\": 100\n\t}\n}",[{ id : "wrapping.arrayMatrixWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noMatrixWrap" , String),js_Boot.__cast("matrixWrapNoAlign" , String),js_Boot.__cast("matrixWrapWithAlign" , String)])},{ id : "wrapping.arrayWrap.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.arrayWrap.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])},{ id : "wrapping.maxLineLength", type : codesamples_config_ConfigFieldType.Number}],"","class Main {\n\tstatic function main() {\n\t\tsampleMapArray = [\n\t\t\t0, 1, 0, 1,\n\t\t\t1, 1, 1, 1,\n\t\t\t1, 0, 0, 1\n\t\t];\n\t\treturn [\n\t\t\t-1.0, -1.0, 0, 0,\n\t\t\t1.0, -1.0, 1, 0,\n\t\t\t-1.0,  1.0, 0, 1,\n\t\t\t1.0, -1.0, 1, 0,\n\t\t\t1.0,  1.0, 1, 1,\n\t\t\t-1.0,  1.0, 0, 1\n\t\t];\n\n\t\treturn [xAxis.x, yAxis.x, zAxis.x, 0,\n\t\t\txAxis.y, yAxis.y, zAxis.y, 0,\n\t\t\txAxis.z, yAxis.z, zAxis.z, 0,\n\t\t\t0,       0,       0,       1];\n\n\t\trotation =  [1, 0, 0, 0,\n\t\t\t0, Math.cos(alpha), -Math.sin(alpha),  0,\n\t\t\t0, Math.sin(alpha), Math.cos(alpha),   0,\n\t\t\t0, 0, 0, 1];\n\n\t\trotation =  [Math.cos(alpha), 0, Math.sin(alpha), 0,\n\t\t\t0, 1, 0,  0,\n\t\t\t-Math.sin(alpha), 0, Math.cos(alpha),   0,\n\t\t\t0, 0, 0, 1];\n\t}\n\n\tstatic var offsetAutoTile:Array<Int> =\n\t\t[\n\t\t\t0, 0, 0, 0, 2, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t11, 11, 0, 0, 13, 13, 0, 14, 0, 0, 0, 0, 18, 18, 0, 19,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t51, 51, 0, 0, 53, 53, 0, 54, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t62, 62, 0, 0, 64, 64, 0, 65, 0, 0, 0, 0, 69, 69, 0, 70,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t86, 86, 0, 0, 88, 88, 0, 89, 0, 0, 0, 0, 93, 93, 0, 94,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 159, 0, 0, 0, 162, 0, 163, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 172, 0, 0, 0, 175, 0, 176, 0, 0, 0, 0, 0, 181, 0, 182,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 199, 0, 0, 0, 202, 0, 203, 0, 0, 0, 0, 0, 208, 0, 209\n\t\t];\n}\n");
-	}
-	case_pattern_wrapping(container) {
-		this.buildDocSamplePage(container,"case.pattern.wrapping","wrapping large amounts of case patterns\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"casePattern\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"beforeLast\"\n\t\t},\n\t\t\"maxLineLength\": 100\n\t}\n}",[{ id : "wrapping.casePattern.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.casePattern.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])},{ id : "wrapping.maxLineLength", type : codesamples_config_ConfigFieldType.Number}],"","class Main {\n\tstatic function main() {\n\t\tswitch (part.toLowerCase()) {\n\t\t\tcase \"__halt_compiler\" | \"abstract\" | \"and\" | \"array\" | \"as\" | \"break\" | \"callable\" | \"case\" | \"catch\" | \"class\" | \"clone\" | \"const\"\n\t\t\t\t| \"continue\" | \"declare\" | \"default\" | \"die\" | \"do\" | \"echo\" | \"else\" | \"elseif\" | \"empty\" | \"enddeclare\" | \"endfor\" | \"endforeach\" | \"endif\"\n\t\t\t\t| \"endswitch\" | \"endwhile\" | \"eval\" | \"exit\" | \"extends\" | \"final\" | \"finally\" | \"for\" | \"foreach\" | \"function\" | \"global\" | \"goto\" | \"if\"\n\t\t\t\t| \"implements\" | \"include\" | \"include_once\" | \"instanceof\" | \"insteadof\" | \"interface\" | \"isset\" | \"list\" | \"namespace\" | \"new\" | \"or\"\n\t\t\t\t| \"print\" | \"private\" | \"protected\" | \"public\" | \"require\" | \"require_once\" | \"return\" | \"static\" | \"switch\" | \"throw\" | \"trait\" | \"try\"\n\t\t\t\t| \"unset\" | \"use\" | \"var\" | \"while\" | \"xor\" | \"yield\" | \"__class__\" | \"__dir__\" | \"__file__\" | \"__function__\" | \"__line__\" | \"__method__\"\n\t\t\t\t| \"__trait__\" | \"__namespace__\" | \"int\" | \"float\" | \"bool\" | \"string\" | \"true\" | \"false\" | \"null\" | \"parent\" | \"void\" | \"iterable\" | \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\", \"and\", \"array\", \"as\", \"break\", \"callable\", \"case\", \"catch\", \"class\", \"clone\", \"const\", \"continue\", \"declare\"\n\t\t\t\t, \"default\", \"die\", \"do\", \"echo\", \"else\", \"elseif\", \"empty\", \"enddeclare\", \"endfor\", \"endforeach\", \"endif\", \"endswitch\", \"endwhile\", \"eval\"\n\t\t\t\t, \"exit\", \"extends\", \"final\", \"finally\", \"for\", \"foreach\", \"function\", \"global\", \"goto\", \"if\", \"implements\", \"include\", \"include_once\"\n\t\t\t\t, \"instanceof\", \"insteadof\", \"interface\", \"isset\", \"list\", \"namespace\", \"new\", \"or\", \"print\", \"private\", \"protected\", \"public\", \"require\"\n\t\t\t\t, \"require_once\", \"return\", \"static\", \"switch\", \"throw\", \"trait\", \"try\", \"unset\", \"use\", \"var\", \"while\", \"xor\", \"yield\", \"__class__\"\n\t\t\t\t, \"__dir__\", \"__file__\", \"__function__\", \"__line__\", \"__method__\", \"__trait__\", \"__namespace__\", \"int\", \"float\", \"bool\", \"string\", \"true\"\n\t\t\t\t, \"false\", \"null\", \"parent\", \"void\", \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\" | \"and\", \"array\" | \"as\", \"break\" | \"callable\", \"case\" | \"catch\", \"class\" | \"clone\", \"const\" | \"continue\"\n\t\t\t\t, \"declare\" | \"default\", \"die\" | \"do\", \"echo\" | \"else\", \"elseif\" | \"empty\", \"enddeclare\" | \"endfor\", \"endforeach\" | \"endif\", \"endswitch\"\n\t\t\t\t| \"endwhile\", \"eval\" | \"exit\", \"extends\" | \"final\", \"finally\" | \"for\", \"foreach\" | \"function\", \"global\" | \"goto\", \"if\" | \"implements\"\n\t\t\t\t, \"include\" | \"include_once\", \"instanceof\" | \"insteadof\", \"interface\" | \"isset\", \"list\" | \"namespace\", \"new\" | \"or\", \"print\" | \"private\"\n\t\t\t\t, \"protected\" | \"public\", \"require\" | \"require_once\", \"return\" | \"static\", \"switch\" | \"throw\", \"trait\" | \"try\", \"unset\" | \"use\", \"var\"\n\t\t\t\t| \"while\", \"xor\" | \"yield\", \"__class__\" | \"__dir__\", \"__file__\" | \"__function__\", \"__line__\" | \"__method__\", \"__trait__\" | \"__namespace__\"\n\t\t\t\t, \"int\" | \"float\", \"bool\" | \"string\", \"true\" | \"false\", \"null\" | \"parent\", \"void\" | \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase _:\n\t\t}\n\t}\n}\n");
-	}
-	method_chain_wrapping(container) {
-		this.buildDocSamplePage(container,"method.chain.wrapping","wrapping chains of method calls\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"methodChain\": {\n\t\t\t\"defaultWrap\": \"onePerLine\",\n\t\t\t\"defaultLocation\": \"afterLast\",\n\t\t\t\"rules\": []\n\t\t},\n\t\t\"maxLineLength\": 110\n\t}\n}",[{ id : "wrapping.methodChain.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.methodChain.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])},{ id : "wrapping.maxLineLength", type : codesamples_config_ConfigFieldType.Number}],"","class Main {\n\tfunction main() {\n\t\towner.addEntity().addEntity().addEntity().addEntity().addEntity();\n\t\towner.addEntity() // test\n\t\t\t.addEntity().addEntity().addEntity().addEntity();\n\t\towner // test\n\t\t\t.addEntity().addEntity().addEntity().addEntity().addEntity();\n\t\towner.addEntity().addEntity().addEntity().addEntity().addEntity(); // test\n\t\towner.addEntity() // test\n\t\t\t.addEntity() // test\n\t\t\t.addEntity() // test\n\t\t\t.addEntity() // test\n\t\t\t.addEntity(); // test\n\n\t\tnew Entity() // test\n\t\t\t.addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(new PointerTap()); // test\n\t\tnew Entity().addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(new PointerTap()); // test\n\t\tnew Entity().addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE))\n\t\t\t.addComponent(new PointerTap());\n\t\tnew Entity() // test\n\t\t\t.addComponent(new PointerTap()) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE)) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE)) // test\n\t\t\t.addComponent(_sprite = FlumpAssets.getMovieSprite(\"mute_button\", LibraryName.INTERFACE)) // test\n\t\t\t.addComponent(new PointerTap()); // test\n\t}\n}\n");
-	}
-	operator_add_chain_wrapping(container) {
-		this.buildDocSamplePage(container,"operator.add.chain.wrapping","wrapping of +/- chains\n\nNote: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"opAddSubChain\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"beforeLast\",\n\t\t\t\"rules\": []\n\t\t},\n\t\t\"maxLineLength\": 100\n\t}\n}",[{ id : "wrapping.opAddSubChain.defaultWrap", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)])},{ id : "wrapping.opAddSubChain.defaultLocation", type : codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)])},{ id : "wrapping.maxLineLength", type : codesamples_config_ConfigFieldType.Number}],"","class Main {\n\tstatic function main() {\n\t\t\t\treturn\n                       1 * ((this[0] * this[5] - this[4] * this[1]) * (this[10] * this[15] - this[14] * this[11]) - (this[0] * this[9] - this[8] * this[1]) * (this[6] * this[15] - this[14] * this[7]) +\n                               (this[0] * this[13] - this[12] * this[1]) * (this[6] * this[11] - this[10] * this[7]) + (this[4] * this[9] - this[8] * this[5]) * (this[2] * this[15] - this[14] * this[3]) - (this[4] * this[13] - this[12] * this[5]) * (this[2] * this[11] - this[10] * this[3]) +\n                                       (this[8] * this[13] - this[12] * this[9]) * (this[2] * this[7] - this[6] * this[3]));\n\t}\n}\n");
-	}
-}
-$hxClasses["codesamples.WrappingSamples"] = codesamples_WrappingSamples;
-codesamples_WrappingSamples.__name__ = "codesamples.WrappingSamples";
-codesamples_WrappingSamples.__super__ = codesamples_SampleBase;
-Object.assign(codesamples_WrappingSamples.prototype, {
-	__class__: codesamples_WrappingSamples
+	,sampleConfig: null
+	,sampleConfigText: null
+	,currentConfig: null
 });
 var codesamples_config_ConfigFieldType = $hxEnums["codesamples.config.ConfigFieldType"] = { __ename__ : true, __constructs__ : ["Combo","Number","Bool","Text"]
 	,Combo: ($_=function(abstractValues) { return {_hx_index:0,abstractValues:abstractValues,__enum__:"codesamples.config.ConfigFieldType",toString:$estr}; },$_.__params__ = ["abstractValues"],$_)
