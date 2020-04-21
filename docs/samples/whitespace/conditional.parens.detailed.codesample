@@ -1,0 +1,69 @@
+The following whitespace setting structures were added in version 1.11.0 (all childs of `whitespace.parenConfig`):
+
+- `ifConditionParens` - whitespace policies for `if (expr)`
+- `switchConditionParens` - whitespace policies for `switch (expr)`
+- `whileConditionParens` - whitespace policies for `while (expr)`
+- `sharpConditionParens` - whitespace policies for `#if (expr)`
+- `catchParens` - whitespace policies for `catch (expr)`
+
+They use the same structure as `whitespace.parenConfig.conditionParens` (see [conditional parens short](#codesamples.WhitespaceSamples.conditional_parens_short))
+and allow a finer control over whitespace settings for each location.
+The new settings default to `null` which means `conditionParens` applies to all locations.
+It also means you only have to set values for those locations where you want formatter to behave differently.
+
+Note: Using `removeInnerWhenEmpty` is technically possible, but since code with an empty condtion expression
+doesn't make sense and probably won't compile there isn't much use to it.
+
+---
+
+{
+	"whitespace": {
+		"parenConfig": {
+			"ifConditionParens": {
+				"openingPolicy": "onlyAfter",
+				"closingPolicy": "before"
+			},
+			"switchConditionParens": {
+				"openingPolicy": "onlyAfter",
+				"closingPolicy": "before"
+			},
+			"whileConditionParens": {
+				"openingPolicy": "onlyAfter",
+				"closingPolicy": "before"
+			},
+			"sharpConditionParens": {
+				"openingPolicy": "onlyAfter",
+				"closingPolicy": "before"
+			},
+			"catchParens": {
+				"openingPolicy": "onlyAfter",
+				"closingPolicy": "before"
+			}
+		}
+	}
+}
+
+---
+
+class Main {
+	static function main() {
+		try {
+			#if (haxe_ver > 4.0)
+			#end
+			var v, a = 1, b = 2;
+			switch (a) {
+				default:
+					v = (a + b);
+			}
+			if (a) {
+				v = (a + b);
+			}
+			while (true) {
+				v = (a + b);
+			}
+			do {
+				v = (a + b);
+			} while (true);
+		} catch (e:Any)
+	}
+}

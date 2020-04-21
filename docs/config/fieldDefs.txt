@@ -19,6 +19,84 @@ emptyLines.importAndUsing.betweenImportsLevel = combo,formatter.config.BetweenIm
 emptyLines.importAndUsing.beforeUsing = number
 emptyLines.importAndUsing.beforeType = number
 
+emptyLines.enumAbstractEmptyLines.beginType = number
+emptyLines.enumAbstractEmptyLines.endType = number
+emptyLines.enumAbstractEmptyLines.betweenVars = number
+emptyLines.enumAbstractEmptyLines.afterVars = number
+emptyLines.enumAbstractEmptyLines.betweenFunctions = number
+emptyLines.enumAbstractEmptyLines.existingBetweenFields = combo,formatter.config.KeepEmptyLinesPolicy
+
+emptyLines.classEmptyLines.beginType = number
+emptyLines.classEmptyLines.endType = number
+emptyLines.classEmptyLines.betweenStaticVars = number
+emptyLines.classEmptyLines.afterStaticVars = number
+emptyLines.classEmptyLines.afterPrivateVars = number
+emptyLines.classEmptyLines.betweenVars = number
+emptyLines.classEmptyLines.afterVars = number
+emptyLines.classEmptyLines.afterStaticFunctions = number
+emptyLines.classEmptyLines.betweenStaticFunctions = number
+emptyLines.classEmptyLines.afterPrivateFunctions = number
+emptyLines.classEmptyLines.betweenFunctions = number
+emptyLines.classEmptyLines.existingBetweenFields = combo,formatter.config.KeepEmptyLinesPolicy
+
+
+emptyLines.macroClassEmptyLines.beginType = number
+emptyLines.macroClassEmptyLines.endType = number
+emptyLines.macroClassEmptyLines.betweenStaticVars = number
+emptyLines.macroClassEmptyLines.afterStaticVars = number
+emptyLines.macroClassEmptyLines.afterPrivateVars = number
+emptyLines.macroClassEmptyLines.betweenVars = number
+emptyLines.macroClassEmptyLines.afterVars = number
+emptyLines.macroClassEmptyLines.afterStaticFunctions = number
+emptyLines.macroClassEmptyLines.betweenStaticFunctions = number
+emptyLines.macroClassEmptyLines.afterPrivateFunctions = number
+emptyLines.macroClassEmptyLines.betweenFunctions = number
+emptyLines.macroClassEmptyLines.existingBetweenFields = combo,formatter.config.KeepEmptyLinesPolicy
+
+emptyLines.abstractEmptyLines.beginType = number
+emptyLines.abstractEmptyLines.endType = number
+emptyLines.abstractEmptyLines.betweenStaticVars = number
+emptyLines.abstractEmptyLines.afterStaticVars = number
+emptyLines.abstractEmptyLines.afterPrivateVars = number
+emptyLines.abstractEmptyLines.betweenVars = number
+emptyLines.abstractEmptyLines.afterVars = number
+emptyLines.abstractEmptyLines.afterStaticFunctions = number
+emptyLines.abstractEmptyLines.betweenStaticFunctions = number
+emptyLines.abstractEmptyLines.afterPrivateFunctions = number
+emptyLines.abstractEmptyLines.betweenFunctions = number
+emptyLines.abstractEmptyLines.existingBetweenFields = combo,formatter.config.KeepEmptyLinesPolicy
+
+emptyLines.externClassEmptyLines.beginType = number
+emptyLines.externClassEmptyLines.endType = number
+emptyLines.externClassEmptyLines.betweenVars = number
+emptyLines.externClassEmptyLines.afterVars = number
+emptyLines.externClassEmptyLines.betweenFunctions = number
+emptyLines.externClassEmptyLines.existingBetweenFields = combo,formatter.config.KeepEmptyLinesPolicy
+
+emptyLines.interfaceEmptyLines.beginType = number
+emptyLines.interfaceEmptyLines.endType = number
+emptyLines.interfaceEmptyLines.betweenVars = number
+emptyLines.interfaceEmptyLines.afterVars = number
+emptyLines.interfaceEmptyLines.betweenFunctions = number
+emptyLines.interfaceEmptyLines.existingBetweenFields = combo,formatter.config.KeepEmptyLinesPolicy
+
+emptyLines.enumEmptyLines.beginType = number
+emptyLines.enumEmptyLines.endType = number
+emptyLines.enumEmptyLines.betweenFields = number
+emptyLines.enumEmptyLines.existingBetweenFields = combo,formatter.config.KeepEmptyLinesPolicy
+
+emptyLines.typedefEmptyLines.beginType = number
+emptyLines.typedefEmptyLines.endType = number
+emptyLines.typedefEmptyLines.betweenFields = number
+emptyLines.typedefEmptyLines.existingBetweenFields = combo,formatter.config.KeepEmptyLinesPolicy
+
+emptyLines.conditionalsEmptyLines.afterIf = number
+emptyLines.conditionalsEmptyLines.beforeElse = number
+emptyLines.conditionalsEmptyLines.afterElse = number
+emptyLines.conditionalsEmptyLines.beforeEnd = number
+emptyLines.conditionalsEmptyLines.beforeError = number
+emptyLines.conditionalsEmptyLines.afterError = number
+
 indentation.conditionalPolicy = combo,formatter.config.ConditionalIndentationPolicy
 indentation.character = text
 indentation.tabWidth = number
@@ -81,9 +159,31 @@ whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty = bool
 whitespace.parenConfig.callParens.openingPolicy = combo,formatter.config.WhitespacePolicy
 whitespace.parenConfig.callParens.closingPolicy = combo,formatter.config.WhitespacePolicy
 whitespace.parenConfig.callParens.removeInnerWhenEmpty = bool
+
 whitespace.parenConfig.conditionParens.openingPolicy = combo,formatter.config.WhitespacePolicy
 whitespace.parenConfig.conditionParens.closingPolicy = combo,formatter.config.WhitespacePolicy
 whitespace.parenConfig.conditionParens.removeInnerWhenEmpty = bool
+
+whitespace.parenConfig.ifConditionParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.ifConditionParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.ifConditionParens.removeInnerWhenEmpty = bool
+
+whitespace.parenConfig.switchConditionParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.switchConditionParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.switchConditionParens.removeInnerWhenEmpty = bool
+
+whitespace.parenConfig.whileConditionParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.whileConditionParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.whileConditionParens.removeInnerWhenEmpty = bool
+
+whitespace.parenConfig.sharpConditionParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.sharpConditionParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.sharpConditionParens.removeInnerWhenEmpty = bool
+
+whitespace.parenConfig.catchParens.openingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.catchParens.closingPolicy = combo,formatter.config.WhitespacePolicy
+whitespace.parenConfig.catchParens.removeInnerWhenEmpty = bool
+
 whitespace.parenConfig.forLoopParens.openingPolicy = combo,formatter.config.WhitespacePolicy
 whitespace.parenConfig.forLoopParens.closingPolicy = combo,formatter.config.WhitespacePolicy
 whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty = bool
@@ -142,42 +242,56 @@ wrapping.maxLineLength = number
 wrapping.arrayMatrixWrap = combo,formatter.config.ArrayMatrixWrap
 wrapping.arrayWrap.defaultWrap = combo,formatter.config.WrappingType
 wrapping.arrayWrap.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.arrayWrap.defaultAdditionalIndent = number
 
 wrapping.typeParameter.defaultWrap = combo,formatter.config.WrappingType
 wrapping.typeParameter.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.typeParameter.defaultAdditionalIndent = number
 
 wrapping.functionSignature.defaultWrap = combo,formatter.config.WrappingType
 wrapping.functionSignature.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.functionSignature.defaultAdditionalIndent = number
 
 wrapping.anonFunctionSignature.defaultWrap = combo,formatter.config.WrappingType
 wrapping.anonFunctionSignature.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.anonFunctionSignature.defaultAdditionalIndent = number
 
 wrapping.callParameter.defaultWrap = combo,formatter.config.WrappingType
 wrapping.callParameter.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.callParameter.defaultAdditionalIndent = number
 
 wrapping.metadataCallParameter.defaultWrap = combo,formatter.config.WrappingType
 wrapping.metadataCallParameter.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.metadataCallParameter.defaultAdditionalIndent = number
 
 wrapping.objectLiteral.defaultWrap = combo,formatter.config.WrappingType
 wrapping.objectLiteral.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.objectLiteral.defaultAdditionalIndent = number
 
 wrapping.anonType.defaultWrap = combo,formatter.config.WrappingType
 wrapping.anonType.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.anonType.defaultAdditionalIndent = number
 
 wrapping.methodChain.defaultWrap = combo,formatter.config.WrappingType
 wrapping.methodChain.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.methodChain.defaultAdditionalIndent = number
 
 wrapping.opBoolChain.defaultWrap = combo,formatter.config.WrappingType
 wrapping.opBoolChain.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.opBoolChain.defaultAdditionalIndent = number
 
 wrapping.implementsExtends.defaultWrap = combo,formatter.config.WrappingType
 wrapping.implementsExtends.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.implementsExtends.defaultAdditionalIndent = number
 
 wrapping.opAddSubChain.defaultWrap = combo,formatter.config.WrappingType
 wrapping.opAddSubChain.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.opAddSubChain.defaultAdditionalIndent = number
 
 wrapping.multiVar.defaultWrap = combo,formatter.config.WrappingType
 wrapping.multiVar.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.multiVar.defaultAdditionalIndent = number
 
 wrapping.casePattern.defaultWrap = combo,formatter.config.WrappingType
 wrapping.casePattern.defaultLocation = combo,formatter.config.WrappingLocation
+wrapping.casePattern.defaultAdditionalIndent = number

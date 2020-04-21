@@ -1,0 +1,58 @@
+Whitespace policies for parens in `whitespace.parenConfig` as well as `whitespace.bracesConfig` for curyl braces
+use a data structure that has three fields for each of their locations:
+
+- `openingPolicy` - whitespace policy for opening parens or curly
+- `closingPolicy` - whitespace policy for closing parens or curly
+- `removeInnerWhenEmpty` - true when you want to remove inner whitespace when parens / curlies are empty
+
+policy can be one of the following (element being either an opening or a closing parens / curly):
+
+- `none` - no whitespace before or after element
+- `before` - add whitespace before element
+- `noneBefore` - never add whitespace before element
+- `onlyBefore` - only add whitespace before element
+- `after` - add whitespace after element
+- `onlyAfter` - only add whitespace after element
+- `noneAfter` - never add whitespace after element
+- `around` - add whitespace before and after element
+
+Note: whitespace policies can be overruled by code parts preceeding or following a whitespace location,
+because these code parts might have whitespace policies that contradict their neighbours.
+
+---
+
+{
+	"whitespace": {
+		"parenConfig": {
+			"conditionParens": {
+				"openingPolicy": "onlyAfter",
+				"closingPolicy": "before"
+			}
+		}
+	}
+}
+
+---
+
+class Main {
+	static function main() {
+		try {
+			#if (haxe_ver > 4.0)
+			#end
+			var v, a = 1, b = 2;
+			switch (a) {
+				default:
+					v = (a + b);
+			}
+			if (a) {
+				v = (a + b);
+			}
+			while (true) {
+				v = (a + b);
+			}
+			do {
+				v = (a + b);
+			} while (true);
+		} catch (e:Any)
+	}
+}
