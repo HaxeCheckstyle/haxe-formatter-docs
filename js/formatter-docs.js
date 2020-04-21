@@ -724,7 +724,7 @@ class JsonParser_$15 extends json2object_reader_BaseParser {
 				this.value.endType = this.loadObjectField(($_=new JsonParser_$96(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"endType",assigned,this.value.endType);
 				break;
 			case "existingBetweenFields":
-				this.value.existingBetweenFields = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"existingBetweenFields",assigned,this.value.existingBetweenFields);
+				this.value.existingBetweenFields = this.loadObjectField(($_=new JsonParser_$196(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"existingBetweenFields",assigned,this.value.existingBetweenFields);
 				break;
 			default:
 				this.errors.push(json2object_Error.UnknownVariable(field.name,this.putils.convertPosition(field.namePos)));
@@ -742,7 +742,7 @@ JsonParser_$15.__super__ = json2object_reader_BaseParser;
 Object.assign(JsonParser_$15.prototype, {
 	__class__: JsonParser_$15
 });
-class JsonParser_$155 extends json2object_reader_BaseParser {
+class JsonParser_$165 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
 		if(errorType == null) {
 			errorType = 0;
@@ -761,13 +761,13 @@ class JsonParser_$155 extends json2object_reader_BaseParser {
 		this.value = this.loadString(s,pos,variable,["same","next","keep"],"same");
 	}
 }
-$hxClasses["JsonParser_155"] = JsonParser_$155;
-JsonParser_$155.__name__ = "JsonParser_155";
-JsonParser_$155.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$155.prototype, {
-	__class__: JsonParser_$155
+$hxClasses["JsonParser_165"] = JsonParser_$165;
+JsonParser_$165.__name__ = "JsonParser_165";
+JsonParser_$165.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$165.prototype, {
+	__class__: JsonParser_$165
 });
-class JsonParser_$158 extends json2object_reader_BaseParser {
+class JsonParser_$168 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
 		if(errorType == null) {
 			errorType = 0;
@@ -791,13 +791,13 @@ class JsonParser_$158 extends json2object_reader_BaseParser {
 			++_g;
 			switch(field.name) {
 			case "emptyCurly":
-				this.value.emptyCurly = this.loadObjectField(($_=new JsonParser_$166(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"emptyCurly",assigned,this.value.emptyCurly);
+				this.value.emptyCurly = this.loadObjectField(($_=new JsonParser_$176(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"emptyCurly",assigned,this.value.emptyCurly);
 				break;
 			case "leftCurly":
-				this.value.leftCurly = this.loadObjectField(($_=new JsonParser_$168(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"leftCurly",assigned,this.value.leftCurly);
+				this.value.leftCurly = this.loadObjectField(($_=new JsonParser_$178(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"leftCurly",assigned,this.value.leftCurly);
 				break;
 			case "rightCurly":
-				this.value.rightCurly = this.loadObjectField(($_=new JsonParser_$174(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"rightCurly",assigned,this.value.rightCurly);
+				this.value.rightCurly = this.loadObjectField(($_=new JsonParser_$184(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"rightCurly",assigned,this.value.rightCurly);
 				break;
 			default:
 				this.errors.push(json2object_Error.UnknownVariable(field.name,this.putils.convertPosition(field.namePos)));
@@ -809,13 +809,13 @@ class JsonParser_$158 extends json2object_reader_BaseParser {
 		return { emptyCurly : "noBreak", leftCurly : "after", rightCurly : "both"};
 	}
 }
-$hxClasses["JsonParser_158"] = JsonParser_$158;
-JsonParser_$158.__name__ = "JsonParser_158";
-JsonParser_$158.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$158.prototype, {
-	__class__: JsonParser_$158
+$hxClasses["JsonParser_168"] = JsonParser_$168;
+JsonParser_$168.__name__ = "JsonParser_168";
+JsonParser_$168.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$168.prototype, {
+	__class__: JsonParser_$168
 });
-class JsonParser_$164 extends json2object_reader_BaseParser {
+class JsonParser_$174 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
 		if(errorType == null) {
 			errorType = 0;
@@ -834,13 +834,13 @@ class JsonParser_$164 extends json2object_reader_BaseParser {
 		this.value = this.loadString(s,pos,variable,["none","after"],"none");
 	}
 }
-$hxClasses["JsonParser_164"] = JsonParser_$164;
-JsonParser_$164.__name__ = "JsonParser_164";
-JsonParser_$164.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$164.prototype, {
-	__class__: JsonParser_$164
+$hxClasses["JsonParser_174"] = JsonParser_$174;
+JsonParser_$174.__name__ = "JsonParser_174";
+JsonParser_$174.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$174.prototype, {
+	__class__: JsonParser_$174
 });
-class JsonParser_$166 extends json2object_reader_BaseParser {
+class JsonParser_$176 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
 		if(errorType == null) {
 			errorType = 0;
@@ -859,13 +859,13 @@ class JsonParser_$166 extends json2object_reader_BaseParser {
 		this.value = this.loadString(s,pos,variable,["noBreak","break"],"noBreak");
 	}
 }
-$hxClasses["JsonParser_166"] = JsonParser_$166;
-JsonParser_$166.__name__ = "JsonParser_166";
-JsonParser_$166.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$166.prototype, {
-	__class__: JsonParser_$166
+$hxClasses["JsonParser_176"] = JsonParser_$176;
+JsonParser_$176.__name__ = "JsonParser_176";
+JsonParser_$176.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$176.prototype, {
+	__class__: JsonParser_$176
 });
-class JsonParser_$168 extends json2object_reader_BaseParser {
+class JsonParser_$178 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
 		if(errorType == null) {
 			errorType = 0;
@@ -884,86 +884,11 @@ class JsonParser_$168 extends json2object_reader_BaseParser {
 		this.value = this.loadString(s,pos,variable,["none","after","before","both"],"none");
 	}
 }
-$hxClasses["JsonParser_168"] = JsonParser_$168;
-JsonParser_$168.__name__ = "JsonParser_168";
-JsonParser_$168.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$168.prototype, {
-	__class__: JsonParser_$168
-});
-class JsonParser_$170 extends json2object_reader_BaseParser {
-	constructor(errors,putils,errorType) {
-		if(errorType == null) {
-			errorType = 0;
-		}
-		super(errors,putils,errorType);
-	}
-	onIncorrectType(pos,variable) {
-		this.value = "none";
-		this.errors.push(json2object_Error.IncorrectType(variable,"formatter.config.AtLineEndPolicy",pos));
-		this.objectThrow(pos,variable);
-	}
-	loadJsonNull(pos,variable) {
-		this.value = null;
-	}
-	loadJsonString(s,pos,variable) {
-		this.value = this.loadString(s,pos,variable,["none","after","afterLast","forceAfterLast"],"none");
-	}
-}
-$hxClasses["JsonParser_170"] = JsonParser_$170;
-JsonParser_$170.__name__ = "JsonParser_170";
-JsonParser_$170.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$170.prototype, {
-	__class__: JsonParser_$170
-});
-class JsonParser_$174 extends json2object_reader_BaseParser {
-	constructor(errors,putils,errorType) {
-		if(errorType == null) {
-			errorType = 0;
-		}
-		super(errors,putils,errorType);
-	}
-	onIncorrectType(pos,variable) {
-		this.value = "none";
-		this.errors.push(json2object_Error.IncorrectType(variable,"formatter.config.RightCurlyLineEndPolicy",pos));
-		this.objectThrow(pos,variable);
-	}
-	loadJsonNull(pos,variable) {
-		this.value = null;
-	}
-	loadJsonString(s,pos,variable) {
-		this.value = this.loadString(s,pos,variable,["none","before","after","both"],"none");
-	}
-}
-$hxClasses["JsonParser_174"] = JsonParser_$174;
-JsonParser_$174.__name__ = "JsonParser_174";
-JsonParser_$174.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$174.prototype, {
-	__class__: JsonParser_$174
-});
-class JsonParser_$176 extends json2object_reader_BaseParser {
-	constructor(errors,putils,errorType) {
-		if(errorType == null) {
-			errorType = 0;
-		}
-		super(errors,putils,errorType);
-	}
-	onIncorrectType(pos,variable) {
-		this.value = "none";
-		this.errors.push(json2object_Error.IncorrectType(variable,"formatter.config.SharpLineEndPolicy",pos));
-		this.objectThrow(pos,variable);
-	}
-	loadJsonNull(pos,variable) {
-		this.value = null;
-	}
-	loadJsonString(s,pos,variable) {
-		this.value = this.loadString(s,pos,variable,["none","after"],"none");
-	}
-}
-$hxClasses["JsonParser_176"] = JsonParser_$176;
-JsonParser_$176.__name__ = "JsonParser_176";
-JsonParser_$176.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$176.prototype, {
-	__class__: JsonParser_$176
+$hxClasses["JsonParser_178"] = JsonParser_$178;
+JsonParser_$178.__name__ = "JsonParser_178";
+JsonParser_$178.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$178.prototype, {
+	__class__: JsonParser_$178
 });
 class JsonParser_$18 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
@@ -998,7 +923,7 @@ class JsonParser_$18 extends json2object_reader_BaseParser {
 				this.value.endType = this.loadObjectField(($_=new JsonParser_$96(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"endType",assigned,this.value.endType);
 				break;
 			case "existingBetweenFields":
-				this.value.existingBetweenFields = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"existingBetweenFields",assigned,this.value.existingBetweenFields);
+				this.value.existingBetweenFields = this.loadObjectField(($_=new JsonParser_$196(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"existingBetweenFields",assigned,this.value.existingBetweenFields);
 				break;
 			default:
 				this.errors.push(json2object_Error.UnknownVariable(field.name,this.putils.convertPosition(field.namePos)));
@@ -1024,6 +949,81 @@ class JsonParser_$180 extends json2object_reader_BaseParser {
 		super(errors,putils,errorType);
 	}
 	onIncorrectType(pos,variable) {
+		this.value = "none";
+		this.errors.push(json2object_Error.IncorrectType(variable,"formatter.config.AtLineEndPolicy",pos));
+		this.objectThrow(pos,variable);
+	}
+	loadJsonNull(pos,variable) {
+		this.value = null;
+	}
+	loadJsonString(s,pos,variable) {
+		this.value = this.loadString(s,pos,variable,["none","after","afterLast","forceAfterLast"],"none");
+	}
+}
+$hxClasses["JsonParser_180"] = JsonParser_$180;
+JsonParser_$180.__name__ = "JsonParser_180";
+JsonParser_$180.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$180.prototype, {
+	__class__: JsonParser_$180
+});
+class JsonParser_$184 extends json2object_reader_BaseParser {
+	constructor(errors,putils,errorType) {
+		if(errorType == null) {
+			errorType = 0;
+		}
+		super(errors,putils,errorType);
+	}
+	onIncorrectType(pos,variable) {
+		this.value = "none";
+		this.errors.push(json2object_Error.IncorrectType(variable,"formatter.config.RightCurlyLineEndPolicy",pos));
+		this.objectThrow(pos,variable);
+	}
+	loadJsonNull(pos,variable) {
+		this.value = null;
+	}
+	loadJsonString(s,pos,variable) {
+		this.value = this.loadString(s,pos,variable,["none","before","after","both"],"none");
+	}
+}
+$hxClasses["JsonParser_184"] = JsonParser_$184;
+JsonParser_$184.__name__ = "JsonParser_184";
+JsonParser_$184.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$184.prototype, {
+	__class__: JsonParser_$184
+});
+class JsonParser_$186 extends json2object_reader_BaseParser {
+	constructor(errors,putils,errorType) {
+		if(errorType == null) {
+			errorType = 0;
+		}
+		super(errors,putils,errorType);
+	}
+	onIncorrectType(pos,variable) {
+		this.value = "none";
+		this.errors.push(json2object_Error.IncorrectType(variable,"formatter.config.SharpLineEndPolicy",pos));
+		this.objectThrow(pos,variable);
+	}
+	loadJsonNull(pos,variable) {
+		this.value = null;
+	}
+	loadJsonString(s,pos,variable) {
+		this.value = this.loadString(s,pos,variable,["none","after"],"none");
+	}
+}
+$hxClasses["JsonParser_186"] = JsonParser_$186;
+JsonParser_$186.__name__ = "JsonParser_186";
+JsonParser_$186.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$186.prototype, {
+	__class__: JsonParser_$186
+});
+class JsonParser_$190 extends json2object_reader_BaseParser {
+	constructor(errors,putils,errorType) {
+		if(errorType == null) {
+			errorType = 0;
+		}
+		super(errors,putils,errorType);
+	}
+	onIncorrectType(pos,variable) {
 		this.errors.push(json2object_Error.IncorrectType(variable,"String",pos));
 		super.onIncorrectType(pos,variable);
 	}
@@ -1034,13 +1034,13 @@ class JsonParser_$180 extends json2object_reader_BaseParser {
 		this.value = s;
 	}
 }
-$hxClasses["JsonParser_180"] = JsonParser_$180;
-JsonParser_$180.__name__ = "JsonParser_180";
-JsonParser_$180.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$180.prototype, {
-	__class__: JsonParser_$180
+$hxClasses["JsonParser_190"] = JsonParser_$190;
+JsonParser_$190.__name__ = "JsonParser_190";
+JsonParser_$190.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$190.prototype, {
+	__class__: JsonParser_$190
 });
-class JsonParser_$182 extends json2object_reader_BaseParser {
+class JsonParser_$192 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
 		if(errorType == null) {
 			errorType = 0;
@@ -1059,13 +1059,13 @@ class JsonParser_$182 extends json2object_reader_BaseParser {
 		this.value = this.loadString(s,pos,variable,["fixedZero","fixedZeroIncrease","fixedZeroIncreaseBlocks","aligned","alignedNestedIncrease","alignedIncrease","alignedDecrease"],"fixedZero");
 	}
 }
-$hxClasses["JsonParser_182"] = JsonParser_$182;
-JsonParser_$182.__name__ = "JsonParser_182";
-JsonParser_$182.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$182.prototype, {
-	__class__: JsonParser_$182
+$hxClasses["JsonParser_192"] = JsonParser_$192;
+JsonParser_$192.__name__ = "JsonParser_192";
+JsonParser_$192.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$192.prototype, {
+	__class__: JsonParser_$192
 });
-class JsonParser_$184 extends json2object_reader_BaseParser {
+class JsonParser_$194 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
 		if(errorType == null) {
 			errorType = 0;
@@ -1084,13 +1084,13 @@ class JsonParser_$184 extends json2object_reader_BaseParser {
 		this.value = this.loadString(s,pos,variable,["all","firstLevelPackage","secondLevelPackage","thirdLevelPackage","fourthLevelPackage","fifthLevelPackage","fullPackage"],"all");
 	}
 }
-$hxClasses["JsonParser_184"] = JsonParser_$184;
-JsonParser_$184.__name__ = "JsonParser_184";
-JsonParser_$184.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$184.prototype, {
-	__class__: JsonParser_$184
+$hxClasses["JsonParser_194"] = JsonParser_$194;
+JsonParser_$194.__name__ = "JsonParser_194";
+JsonParser_$194.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$194.prototype, {
+	__class__: JsonParser_$194
 });
-class JsonParser_$186 extends json2object_reader_BaseParser {
+class JsonParser_$196 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
 		if(errorType == null) {
 			errorType = 0;
@@ -1109,13 +1109,13 @@ class JsonParser_$186 extends json2object_reader_BaseParser {
 		this.value = this.loadString(s,pos,variable,["keep","remove"],"keep");
 	}
 }
-$hxClasses["JsonParser_186"] = JsonParser_$186;
-JsonParser_$186.__name__ = "JsonParser_186";
-JsonParser_$186.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$186.prototype, {
-	__class__: JsonParser_$186
+$hxClasses["JsonParser_196"] = JsonParser_$196;
+JsonParser_$196.__name__ = "JsonParser_196";
+JsonParser_$196.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$196.prototype, {
+	__class__: JsonParser_$196
 });
-class JsonParser_$190 extends json2object_reader_BaseParser {
+class JsonParser_$200 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
 		if(errorType == null) {
 			errorType = 0;
@@ -1134,36 +1134,11 @@ class JsonParser_$190 extends json2object_reader_BaseParser {
 		this.value = this.loadString(s,pos,variable,["ignore","none","one"],"ignore");
 	}
 }
-$hxClasses["JsonParser_190"] = JsonParser_$190;
-JsonParser_$190.__name__ = "JsonParser_190";
-JsonParser_$190.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$190.prototype, {
-	__class__: JsonParser_$190
-});
-class JsonParser_$206 extends json2object_reader_BaseParser {
-	constructor(errors,putils,errorType) {
-		if(errorType == null) {
-			errorType = 0;
-		}
-		super(errors,putils,errorType);
-	}
-	onIncorrectType(pos,variable) {
-		this.value = "keep";
-		this.errors.push(json2object_Error.IncorrectType(variable,"formatter.config.LineCommentEmptyLinePolicy",pos));
-		this.objectThrow(pos,variable);
-	}
-	loadJsonNull(pos,variable) {
-		this.value = null;
-	}
-	loadJsonString(s,pos,variable) {
-		this.value = this.loadString(s,pos,variable,["keep","one","none"],"keep");
-	}
-}
-$hxClasses["JsonParser_206"] = JsonParser_$206;
-JsonParser_$206.__name__ = "JsonParser_206";
-JsonParser_$206.__super__ = json2object_reader_BaseParser;
-Object.assign(JsonParser_$206.prototype, {
-	__class__: JsonParser_$206
+$hxClasses["JsonParser_200"] = JsonParser_$200;
+JsonParser_$200.__name__ = "JsonParser_200";
+JsonParser_$200.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$200.prototype, {
+	__class__: JsonParser_$200
 });
 class JsonParser_$21 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
@@ -1204,7 +1179,7 @@ class JsonParser_$21 extends json2object_reader_BaseParser {
 				this.value.endType = this.loadObjectField(($_=new JsonParser_$96(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"endType",assigned,this.value.endType);
 				break;
 			case "existingBetweenFields":
-				this.value.existingBetweenFields = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"existingBetweenFields",assigned,this.value.existingBetweenFields);
+				this.value.existingBetweenFields = this.loadObjectField(($_=new JsonParser_$196(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"existingBetweenFields",assigned,this.value.existingBetweenFields);
 				break;
 			default:
 				this.errors.push(json2object_Error.UnknownVariable(field.name,this.putils.convertPosition(field.namePos)));
@@ -1221,6 +1196,31 @@ JsonParser_$21.__name__ = "JsonParser_21";
 JsonParser_$21.__super__ = json2object_reader_BaseParser;
 Object.assign(JsonParser_$21.prototype, {
 	__class__: JsonParser_$21
+});
+class JsonParser_$216 extends json2object_reader_BaseParser {
+	constructor(errors,putils,errorType) {
+		if(errorType == null) {
+			errorType = 0;
+		}
+		super(errors,putils,errorType);
+	}
+	onIncorrectType(pos,variable) {
+		this.value = "keep";
+		this.errors.push(json2object_Error.IncorrectType(variable,"formatter.config.LineCommentEmptyLinePolicy",pos));
+		this.objectThrow(pos,variable);
+	}
+	loadJsonNull(pos,variable) {
+		this.value = null;
+	}
+	loadJsonString(s,pos,variable) {
+		this.value = this.loadString(s,pos,variable,["keep","one","none"],"keep");
+	}
+}
+$hxClasses["JsonParser_216"] = JsonParser_$216;
+JsonParser_$216.__name__ = "JsonParser_216";
+JsonParser_$216.__super__ = json2object_reader_BaseParser;
+Object.assign(JsonParser_$216.prototype, {
+	__class__: JsonParser_$216
 });
 class JsonParser_$24 extends json2object_reader_BaseParser {
 	constructor(errors,putils,errorType) {
@@ -1255,7 +1255,7 @@ class JsonParser_$24 extends json2object_reader_BaseParser {
 				this.value.betweenImports = this.loadObjectField(($_=new JsonParser_$96(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"betweenImports",assigned,this.value.betweenImports);
 				break;
 			case "betweenImportsLevel":
-				this.value.betweenImportsLevel = this.loadObjectField(($_=new JsonParser_$184(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"betweenImportsLevel",assigned,this.value.betweenImportsLevel);
+				this.value.betweenImportsLevel = this.loadObjectField(($_=new JsonParser_$194(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"betweenImportsLevel",assigned,this.value.betweenImportsLevel);
 				break;
 			default:
 				this.errors.push(json2object_Error.UnknownVariable(field.name,this.putils.convertPosition(field.namePos)));
@@ -1297,10 +1297,10 @@ class JsonParser_$33 extends json2object_reader_BaseParser {
 			++_g;
 			switch(field.name) {
 			case "character":
-				this.value.character = this.loadObjectField(($_=new JsonParser_$180(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"character",assigned,this.value.character);
+				this.value.character = this.loadObjectField(($_=new JsonParser_$190(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"character",assigned,this.value.character);
 				break;
 			case "conditionalPolicy":
-				this.value.conditionalPolicy = this.loadObjectField(($_=new JsonParser_$182(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"conditionalPolicy",assigned,this.value.conditionalPolicy);
+				this.value.conditionalPolicy = this.loadObjectField(($_=new JsonParser_$192(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"conditionalPolicy",assigned,this.value.conditionalPolicy);
 				break;
 			case "indentCaseLabels":
 				this.value.indentCaseLabels = this.loadObjectField(($_=new JsonParser_$62(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"indentCaseLabels",assigned,this.value.indentCaseLabels);
@@ -1357,46 +1357,46 @@ class JsonParser_$36 extends json2object_reader_BaseParser {
 			++_g;
 			switch(field.name) {
 			case "anonFunctionCurly":
-				this.value.anonFunctionCurly = this.loadObjectField(($_=new JsonParser_$158(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"anonFunctionCurly",assigned,this.value.anonFunctionCurly);
+				this.value.anonFunctionCurly = this.loadObjectField(($_=new JsonParser_$168(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"anonFunctionCurly",assigned,this.value.anonFunctionCurly);
 				break;
 			case "anonTypeCurly":
-				this.value.anonTypeCurly = this.loadObjectField(($_=new JsonParser_$158(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"anonTypeCurly",assigned,this.value.anonTypeCurly);
+				this.value.anonTypeCurly = this.loadObjectField(($_=new JsonParser_$168(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"anonTypeCurly",assigned,this.value.anonTypeCurly);
 				break;
 			case "blockCurly":
-				this.value.blockCurly = this.loadObjectField(($_=new JsonParser_$158(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"blockCurly",assigned,this.value.blockCurly);
+				this.value.blockCurly = this.loadObjectField(($_=new JsonParser_$168(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"blockCurly",assigned,this.value.blockCurly);
 				break;
 			case "caseColon":
-				this.value.caseColon = this.loadObjectField(($_=new JsonParser_$164(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"caseColon",assigned,this.value.caseColon);
+				this.value.caseColon = this.loadObjectField(($_=new JsonParser_$174(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"caseColon",assigned,this.value.caseColon);
 				break;
 			case "emptyCurly":
-				this.value.emptyCurly = this.loadObjectField(($_=new JsonParser_$166(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"emptyCurly",assigned,this.value.emptyCurly);
+				this.value.emptyCurly = this.loadObjectField(($_=new JsonParser_$176(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"emptyCurly",assigned,this.value.emptyCurly);
 				break;
 			case "leftCurly":
-				this.value.leftCurly = this.loadObjectField(($_=new JsonParser_$168(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"leftCurly",assigned,this.value.leftCurly);
+				this.value.leftCurly = this.loadObjectField(($_=new JsonParser_$178(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"leftCurly",assigned,this.value.leftCurly);
 				break;
 			case "metadataFunction":
-				this.value.metadataFunction = this.loadObjectField(($_=new JsonParser_$170(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"metadataFunction",assigned,this.value.metadataFunction);
+				this.value.metadataFunction = this.loadObjectField(($_=new JsonParser_$180(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"metadataFunction",assigned,this.value.metadataFunction);
 				break;
 			case "metadataOther":
-				this.value.metadataOther = this.loadObjectField(($_=new JsonParser_$170(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"metadataOther",assigned,this.value.metadataOther);
+				this.value.metadataOther = this.loadObjectField(($_=new JsonParser_$180(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"metadataOther",assigned,this.value.metadataOther);
 				break;
 			case "metadataType":
-				this.value.metadataType = this.loadObjectField(($_=new JsonParser_$170(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"metadataType",assigned,this.value.metadataType);
+				this.value.metadataType = this.loadObjectField(($_=new JsonParser_$180(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"metadataType",assigned,this.value.metadataType);
 				break;
 			case "metadataVar":
-				this.value.metadataVar = this.loadObjectField(($_=new JsonParser_$170(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"metadataVar",assigned,this.value.metadataVar);
+				this.value.metadataVar = this.loadObjectField(($_=new JsonParser_$180(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"metadataVar",assigned,this.value.metadataVar);
 				break;
 			case "objectLiteralCurly":
-				this.value.objectLiteralCurly = this.loadObjectField(($_=new JsonParser_$158(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"objectLiteralCurly",assigned,this.value.objectLiteralCurly);
+				this.value.objectLiteralCurly = this.loadObjectField(($_=new JsonParser_$168(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"objectLiteralCurly",assigned,this.value.objectLiteralCurly);
 				break;
 			case "rightCurly":
-				this.value.rightCurly = this.loadObjectField(($_=new JsonParser_$174(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"rightCurly",assigned,this.value.rightCurly);
+				this.value.rightCurly = this.loadObjectField(($_=new JsonParser_$184(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"rightCurly",assigned,this.value.rightCurly);
 				break;
 			case "sharp":
-				this.value.sharp = this.loadObjectField(($_=new JsonParser_$176(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"sharp",assigned,this.value.sharp);
+				this.value.sharp = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"sharp",assigned,this.value.sharp);
 				break;
 			case "typedefCurly":
-				this.value.typedefCurly = this.loadObjectField(($_=new JsonParser_$158(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"typedefCurly",assigned,this.value.typedefCurly);
+				this.value.typedefCurly = this.loadObjectField(($_=new JsonParser_$168(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"typedefCurly",assigned,this.value.typedefCurly);
 				break;
 			default:
 				this.errors.push(json2object_Error.UnknownVariable(field.name,this.putils.convertPosition(field.namePos)));
@@ -1438,70 +1438,70 @@ class JsonParser_$39 extends json2object_reader_BaseParser {
 			++_g;
 			switch(field.name) {
 			case "anonFunctionBody":
-				this.value.anonFunctionBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"anonFunctionBody",assigned,this.value.anonFunctionBody);
+				this.value.anonFunctionBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"anonFunctionBody",assigned,this.value.anonFunctionBody);
 				break;
 			case "caseBody":
-				this.value.caseBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"caseBody",assigned,this.value.caseBody);
+				this.value.caseBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"caseBody",assigned,this.value.caseBody);
 				break;
 			case "catchBody":
-				this.value.catchBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"catchBody",assigned,this.value.catchBody);
+				this.value.catchBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"catchBody",assigned,this.value.catchBody);
 				break;
 			case "comprehensionFor":
-				this.value.comprehensionFor = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"comprehensionFor",assigned,this.value.comprehensionFor);
+				this.value.comprehensionFor = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"comprehensionFor",assigned,this.value.comprehensionFor);
 				break;
 			case "doWhile":
-				this.value.doWhile = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"doWhile",assigned,this.value.doWhile);
+				this.value.doWhile = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"doWhile",assigned,this.value.doWhile);
 				break;
 			case "doWhileBody":
-				this.value.doWhileBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"doWhileBody",assigned,this.value.doWhileBody);
+				this.value.doWhileBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"doWhileBody",assigned,this.value.doWhileBody);
 				break;
 			case "elseBody":
-				this.value.elseBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"elseBody",assigned,this.value.elseBody);
+				this.value.elseBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"elseBody",assigned,this.value.elseBody);
 				break;
 			case "elseIf":
-				this.value.elseIf = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"elseIf",assigned,this.value.elseIf);
+				this.value.elseIf = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"elseIf",assigned,this.value.elseIf);
 				break;
 			case "expressionCase":
-				this.value.expressionCase = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"expressionCase",assigned,this.value.expressionCase);
+				this.value.expressionCase = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"expressionCase",assigned,this.value.expressionCase);
 				break;
 			case "expressionIf":
-				this.value.expressionIf = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"expressionIf",assigned,this.value.expressionIf);
+				this.value.expressionIf = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"expressionIf",assigned,this.value.expressionIf);
 				break;
 			case "expressionIfWithBlocks":
 				this.value.expressionIfWithBlocks = this.loadObjectField(($_=new JsonParser_$62(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"expressionIfWithBlocks",assigned,this.value.expressionIfWithBlocks);
 				break;
 			case "expressionTry":
-				this.value.expressionTry = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"expressionTry",assigned,this.value.expressionTry);
+				this.value.expressionTry = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"expressionTry",assigned,this.value.expressionTry);
 				break;
 			case "forBody":
-				this.value.forBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"forBody",assigned,this.value.forBody);
+				this.value.forBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"forBody",assigned,this.value.forBody);
 				break;
 			case "functionBody":
-				this.value.functionBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"functionBody",assigned,this.value.functionBody);
+				this.value.functionBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"functionBody",assigned,this.value.functionBody);
 				break;
 			case "ifBody":
-				this.value.ifBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"ifBody",assigned,this.value.ifBody);
+				this.value.ifBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"ifBody",assigned,this.value.ifBody);
 				break;
 			case "ifElse":
-				this.value.ifElse = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"ifElse",assigned,this.value.ifElse);
+				this.value.ifElse = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"ifElse",assigned,this.value.ifElse);
 				break;
 			case "returnBody":
-				this.value.returnBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"returnBody",assigned,this.value.returnBody);
+				this.value.returnBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"returnBody",assigned,this.value.returnBody);
 				break;
 			case "returnBodySingleLine":
-				this.value.returnBodySingleLine = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"returnBodySingleLine",assigned,this.value.returnBodySingleLine);
+				this.value.returnBodySingleLine = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"returnBodySingleLine",assigned,this.value.returnBodySingleLine);
 				break;
 			case "tryBody":
-				this.value.tryBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"tryBody",assigned,this.value.tryBody);
+				this.value.tryBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"tryBody",assigned,this.value.tryBody);
 				break;
 			case "tryCatch":
-				this.value.tryCatch = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"tryCatch",assigned,this.value.tryCatch);
+				this.value.tryCatch = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"tryCatch",assigned,this.value.tryCatch);
 				break;
 			case "untypedBody":
-				this.value.untypedBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"untypedBody",assigned,this.value.untypedBody);
+				this.value.untypedBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"untypedBody",assigned,this.value.untypedBody);
 				break;
 			case "whileBody":
-				this.value.whileBody = this.loadObjectField(($_=new JsonParser_$155(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"whileBody",assigned,this.value.whileBody);
+				this.value.whileBody = this.loadObjectField(($_=new JsonParser_$165(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"whileBody",assigned,this.value.whileBody);
 				break;
 			default:
 				this.errors.push(json2object_Error.UnknownVariable(field.name,this.putils.convertPosition(field.namePos)));
@@ -1546,34 +1546,34 @@ class JsonParser_$4 extends json2object_reader_BaseParser {
 				this.value.abstractEmptyLines = this.loadObjectField(($_=new JsonParser_$7(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"abstractEmptyLines",assigned,this.value.abstractEmptyLines);
 				break;
 			case "afterBlocks":
-				this.value.afterBlocks = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterBlocks",assigned,this.value.afterBlocks);
+				this.value.afterBlocks = this.loadObjectField(($_=new JsonParser_$196(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterBlocks",assigned,this.value.afterBlocks);
 				break;
 			case "afterFieldsWithDocComments":
-				this.value.afterFieldsWithDocComments = this.loadObjectField(($_=new JsonParser_$190(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterFieldsWithDocComments",assigned,this.value.afterFieldsWithDocComments);
+				this.value.afterFieldsWithDocComments = this.loadObjectField(($_=new JsonParser_$200(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterFieldsWithDocComments",assigned,this.value.afterFieldsWithDocComments);
 				break;
 			case "afterFileHeaderComment":
 				this.value.afterFileHeaderComment = this.loadObjectField(($_=new JsonParser_$96(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterFileHeaderComment",assigned,this.value.afterFileHeaderComment);
 				break;
 			case "afterLeftCurly":
-				this.value.afterLeftCurly = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterLeftCurly",assigned,this.value.afterLeftCurly);
+				this.value.afterLeftCurly = this.loadObjectField(($_=new JsonParser_$196(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterLeftCurly",assigned,this.value.afterLeftCurly);
 				break;
 			case "afterPackage":
 				this.value.afterPackage = this.loadObjectField(($_=new JsonParser_$96(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterPackage",assigned,this.value.afterPackage);
 				break;
 			case "afterReturn":
-				this.value.afterReturn = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterReturn",assigned,this.value.afterReturn);
+				this.value.afterReturn = this.loadObjectField(($_=new JsonParser_$196(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"afterReturn",assigned,this.value.afterReturn);
 				break;
 			case "beforeBlocks":
-				this.value.beforeBlocks = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"beforeBlocks",assigned,this.value.beforeBlocks);
+				this.value.beforeBlocks = this.loadObjectField(($_=new JsonParser_$196(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"beforeBlocks",assigned,this.value.beforeBlocks);
 				break;
 			case "beforeDocCommentEmptyLines":
-				this.value.beforeDocCommentEmptyLines = this.loadObjectField(($_=new JsonParser_$190(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"beforeDocCommentEmptyLines",assigned,this.value.beforeDocCommentEmptyLines);
+				this.value.beforeDocCommentEmptyLines = this.loadObjectField(($_=new JsonParser_$200(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"beforeDocCommentEmptyLines",assigned,this.value.beforeDocCommentEmptyLines);
 				break;
 			case "beforePackage":
 				this.value.beforePackage = this.loadObjectField(($_=new JsonParser_$96(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"beforePackage",assigned,this.value.beforePackage);
 				break;
 			case "beforeRightCurly":
-				this.value.beforeRightCurly = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"beforeRightCurly",assigned,this.value.beforeRightCurly);
+				this.value.beforeRightCurly = this.loadObjectField(($_=new JsonParser_$196(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"beforeRightCurly",assigned,this.value.beforeRightCurly);
 				break;
 			case "betweenMultilineComments":
 				this.value.betweenMultilineComments = this.loadObjectField(($_=new JsonParser_$96(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"betweenMultilineComments",assigned,this.value.betweenMultilineComments);
@@ -1609,10 +1609,10 @@ class JsonParser_$4 extends json2object_reader_BaseParser {
 				this.value.interfaceEmptyLines = this.loadObjectField(($_=new JsonParser_$21(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"interfaceEmptyLines",assigned,this.value.interfaceEmptyLines);
 				break;
 			case "lineCommentsBetweenFunctions":
-				this.value.lineCommentsBetweenFunctions = this.loadObjectField(($_=new JsonParser_$206(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"lineCommentsBetweenFunctions",assigned,this.value.lineCommentsBetweenFunctions);
+				this.value.lineCommentsBetweenFunctions = this.loadObjectField(($_=new JsonParser_$216(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"lineCommentsBetweenFunctions",assigned,this.value.lineCommentsBetweenFunctions);
 				break;
 			case "lineCommentsBetweenTypes":
-				this.value.lineCommentsBetweenTypes = this.loadObjectField(($_=new JsonParser_$206(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"lineCommentsBetweenTypes",assigned,this.value.lineCommentsBetweenTypes);
+				this.value.lineCommentsBetweenTypes = this.loadObjectField(($_=new JsonParser_$216(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"lineCommentsBetweenTypes",assigned,this.value.lineCommentsBetweenTypes);
 				break;
 			case "macroClassEmptyLines":
 				this.value.macroClassEmptyLines = this.loadObjectField(($_=new JsonParser_$7(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"macroClassEmptyLines",assigned,this.value.macroClassEmptyLines);
@@ -1833,7 +1833,7 @@ class JsonParser_$48 extends json2object_reader_BaseParser {
 		super(errors,putils,errorType);
 	}
 	onIncorrectType(pos,variable) {
-		this.errors.push(json2object_Error.IncorrectType(variable,"{ ?metadataParens : Null<formatter.config.OpenClosePolicy>, ?funcParamParens : Null<formatter.config.OpenClosePolicy>, ?forLoopParens : Null<formatter.config.OpenClosePolicy>, ?expressionParens : Null<formatter.config.OpenClosePolicy>, ?conditionParens : Null<formatter.config.OpenClosePolicy>, ?callParens : Null<formatter.config.OpenClosePolicy>, ?anonFuncParamParens : Null<formatter.config.OpenClosePolicy> }",pos));
+		this.errors.push(json2object_Error.IncorrectType(variable,"{ ?whileConditionParens : Null<formatter.config.OpenClosePolicy>, ?switchConditionParens : Null<formatter.config.OpenClosePolicy>, ?sharpConditionParens : Null<formatter.config.OpenClosePolicy>, ?metadataParens : Null<formatter.config.OpenClosePolicy>, ?ifConditionParens : Null<formatter.config.OpenClosePolicy>, ?funcParamParens : Null<formatter.config.OpenClosePolicy>, ?forLoopParens : Null<formatter.config.OpenClosePolicy>, ?expressionParens : Null<formatter.config.OpenClosePolicy>, ?conditionParens : Null<formatter.config.OpenClosePolicy>, ?catchParens : Null<formatter.config.OpenClosePolicy>, ?callParens : Null<formatter.config.OpenClosePolicy>, ?anonFuncParamParens : Null<formatter.config.OpenClosePolicy> }",pos));
 		super.onIncorrectType(pos,variable);
 	}
 	loadJsonNull(pos,variable) {
@@ -1841,7 +1841,7 @@ class JsonParser_$48 extends json2object_reader_BaseParser {
 	}
 	loadJsonObject(o,pos,variable) {
 		var assigned = new haxe_ds_StringMap();
-		this.objectSetupAssign(assigned,["anonFuncParamParens","callParens","conditionParens","expressionParens","forLoopParens","funcParamParens","metadataParens"],[true,true,true,true,true,true,true]);
+		this.objectSetupAssign(assigned,["anonFuncParamParens","callParens","catchParens","conditionParens","expressionParens","forLoopParens","funcParamParens","ifConditionParens","metadataParens","sharpConditionParens","switchConditionParens","whileConditionParens"],[true,true,true,true,true,true,true,true,true,true,true,true]);
 		this.value = this.getAuto();
 		var _g = 0;
 		while(_g < o.length) {
@@ -1853,6 +1853,9 @@ class JsonParser_$48 extends json2object_reader_BaseParser {
 				break;
 			case "callParens":
 				this.value.callParens = this.loadObjectField(($_=new JsonParser_$51(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"callParens",assigned,this.value.callParens);
+				break;
+			case "catchParens":
+				this.value.catchParens = this.loadObjectField(($_=new JsonParser_$51(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"catchParens",assigned,this.value.catchParens);
 				break;
 			case "conditionParens":
 				this.value.conditionParens = this.loadObjectField(($_=new JsonParser_$51(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"conditionParens",assigned,this.value.conditionParens);
@@ -1866,8 +1869,20 @@ class JsonParser_$48 extends json2object_reader_BaseParser {
 			case "funcParamParens":
 				this.value.funcParamParens = this.loadObjectField(($_=new JsonParser_$51(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"funcParamParens",assigned,this.value.funcParamParens);
 				break;
+			case "ifConditionParens":
+				this.value.ifConditionParens = this.loadObjectField(($_=new JsonParser_$51(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"ifConditionParens",assigned,this.value.ifConditionParens);
+				break;
 			case "metadataParens":
 				this.value.metadataParens = this.loadObjectField(($_=new JsonParser_$51(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"metadataParens",assigned,this.value.metadataParens);
+				break;
+			case "sharpConditionParens":
+				this.value.sharpConditionParens = this.loadObjectField(($_=new JsonParser_$51(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"sharpConditionParens",assigned,this.value.sharpConditionParens);
+				break;
+			case "switchConditionParens":
+				this.value.switchConditionParens = this.loadObjectField(($_=new JsonParser_$51(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"switchConditionParens",assigned,this.value.switchConditionParens);
+				break;
+			case "whileConditionParens":
+				this.value.whileConditionParens = this.loadObjectField(($_=new JsonParser_$51(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"whileConditionParens",assigned,this.value.whileConditionParens);
 				break;
 			default:
 				this.errors.push(json2object_Error.UnknownVariable(field.name,this.putils.convertPosition(field.namePos)));
@@ -1880,7 +1895,7 @@ class JsonParser_$48 extends json2object_reader_BaseParser {
 		var tmp1 = new JsonParser_$51([],this.putils,0).getAuto();
 		var tmp2 = new JsonParser_$51([],this.putils,0).getAuto();
 		var tmp3 = new JsonParser_$51([],this.putils,0).getAuto();
-		return { anonFuncParamParens : tmp, callParens : tmp1, conditionParens : { openingPolicy : "noneAfter", closingPolicy : "onlyAfter", removeInnerWhenEmpty : true}, expressionParens : { openingPolicy : "noneAfter", closingPolicy : "onlyAfter", removeInnerWhenEmpty : true}, forLoopParens : { openingPolicy : "noneAfter", closingPolicy : "onlyAfter", removeInnerWhenEmpty : true}, funcParamParens : tmp2, metadataParens : tmp3};
+		return { anonFuncParamParens : tmp, callParens : tmp1, catchParens : null, conditionParens : { openingPolicy : "noneAfter", closingPolicy : "onlyAfter", removeInnerWhenEmpty : true}, expressionParens : { openingPolicy : "noneAfter", closingPolicy : "onlyAfter", removeInnerWhenEmpty : true}, forLoopParens : { openingPolicy : "noneAfter", closingPolicy : "onlyAfter", removeInnerWhenEmpty : true}, funcParamParens : tmp2, ifConditionParens : null, metadataParens : tmp3, sharpConditionParens : null, switchConditionParens : null, whileConditionParens : null};
 	}
 }
 $hxClasses["JsonParser_48"] = JsonParser_$48;
@@ -2129,7 +2144,7 @@ class JsonParser_$7 extends json2object_reader_BaseParser {
 				this.value.endType = this.loadObjectField(($_=new JsonParser_$96(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"endType",assigned,this.value.endType);
 				break;
 			case "existingBetweenFields":
-				this.value.existingBetweenFields = this.loadObjectField(($_=new JsonParser_$186(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"existingBetweenFields",assigned,this.value.existingBetweenFields);
+				this.value.existingBetweenFields = this.loadObjectField(($_=new JsonParser_$196(this.errors,this.putils,1),$bind($_,$_.loadJson)),field,"existingBetweenFields",assigned,this.value.existingBetweenFields);
 				break;
 			default:
 				this.errors.push(json2object_Error.UnknownVariable(field.name,this.putils.convertPosition(field.namePos)));
@@ -2987,6 +3002,12 @@ class codesamples_WhitespaceSamples extends codesamples_SampleBase {
 	constructor() {
 		super();
 	}
+	conditional_parens_detailed(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"conditional.parens.detailed","The following whitespace setting structures were added in version 1.11.0 (all childs of `whitespace.parenConfig`):\n\n- `ifConditionParens` - whitespace policies for `if (expr)`\n- `switchConditionParens` - whitespace policies for `switch (expr)`\n- `whileConditionParens` - whitespace policies for `while (expr)`\n- `sharpConditionParens` - whitespace policies for `#if (expr)`\n- `catchParens` - whitespace policies for `catch (expr)`\n\nThey use the same structure as `whitespace.parenConfig.conditionParens` (see [conditional parens short](#codesamples.WhitespaceSamples.conditional_parens_short))\nand allow a finer control over whitespace settings for each location.\nThe new settings default to `null` which means `conditionParens` applies to all locations.\nIt also means you only have to set values for those locations where you want formatter to behave differently.\n\nNote: Using `removeInnerWhenEmpty` is technically possible, but since code with an empty condtion expression\ndoesn't make sense and probably won't compile there isn't much use to it.","{\n\t\"whitespace\": {\n\t\t\"parenConfig\": {\n\t\t\t\"ifConditionParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t},\n\t\t\t\"switchConditionParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t},\n\t\t\t\"whileConditionParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t},\n\t\t\t\"sharpConditionParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t},\n\t\t\t\"catchParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t}\n\t\t}\n\t}\n}","","class Main {\n\tstatic function main() {\n\t\ttry {\n\t\t\t#if (haxe_ver > 4.0)\n\t\t\t#end\n\t\t\tvar v, a = 1, b = 2;\n\t\t\tswitch (a) {\n\t\t\t\tdefault:\n\t\t\t\t\tv = (a + b);\n\t\t\t}\n\t\t\tif (a) {\n\t\t\t\tv = (a + b);\n\t\t\t}\n\t\t\twhile (true) {\n\t\t\t\tv = (a + b);\n\t\t\t}\n\t\t\tdo {\n\t\t\t\tv = (a + b);\n\t\t\t} while (true);\n\t\t} catch (e:Any)\n\t}\n}\n",configFieldRegistry);
+	}
+	conditional_parens_short(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"conditional.parens.short","Whitespace policies for parens in `whitespace.parenConfig` as well as `whitespace.bracesConfig` for curyl braces\nuse a data structure that has three fields for each of their locations:\n\n- `openingPolicy` - whitespace policy for opening parens or curly\n- `closingPolicy` - whitespace policy for closing parens or curly\n- `removeInnerWhenEmpty` - true when you want to remove inner whitespace when parens / curlies are empty\n\npolicy can be one of the following (element being either an opening or a closing parens / curly):\n\n- `none` - no whitespace before or after element\n- `before` - add whitespace before element\n- `noneBefore` - never add whitespace before element\n- `onlyBefore` - only add whitespace before element\n- `after` - add whitespace after element\n- `onlyAfter` - only add whitespace after element\n- `noneAfter` - never add whitespace after element\n- `around` - add whitespace before and after element\n\nNote: whitespace policies can be overruled by code parts preceeding or following a whitespace location,\nbecause these code parts might have whitespace policies that contradict their neighbours.","{\n\t\"whitespace\": {\n\t\t\"parenConfig\": {\n\t\t\t\"conditionParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t}\n\t\t}\n\t}\n}","","class Main {\n\tstatic function main() {\n\t\ttry {\n\t\t\t#if (haxe_ver > 4.0)\n\t\t\t#end\n\t\t\tvar v, a = 1, b = 2;\n\t\t\tswitch (a) {\n\t\t\t\tdefault:\n\t\t\t\t\tv = (a + b);\n\t\t\t}\n\t\t\tif (a) {\n\t\t\t\tv = (a + b);\n\t\t\t}\n\t\t\twhile (true) {\n\t\t\t\tv = (a + b);\n\t\t\t}\n\t\t\tdo {\n\t\t\t\tv = (a + b);\n\t\t\t} while (true);\n\t\t} catch (e:Any)\n\t}\n}\n",configFieldRegistry);
+	}
 	function_parens(container,configFieldRegistry) {
 		this.buildDocSamplePage(container,"function.parens","","{\n    \"whitespace\": {\n        \"parenConfig\": {\n            \"funcParamParens\": {\n                \"openingPolicy\": \"before\",\n                \"closingPolicy\": \"none\",\n                \"removeInnerWhenEmpty\": true\n            },\n\t\t\t\"anonFuncParamParens\": {\n                \"openingPolicy\": \"none\",\n                \"closingPolicy\": \"onlyAfter\",\n                \"removeInnerWhenEmpty\": true\n\t\t\t}\n        }\n    }\n}","","class Main {\n    function new () {}\n\n\tfunction test(param1:Int,param2:Array<String>, callback:(index:Int)->String, callback2:()->String) {\n\t\tparam2.push(callback(param1));\n\t}\n}\n",configFieldRegistry);
 	}
@@ -3137,851 +3158,1433 @@ class codesamples_config_ConfigFieldRegistry {
 		} else {
 			_g.h["emptyLines.importAndUsing.beforeType"] = value18;
 		}
-		var value19 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("fixedZero" , String),js_Boot.__cast("fixedZeroIncrease" , String),js_Boot.__cast("fixedZeroIncreaseBlocks" , String),js_Boot.__cast("aligned" , String),js_Boot.__cast("alignedNestedIncrease" , String),js_Boot.__cast("alignedIncrease" , String),js_Boot.__cast("alignedDecrease" , String)]);
-		if(__map_reserved["indentation.conditionalPolicy"] != null) {
-			_g.setReserved("indentation.conditionalPolicy",value19);
+		var value19 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.enumAbstractEmptyLines.beginType"] != null) {
+			_g.setReserved("emptyLines.enumAbstractEmptyLines.beginType",value19);
 		} else {
-			_g.h["indentation.conditionalPolicy"] = value19;
+			_g.h["emptyLines.enumAbstractEmptyLines.beginType"] = value19;
 		}
-		var value20 = codesamples_config_ConfigFieldType.Text;
-		if(__map_reserved["indentation.character"] != null) {
-			_g.setReserved("indentation.character",value20);
+		var value20 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.enumAbstractEmptyLines.endType"] != null) {
+			_g.setReserved("emptyLines.enumAbstractEmptyLines.endType",value20);
 		} else {
-			_g.h["indentation.character"] = value20;
+			_g.h["emptyLines.enumAbstractEmptyLines.endType"] = value20;
 		}
 		var value21 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.enumAbstractEmptyLines.betweenVars"] != null) {
+			_g.setReserved("emptyLines.enumAbstractEmptyLines.betweenVars",value21);
+		} else {
+			_g.h["emptyLines.enumAbstractEmptyLines.betweenVars"] = value21;
+		}
+		var value22 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.enumAbstractEmptyLines.afterVars"] != null) {
+			_g.setReserved("emptyLines.enumAbstractEmptyLines.afterVars",value22);
+		} else {
+			_g.h["emptyLines.enumAbstractEmptyLines.afterVars"] = value22;
+		}
+		var value23 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.enumAbstractEmptyLines.betweenFunctions"] != null) {
+			_g.setReserved("emptyLines.enumAbstractEmptyLines.betweenFunctions",value23);
+		} else {
+			_g.h["emptyLines.enumAbstractEmptyLines.betweenFunctions"] = value23;
+		}
+		var value24 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.enumAbstractEmptyLines.existingBetweenFields"] != null) {
+			_g.setReserved("emptyLines.enumAbstractEmptyLines.existingBetweenFields",value24);
+		} else {
+			_g.h["emptyLines.enumAbstractEmptyLines.existingBetweenFields"] = value24;
+		}
+		var value25 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.beginType"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.beginType",value25);
+		} else {
+			_g.h["emptyLines.classEmptyLines.beginType"] = value25;
+		}
+		var value26 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.endType"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.endType",value26);
+		} else {
+			_g.h["emptyLines.classEmptyLines.endType"] = value26;
+		}
+		var value27 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.betweenStaticVars"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.betweenStaticVars",value27);
+		} else {
+			_g.h["emptyLines.classEmptyLines.betweenStaticVars"] = value27;
+		}
+		var value28 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.afterStaticVars"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.afterStaticVars",value28);
+		} else {
+			_g.h["emptyLines.classEmptyLines.afterStaticVars"] = value28;
+		}
+		var value29 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.afterPrivateVars"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.afterPrivateVars",value29);
+		} else {
+			_g.h["emptyLines.classEmptyLines.afterPrivateVars"] = value29;
+		}
+		var value30 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.betweenVars"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.betweenVars",value30);
+		} else {
+			_g.h["emptyLines.classEmptyLines.betweenVars"] = value30;
+		}
+		var value31 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.afterVars"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.afterVars",value31);
+		} else {
+			_g.h["emptyLines.classEmptyLines.afterVars"] = value31;
+		}
+		var value32 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.afterStaticFunctions"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.afterStaticFunctions",value32);
+		} else {
+			_g.h["emptyLines.classEmptyLines.afterStaticFunctions"] = value32;
+		}
+		var value33 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.betweenStaticFunctions"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.betweenStaticFunctions",value33);
+		} else {
+			_g.h["emptyLines.classEmptyLines.betweenStaticFunctions"] = value33;
+		}
+		var value34 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.afterPrivateFunctions"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.afterPrivateFunctions",value34);
+		} else {
+			_g.h["emptyLines.classEmptyLines.afterPrivateFunctions"] = value34;
+		}
+		var value35 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.classEmptyLines.betweenFunctions"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.betweenFunctions",value35);
+		} else {
+			_g.h["emptyLines.classEmptyLines.betweenFunctions"] = value35;
+		}
+		var value36 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.classEmptyLines.existingBetweenFields"] != null) {
+			_g.setReserved("emptyLines.classEmptyLines.existingBetweenFields",value36);
+		} else {
+			_g.h["emptyLines.classEmptyLines.existingBetweenFields"] = value36;
+		}
+		var value37 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.beginType"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.beginType",value37);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.beginType"] = value37;
+		}
+		var value38 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.endType"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.endType",value38);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.endType"] = value38;
+		}
+		var value39 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.betweenStaticVars"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.betweenStaticVars",value39);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.betweenStaticVars"] = value39;
+		}
+		var value40 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.afterStaticVars"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.afterStaticVars",value40);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.afterStaticVars"] = value40;
+		}
+		var value41 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.afterPrivateVars"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.afterPrivateVars",value41);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.afterPrivateVars"] = value41;
+		}
+		var value42 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.betweenVars"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.betweenVars",value42);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.betweenVars"] = value42;
+		}
+		var value43 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.afterVars"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.afterVars",value43);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.afterVars"] = value43;
+		}
+		var value44 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.afterStaticFunctions"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.afterStaticFunctions",value44);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.afterStaticFunctions"] = value44;
+		}
+		var value45 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.betweenStaticFunctions"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.betweenStaticFunctions",value45);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.betweenStaticFunctions"] = value45;
+		}
+		var value46 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.afterPrivateFunctions"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.afterPrivateFunctions",value46);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.afterPrivateFunctions"] = value46;
+		}
+		var value47 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.macroClassEmptyLines.betweenFunctions"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.betweenFunctions",value47);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.betweenFunctions"] = value47;
+		}
+		var value48 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.macroClassEmptyLines.existingBetweenFields"] != null) {
+			_g.setReserved("emptyLines.macroClassEmptyLines.existingBetweenFields",value48);
+		} else {
+			_g.h["emptyLines.macroClassEmptyLines.existingBetweenFields"] = value48;
+		}
+		var value49 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.beginType"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.beginType",value49);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.beginType"] = value49;
+		}
+		var value50 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.endType"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.endType",value50);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.endType"] = value50;
+		}
+		var value51 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.betweenStaticVars"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.betweenStaticVars",value51);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.betweenStaticVars"] = value51;
+		}
+		var value52 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.afterStaticVars"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.afterStaticVars",value52);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.afterStaticVars"] = value52;
+		}
+		var value53 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.afterPrivateVars"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.afterPrivateVars",value53);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.afterPrivateVars"] = value53;
+		}
+		var value54 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.betweenVars"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.betweenVars",value54);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.betweenVars"] = value54;
+		}
+		var value55 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.afterVars"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.afterVars",value55);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.afterVars"] = value55;
+		}
+		var value56 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.afterStaticFunctions"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.afterStaticFunctions",value56);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.afterStaticFunctions"] = value56;
+		}
+		var value57 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.betweenStaticFunctions"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.betweenStaticFunctions",value57);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.betweenStaticFunctions"] = value57;
+		}
+		var value58 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.afterPrivateFunctions"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.afterPrivateFunctions",value58);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.afterPrivateFunctions"] = value58;
+		}
+		var value59 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.abstractEmptyLines.betweenFunctions"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.betweenFunctions",value59);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.betweenFunctions"] = value59;
+		}
+		var value60 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.abstractEmptyLines.existingBetweenFields"] != null) {
+			_g.setReserved("emptyLines.abstractEmptyLines.existingBetweenFields",value60);
+		} else {
+			_g.h["emptyLines.abstractEmptyLines.existingBetweenFields"] = value60;
+		}
+		var value61 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.externClassEmptyLines.beginType"] != null) {
+			_g.setReserved("emptyLines.externClassEmptyLines.beginType",value61);
+		} else {
+			_g.h["emptyLines.externClassEmptyLines.beginType"] = value61;
+		}
+		var value62 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.externClassEmptyLines.endType"] != null) {
+			_g.setReserved("emptyLines.externClassEmptyLines.endType",value62);
+		} else {
+			_g.h["emptyLines.externClassEmptyLines.endType"] = value62;
+		}
+		var value63 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.externClassEmptyLines.betweenVars"] != null) {
+			_g.setReserved("emptyLines.externClassEmptyLines.betweenVars",value63);
+		} else {
+			_g.h["emptyLines.externClassEmptyLines.betweenVars"] = value63;
+		}
+		var value64 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.externClassEmptyLines.afterVars"] != null) {
+			_g.setReserved("emptyLines.externClassEmptyLines.afterVars",value64);
+		} else {
+			_g.h["emptyLines.externClassEmptyLines.afterVars"] = value64;
+		}
+		var value65 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.externClassEmptyLines.betweenFunctions"] != null) {
+			_g.setReserved("emptyLines.externClassEmptyLines.betweenFunctions",value65);
+		} else {
+			_g.h["emptyLines.externClassEmptyLines.betweenFunctions"] = value65;
+		}
+		var value66 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.externClassEmptyLines.existingBetweenFields"] != null) {
+			_g.setReserved("emptyLines.externClassEmptyLines.existingBetweenFields",value66);
+		} else {
+			_g.h["emptyLines.externClassEmptyLines.existingBetweenFields"] = value66;
+		}
+		var value67 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.interfaceEmptyLines.beginType"] != null) {
+			_g.setReserved("emptyLines.interfaceEmptyLines.beginType",value67);
+		} else {
+			_g.h["emptyLines.interfaceEmptyLines.beginType"] = value67;
+		}
+		var value68 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.interfaceEmptyLines.endType"] != null) {
+			_g.setReserved("emptyLines.interfaceEmptyLines.endType",value68);
+		} else {
+			_g.h["emptyLines.interfaceEmptyLines.endType"] = value68;
+		}
+		var value69 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.interfaceEmptyLines.betweenVars"] != null) {
+			_g.setReserved("emptyLines.interfaceEmptyLines.betweenVars",value69);
+		} else {
+			_g.h["emptyLines.interfaceEmptyLines.betweenVars"] = value69;
+		}
+		var value70 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.interfaceEmptyLines.afterVars"] != null) {
+			_g.setReserved("emptyLines.interfaceEmptyLines.afterVars",value70);
+		} else {
+			_g.h["emptyLines.interfaceEmptyLines.afterVars"] = value70;
+		}
+		var value71 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.interfaceEmptyLines.betweenFunctions"] != null) {
+			_g.setReserved("emptyLines.interfaceEmptyLines.betweenFunctions",value71);
+		} else {
+			_g.h["emptyLines.interfaceEmptyLines.betweenFunctions"] = value71;
+		}
+		var value72 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.interfaceEmptyLines.existingBetweenFields"] != null) {
+			_g.setReserved("emptyLines.interfaceEmptyLines.existingBetweenFields",value72);
+		} else {
+			_g.h["emptyLines.interfaceEmptyLines.existingBetweenFields"] = value72;
+		}
+		var value73 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.enumEmptyLines.beginType"] != null) {
+			_g.setReserved("emptyLines.enumEmptyLines.beginType",value73);
+		} else {
+			_g.h["emptyLines.enumEmptyLines.beginType"] = value73;
+		}
+		var value74 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.enumEmptyLines.endType"] != null) {
+			_g.setReserved("emptyLines.enumEmptyLines.endType",value74);
+		} else {
+			_g.h["emptyLines.enumEmptyLines.endType"] = value74;
+		}
+		var value75 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.enumEmptyLines.betweenFields"] != null) {
+			_g.setReserved("emptyLines.enumEmptyLines.betweenFields",value75);
+		} else {
+			_g.h["emptyLines.enumEmptyLines.betweenFields"] = value75;
+		}
+		var value76 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.enumEmptyLines.existingBetweenFields"] != null) {
+			_g.setReserved("emptyLines.enumEmptyLines.existingBetweenFields",value76);
+		} else {
+			_g.h["emptyLines.enumEmptyLines.existingBetweenFields"] = value76;
+		}
+		var value77 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.typedefEmptyLines.beginType"] != null) {
+			_g.setReserved("emptyLines.typedefEmptyLines.beginType",value77);
+		} else {
+			_g.h["emptyLines.typedefEmptyLines.beginType"] = value77;
+		}
+		var value78 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.typedefEmptyLines.endType"] != null) {
+			_g.setReserved("emptyLines.typedefEmptyLines.endType",value78);
+		} else {
+			_g.h["emptyLines.typedefEmptyLines.endType"] = value78;
+		}
+		var value79 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.typedefEmptyLines.betweenFields"] != null) {
+			_g.setReserved("emptyLines.typedefEmptyLines.betweenFields",value79);
+		} else {
+			_g.h["emptyLines.typedefEmptyLines.betweenFields"] = value79;
+		}
+		var value80 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("keep" , String),js_Boot.__cast("remove" , String)]);
+		if(__map_reserved["emptyLines.typedefEmptyLines.existingBetweenFields"] != null) {
+			_g.setReserved("emptyLines.typedefEmptyLines.existingBetweenFields",value80);
+		} else {
+			_g.h["emptyLines.typedefEmptyLines.existingBetweenFields"] = value80;
+		}
+		var value81 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.conditionalsEmptyLines.afterIf"] != null) {
+			_g.setReserved("emptyLines.conditionalsEmptyLines.afterIf",value81);
+		} else {
+			_g.h["emptyLines.conditionalsEmptyLines.afterIf"] = value81;
+		}
+		var value82 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.conditionalsEmptyLines.beforeElse"] != null) {
+			_g.setReserved("emptyLines.conditionalsEmptyLines.beforeElse",value82);
+		} else {
+			_g.h["emptyLines.conditionalsEmptyLines.beforeElse"] = value82;
+		}
+		var value83 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.conditionalsEmptyLines.afterElse"] != null) {
+			_g.setReserved("emptyLines.conditionalsEmptyLines.afterElse",value83);
+		} else {
+			_g.h["emptyLines.conditionalsEmptyLines.afterElse"] = value83;
+		}
+		var value84 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.conditionalsEmptyLines.beforeEnd"] != null) {
+			_g.setReserved("emptyLines.conditionalsEmptyLines.beforeEnd",value84);
+		} else {
+			_g.h["emptyLines.conditionalsEmptyLines.beforeEnd"] = value84;
+		}
+		var value85 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.conditionalsEmptyLines.beforeError"] != null) {
+			_g.setReserved("emptyLines.conditionalsEmptyLines.beforeError",value85);
+		} else {
+			_g.h["emptyLines.conditionalsEmptyLines.beforeError"] = value85;
+		}
+		var value86 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["emptyLines.conditionalsEmptyLines.afterError"] != null) {
+			_g.setReserved("emptyLines.conditionalsEmptyLines.afterError",value86);
+		} else {
+			_g.h["emptyLines.conditionalsEmptyLines.afterError"] = value86;
+		}
+		var value87 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("fixedZero" , String),js_Boot.__cast("fixedZeroIncrease" , String),js_Boot.__cast("fixedZeroIncreaseBlocks" , String),js_Boot.__cast("aligned" , String),js_Boot.__cast("alignedNestedIncrease" , String),js_Boot.__cast("alignedIncrease" , String),js_Boot.__cast("alignedDecrease" , String)]);
+		if(__map_reserved["indentation.conditionalPolicy"] != null) {
+			_g.setReserved("indentation.conditionalPolicy",value87);
+		} else {
+			_g.h["indentation.conditionalPolicy"] = value87;
+		}
+		var value88 = codesamples_config_ConfigFieldType.Text;
+		if(__map_reserved["indentation.character"] != null) {
+			_g.setReserved("indentation.character",value88);
+		} else {
+			_g.h["indentation.character"] = value88;
+		}
+		var value89 = codesamples_config_ConfigFieldType.Number;
 		if(__map_reserved["indentation.tabWidth"] != null) {
-			_g.setReserved("indentation.tabWidth",value21);
+			_g.setReserved("indentation.tabWidth",value89);
 		} else {
-			_g.h["indentation.tabWidth"] = value21;
+			_g.h["indentation.tabWidth"] = value89;
 		}
-		var value22 = codesamples_config_ConfigFieldType.Bool;
+		var value90 = codesamples_config_ConfigFieldType.Bool;
 		if(__map_reserved["indentation.trailingWhitespace"] != null) {
-			_g.setReserved("indentation.trailingWhitespace",value22);
+			_g.setReserved("indentation.trailingWhitespace",value90);
 		} else {
-			_g.h["indentation.trailingWhitespace"] = value22;
-		}
-		var value23 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["indentation.indentObjectLiteral"] != null) {
-			_g.setReserved("indentation.indentObjectLiteral",value23);
-		} else {
-			_g.h["indentation.indentObjectLiteral"] = value23;
-		}
-		var value24 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["indentation.indentComplexValueExpressions"] != null) {
-			_g.setReserved("indentation.indentComplexValueExpressions",value24);
-		} else {
-			_g.h["indentation.indentComplexValueExpressions"] = value24;
-		}
-		var value25 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["indentation.indentCaseLabels"] != null) {
-			_g.setReserved("indentation.indentCaseLabels",value25);
-		} else {
-			_g.h["indentation.indentCaseLabels"] = value25;
-		}
-		var value26 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.leftCurly"] != null) {
-			_g.setReserved("lineEnds.leftCurly",value26);
-		} else {
-			_g.h["lineEnds.leftCurly"] = value26;
-		}
-		var value27 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.rightCurly"] != null) {
-			_g.setReserved("lineEnds.rightCurly",value27);
-		} else {
-			_g.h["lineEnds.rightCurly"] = value27;
-		}
-		var value28 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
-		if(__map_reserved["lineEnds.emptyCurly"] != null) {
-			_g.setReserved("lineEnds.emptyCurly",value28);
-		} else {
-			_g.h["lineEnds.emptyCurly"] = value28;
-		}
-		var value29 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.blockCurly.leftCurly"] != null) {
-			_g.setReserved("lineEnds.blockCurly.leftCurly",value29);
-		} else {
-			_g.h["lineEnds.blockCurly.leftCurly"] = value29;
-		}
-		var value30 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.blockCurly.rightCurly"] != null) {
-			_g.setReserved("lineEnds.blockCurly.rightCurly",value30);
-		} else {
-			_g.h["lineEnds.blockCurly.rightCurly"] = value30;
-		}
-		var value31 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
-		if(__map_reserved["lineEnds.blockCurly.emptyCurly"] != null) {
-			_g.setReserved("lineEnds.blockCurly.emptyCurly",value31);
-		} else {
-			_g.h["lineEnds.blockCurly.emptyCurly"] = value31;
-		}
-		var value32 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.anonFunctionCurly.leftCurly"] != null) {
-			_g.setReserved("lineEnds.anonFunctionCurly.leftCurly",value32);
-		} else {
-			_g.h["lineEnds.anonFunctionCurly.leftCurly"] = value32;
-		}
-		var value33 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.anonFunctionCurly.rightCurly"] != null) {
-			_g.setReserved("lineEnds.anonFunctionCurly.rightCurly",value33);
-		} else {
-			_g.h["lineEnds.anonFunctionCurly.rightCurly"] = value33;
-		}
-		var value34 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
-		if(__map_reserved["lineEnds.anonFunctionCurly.emptyCurly"] != null) {
-			_g.setReserved("lineEnds.anonFunctionCurly.emptyCurly",value34);
-		} else {
-			_g.h["lineEnds.anonFunctionCurly.emptyCurly"] = value34;
-		}
-		var value35 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.anonTypeCurly.leftCurly"] != null) {
-			_g.setReserved("lineEnds.anonTypeCurly.leftCurly",value35);
-		} else {
-			_g.h["lineEnds.anonTypeCurly.leftCurly"] = value35;
-		}
-		var value36 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.anonTypeCurly.rightCurly"] != null) {
-			_g.setReserved("lineEnds.anonTypeCurly.rightCurly",value36);
-		} else {
-			_g.h["lineEnds.anonTypeCurly.rightCurly"] = value36;
-		}
-		var value37 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
-		if(__map_reserved["lineEnds.anonTypeCurly.emptyCurly"] != null) {
-			_g.setReserved("lineEnds.anonTypeCurly.emptyCurly",value37);
-		} else {
-			_g.h["lineEnds.anonTypeCurly.emptyCurly"] = value37;
-		}
-		var value38 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.objectLiteralCurly.leftCurly"] != null) {
-			_g.setReserved("lineEnds.objectLiteralCurly.leftCurly",value38);
-		} else {
-			_g.h["lineEnds.objectLiteralCurly.leftCurly"] = value38;
-		}
-		var value39 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.objectLiteralCurly.rightCurly"] != null) {
-			_g.setReserved("lineEnds.objectLiteralCurly.rightCurly",value39);
-		} else {
-			_g.h["lineEnds.objectLiteralCurly.rightCurly"] = value39;
-		}
-		var value40 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
-		if(__map_reserved["lineEnds.objectLiteralCurly.emptyCurly"] != null) {
-			_g.setReserved("lineEnds.objectLiteralCurly.emptyCurly",value40);
-		} else {
-			_g.h["lineEnds.objectLiteralCurly.emptyCurly"] = value40;
-		}
-		var value41 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.typedefCurly.leftCurly"] != null) {
-			_g.setReserved("lineEnds.typedefCurly.leftCurly",value41);
-		} else {
-			_g.h["lineEnds.typedefCurly.leftCurly"] = value41;
-		}
-		var value42 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
-		if(__map_reserved["lineEnds.typedefCurly.rightCurly"] != null) {
-			_g.setReserved("lineEnds.typedefCurly.rightCurly",value42);
-		} else {
-			_g.h["lineEnds.typedefCurly.rightCurly"] = value42;
-		}
-		var value43 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
-		if(__map_reserved["lineEnds.typedefCurly.emptyCurly"] != null) {
-			_g.setReserved("lineEnds.typedefCurly.emptyCurly",value43);
-		} else {
-			_g.h["lineEnds.typedefCurly.emptyCurly"] = value43;
-		}
-		var value44 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.ifBody"] != null) {
-			_g.setReserved("sameLine.ifBody",value44);
-		} else {
-			_g.h["sameLine.ifBody"] = value44;
-		}
-		var value45 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.elseBody"] != null) {
-			_g.setReserved("sameLine.elseBody",value45);
-		} else {
-			_g.h["sameLine.elseBody"] = value45;
-		}
-		var value46 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.ifElse"] != null) {
-			_g.setReserved("sameLine.ifElse",value46);
-		} else {
-			_g.h["sameLine.ifElse"] = value46;
-		}
-		var value47 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.elseIf"] != null) {
-			_g.setReserved("sameLine.elseIf",value47);
-		} else {
-			_g.h["sameLine.elseIf"] = value47;
-		}
-		var value48 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.expressionIf"] != null) {
-			_g.setReserved("sameLine.expressionIf",value48);
-		} else {
-			_g.h["sameLine.expressionIf"] = value48;
-		}
-		var value49 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["sameLine.expressionIfWithBlocks"] != null) {
-			_g.setReserved("sameLine.expressionIfWithBlocks",value49);
-		} else {
-			_g.h["sameLine.expressionIfWithBlocks"] = value49;
-		}
-		var value50 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.forBody"] != null) {
-			_g.setReserved("sameLine.forBody",value50);
-		} else {
-			_g.h["sameLine.forBody"] = value50;
-		}
-		var value51 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.whileBody"] != null) {
-			_g.setReserved("sameLine.whileBody",value51);
-		} else {
-			_g.h["sameLine.whileBody"] = value51;
-		}
-		var value52 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.doWhileBody"] != null) {
-			_g.setReserved("sameLine.doWhileBody",value52);
-		} else {
-			_g.h["sameLine.doWhileBody"] = value52;
-		}
-		var value53 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.doWhile"] != null) {
-			_g.setReserved("sameLine.doWhile",value53);
-		} else {
-			_g.h["sameLine.doWhile"] = value53;
-		}
-		var value54 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.tryBody"] != null) {
-			_g.setReserved("sameLine.tryBody",value54);
-		} else {
-			_g.h["sameLine.tryBody"] = value54;
-		}
-		var value55 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.catchBody"] != null) {
-			_g.setReserved("sameLine.catchBody",value55);
-		} else {
-			_g.h["sameLine.catchBody"] = value55;
-		}
-		var value56 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.caseBody"] != null) {
-			_g.setReserved("sameLine.caseBody",value56);
-		} else {
-			_g.h["sameLine.caseBody"] = value56;
-		}
-		var value57 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.tryCatch"] != null) {
-			_g.setReserved("sameLine.tryCatch",value57);
-		} else {
-			_g.h["sameLine.tryCatch"] = value57;
-		}
-		var value58 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.expressionCase"] != null) {
-			_g.setReserved("sameLine.expressionCase",value58);
-		} else {
-			_g.h["sameLine.expressionCase"] = value58;
-		}
-		var value59 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.expressionTry"] != null) {
-			_g.setReserved("sameLine.expressionTry",value59);
-		} else {
-			_g.h["sameLine.expressionTry"] = value59;
-		}
-		var value60 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.functionBody"] != null) {
-			_g.setReserved("sameLine.functionBody",value60);
-		} else {
-			_g.h["sameLine.functionBody"] = value60;
-		}
-		var value61 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.anonFunctionBody"] != null) {
-			_g.setReserved("sameLine.anonFunctionBody",value61);
-		} else {
-			_g.h["sameLine.anonFunctionBody"] = value61;
-		}
-		var value62 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.returnBody"] != null) {
-			_g.setReserved("sameLine.returnBody",value62);
-		} else {
-			_g.h["sameLine.returnBody"] = value62;
-		}
-		var value63 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.returnBodySingleLine"] != null) {
-			_g.setReserved("sameLine.returnBodySingleLine",value63);
-		} else {
-			_g.h["sameLine.returnBodySingleLine"] = value63;
-		}
-		var value64 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["sameLine.untypedBody"] != null) {
-			_g.setReserved("sameLine.untypedBody",value64);
-		} else {
-			_g.h["sameLine.untypedBody"] = value64;
-		}
-		var value65 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.metadataParens.openingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.metadataParens.openingPolicy",value65);
-		} else {
-			_g.h["whitespace.parenConfig.metadataParens.openingPolicy"] = value65;
-		}
-		var value66 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.metadataParens.closingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.metadataParens.closingPolicy",value66);
-		} else {
-			_g.h["whitespace.parenConfig.metadataParens.closingPolicy"] = value66;
-		}
-		var value67 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["whitespace.parenConfig.metadataParens.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.parenConfig.metadataParens.removeInnerWhenEmpty",value67);
-		} else {
-			_g.h["whitespace.parenConfig.metadataParens.removeInnerWhenEmpty"] = value67;
-		}
-		var value68 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.funcParamParens.openingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.funcParamParens.openingPolicy",value68);
-		} else {
-			_g.h["whitespace.parenConfig.funcParamParens.openingPolicy"] = value68;
-		}
-		var value69 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.funcParamParens.closingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.funcParamParens.closingPolicy",value69);
-		} else {
-			_g.h["whitespace.parenConfig.funcParamParens.closingPolicy"] = value69;
-		}
-		var value70 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty",value70);
-		} else {
-			_g.h["whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty"] = value70;
-		}
-		var value71 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.anonFuncParamParens.openingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.anonFuncParamParens.openingPolicy",value71);
-		} else {
-			_g.h["whitespace.parenConfig.anonFuncParamParens.openingPolicy"] = value71;
-		}
-		var value72 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.anonFuncParamParens.closingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.anonFuncParamParens.closingPolicy",value72);
-		} else {
-			_g.h["whitespace.parenConfig.anonFuncParamParens.closingPolicy"] = value72;
-		}
-		var value73 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty",value73);
-		} else {
-			_g.h["whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty"] = value73;
-		}
-		var value74 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.callParens.openingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.callParens.openingPolicy",value74);
-		} else {
-			_g.h["whitespace.parenConfig.callParens.openingPolicy"] = value74;
-		}
-		var value75 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.callParens.closingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.callParens.closingPolicy",value75);
-		} else {
-			_g.h["whitespace.parenConfig.callParens.closingPolicy"] = value75;
-		}
-		var value76 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["whitespace.parenConfig.callParens.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.parenConfig.callParens.removeInnerWhenEmpty",value76);
-		} else {
-			_g.h["whitespace.parenConfig.callParens.removeInnerWhenEmpty"] = value76;
-		}
-		var value77 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.conditionParens.openingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.conditionParens.openingPolicy",value77);
-		} else {
-			_g.h["whitespace.parenConfig.conditionParens.openingPolicy"] = value77;
-		}
-		var value78 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.conditionParens.closingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.conditionParens.closingPolicy",value78);
-		} else {
-			_g.h["whitespace.parenConfig.conditionParens.closingPolicy"] = value78;
-		}
-		var value79 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["whitespace.parenConfig.conditionParens.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.parenConfig.conditionParens.removeInnerWhenEmpty",value79);
-		} else {
-			_g.h["whitespace.parenConfig.conditionParens.removeInnerWhenEmpty"] = value79;
-		}
-		var value80 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.forLoopParens.openingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.forLoopParens.openingPolicy",value80);
-		} else {
-			_g.h["whitespace.parenConfig.forLoopParens.openingPolicy"] = value80;
-		}
-		var value81 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.forLoopParens.closingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.forLoopParens.closingPolicy",value81);
-		} else {
-			_g.h["whitespace.parenConfig.forLoopParens.closingPolicy"] = value81;
-		}
-		var value82 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty",value82);
-		} else {
-			_g.h["whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty"] = value82;
-		}
-		var value83 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.expressionParens.openingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.expressionParens.openingPolicy",value83);
-		} else {
-			_g.h["whitespace.parenConfig.expressionParens.openingPolicy"] = value83;
-		}
-		var value84 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.parenConfig.expressionParens.closingPolicy"] != null) {
-			_g.setReserved("whitespace.parenConfig.expressionParens.closingPolicy",value84);
-		} else {
-			_g.h["whitespace.parenConfig.expressionParens.closingPolicy"] = value84;
-		}
-		var value85 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["whitespace.parenConfig.expressionParens.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.parenConfig.expressionParens.removeInnerWhenEmpty",value85);
-		} else {
-			_g.h["whitespace.parenConfig.expressionParens.removeInnerWhenEmpty"] = value85;
-		}
-		var value86 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.bracesConfig.blockBraces.openingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.blockBraces.openingPolicy",value86);
-		} else {
-			_g.h["whitespace.bracesConfig.blockBraces.openingPolicy"] = value86;
-		}
-		var value87 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.bracesConfig.blockBraces.closingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.blockBraces.closingPolicy",value87);
-		} else {
-			_g.h["whitespace.bracesConfig.blockBraces.closingPolicy"] = value87;
-		}
-		var value88 = codesamples_config_ConfigFieldType.Bool;
-		if(__map_reserved["whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty",value88);
-		} else {
-			_g.h["whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty"] = value88;
-		}
-		var value89 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.bracesConfig.typedefBraces.openingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.typedefBraces.openingPolicy",value89);
-		} else {
-			_g.h["whitespace.bracesConfig.typedefBraces.openingPolicy"] = value89;
-		}
-		var value90 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
-		if(__map_reserved["whitespace.bracesConfig.typedefBraces.closingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.typedefBraces.closingPolicy",value90);
-		} else {
-			_g.h["whitespace.bracesConfig.typedefBraces.closingPolicy"] = value90;
+			_g.h["indentation.trailingWhitespace"] = value90;
 		}
 		var value91 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["indentation.indentObjectLiteral"] != null) {
+			_g.setReserved("indentation.indentObjectLiteral",value91);
+		} else {
+			_g.h["indentation.indentObjectLiteral"] = value91;
+		}
+		var value92 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["indentation.indentComplexValueExpressions"] != null) {
+			_g.setReserved("indentation.indentComplexValueExpressions",value92);
+		} else {
+			_g.h["indentation.indentComplexValueExpressions"] = value92;
+		}
+		var value93 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["indentation.indentCaseLabels"] != null) {
+			_g.setReserved("indentation.indentCaseLabels",value93);
+		} else {
+			_g.h["indentation.indentCaseLabels"] = value93;
+		}
+		var value94 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.leftCurly"] != null) {
+			_g.setReserved("lineEnds.leftCurly",value94);
+		} else {
+			_g.h["lineEnds.leftCurly"] = value94;
+		}
+		var value95 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.rightCurly"] != null) {
+			_g.setReserved("lineEnds.rightCurly",value95);
+		} else {
+			_g.h["lineEnds.rightCurly"] = value95;
+		}
+		var value96 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.emptyCurly",value96);
+		} else {
+			_g.h["lineEnds.emptyCurly"] = value96;
+		}
+		var value97 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.blockCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.blockCurly.leftCurly",value97);
+		} else {
+			_g.h["lineEnds.blockCurly.leftCurly"] = value97;
+		}
+		var value98 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.blockCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.blockCurly.rightCurly",value98);
+		} else {
+			_g.h["lineEnds.blockCurly.rightCurly"] = value98;
+		}
+		var value99 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.blockCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.blockCurly.emptyCurly",value99);
+		} else {
+			_g.h["lineEnds.blockCurly.emptyCurly"] = value99;
+		}
+		var value100 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.anonFunctionCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.anonFunctionCurly.leftCurly",value100);
+		} else {
+			_g.h["lineEnds.anonFunctionCurly.leftCurly"] = value100;
+		}
+		var value101 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.anonFunctionCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.anonFunctionCurly.rightCurly",value101);
+		} else {
+			_g.h["lineEnds.anonFunctionCurly.rightCurly"] = value101;
+		}
+		var value102 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.anonFunctionCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.anonFunctionCurly.emptyCurly",value102);
+		} else {
+			_g.h["lineEnds.anonFunctionCurly.emptyCurly"] = value102;
+		}
+		var value103 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.anonTypeCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.anonTypeCurly.leftCurly",value103);
+		} else {
+			_g.h["lineEnds.anonTypeCurly.leftCurly"] = value103;
+		}
+		var value104 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.anonTypeCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.anonTypeCurly.rightCurly",value104);
+		} else {
+			_g.h["lineEnds.anonTypeCurly.rightCurly"] = value104;
+		}
+		var value105 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.anonTypeCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.anonTypeCurly.emptyCurly",value105);
+		} else {
+			_g.h["lineEnds.anonTypeCurly.emptyCurly"] = value105;
+		}
+		var value106 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.objectLiteralCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.objectLiteralCurly.leftCurly",value106);
+		} else {
+			_g.h["lineEnds.objectLiteralCurly.leftCurly"] = value106;
+		}
+		var value107 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.objectLiteralCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.objectLiteralCurly.rightCurly",value107);
+		} else {
+			_g.h["lineEnds.objectLiteralCurly.rightCurly"] = value107;
+		}
+		var value108 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.objectLiteralCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.objectLiteralCurly.emptyCurly",value108);
+		} else {
+			_g.h["lineEnds.objectLiteralCurly.emptyCurly"] = value108;
+		}
+		var value109 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("after" , String),js_Boot.__cast("before" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.typedefCurly.leftCurly"] != null) {
+			_g.setReserved("lineEnds.typedefCurly.leftCurly",value109);
+		} else {
+			_g.h["lineEnds.typedefCurly.leftCurly"] = value109;
+		}
+		var value110 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("after" , String),js_Boot.__cast("both" , String)]);
+		if(__map_reserved["lineEnds.typedefCurly.rightCurly"] != null) {
+			_g.setReserved("lineEnds.typedefCurly.rightCurly",value110);
+		} else {
+			_g.h["lineEnds.typedefCurly.rightCurly"] = value110;
+		}
+		var value111 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noBreak" , String),js_Boot.__cast("break" , String)]);
+		if(__map_reserved["lineEnds.typedefCurly.emptyCurly"] != null) {
+			_g.setReserved("lineEnds.typedefCurly.emptyCurly",value111);
+		} else {
+			_g.h["lineEnds.typedefCurly.emptyCurly"] = value111;
+		}
+		var value112 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.ifBody"] != null) {
+			_g.setReserved("sameLine.ifBody",value112);
+		} else {
+			_g.h["sameLine.ifBody"] = value112;
+		}
+		var value113 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.elseBody"] != null) {
+			_g.setReserved("sameLine.elseBody",value113);
+		} else {
+			_g.h["sameLine.elseBody"] = value113;
+		}
+		var value114 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.ifElse"] != null) {
+			_g.setReserved("sameLine.ifElse",value114);
+		} else {
+			_g.h["sameLine.ifElse"] = value114;
+		}
+		var value115 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.elseIf"] != null) {
+			_g.setReserved("sameLine.elseIf",value115);
+		} else {
+			_g.h["sameLine.elseIf"] = value115;
+		}
+		var value116 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.expressionIf"] != null) {
+			_g.setReserved("sameLine.expressionIf",value116);
+		} else {
+			_g.h["sameLine.expressionIf"] = value116;
+		}
+		var value117 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["sameLine.expressionIfWithBlocks"] != null) {
+			_g.setReserved("sameLine.expressionIfWithBlocks",value117);
+		} else {
+			_g.h["sameLine.expressionIfWithBlocks"] = value117;
+		}
+		var value118 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.forBody"] != null) {
+			_g.setReserved("sameLine.forBody",value118);
+		} else {
+			_g.h["sameLine.forBody"] = value118;
+		}
+		var value119 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.whileBody"] != null) {
+			_g.setReserved("sameLine.whileBody",value119);
+		} else {
+			_g.h["sameLine.whileBody"] = value119;
+		}
+		var value120 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.doWhileBody"] != null) {
+			_g.setReserved("sameLine.doWhileBody",value120);
+		} else {
+			_g.h["sameLine.doWhileBody"] = value120;
+		}
+		var value121 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.doWhile"] != null) {
+			_g.setReserved("sameLine.doWhile",value121);
+		} else {
+			_g.h["sameLine.doWhile"] = value121;
+		}
+		var value122 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.tryBody"] != null) {
+			_g.setReserved("sameLine.tryBody",value122);
+		} else {
+			_g.h["sameLine.tryBody"] = value122;
+		}
+		var value123 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.catchBody"] != null) {
+			_g.setReserved("sameLine.catchBody",value123);
+		} else {
+			_g.h["sameLine.catchBody"] = value123;
+		}
+		var value124 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.caseBody"] != null) {
+			_g.setReserved("sameLine.caseBody",value124);
+		} else {
+			_g.h["sameLine.caseBody"] = value124;
+		}
+		var value125 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.tryCatch"] != null) {
+			_g.setReserved("sameLine.tryCatch",value125);
+		} else {
+			_g.h["sameLine.tryCatch"] = value125;
+		}
+		var value126 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.expressionCase"] != null) {
+			_g.setReserved("sameLine.expressionCase",value126);
+		} else {
+			_g.h["sameLine.expressionCase"] = value126;
+		}
+		var value127 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.expressionTry"] != null) {
+			_g.setReserved("sameLine.expressionTry",value127);
+		} else {
+			_g.h["sameLine.expressionTry"] = value127;
+		}
+		var value128 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.functionBody"] != null) {
+			_g.setReserved("sameLine.functionBody",value128);
+		} else {
+			_g.h["sameLine.functionBody"] = value128;
+		}
+		var value129 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.anonFunctionBody"] != null) {
+			_g.setReserved("sameLine.anonFunctionBody",value129);
+		} else {
+			_g.h["sameLine.anonFunctionBody"] = value129;
+		}
+		var value130 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.returnBody"] != null) {
+			_g.setReserved("sameLine.returnBody",value130);
+		} else {
+			_g.h["sameLine.returnBody"] = value130;
+		}
+		var value131 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.returnBodySingleLine"] != null) {
+			_g.setReserved("sameLine.returnBodySingleLine",value131);
+		} else {
+			_g.h["sameLine.returnBodySingleLine"] = value131;
+		}
+		var value132 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("same" , String),js_Boot.__cast("next" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["sameLine.untypedBody"] != null) {
+			_g.setReserved("sameLine.untypedBody",value132);
+		} else {
+			_g.h["sameLine.untypedBody"] = value132;
+		}
+		var value133 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.metadataParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.metadataParens.openingPolicy",value133);
+		} else {
+			_g.h["whitespace.parenConfig.metadataParens.openingPolicy"] = value133;
+		}
+		var value134 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.metadataParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.metadataParens.closingPolicy",value134);
+		} else {
+			_g.h["whitespace.parenConfig.metadataParens.closingPolicy"] = value134;
+		}
+		var value135 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.metadataParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.metadataParens.removeInnerWhenEmpty",value135);
+		} else {
+			_g.h["whitespace.parenConfig.metadataParens.removeInnerWhenEmpty"] = value135;
+		}
+		var value136 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.funcParamParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.funcParamParens.openingPolicy",value136);
+		} else {
+			_g.h["whitespace.parenConfig.funcParamParens.openingPolicy"] = value136;
+		}
+		var value137 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.funcParamParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.funcParamParens.closingPolicy",value137);
+		} else {
+			_g.h["whitespace.parenConfig.funcParamParens.closingPolicy"] = value137;
+		}
+		var value138 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty",value138);
+		} else {
+			_g.h["whitespace.parenConfig.funcParamParens.removeInnerWhenEmpty"] = value138;
+		}
+		var value139 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.anonFuncParamParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.anonFuncParamParens.openingPolicy",value139);
+		} else {
+			_g.h["whitespace.parenConfig.anonFuncParamParens.openingPolicy"] = value139;
+		}
+		var value140 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.anonFuncParamParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.anonFuncParamParens.closingPolicy",value140);
+		} else {
+			_g.h["whitespace.parenConfig.anonFuncParamParens.closingPolicy"] = value140;
+		}
+		var value141 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty",value141);
+		} else {
+			_g.h["whitespace.parenConfig.anonFuncParamParens.removeInnerWhenEmpty"] = value141;
+		}
+		var value142 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.callParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.callParens.openingPolicy",value142);
+		} else {
+			_g.h["whitespace.parenConfig.callParens.openingPolicy"] = value142;
+		}
+		var value143 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.callParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.callParens.closingPolicy",value143);
+		} else {
+			_g.h["whitespace.parenConfig.callParens.closingPolicy"] = value143;
+		}
+		var value144 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.callParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.callParens.removeInnerWhenEmpty",value144);
+		} else {
+			_g.h["whitespace.parenConfig.callParens.removeInnerWhenEmpty"] = value144;
+		}
+		var value145 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.conditionParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.conditionParens.openingPolicy",value145);
+		} else {
+			_g.h["whitespace.parenConfig.conditionParens.openingPolicy"] = value145;
+		}
+		var value146 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.conditionParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.conditionParens.closingPolicy",value146);
+		} else {
+			_g.h["whitespace.parenConfig.conditionParens.closingPolicy"] = value146;
+		}
+		var value147 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.conditionParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.conditionParens.removeInnerWhenEmpty",value147);
+		} else {
+			_g.h["whitespace.parenConfig.conditionParens.removeInnerWhenEmpty"] = value147;
+		}
+		var value148 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.ifConditionParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.ifConditionParens.openingPolicy",value148);
+		} else {
+			_g.h["whitespace.parenConfig.ifConditionParens.openingPolicy"] = value148;
+		}
+		var value149 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.ifConditionParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.ifConditionParens.closingPolicy",value149);
+		} else {
+			_g.h["whitespace.parenConfig.ifConditionParens.closingPolicy"] = value149;
+		}
+		var value150 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.ifConditionParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.ifConditionParens.removeInnerWhenEmpty",value150);
+		} else {
+			_g.h["whitespace.parenConfig.ifConditionParens.removeInnerWhenEmpty"] = value150;
+		}
+		var value151 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.switchConditionParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.switchConditionParens.openingPolicy",value151);
+		} else {
+			_g.h["whitespace.parenConfig.switchConditionParens.openingPolicy"] = value151;
+		}
+		var value152 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.switchConditionParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.switchConditionParens.closingPolicy",value152);
+		} else {
+			_g.h["whitespace.parenConfig.switchConditionParens.closingPolicy"] = value152;
+		}
+		var value153 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.switchConditionParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.switchConditionParens.removeInnerWhenEmpty",value153);
+		} else {
+			_g.h["whitespace.parenConfig.switchConditionParens.removeInnerWhenEmpty"] = value153;
+		}
+		var value154 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.whileConditionParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.whileConditionParens.openingPolicy",value154);
+		} else {
+			_g.h["whitespace.parenConfig.whileConditionParens.openingPolicy"] = value154;
+		}
+		var value155 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.whileConditionParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.whileConditionParens.closingPolicy",value155);
+		} else {
+			_g.h["whitespace.parenConfig.whileConditionParens.closingPolicy"] = value155;
+		}
+		var value156 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.whileConditionParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.whileConditionParens.removeInnerWhenEmpty",value156);
+		} else {
+			_g.h["whitespace.parenConfig.whileConditionParens.removeInnerWhenEmpty"] = value156;
+		}
+		var value157 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.sharpConditionParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.sharpConditionParens.openingPolicy",value157);
+		} else {
+			_g.h["whitespace.parenConfig.sharpConditionParens.openingPolicy"] = value157;
+		}
+		var value158 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.sharpConditionParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.sharpConditionParens.closingPolicy",value158);
+		} else {
+			_g.h["whitespace.parenConfig.sharpConditionParens.closingPolicy"] = value158;
+		}
+		var value159 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.sharpConditionParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.sharpConditionParens.removeInnerWhenEmpty",value159);
+		} else {
+			_g.h["whitespace.parenConfig.sharpConditionParens.removeInnerWhenEmpty"] = value159;
+		}
+		var value160 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.catchParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.catchParens.openingPolicy",value160);
+		} else {
+			_g.h["whitespace.parenConfig.catchParens.openingPolicy"] = value160;
+		}
+		var value161 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.catchParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.catchParens.closingPolicy",value161);
+		} else {
+			_g.h["whitespace.parenConfig.catchParens.closingPolicy"] = value161;
+		}
+		var value162 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.catchParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.catchParens.removeInnerWhenEmpty",value162);
+		} else {
+			_g.h["whitespace.parenConfig.catchParens.removeInnerWhenEmpty"] = value162;
+		}
+		var value163 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.forLoopParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.forLoopParens.openingPolicy",value163);
+		} else {
+			_g.h["whitespace.parenConfig.forLoopParens.openingPolicy"] = value163;
+		}
+		var value164 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.forLoopParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.forLoopParens.closingPolicy",value164);
+		} else {
+			_g.h["whitespace.parenConfig.forLoopParens.closingPolicy"] = value164;
+		}
+		var value165 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty",value165);
+		} else {
+			_g.h["whitespace.parenConfig.forLoopParens.removeInnerWhenEmpty"] = value165;
+		}
+		var value166 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.expressionParens.openingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.expressionParens.openingPolicy",value166);
+		} else {
+			_g.h["whitespace.parenConfig.expressionParens.openingPolicy"] = value166;
+		}
+		var value167 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.parenConfig.expressionParens.closingPolicy"] != null) {
+			_g.setReserved("whitespace.parenConfig.expressionParens.closingPolicy",value167);
+		} else {
+			_g.h["whitespace.parenConfig.expressionParens.closingPolicy"] = value167;
+		}
+		var value168 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.parenConfig.expressionParens.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.parenConfig.expressionParens.removeInnerWhenEmpty",value168);
+		} else {
+			_g.h["whitespace.parenConfig.expressionParens.removeInnerWhenEmpty"] = value168;
+		}
+		var value169 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.blockBraces.openingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.blockBraces.openingPolicy",value169);
+		} else {
+			_g.h["whitespace.bracesConfig.blockBraces.openingPolicy"] = value169;
+		}
+		var value170 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.blockBraces.closingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.blockBraces.closingPolicy",value170);
+		} else {
+			_g.h["whitespace.bracesConfig.blockBraces.closingPolicy"] = value170;
+		}
+		var value171 = codesamples_config_ConfigFieldType.Bool;
+		if(__map_reserved["whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty"] != null) {
+			_g.setReserved("whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty",value171);
+		} else {
+			_g.h["whitespace.bracesConfig.blockBraces.removeInnerWhenEmpty"] = value171;
+		}
+		var value172 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.typedefBraces.openingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.typedefBraces.openingPolicy",value172);
+		} else {
+			_g.h["whitespace.bracesConfig.typedefBraces.openingPolicy"] = value172;
+		}
+		var value173 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		if(__map_reserved["whitespace.bracesConfig.typedefBraces.closingPolicy"] != null) {
+			_g.setReserved("whitespace.bracesConfig.typedefBraces.closingPolicy",value173);
+		} else {
+			_g.h["whitespace.bracesConfig.typedefBraces.closingPolicy"] = value173;
+		}
+		var value174 = codesamples_config_ConfigFieldType.Bool;
 		if(__map_reserved["whitespace.bracesConfig.typedefBraces.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.bracesConfig.typedefBraces.removeInnerWhenEmpty",value91);
+			_g.setReserved("whitespace.bracesConfig.typedefBraces.removeInnerWhenEmpty",value174);
 		} else {
-			_g.h["whitespace.bracesConfig.typedefBraces.removeInnerWhenEmpty"] = value91;
+			_g.h["whitespace.bracesConfig.typedefBraces.removeInnerWhenEmpty"] = value174;
 		}
-		var value92 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value175 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.bracesConfig.anonTypeBraces.openingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.anonTypeBraces.openingPolicy",value92);
+			_g.setReserved("whitespace.bracesConfig.anonTypeBraces.openingPolicy",value175);
 		} else {
-			_g.h["whitespace.bracesConfig.anonTypeBraces.openingPolicy"] = value92;
+			_g.h["whitespace.bracesConfig.anonTypeBraces.openingPolicy"] = value175;
 		}
-		var value93 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value176 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.bracesConfig.anonTypeBraces.closingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.anonTypeBraces.closingPolicy",value93);
+			_g.setReserved("whitespace.bracesConfig.anonTypeBraces.closingPolicy",value176);
 		} else {
-			_g.h["whitespace.bracesConfig.anonTypeBraces.closingPolicy"] = value93;
+			_g.h["whitespace.bracesConfig.anonTypeBraces.closingPolicy"] = value176;
 		}
-		var value94 = codesamples_config_ConfigFieldType.Bool;
+		var value177 = codesamples_config_ConfigFieldType.Bool;
 		if(__map_reserved["whitespace.bracesConfig.anonTypeBraces.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.bracesConfig.anonTypeBraces.removeInnerWhenEmpty",value94);
+			_g.setReserved("whitespace.bracesConfig.anonTypeBraces.removeInnerWhenEmpty",value177);
 		} else {
-			_g.h["whitespace.bracesConfig.anonTypeBraces.removeInnerWhenEmpty"] = value94;
+			_g.h["whitespace.bracesConfig.anonTypeBraces.removeInnerWhenEmpty"] = value177;
 		}
-		var value95 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value178 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.bracesConfig.objectLiteralBraces.openingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.objectLiteralBraces.openingPolicy",value95);
+			_g.setReserved("whitespace.bracesConfig.objectLiteralBraces.openingPolicy",value178);
 		} else {
-			_g.h["whitespace.bracesConfig.objectLiteralBraces.openingPolicy"] = value95;
+			_g.h["whitespace.bracesConfig.objectLiteralBraces.openingPolicy"] = value178;
 		}
-		var value96 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value179 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.bracesConfig.objectLiteralBraces.closingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.objectLiteralBraces.closingPolicy",value96);
+			_g.setReserved("whitespace.bracesConfig.objectLiteralBraces.closingPolicy",value179);
 		} else {
-			_g.h["whitespace.bracesConfig.objectLiteralBraces.closingPolicy"] = value96;
+			_g.h["whitespace.bracesConfig.objectLiteralBraces.closingPolicy"] = value179;
 		}
-		var value97 = codesamples_config_ConfigFieldType.Bool;
+		var value180 = codesamples_config_ConfigFieldType.Bool;
 		if(__map_reserved["whitespace.bracesConfig.objectLiteralBraces.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.bracesConfig.objectLiteralBraces.removeInnerWhenEmpty",value97);
+			_g.setReserved("whitespace.bracesConfig.objectLiteralBraces.removeInnerWhenEmpty",value180);
 		} else {
-			_g.h["whitespace.bracesConfig.objectLiteralBraces.removeInnerWhenEmpty"] = value97;
+			_g.h["whitespace.bracesConfig.objectLiteralBraces.removeInnerWhenEmpty"] = value180;
 		}
-		var value98 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value181 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.bracesConfig.unknownBraces.openingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.unknownBraces.openingPolicy",value98);
+			_g.setReserved("whitespace.bracesConfig.unknownBraces.openingPolicy",value181);
 		} else {
-			_g.h["whitespace.bracesConfig.unknownBraces.openingPolicy"] = value98;
+			_g.h["whitespace.bracesConfig.unknownBraces.openingPolicy"] = value181;
 		}
-		var value99 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value182 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.bracesConfig.unknownBraces.closingPolicy"] != null) {
-			_g.setReserved("whitespace.bracesConfig.unknownBraces.closingPolicy",value99);
+			_g.setReserved("whitespace.bracesConfig.unknownBraces.closingPolicy",value182);
 		} else {
-			_g.h["whitespace.bracesConfig.unknownBraces.closingPolicy"] = value99;
+			_g.h["whitespace.bracesConfig.unknownBraces.closingPolicy"] = value182;
 		}
-		var value100 = codesamples_config_ConfigFieldType.Bool;
+		var value183 = codesamples_config_ConfigFieldType.Bool;
 		if(__map_reserved["whitespace.bracesConfig.unknownBraces.removeInnerWhenEmpty"] != null) {
-			_g.setReserved("whitespace.bracesConfig.unknownBraces.removeInnerWhenEmpty",value100);
+			_g.setReserved("whitespace.bracesConfig.unknownBraces.removeInnerWhenEmpty",value183);
 		} else {
-			_g.h["whitespace.bracesConfig.unknownBraces.removeInnerWhenEmpty"] = value100;
+			_g.h["whitespace.bracesConfig.unknownBraces.removeInnerWhenEmpty"] = value183;
 		}
-		var value101 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value184 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.openingBracketPolicy"] != null) {
-			_g.setReserved("whitespace.openingBracketPolicy",value101);
+			_g.setReserved("whitespace.openingBracketPolicy",value184);
 		} else {
-			_g.h["whitespace.openingBracketPolicy"] = value101;
+			_g.h["whitespace.openingBracketPolicy"] = value184;
 		}
-		var value102 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value185 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.closingBracketPolicy"] != null) {
-			_g.setReserved("whitespace.closingBracketPolicy",value102);
+			_g.setReserved("whitespace.closingBracketPolicy",value185);
 		} else {
-			_g.h["whitespace.closingBracketPolicy"] = value102;
+			_g.h["whitespace.closingBracketPolicy"] = value185;
 		}
-		var value103 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value186 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.typeParamOpenPolicy"] != null) {
-			_g.setReserved("whitespace.typeParamOpenPolicy",value103);
+			_g.setReserved("whitespace.typeParamOpenPolicy",value186);
 		} else {
-			_g.h["whitespace.typeParamOpenPolicy"] = value103;
+			_g.h["whitespace.typeParamOpenPolicy"] = value186;
 		}
-		var value104 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value187 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.typeParamClosePolicy"] != null) {
-			_g.setReserved("whitespace.typeParamClosePolicy",value104);
+			_g.setReserved("whitespace.typeParamClosePolicy",value187);
 		} else {
-			_g.h["whitespace.typeParamClosePolicy"] = value104;
+			_g.h["whitespace.typeParamClosePolicy"] = value187;
 		}
-		var value105 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value188 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.typeExtensionPolicy"] != null) {
-			_g.setReserved("whitespace.typeExtensionPolicy",value105);
+			_g.setReserved("whitespace.typeExtensionPolicy",value188);
 		} else {
-			_g.h["whitespace.typeExtensionPolicy"] = value105;
+			_g.h["whitespace.typeExtensionPolicy"] = value188;
 		}
-		var value106 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value189 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.commaPolicy"] != null) {
-			_g.setReserved("whitespace.commaPolicy",value106);
+			_g.setReserved("whitespace.commaPolicy",value189);
 		} else {
-			_g.h["whitespace.commaPolicy"] = value106;
+			_g.h["whitespace.commaPolicy"] = value189;
 		}
-		var value107 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value190 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.dotPolicy"] != null) {
-			_g.setReserved("whitespace.dotPolicy",value107);
+			_g.setReserved("whitespace.dotPolicy",value190);
 		} else {
-			_g.h["whitespace.dotPolicy"] = value107;
+			_g.h["whitespace.dotPolicy"] = value190;
 		}
-		var value108 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value191 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.colonPolicy"] != null) {
-			_g.setReserved("whitespace.colonPolicy",value108);
+			_g.setReserved("whitespace.colonPolicy",value191);
 		} else {
-			_g.h["whitespace.colonPolicy"] = value108;
+			_g.h["whitespace.colonPolicy"] = value191;
 		}
-		var value109 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value192 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.caseColonPolicy"] != null) {
-			_g.setReserved("whitespace.caseColonPolicy",value109);
+			_g.setReserved("whitespace.caseColonPolicy",value192);
 		} else {
-			_g.h["whitespace.caseColonPolicy"] = value109;
+			_g.h["whitespace.caseColonPolicy"] = value192;
 		}
-		var value110 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value193 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.objectFieldColonPolicy"] != null) {
-			_g.setReserved("whitespace.objectFieldColonPolicy",value110);
+			_g.setReserved("whitespace.objectFieldColonPolicy",value193);
 		} else {
-			_g.h["whitespace.objectFieldColonPolicy"] = value110;
+			_g.h["whitespace.objectFieldColonPolicy"] = value193;
 		}
-		var value111 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value194 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.typeHintColonPolicy"] != null) {
-			_g.setReserved("whitespace.typeHintColonPolicy",value111);
+			_g.setReserved("whitespace.typeHintColonPolicy",value194);
 		} else {
-			_g.h["whitespace.typeHintColonPolicy"] = value111;
+			_g.h["whitespace.typeHintColonPolicy"] = value194;
 		}
-		var value112 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value195 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.typeCheckColonPolicy"] != null) {
-			_g.setReserved("whitespace.typeCheckColonPolicy",value112);
+			_g.setReserved("whitespace.typeCheckColonPolicy",value195);
 		} else {
-			_g.h["whitespace.typeCheckColonPolicy"] = value112;
+			_g.h["whitespace.typeCheckColonPolicy"] = value195;
 		}
-		var value113 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value196 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.ternaryPolicy"] != null) {
-			_g.setReserved("whitespace.ternaryPolicy",value113);
+			_g.setReserved("whitespace.ternaryPolicy",value196);
 		} else {
-			_g.h["whitespace.ternaryPolicy"] = value113;
+			_g.h["whitespace.ternaryPolicy"] = value196;
 		}
-		var value114 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value197 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.semicolonPolicy"] != null) {
-			_g.setReserved("whitespace.semicolonPolicy",value114);
+			_g.setReserved("whitespace.semicolonPolicy",value197);
 		} else {
-			_g.h["whitespace.semicolonPolicy"] = value114;
+			_g.h["whitespace.semicolonPolicy"] = value197;
 		}
-		var value115 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value198 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.ifPolicy"] != null) {
-			_g.setReserved("whitespace.ifPolicy",value115);
+			_g.setReserved("whitespace.ifPolicy",value198);
 		} else {
-			_g.h["whitespace.ifPolicy"] = value115;
+			_g.h["whitespace.ifPolicy"] = value198;
 		}
-		var value116 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value199 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.doPolicy"] != null) {
-			_g.setReserved("whitespace.doPolicy",value116);
+			_g.setReserved("whitespace.doPolicy",value199);
 		} else {
-			_g.h["whitespace.doPolicy"] = value116;
+			_g.h["whitespace.doPolicy"] = value199;
 		}
-		var value117 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value200 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.whilePolicy"] != null) {
-			_g.setReserved("whitespace.whilePolicy",value117);
+			_g.setReserved("whitespace.whilePolicy",value200);
 		} else {
-			_g.h["whitespace.whilePolicy"] = value117;
+			_g.h["whitespace.whilePolicy"] = value200;
 		}
-		var value118 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value201 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.forPolicy"] != null) {
-			_g.setReserved("whitespace.forPolicy",value118);
+			_g.setReserved("whitespace.forPolicy",value201);
 		} else {
-			_g.h["whitespace.forPolicy"] = value118;
+			_g.h["whitespace.forPolicy"] = value201;
 		}
-		var value119 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value202 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.switchPolicy"] != null) {
-			_g.setReserved("whitespace.switchPolicy",value119);
+			_g.setReserved("whitespace.switchPolicy",value202);
 		} else {
-			_g.h["whitespace.switchPolicy"] = value119;
+			_g.h["whitespace.switchPolicy"] = value202;
 		}
-		var value120 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value203 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.tryPolicy"] != null) {
-			_g.setReserved("whitespace.tryPolicy",value120);
+			_g.setReserved("whitespace.tryPolicy",value203);
 		} else {
-			_g.h["whitespace.tryPolicy"] = value120;
+			_g.h["whitespace.tryPolicy"] = value203;
 		}
-		var value121 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value204 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.catchPolicy"] != null) {
-			_g.setReserved("whitespace.catchPolicy",value121);
+			_g.setReserved("whitespace.catchPolicy",value204);
 		} else {
-			_g.h["whitespace.catchPolicy"] = value121;
+			_g.h["whitespace.catchPolicy"] = value204;
 		}
-		var value122 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value205 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.binopPolicy"] != null) {
-			_g.setReserved("whitespace.binopPolicy",value122);
+			_g.setReserved("whitespace.binopPolicy",value205);
 		} else {
-			_g.h["whitespace.binopPolicy"] = value122;
+			_g.h["whitespace.binopPolicy"] = value205;
 		}
-		var value123 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value206 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.intervalPolicy"] != null) {
-			_g.setReserved("whitespace.intervalPolicy",value123);
+			_g.setReserved("whitespace.intervalPolicy",value206);
 		} else {
-			_g.h["whitespace.intervalPolicy"] = value123;
+			_g.h["whitespace.intervalPolicy"] = value206;
 		}
-		var value124 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value207 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.arrowFunctionsPolicy"] != null) {
-			_g.setReserved("whitespace.arrowFunctionsPolicy",value124);
+			_g.setReserved("whitespace.arrowFunctionsPolicy",value207);
 		} else {
-			_g.h["whitespace.arrowFunctionsPolicy"] = value124;
+			_g.h["whitespace.arrowFunctionsPolicy"] = value207;
 		}
-		var value125 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value208 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.functionTypeHaxe3Policy"] != null) {
-			_g.setReserved("whitespace.functionTypeHaxe3Policy",value125);
+			_g.setReserved("whitespace.functionTypeHaxe3Policy",value208);
 		} else {
-			_g.h["whitespace.functionTypeHaxe3Policy"] = value125;
+			_g.h["whitespace.functionTypeHaxe3Policy"] = value208;
 		}
-		var value126 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
+		var value209 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("none" , String),js_Boot.__cast("before" , String),js_Boot.__cast("noneBefore" , String),js_Boot.__cast("onlyBefore" , String),js_Boot.__cast("after" , String),js_Boot.__cast("onlyAfter" , String),js_Boot.__cast("noneAfter" , String),js_Boot.__cast("around" , String)]);
 		if(__map_reserved["whitespace.functionTypeHaxe4Policy"] != null) {
-			_g.setReserved("whitespace.functionTypeHaxe4Policy",value126);
+			_g.setReserved("whitespace.functionTypeHaxe4Policy",value209);
 		} else {
-			_g.h["whitespace.functionTypeHaxe4Policy"] = value126;
+			_g.h["whitespace.functionTypeHaxe4Policy"] = value209;
 		}
-		var value127 = codesamples_config_ConfigFieldType.Bool;
+		var value210 = codesamples_config_ConfigFieldType.Bool;
 		if(__map_reserved["whitespace.compressSuccessiveParenthesis"] != null) {
-			_g.setReserved("whitespace.compressSuccessiveParenthesis",value127);
+			_g.setReserved("whitespace.compressSuccessiveParenthesis",value210);
 		} else {
-			_g.h["whitespace.compressSuccessiveParenthesis"] = value127;
+			_g.h["whitespace.compressSuccessiveParenthesis"] = value210;
 		}
-		var value128 = codesamples_config_ConfigFieldType.Bool;
+		var value211 = codesamples_config_ConfigFieldType.Bool;
 		if(__map_reserved["whitespace.formatStringInterpolation"] != null) {
-			_g.setReserved("whitespace.formatStringInterpolation",value128);
+			_g.setReserved("whitespace.formatStringInterpolation",value211);
 		} else {
-			_g.h["whitespace.formatStringInterpolation"] = value128;
+			_g.h["whitespace.formatStringInterpolation"] = value211;
 		}
-		var value129 = codesamples_config_ConfigFieldType.Bool;
+		var value212 = codesamples_config_ConfigFieldType.Bool;
 		if(__map_reserved["whitespace.addLineCommentSpace"] != null) {
-			_g.setReserved("whitespace.addLineCommentSpace",value129);
+			_g.setReserved("whitespace.addLineCommentSpace",value212);
 		} else {
-			_g.h["whitespace.addLineCommentSpace"] = value129;
+			_g.h["whitespace.addLineCommentSpace"] = value212;
 		}
-		var value130 = codesamples_config_ConfigFieldType.Number;
+		var value213 = codesamples_config_ConfigFieldType.Number;
 		if(__map_reserved["wrapping.maxLineLength"] != null) {
-			_g.setReserved("wrapping.maxLineLength",value130);
+			_g.setReserved("wrapping.maxLineLength",value213);
 		} else {
-			_g.h["wrapping.maxLineLength"] = value130;
+			_g.h["wrapping.maxLineLength"] = value213;
 		}
-		var value131 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noMatrixWrap" , String),js_Boot.__cast("matrixWrapNoAlign" , String),js_Boot.__cast("matrixWrapWithAlign" , String)]);
+		var value214 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("noMatrixWrap" , String),js_Boot.__cast("matrixWrapNoAlign" , String),js_Boot.__cast("matrixWrapWithAlign" , String)]);
 		if(__map_reserved["wrapping.arrayMatrixWrap"] != null) {
-			_g.setReserved("wrapping.arrayMatrixWrap",value131);
+			_g.setReserved("wrapping.arrayMatrixWrap",value214);
 		} else {
-			_g.h["wrapping.arrayMatrixWrap"] = value131;
+			_g.h["wrapping.arrayMatrixWrap"] = value214;
 		}
-		var value132 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value215 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.arrayWrap.defaultWrap"] != null) {
-			_g.setReserved("wrapping.arrayWrap.defaultWrap",value132);
+			_g.setReserved("wrapping.arrayWrap.defaultWrap",value215);
 		} else {
-			_g.h["wrapping.arrayWrap.defaultWrap"] = value132;
+			_g.h["wrapping.arrayWrap.defaultWrap"] = value215;
 		}
-		var value133 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value216 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.arrayWrap.defaultLocation"] != null) {
-			_g.setReserved("wrapping.arrayWrap.defaultLocation",value133);
+			_g.setReserved("wrapping.arrayWrap.defaultLocation",value216);
 		} else {
-			_g.h["wrapping.arrayWrap.defaultLocation"] = value133;
+			_g.h["wrapping.arrayWrap.defaultLocation"] = value216;
 		}
-		var value134 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value217 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.arrayWrap.defaultAdditionalIndent",value217);
+		} else {
+			_g.h["wrapping.arrayWrap.defaultAdditionalIndent"] = value217;
+		}
+		var value218 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.typeParameter.defaultWrap"] != null) {
-			_g.setReserved("wrapping.typeParameter.defaultWrap",value134);
+			_g.setReserved("wrapping.typeParameter.defaultWrap",value218);
 		} else {
-			_g.h["wrapping.typeParameter.defaultWrap"] = value134;
+			_g.h["wrapping.typeParameter.defaultWrap"] = value218;
 		}
-		var value135 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value219 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.typeParameter.defaultLocation"] != null) {
-			_g.setReserved("wrapping.typeParameter.defaultLocation",value135);
+			_g.setReserved("wrapping.typeParameter.defaultLocation",value219);
 		} else {
-			_g.h["wrapping.typeParameter.defaultLocation"] = value135;
+			_g.h["wrapping.typeParameter.defaultLocation"] = value219;
 		}
-		var value136 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value220 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.typeParameter.defaultAdditionalIndent",value220);
+		} else {
+			_g.h["wrapping.typeParameter.defaultAdditionalIndent"] = value220;
+		}
+		var value221 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.functionSignature.defaultWrap"] != null) {
-			_g.setReserved("wrapping.functionSignature.defaultWrap",value136);
+			_g.setReserved("wrapping.functionSignature.defaultWrap",value221);
 		} else {
-			_g.h["wrapping.functionSignature.defaultWrap"] = value136;
+			_g.h["wrapping.functionSignature.defaultWrap"] = value221;
 		}
-		var value137 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value222 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.functionSignature.defaultLocation"] != null) {
-			_g.setReserved("wrapping.functionSignature.defaultLocation",value137);
+			_g.setReserved("wrapping.functionSignature.defaultLocation",value222);
 		} else {
-			_g.h["wrapping.functionSignature.defaultLocation"] = value137;
+			_g.h["wrapping.functionSignature.defaultLocation"] = value222;
 		}
-		var value138 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value223 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.functionSignature.defaultAdditionalIndent",value223);
+		} else {
+			_g.h["wrapping.functionSignature.defaultAdditionalIndent"] = value223;
+		}
+		var value224 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.anonFunctionSignature.defaultWrap"] != null) {
-			_g.setReserved("wrapping.anonFunctionSignature.defaultWrap",value138);
+			_g.setReserved("wrapping.anonFunctionSignature.defaultWrap",value224);
 		} else {
-			_g.h["wrapping.anonFunctionSignature.defaultWrap"] = value138;
+			_g.h["wrapping.anonFunctionSignature.defaultWrap"] = value224;
 		}
-		var value139 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value225 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.anonFunctionSignature.defaultLocation"] != null) {
-			_g.setReserved("wrapping.anonFunctionSignature.defaultLocation",value139);
+			_g.setReserved("wrapping.anonFunctionSignature.defaultLocation",value225);
 		} else {
-			_g.h["wrapping.anonFunctionSignature.defaultLocation"] = value139;
+			_g.h["wrapping.anonFunctionSignature.defaultLocation"] = value225;
 		}
-		var value140 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value226 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.defaultAdditionalIndent",value226);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.defaultAdditionalIndent"] = value226;
+		}
+		var value227 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.callParameter.defaultWrap"] != null) {
-			_g.setReserved("wrapping.callParameter.defaultWrap",value140);
+			_g.setReserved("wrapping.callParameter.defaultWrap",value227);
 		} else {
-			_g.h["wrapping.callParameter.defaultWrap"] = value140;
+			_g.h["wrapping.callParameter.defaultWrap"] = value227;
 		}
-		var value141 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value228 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.callParameter.defaultLocation"] != null) {
-			_g.setReserved("wrapping.callParameter.defaultLocation",value141);
+			_g.setReserved("wrapping.callParameter.defaultLocation",value228);
 		} else {
-			_g.h["wrapping.callParameter.defaultLocation"] = value141;
+			_g.h["wrapping.callParameter.defaultLocation"] = value228;
 		}
-		var value142 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value229 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.callParameter.defaultAdditionalIndent",value229);
+		} else {
+			_g.h["wrapping.callParameter.defaultAdditionalIndent"] = value229;
+		}
+		var value230 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.metadataCallParameter.defaultWrap"] != null) {
-			_g.setReserved("wrapping.metadataCallParameter.defaultWrap",value142);
+			_g.setReserved("wrapping.metadataCallParameter.defaultWrap",value230);
 		} else {
-			_g.h["wrapping.metadataCallParameter.defaultWrap"] = value142;
+			_g.h["wrapping.metadataCallParameter.defaultWrap"] = value230;
 		}
-		var value143 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value231 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.metadataCallParameter.defaultLocation"] != null) {
-			_g.setReserved("wrapping.metadataCallParameter.defaultLocation",value143);
+			_g.setReserved("wrapping.metadataCallParameter.defaultLocation",value231);
 		} else {
-			_g.h["wrapping.metadataCallParameter.defaultLocation"] = value143;
+			_g.h["wrapping.metadataCallParameter.defaultLocation"] = value231;
 		}
-		var value144 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value232 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.defaultAdditionalIndent",value232);
+		} else {
+			_g.h["wrapping.metadataCallParameter.defaultAdditionalIndent"] = value232;
+		}
+		var value233 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.objectLiteral.defaultWrap"] != null) {
-			_g.setReserved("wrapping.objectLiteral.defaultWrap",value144);
+			_g.setReserved("wrapping.objectLiteral.defaultWrap",value233);
 		} else {
-			_g.h["wrapping.objectLiteral.defaultWrap"] = value144;
+			_g.h["wrapping.objectLiteral.defaultWrap"] = value233;
 		}
-		var value145 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value234 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.objectLiteral.defaultLocation"] != null) {
-			_g.setReserved("wrapping.objectLiteral.defaultLocation",value145);
+			_g.setReserved("wrapping.objectLiteral.defaultLocation",value234);
 		} else {
-			_g.h["wrapping.objectLiteral.defaultLocation"] = value145;
+			_g.h["wrapping.objectLiteral.defaultLocation"] = value234;
 		}
-		var value146 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value235 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.objectLiteral.defaultAdditionalIndent",value235);
+		} else {
+			_g.h["wrapping.objectLiteral.defaultAdditionalIndent"] = value235;
+		}
+		var value236 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.anonType.defaultWrap"] != null) {
-			_g.setReserved("wrapping.anonType.defaultWrap",value146);
+			_g.setReserved("wrapping.anonType.defaultWrap",value236);
 		} else {
-			_g.h["wrapping.anonType.defaultWrap"] = value146;
+			_g.h["wrapping.anonType.defaultWrap"] = value236;
 		}
-		var value147 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value237 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.anonType.defaultLocation"] != null) {
-			_g.setReserved("wrapping.anonType.defaultLocation",value147);
+			_g.setReserved("wrapping.anonType.defaultLocation",value237);
 		} else {
-			_g.h["wrapping.anonType.defaultLocation"] = value147;
+			_g.h["wrapping.anonType.defaultLocation"] = value237;
 		}
-		var value148 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value238 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.anonType.defaultAdditionalIndent",value238);
+		} else {
+			_g.h["wrapping.anonType.defaultAdditionalIndent"] = value238;
+		}
+		var value239 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.methodChain.defaultWrap"] != null) {
-			_g.setReserved("wrapping.methodChain.defaultWrap",value148);
+			_g.setReserved("wrapping.methodChain.defaultWrap",value239);
 		} else {
-			_g.h["wrapping.methodChain.defaultWrap"] = value148;
+			_g.h["wrapping.methodChain.defaultWrap"] = value239;
 		}
-		var value149 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value240 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.methodChain.defaultLocation"] != null) {
-			_g.setReserved("wrapping.methodChain.defaultLocation",value149);
+			_g.setReserved("wrapping.methodChain.defaultLocation",value240);
 		} else {
-			_g.h["wrapping.methodChain.defaultLocation"] = value149;
+			_g.h["wrapping.methodChain.defaultLocation"] = value240;
 		}
-		var value150 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value241 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.methodChain.defaultAdditionalIndent",value241);
+		} else {
+			_g.h["wrapping.methodChain.defaultAdditionalIndent"] = value241;
+		}
+		var value242 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.opBoolChain.defaultWrap"] != null) {
-			_g.setReserved("wrapping.opBoolChain.defaultWrap",value150);
+			_g.setReserved("wrapping.opBoolChain.defaultWrap",value242);
 		} else {
-			_g.h["wrapping.opBoolChain.defaultWrap"] = value150;
+			_g.h["wrapping.opBoolChain.defaultWrap"] = value242;
 		}
-		var value151 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value243 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.opBoolChain.defaultLocation"] != null) {
-			_g.setReserved("wrapping.opBoolChain.defaultLocation",value151);
+			_g.setReserved("wrapping.opBoolChain.defaultLocation",value243);
 		} else {
-			_g.h["wrapping.opBoolChain.defaultLocation"] = value151;
+			_g.h["wrapping.opBoolChain.defaultLocation"] = value243;
 		}
-		var value152 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value244 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.opBoolChain.defaultAdditionalIndent",value244);
+		} else {
+			_g.h["wrapping.opBoolChain.defaultAdditionalIndent"] = value244;
+		}
+		var value245 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.implementsExtends.defaultWrap"] != null) {
-			_g.setReserved("wrapping.implementsExtends.defaultWrap",value152);
+			_g.setReserved("wrapping.implementsExtends.defaultWrap",value245);
 		} else {
-			_g.h["wrapping.implementsExtends.defaultWrap"] = value152;
+			_g.h["wrapping.implementsExtends.defaultWrap"] = value245;
 		}
-		var value153 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value246 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.implementsExtends.defaultLocation"] != null) {
-			_g.setReserved("wrapping.implementsExtends.defaultLocation",value153);
+			_g.setReserved("wrapping.implementsExtends.defaultLocation",value246);
 		} else {
-			_g.h["wrapping.implementsExtends.defaultLocation"] = value153;
+			_g.h["wrapping.implementsExtends.defaultLocation"] = value246;
 		}
-		var value154 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value247 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.implementsExtends.defaultAdditionalIndent",value247);
+		} else {
+			_g.h["wrapping.implementsExtends.defaultAdditionalIndent"] = value247;
+		}
+		var value248 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.opAddSubChain.defaultWrap"] != null) {
-			_g.setReserved("wrapping.opAddSubChain.defaultWrap",value154);
+			_g.setReserved("wrapping.opAddSubChain.defaultWrap",value248);
 		} else {
-			_g.h["wrapping.opAddSubChain.defaultWrap"] = value154;
+			_g.h["wrapping.opAddSubChain.defaultWrap"] = value248;
 		}
-		var value155 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value249 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.opAddSubChain.defaultLocation"] != null) {
-			_g.setReserved("wrapping.opAddSubChain.defaultLocation",value155);
+			_g.setReserved("wrapping.opAddSubChain.defaultLocation",value249);
 		} else {
-			_g.h["wrapping.opAddSubChain.defaultLocation"] = value155;
+			_g.h["wrapping.opAddSubChain.defaultLocation"] = value249;
 		}
-		var value156 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value250 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.defaultAdditionalIndent",value250);
+		} else {
+			_g.h["wrapping.opAddSubChain.defaultAdditionalIndent"] = value250;
+		}
+		var value251 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.multiVar.defaultWrap"] != null) {
-			_g.setReserved("wrapping.multiVar.defaultWrap",value156);
+			_g.setReserved("wrapping.multiVar.defaultWrap",value251);
 		} else {
-			_g.h["wrapping.multiVar.defaultWrap"] = value156;
+			_g.h["wrapping.multiVar.defaultWrap"] = value251;
 		}
-		var value157 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value252 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.multiVar.defaultLocation"] != null) {
-			_g.setReserved("wrapping.multiVar.defaultLocation",value157);
+			_g.setReserved("wrapping.multiVar.defaultLocation",value252);
 		} else {
-			_g.h["wrapping.multiVar.defaultLocation"] = value157;
+			_g.h["wrapping.multiVar.defaultLocation"] = value252;
 		}
-		var value158 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		var value253 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.multiVar.defaultAdditionalIndent",value253);
+		} else {
+			_g.h["wrapping.multiVar.defaultAdditionalIndent"] = value253;
+		}
+		var value254 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
 		if(__map_reserved["wrapping.casePattern.defaultWrap"] != null) {
-			_g.setReserved("wrapping.casePattern.defaultWrap",value158);
+			_g.setReserved("wrapping.casePattern.defaultWrap",value254);
 		} else {
-			_g.h["wrapping.casePattern.defaultWrap"] = value158;
+			_g.h["wrapping.casePattern.defaultWrap"] = value254;
 		}
-		var value159 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		var value255 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
 		if(__map_reserved["wrapping.casePattern.defaultLocation"] != null) {
-			_g.setReserved("wrapping.casePattern.defaultLocation",value159);
+			_g.setReserved("wrapping.casePattern.defaultLocation",value255);
 		} else {
-			_g.h["wrapping.casePattern.defaultLocation"] = value159;
+			_g.h["wrapping.casePattern.defaultLocation"] = value255;
+		}
+		var value256 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.casePattern.defaultAdditionalIndent",value256);
+		} else {
+			_g.h["wrapping.casePattern.defaultAdditionalIndent"] = value256;
 		}
 		this.configFields = _g;
 		this.currentConfig = new formatter_config_Config();
@@ -3992,12 +4595,12 @@ class codesamples_config_ConfigFieldRegistry {
 			var fieldPath = _g11.key;
 			var _ = _g11.value;
 			var this1 = this.configFieldValues;
-			var value160 = { defaultValue : this.getConfigFieldValue(this.currentConfig,fieldPath)};
+			var value257 = { defaultValue : this.getConfigFieldValue(this.currentConfig,fieldPath)};
 			var _this = this1;
 			if(__map_reserved[fieldPath] != null) {
-				_this.setReserved(fieldPath,value160);
+				_this.setReserved(fieldPath,value257);
 			} else {
-				_this.h[fieldPath] = value160;
+				_this.h[fieldPath] = value257;
 			}
 		}
 	}
@@ -6439,8 +7042,20 @@ class formatter_marker_Indenter {
 							mustIndent = true;
 							break;
 						case 4:
+							mustIndent = true;
 							break;
 						case 5:
+							mustIndent = true;
+							break;
+						case 6:
+							mustIndent = true;
+							break;
+						case 7:
+							mustIndent = true;
+							break;
+						case 8:
+							break;
+						case 9:
 							break;
 						}
 						break;
@@ -10879,14 +11494,15 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 						case 1:
 							policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"after");
 							break;
-						case 3:
+						case 3:case 4:case 5:case 6:case 7:
 							policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"after");
 							break;
-						case 4:
+						case 8:
 							policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"after");
 							break;
-						default:
+						case 0:case 2:case 9:
 							policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.remove(policy,"after");
+							break;
 						}
 					} else {
 						policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.remove(policy,"after");
@@ -10946,8 +11562,11 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 					policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.remove(policy,"before");
 					break;
 				case 19:
-					if(tokentree_utils_TokenTreeCheckUtils.getPOpenType(prev.token)._hx_index == 3) {
+					switch(tokentree_utils_TokenTreeCheckUtils.getPOpenType(prev.token)._hx_index) {
+					case 3:case 4:case 5:case 6:case 7:
 						policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"before");
+						break;
+					default:
 					}
 					break;
 				default:
@@ -11326,10 +11945,33 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 		case 2:
 			return this.config.whitespace.parenConfig.callParens;
 		case 3:
+			if(this.config.whitespace.parenConfig.switchConditionParens != null) {
+				return this.config.whitespace.parenConfig.switchConditionParens;
+			}
 			return this.config.whitespace.parenConfig.conditionParens;
 		case 4:
-			return this.config.whitespace.parenConfig.forLoopParens;
+			if(this.config.whitespace.parenConfig.whileConditionParens != null) {
+				return this.config.whitespace.parenConfig.whileConditionParens;
+			}
+			return this.config.whitespace.parenConfig.conditionParens;
 		case 5:
+			if(this.config.whitespace.parenConfig.ifConditionParens != null) {
+				return this.config.whitespace.parenConfig.ifConditionParens;
+			}
+			return this.config.whitespace.parenConfig.conditionParens;
+		case 6:
+			if(this.config.whitespace.parenConfig.sharpConditionParens != null) {
+				return this.config.whitespace.parenConfig.sharpConditionParens;
+			}
+			return this.config.whitespace.parenConfig.conditionParens;
+		case 7:
+			if(this.config.whitespace.parenConfig.catchParens != null) {
+				return this.config.whitespace.parenConfig.catchParens;
+			}
+			return this.config.whitespace.parenConfig.conditionParens;
+		case 8:
+			return this.config.whitespace.parenConfig.forLoopParens;
+		case 9:
 			return this.config.whitespace.parenConfig.expressionParens;
 		}
 	}
@@ -12897,6 +13539,14 @@ class formatter_marker_wrapping_MarkWrapping extends formatter_marker_wrapping_M
 			break;
 		case 5:
 			break;
+		case 6:
+			break;
+		case 7:
+			break;
+		case 8:
+			break;
+		case 9:
+			break;
 		}
 	}
 	arrayWrapping(token) {
@@ -13352,6 +14002,14 @@ class formatter_marker_wrapping_MarkWrapping extends formatter_marker_wrapping_M
 			case 4:
 				break;
 			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
 				break;
 			}
 		}
@@ -18058,6 +18716,14 @@ class tokentree_utils_TokenTreeCheckUtils {
 			case 4:
 				return true;
 			case 5:
+				return true;
+			case 6:
+				return true;
+			case 7:
+				return false;
+			case 8:
+				return true;
+			case 9:
 				return false;
 			}
 			break;
@@ -18366,6 +19032,14 @@ class tokentree_utils_TokenTreeCheckUtils {
 			case 4:
 				return tokentree_utils_BrOpenType.UNKNOWN;
 			case 5:
+				return tokentree_utils_BrOpenType.UNKNOWN;
+			case 6:
+				return tokentree_utils_BrOpenType.UNKNOWN;
+			case 7:
+				return tokentree_utils_BrOpenType.UNKNOWN;
+			case 8:
+				return tokentree_utils_BrOpenType.UNKNOWN;
+			case 9:
 				return tokentree_utils_BrOpenType.OBJECTDECL;
 			}
 			break;
@@ -18494,9 +19168,6 @@ class tokentree_utils_TokenTreeCheckUtils {
 		return type;
 	}
 	static determinePOpenType(token) {
-		if(token == null) {
-			return tokentree_utils_POpenType.EXPRESSION;
-		}
 		var parent = token.parent;
 		if(parent == null || parent.tok == null) {
 			return tokentree_utils_POpenType.EXPRESSION;
@@ -18517,7 +19188,7 @@ class tokentree_utils_TokenTreeCheckUtils {
 				switch(_g.s) {
 				case "elseif":case "if":
 					if(parent.getFirstChild() == token) {
-						return tokentree_utils_POpenType.CONDITION;
+						return tokentree_utils_POpenType.SHARP_CONDITION;
 					}
 					parent = parent.parent;
 					break;
@@ -18548,34 +19219,36 @@ class tokentree_utils_TokenTreeCheckUtils {
 			case 3:
 				var firstChild = parent.getFirstChild();
 				if(firstChild == null) {
-					return tokentree_utils_POpenType.CONDITION;
+					return tokentree_utils_POpenType.IF_CONDITION;
 				}
 				if(firstChild.index == token.index) {
-					return tokentree_utils_POpenType.CONDITION;
+					return tokentree_utils_POpenType.IF_CONDITION;
 				}
 				return tokentree_utils_POpenType.EXPRESSION;
 			case 5:
-				return tokentree_utils_POpenType.CONDITION;
+				return tokentree_utils_POpenType.WHILE_CONDITION;
 			case 7:
 				return tokentree_utils_POpenType.FORLOOP;
+			case 14:
+				return tokentree_utils_POpenType.SWITCH_CONDITION;
 			case 21:
-				return tokentree_utils_POpenType.CONDITION;
+				return tokentree_utils_POpenType.CATCH;
 			case 22:
 				return tokentree_utils_POpenType.PARAMETER;
 			default:
 			}
 			break;
 		case 1:
-			var _g3 = _g1.c;
-			if(_g3._hx_index == 3) {
-				var _g4 = _g3.s;
+			var _g2 = _g1.c;
+			if(_g2._hx_index == 3) {
+				var _g3 = _g2.s;
 				if(parent.parent == null || parent.parent.tok == null) {
 					return tokentree_utils_POpenType.CALL;
 				}
-				var _g2 = parent.parent.tok;
-				switch(_g2._hx_index) {
+				var _g4 = parent.parent.tok;
+				switch(_g4._hx_index) {
 				case 0:
-					switch(_g2.k._hx_index) {
+					switch(_g4.k._hx_index) {
 					case 0:
 						if(parent.previousSibling == null) {
 							return tokentree_utils_POpenType.PARAMETER;
@@ -18595,14 +19268,6 @@ class tokentree_utils_TokenTreeCheckUtils {
 				default:
 					return tokentree_utils_POpenType.CALL;
 				}
-			}
-			break;
-		case 2:
-			switch(_g1.s) {
-			case "elseif":case "if":
-				return tokentree_utils_POpenType.EXPRESSION;
-			default:
-				return tokentree_utils_POpenType.EXPRESSION;
 			}
 			break;
 		case 18:
@@ -18868,7 +19533,7 @@ class tokentree_utils_TokenTreeCheckUtils {
 					switch(type1._hx_index) {
 					case 1:
 						return tokentree_utils_ArrowType.FUNCTION_TYPE_HAXE3;
-					case 5:
+					case 9:
 						return tokentree_utils_ArrowType.FUNCTION_TYPE_HAXE3;
 					default:
 						return tokentree_utils_ArrowType.ARROW_FUNCTION;
@@ -19002,10 +19667,18 @@ class tokentree_utils_TokenTreeCheckUtils {
 				case 2:
 					return tokentree_utils_ColonType.UNKNOWN;
 				case 3:
-					return tokentree_utils_ColonType.UNKNOWN;
-				case 4:
 					return tokentree_utils_ColonType.TYPE_CHECK;
+				case 4:
+					return tokentree_utils_ColonType.UNKNOWN;
 				case 5:
+					return tokentree_utils_ColonType.UNKNOWN;
+				case 6:
+					return tokentree_utils_ColonType.UNKNOWN;
+				case 7:
+					return tokentree_utils_ColonType.UNKNOWN;
+				case 8:
+					return tokentree_utils_ColonType.TYPE_CHECK;
+				case 9:
 					return tokentree_utils_ColonType.TYPE_CHECK;
 				}
 				break;
@@ -19069,13 +19742,17 @@ var tokentree_utils_BrOpenType = $hxEnums["tokentree.utils.BrOpenType"] = { __en
 	,ANONTYPE: {_hx_index:3,__enum__:"tokentree.utils.BrOpenType",toString:$estr}
 	,UNKNOWN: {_hx_index:4,__enum__:"tokentree.utils.BrOpenType",toString:$estr}
 };
-var tokentree_utils_POpenType = $hxEnums["tokentree.utils.POpenType"] = { __ename__ : true, __constructs__ : ["AT","PARAMETER","CALL","CONDITION","FORLOOP","EXPRESSION"]
+var tokentree_utils_POpenType = $hxEnums["tokentree.utils.POpenType"] = { __ename__ : true, __constructs__ : ["AT","PARAMETER","CALL","SWITCH_CONDITION","WHILE_CONDITION","IF_CONDITION","SHARP_CONDITION","CATCH","FORLOOP","EXPRESSION"]
 	,AT: {_hx_index:0,__enum__:"tokentree.utils.POpenType",toString:$estr}
 	,PARAMETER: {_hx_index:1,__enum__:"tokentree.utils.POpenType",toString:$estr}
 	,CALL: {_hx_index:2,__enum__:"tokentree.utils.POpenType",toString:$estr}
-	,CONDITION: {_hx_index:3,__enum__:"tokentree.utils.POpenType",toString:$estr}
-	,FORLOOP: {_hx_index:4,__enum__:"tokentree.utils.POpenType",toString:$estr}
-	,EXPRESSION: {_hx_index:5,__enum__:"tokentree.utils.POpenType",toString:$estr}
+	,SWITCH_CONDITION: {_hx_index:3,__enum__:"tokentree.utils.POpenType",toString:$estr}
+	,WHILE_CONDITION: {_hx_index:4,__enum__:"tokentree.utils.POpenType",toString:$estr}
+	,IF_CONDITION: {_hx_index:5,__enum__:"tokentree.utils.POpenType",toString:$estr}
+	,SHARP_CONDITION: {_hx_index:6,__enum__:"tokentree.utils.POpenType",toString:$estr}
+	,CATCH: {_hx_index:7,__enum__:"tokentree.utils.POpenType",toString:$estr}
+	,FORLOOP: {_hx_index:8,__enum__:"tokentree.utils.POpenType",toString:$estr}
+	,EXPRESSION: {_hx_index:9,__enum__:"tokentree.utils.POpenType",toString:$estr}
 };
 var tokentree_utils_ArrowType = $hxEnums["tokentree.utils.ArrowType"] = { __ename__ : true, __constructs__ : ["ARROW_FUNCTION","FUNCTION_TYPE_HAXE3","FUNCTION_TYPE_HAXE4"]
 	,ARROW_FUNCTION: {_hx_index:0,__enum__:"tokentree.utils.ArrowType",toString:$estr}
@@ -21748,7 +22425,7 @@ codesamples_EmptylinesSamples.__meta__ = { obj : { sectionName : ["Emptylines sa
 codesamples_IndentationSamples.__meta__ = { obj : { sectionName : ["Indentation samples"]}, fields : { trailing_whitespace : { codeSampleName : ["trailing.whitespace"]}}};
 codesamples_LineendsSamples.__meta__ = { obj : { sectionName : ["Lineends samples"]}};
 codesamples_SamelineSamples.__meta__ = { obj : { sectionName : ["Sameline samples"]}, fields : { blockless_function_body : { codeSampleName : ["blockless.function.body"]}}};
-codesamples_WhitespaceSamples.__meta__ = { obj : { sectionName : ["Whitespace samples"]}, fields : { function_parens : { codeSampleName : ["function.parens"]}}};
+codesamples_WhitespaceSamples.__meta__ = { obj : { sectionName : ["Whitespace samples"]}, fields : { conditional_parens_detailed : { codeSampleName : ["conditional.parens.detailed"]}, conditional_parens_short : { codeSampleName : ["conditional.parens.short"]}, function_parens : { codeSampleName : ["function.parens"]}}};
 codesamples_WrappingSamples.__meta__ = { obj : { sectionName : ["Wrapping samples"]}, fields : { array_matrix_wrapping : { codeSampleName : ["array.matrix.wrapping"]}, case_pattern_wrapping : { codeSampleName : ["case.pattern.wrapping"]}, method_chain_wrapping : { codeSampleName : ["method.chain.wrapping"]}, operator_add_chain_wrapping : { codeSampleName : ["operator.add.chain.wrapping"]}}};
 formatter_FormatStats.totalLinesOrig = 0;
 formatter_FormatStats.totalLinesFormatted = 0;
