@@ -50,17 +50,20 @@ class Main {
 		try {
 			#if (haxe_ver > 4.0)
 			#end
-			var v, a = 1, b = 2;
+
 			switch (a) {
 				default:
 					v = (a + b);
 			}
+
 			if (a) {
 				v = (a + b);
 			}
+
 			while (true) {
 				v = (a + b);
 			}
+
 			do {
 				v = (a + b);
 			} while (true);
