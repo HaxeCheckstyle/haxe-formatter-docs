@@ -10,6 +10,8 @@ import codesamples.config.ConfigFieldRegistry;
 
 @:keepSub
 class SampleBase {
+	static inline var DATA_FIELD_PATH = "field-path";
+
 	var currentCodeSample:Null<String>;
 	var codeWasModified:Bool;
 	var configFieldRegistry:ConfigFieldRegistry;
@@ -60,7 +62,7 @@ class SampleBase {
 
 	function onChangeCombo(event:Event) {
 		var element:JQuery = new JQuery(event.target);
-		var fieldPath:String = element.data("field-path");
+		var fieldPath:String = element.data(DATA_FIELD_PATH);
 		var value:String = element.val();
 		applyConfigValue(fieldPath, value);
 		updateFormat();
@@ -68,7 +70,7 @@ class SampleBase {
 
 	function onClickBoolLabel(event:Event) {
 		var element:JQuery = new JQuery(event.target);
-		var fieldPath:String = element.data("field-path");
+		var fieldPath:String = element.data(DATA_FIELD_PATH);
 		element = new JQuery('input[data-field-path="$fieldPath"]');
 		element.prop("checked", !element.prop("checked"));
 		var value:Bool = false;
@@ -82,7 +84,7 @@ class SampleBase {
 
 	function onChangeBool(event:Event) {
 		var element:JQuery = new JQuery(event.target);
-		var fieldPath:String = element.data("field-path");
+		var fieldPath:String = element.data(DATA_FIELD_PATH);
 
 		var value:Bool = false;
 		if (element.is(":checked")) {
@@ -95,7 +97,7 @@ class SampleBase {
 
 	function onChangeNumber(event:Event) {
 		var element:JQuery = new JQuery(event.target);
-		var fieldPath:String = element.data("field-path");
+		var fieldPath:String = element.data(DATA_FIELD_PATH);
 		var value:String = element.val();
 		applyConfigValue(fieldPath, value);
 		updateFormat();
@@ -103,7 +105,7 @@ class SampleBase {
 
 	function onChangeText(event:Event) {
 		var element:JQuery = new JQuery(event.target);
-		var fieldPath:String = element.data("field-path");
+		var fieldPath:String = element.data(DATA_FIELD_PATH);
 		var value:String = element.val();
 		applyConfigValue(fieldPath, value);
 		updateFormat();
@@ -121,8 +123,8 @@ class SampleBase {
 		});
 		var hxformatUrl:Any = URL.createObjectURL(blob);
 		new JQuery("#downloadLink").attr({
-			'download': "hxformat.json",
-			'href': hxformatUrl
+			"download": "hxformat.json",
+			"href": hxformatUrl
 		})[0].click();
 		URL.revokeObjectURL(hxformatUrl);
 	}
@@ -157,7 +159,7 @@ class SampleBase {
 		textElement.val(configFieldRegistry.makeCustomConfig());
 	}
 
-	function applyConfigValue(fieldPath:String, value:Dynamic) {
+	function applyConfigValue(fieldPath:String, value:Any) {
 		configFieldRegistry.setFieldValue(fieldPath, value);
 		Browser.console.info('setting $fieldPath = $value');
 	}

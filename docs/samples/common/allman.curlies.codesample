@@ -1,8 +1,8 @@
 probably the most searched for option of formatter :)
 
-Note: `lineEnds.leftCurly` affects all left curlies, there are specialised options for
-different curly places (e.g. `lineEnds.blockCurly`, `lineEnds.objectLiteralCurly`, etc.)
-see [haxeflixel style sample](#codesamples.CommonSamples.haxeflixel_style)
+> **Note**: `lineEnds.leftCurly` affects all left curlies, there are specialised options for
+> different curly places (e.g. `lineEnds.blockCurly`, `lineEnds.objectLiteralCurly`, etc.)
+> see [haxeflixel style sample](#codesamples.CommonSamples.haxeflixel_style)
 
 ---
 

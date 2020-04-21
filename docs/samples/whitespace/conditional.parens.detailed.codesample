@@ -1,25 +1,33 @@
-The following whitespace setting structures were added in version 1.11.0 (all childs of `whitespace.parenConfig`):
+The following whitespace settings were added in version 1.11.0 (all childs of `whitespace.parenConfig`):
 
-- `ifConditionParens` - whitespace policies for `if (expr)`
-- `switchConditionParens` - whitespace policies for `switch (expr)`
-- `whileConditionParens` - whitespace policies for `while (expr)`
-- `sharpConditionParens` - whitespace policies for `#if (expr)`
-- `catchParens` - whitespace policies for `catch (expr)`
+- `catchParens` - for `catch (expr)`
+- `ifConditionParens` - for `if (expr)`
+- `sharpConditionParens` - for `#if (expr)`
+- `switchConditionParens` - for `switch (expr)`
+- `whileConditionParens` - for `while (expr)`
 
-They use the same structure as `whitespace.parenConfig.conditionParens` (see [conditional parens short](#codesamples.WhitespaceSamples.conditional_parens_short))
+All use the same structure as `whitespace.parenConfig.conditionParens` (see [conditional parens short](#codesamples.WhitespaceSamples.conditional_parens_short))
 and allow a finer control over whitespace settings for each location.
 The new settings default to `null` which means `conditionParens` applies to all locations.
 It also means you only have to set values for those locations where you want formatter to behave differently.
 
-Note: Using `removeInnerWhenEmpty` is technically possible, but since code with an empty condtion expression
-doesn't make sense and probably won't compile there isn't much use to it.
+> **Note**: Using `removeInnerWhenEmpty` is technically possible, but since code with an empty condtion expression
+> doesn't make sense and probably won't compile there isn't much use to it.
 
 ---
 
 {
 	"whitespace": {
 		"parenConfig": {
+			"catchParens": {
+				"openingPolicy": "onlyAfter",
+				"closingPolicy": "before"
+			},
 			"ifConditionParens": {
+				"openingPolicy": "onlyAfter",
+				"closingPolicy": "before"
+			},
+			"sharpConditionParens": {
 				"openingPolicy": "onlyAfter",
 				"closingPolicy": "before"
 			},
@@ -28,14 +36,6 @@ doesn't make sense and probably won't compile there isn't much use to it.
 				"closingPolicy": "before"
 			},
 			"whileConditionParens": {
-				"openingPolicy": "onlyAfter",
-				"closingPolicy": "before"
-			},
-			"sharpConditionParens": {
-				"openingPolicy": "onlyAfter",
-				"closingPolicy": "before"
-			},
-			"catchParens": {
 				"openingPolicy": "onlyAfter",
 				"closingPolicy": "before"
 			}

@@ -2,7 +2,7 @@ wrapping arrays in matrix layout
 
 array wrapping only works on arrays that have an equal number of elements per line, so your input source code should already have a matrix shape
 
-Note: `equalNumber` is not implemented yet
+> **Note**: `equalNumber` is not implemented yet
 
 ---
 

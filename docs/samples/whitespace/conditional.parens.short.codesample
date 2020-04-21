@@ -12,12 +12,12 @@ policy can be one of the following (element being either an opening or a closing
 - `noneBefore` - never add whitespace before element
 - `onlyBefore` - only add whitespace before element
 - `after` - add whitespace after element
-- `onlyAfter` - only add whitespace after element
 - `noneAfter` - never add whitespace after element
+- `onlyAfter` - only add whitespace after element
 - `around` - add whitespace before and after element
 
-Note: whitespace policies can be overruled by code parts preceeding or following a whitespace location,
-because these code parts might have whitespace policies that contradict their neighbours.
+> **Note**: whitespace policies can be overruled by code parts preceeding or following a whitespace location,
+> because these code parts might have whitespace policies that contradict their neighbours.
 
 ---
 

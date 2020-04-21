@@ -1,4 +1,7 @@
+See [conditional parens short](#codesamples.WhitespaceSamples.conditional_parens_short) for details about structure and values.
 
+> **Note**: whitespace policies can be overruled by code parts preceeding or following a whitespace location,
+> because these code parts might have whitespace policies that contradict their neighbours.
 
 ---
 

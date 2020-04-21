@@ -1,4 +1,3 @@
-import codesamples.config.ConfigFieldRegistry;
 import haxe.rtti.Meta;
 import js.Browser;
 import js.jquery.Event;
@@ -10,8 +9,12 @@ import codesamples.LineendsSamples;
 import codesamples.SamelineSamples;
 import codesamples.WhitespaceSamples;
 import codesamples.WrappingSamples;
+import codesamples.config.ConfigFieldRegistry;
+import doc.Docs;
 
 class Navigation {
+	static inline var CONTENT_ID = "#content";
+
 	var configFieldRegistry:ConfigFieldRegistry;
 
 	public function new() {
@@ -23,6 +26,7 @@ class Navigation {
 		var content:String = "";
 
 		content += '<ul class="sections">\n';
+		content += buildNavigationsection(Docs);
 		content += buildNavigationsection(CommonSamples);
 		content += buildNavigationsection(EmptylinesSamples);
 		content += buildNavigationsection(IndentationSamples);
@@ -51,6 +55,9 @@ class Navigation {
 			}
 			var name:Null<Array<String>> = Reflect.field(fieldMeta, "codeSampleName");
 			if (name == null) {
+				name = Reflect.field(fieldMeta, "docName");
+			}
+			if (name == null) {
 				continue;
 			}
 			content += '<li data-class-name="$className" data-field-name="$field">'
@@ -70,17 +77,17 @@ class Navigation {
 		var fieldName:String = parts.pop();
 		var className:String = parts.join(".");
 
-		var instance:Null<Class<Dynamic>> = Type.createInstance(Type.resolveClass(className), []);
+		var instance:Null<Class<Any>> = Type.createInstance(Type.resolveClass(className), []);
 		if (instance == null) {
-			new JQuery("#content").html("");
+			new JQuery(CONTENT_ID).html("");
 			return;
 		}
-		var field:Null<Dynamic> = Reflect.field(instance, fieldName);
+		var field:Null<Any> = Reflect.field(instance, fieldName);
 		if (field == null) {
-			new JQuery("#content").html("");
+			new JQuery(CONTENT_ID).html("");
 			return;
 		}
-		Reflect.callMethod(instance, field, ["#content", configFieldRegistry]);
+		Reflect.callMethod(instance, field, [CONTENT_ID, configFieldRegistry]);
 
 		new JQuery(".sectionEntries li").removeClass("active");
 		new JQuery(".sectionEntries li").filter('[data-class-name="$className"]').filter('[data-field-name="$fieldName"]').addClass("active");
