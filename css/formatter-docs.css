@@ -165,10 +165,11 @@ button {
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
   background-color: #2e2e4e;
-  border: 1px solid #1e1e1e;
-  padding: 2px 3px;
-  margin: 2px;
-  line-height: 19px;
+  border-right: 1px solid #1e1e1e;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 3px 2px 1px 4px;
+  margin: 3px 2px;
+  line-height: 20px;
   text-shadow: 2px 2px #1e1e1e;
 }
 #contentContainer #content #markdownContainer {
@@ -199,10 +200,11 @@ button {
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
   background-color: #2e2e4e;
-  border: 1px solid #1e1e1e;
-  padding: 2px 3px;
-  margin: 2px;
-  line-height: 19px;
+  border-right: 1px solid #1e1e1e;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 3px 2px 1px 4px;
+  margin: 3px 2px;
+  line-height: 20px;
   text-shadow: 2px 2px #1e1e1e;
 }
 #contentContainer #content #codeSampleContainer {

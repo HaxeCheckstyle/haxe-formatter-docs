@@ -4356,239 +4356,3767 @@ class codesamples_config_ConfigFieldRegistry {
 		} else {
 			_g.h["wrapping.arrayWrap.defaultAdditionalIndent"] = value217;
 		}
-		var value218 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.typeParameter.defaultWrap"] != null) {
-			_g.setReserved("wrapping.typeParameter.defaultWrap",value218);
+		var value218 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[0].conditions[0].cond",value218);
 		} else {
-			_g.h["wrapping.typeParameter.defaultWrap"] = value218;
+			_g.h["wrapping.arrayWrap.rules[0].conditions[0].cond"] = value218;
 		}
-		var value219 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.typeParameter.defaultLocation"] != null) {
-			_g.setReserved("wrapping.typeParameter.defaultLocation",value219);
+		var value219 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[0].conditions[0].value",value219);
 		} else {
-			_g.h["wrapping.typeParameter.defaultLocation"] = value219;
+			_g.h["wrapping.arrayWrap.rules[0].conditions[0].value"] = value219;
 		}
-		var value220 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.typeParameter.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.typeParameter.defaultAdditionalIndent",value220);
+		var value220 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[0].conditions[1].cond",value220);
 		} else {
-			_g.h["wrapping.typeParameter.defaultAdditionalIndent"] = value220;
+			_g.h["wrapping.arrayWrap.rules[0].conditions[1].cond"] = value220;
 		}
-		var value221 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.functionSignature.defaultWrap"] != null) {
-			_g.setReserved("wrapping.functionSignature.defaultWrap",value221);
+		var value221 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[0].conditions[1].value",value221);
 		} else {
-			_g.h["wrapping.functionSignature.defaultWrap"] = value221;
+			_g.h["wrapping.arrayWrap.rules[0].conditions[1].value"] = value221;
 		}
-		var value222 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.functionSignature.defaultLocation"] != null) {
-			_g.setReserved("wrapping.functionSignature.defaultLocation",value222);
+		var value222 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[0].type"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[0].type",value222);
 		} else {
-			_g.h["wrapping.functionSignature.defaultLocation"] = value222;
+			_g.h["wrapping.arrayWrap.rules[0].type"] = value222;
 		}
-		var value223 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.functionSignature.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.functionSignature.defaultAdditionalIndent",value223);
+		var value223 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[0].location"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[0].location",value223);
 		} else {
-			_g.h["wrapping.functionSignature.defaultAdditionalIndent"] = value223;
+			_g.h["wrapping.arrayWrap.rules[0].location"] = value223;
 		}
-		var value224 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.anonFunctionSignature.defaultWrap"] != null) {
-			_g.setReserved("wrapping.anonFunctionSignature.defaultWrap",value224);
+		var value224 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[0].additionalIndent",value224);
 		} else {
-			_g.h["wrapping.anonFunctionSignature.defaultWrap"] = value224;
+			_g.h["wrapping.arrayWrap.rules[0].additionalIndent"] = value224;
 		}
-		var value225 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.anonFunctionSignature.defaultLocation"] != null) {
-			_g.setReserved("wrapping.anonFunctionSignature.defaultLocation",value225);
+		var value225 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[1].conditions[0].cond",value225);
 		} else {
-			_g.h["wrapping.anonFunctionSignature.defaultLocation"] = value225;
+			_g.h["wrapping.arrayWrap.rules[1].conditions[0].cond"] = value225;
 		}
 		var value226 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.anonFunctionSignature.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.anonFunctionSignature.defaultAdditionalIndent",value226);
+		if(__map_reserved["wrapping.arrayWrap.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[1].conditions[0].value",value226);
 		} else {
-			_g.h["wrapping.anonFunctionSignature.defaultAdditionalIndent"] = value226;
+			_g.h["wrapping.arrayWrap.rules[1].conditions[0].value"] = value226;
 		}
-		var value227 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.callParameter.defaultWrap"] != null) {
-			_g.setReserved("wrapping.callParameter.defaultWrap",value227);
+		var value227 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[1].conditions[1].cond",value227);
 		} else {
-			_g.h["wrapping.callParameter.defaultWrap"] = value227;
+			_g.h["wrapping.arrayWrap.rules[1].conditions[1].cond"] = value227;
 		}
-		var value228 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.callParameter.defaultLocation"] != null) {
-			_g.setReserved("wrapping.callParameter.defaultLocation",value228);
+		var value228 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[1].conditions[1].value",value228);
 		} else {
-			_g.h["wrapping.callParameter.defaultLocation"] = value228;
+			_g.h["wrapping.arrayWrap.rules[1].conditions[1].value"] = value228;
 		}
-		var value229 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.callParameter.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.callParameter.defaultAdditionalIndent",value229);
+		var value229 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[1].type"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[1].type",value229);
 		} else {
-			_g.h["wrapping.callParameter.defaultAdditionalIndent"] = value229;
+			_g.h["wrapping.arrayWrap.rules[1].type"] = value229;
 		}
-		var value230 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.metadataCallParameter.defaultWrap"] != null) {
-			_g.setReserved("wrapping.metadataCallParameter.defaultWrap",value230);
+		var value230 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[1].location"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[1].location",value230);
 		} else {
-			_g.h["wrapping.metadataCallParameter.defaultWrap"] = value230;
+			_g.h["wrapping.arrayWrap.rules[1].location"] = value230;
 		}
-		var value231 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.metadataCallParameter.defaultLocation"] != null) {
-			_g.setReserved("wrapping.metadataCallParameter.defaultLocation",value231);
+		var value231 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[1].additionalIndent",value231);
 		} else {
-			_g.h["wrapping.metadataCallParameter.defaultLocation"] = value231;
+			_g.h["wrapping.arrayWrap.rules[1].additionalIndent"] = value231;
 		}
-		var value232 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.metadataCallParameter.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.metadataCallParameter.defaultAdditionalIndent",value232);
+		var value232 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[2].conditions[0].cond",value232);
 		} else {
-			_g.h["wrapping.metadataCallParameter.defaultAdditionalIndent"] = value232;
+			_g.h["wrapping.arrayWrap.rules[2].conditions[0].cond"] = value232;
 		}
-		var value233 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.objectLiteral.defaultWrap"] != null) {
-			_g.setReserved("wrapping.objectLiteral.defaultWrap",value233);
+		var value233 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[2].conditions[0].value",value233);
 		} else {
-			_g.h["wrapping.objectLiteral.defaultWrap"] = value233;
+			_g.h["wrapping.arrayWrap.rules[2].conditions[0].value"] = value233;
 		}
-		var value234 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.objectLiteral.defaultLocation"] != null) {
-			_g.setReserved("wrapping.objectLiteral.defaultLocation",value234);
+		var value234 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[2].conditions[1].cond",value234);
 		} else {
-			_g.h["wrapping.objectLiteral.defaultLocation"] = value234;
+			_g.h["wrapping.arrayWrap.rules[2].conditions[1].cond"] = value234;
 		}
 		var value235 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.objectLiteral.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.objectLiteral.defaultAdditionalIndent",value235);
+		if(__map_reserved["wrapping.arrayWrap.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[2].conditions[1].value",value235);
 		} else {
-			_g.h["wrapping.objectLiteral.defaultAdditionalIndent"] = value235;
+			_g.h["wrapping.arrayWrap.rules[2].conditions[1].value"] = value235;
 		}
 		var value236 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.anonType.defaultWrap"] != null) {
-			_g.setReserved("wrapping.anonType.defaultWrap",value236);
+		if(__map_reserved["wrapping.arrayWrap.rules[2].type"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[2].type",value236);
 		} else {
-			_g.h["wrapping.anonType.defaultWrap"] = value236;
+			_g.h["wrapping.arrayWrap.rules[2].type"] = value236;
 		}
 		var value237 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.anonType.defaultLocation"] != null) {
-			_g.setReserved("wrapping.anonType.defaultLocation",value237);
+		if(__map_reserved["wrapping.arrayWrap.rules[2].location"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[2].location",value237);
 		} else {
-			_g.h["wrapping.anonType.defaultLocation"] = value237;
+			_g.h["wrapping.arrayWrap.rules[2].location"] = value237;
 		}
 		var value238 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.anonType.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.anonType.defaultAdditionalIndent",value238);
+		if(__map_reserved["wrapping.arrayWrap.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[2].additionalIndent",value238);
 		} else {
-			_g.h["wrapping.anonType.defaultAdditionalIndent"] = value238;
+			_g.h["wrapping.arrayWrap.rules[2].additionalIndent"] = value238;
 		}
-		var value239 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.methodChain.defaultWrap"] != null) {
-			_g.setReserved("wrapping.methodChain.defaultWrap",value239);
+		var value239 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[3].conditions[0].cond",value239);
 		} else {
-			_g.h["wrapping.methodChain.defaultWrap"] = value239;
+			_g.h["wrapping.arrayWrap.rules[3].conditions[0].cond"] = value239;
 		}
-		var value240 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.methodChain.defaultLocation"] != null) {
-			_g.setReserved("wrapping.methodChain.defaultLocation",value240);
+		var value240 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[3].conditions[0].value",value240);
 		} else {
-			_g.h["wrapping.methodChain.defaultLocation"] = value240;
+			_g.h["wrapping.arrayWrap.rules[3].conditions[0].value"] = value240;
 		}
-		var value241 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.methodChain.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.methodChain.defaultAdditionalIndent",value241);
+		var value241 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[3].conditions[1].cond",value241);
 		} else {
-			_g.h["wrapping.methodChain.defaultAdditionalIndent"] = value241;
+			_g.h["wrapping.arrayWrap.rules[3].conditions[1].cond"] = value241;
 		}
-		var value242 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.opBoolChain.defaultWrap"] != null) {
-			_g.setReserved("wrapping.opBoolChain.defaultWrap",value242);
+		var value242 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[3].conditions[1].value",value242);
 		} else {
-			_g.h["wrapping.opBoolChain.defaultWrap"] = value242;
+			_g.h["wrapping.arrayWrap.rules[3].conditions[1].value"] = value242;
 		}
-		var value243 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.opBoolChain.defaultLocation"] != null) {
-			_g.setReserved("wrapping.opBoolChain.defaultLocation",value243);
+		var value243 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[3].type"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[3].type",value243);
 		} else {
-			_g.h["wrapping.opBoolChain.defaultLocation"] = value243;
+			_g.h["wrapping.arrayWrap.rules[3].type"] = value243;
 		}
-		var value244 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.opBoolChain.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.opBoolChain.defaultAdditionalIndent",value244);
+		var value244 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[3].location"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[3].location",value244);
 		} else {
-			_g.h["wrapping.opBoolChain.defaultAdditionalIndent"] = value244;
+			_g.h["wrapping.arrayWrap.rules[3].location"] = value244;
 		}
-		var value245 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.implementsExtends.defaultWrap"] != null) {
-			_g.setReserved("wrapping.implementsExtends.defaultWrap",value245);
+		var value245 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[3].additionalIndent",value245);
 		} else {
-			_g.h["wrapping.implementsExtends.defaultWrap"] = value245;
+			_g.h["wrapping.arrayWrap.rules[3].additionalIndent"] = value245;
 		}
-		var value246 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.implementsExtends.defaultLocation"] != null) {
-			_g.setReserved("wrapping.implementsExtends.defaultLocation",value246);
+		var value246 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[4].conditions[0].cond",value246);
 		} else {
-			_g.h["wrapping.implementsExtends.defaultLocation"] = value246;
+			_g.h["wrapping.arrayWrap.rules[4].conditions[0].cond"] = value246;
 		}
 		var value247 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.implementsExtends.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.implementsExtends.defaultAdditionalIndent",value247);
+		if(__map_reserved["wrapping.arrayWrap.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[4].conditions[0].value",value247);
 		} else {
-			_g.h["wrapping.implementsExtends.defaultAdditionalIndent"] = value247;
+			_g.h["wrapping.arrayWrap.rules[4].conditions[0].value"] = value247;
 		}
-		var value248 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.opAddSubChain.defaultWrap"] != null) {
-			_g.setReserved("wrapping.opAddSubChain.defaultWrap",value248);
+		var value248 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[4].conditions[1].cond",value248);
 		} else {
-			_g.h["wrapping.opAddSubChain.defaultWrap"] = value248;
+			_g.h["wrapping.arrayWrap.rules[4].conditions[1].cond"] = value248;
 		}
-		var value249 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.opAddSubChain.defaultLocation"] != null) {
-			_g.setReserved("wrapping.opAddSubChain.defaultLocation",value249);
+		var value249 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[4].conditions[1].value",value249);
 		} else {
-			_g.h["wrapping.opAddSubChain.defaultLocation"] = value249;
+			_g.h["wrapping.arrayWrap.rules[4].conditions[1].value"] = value249;
 		}
-		var value250 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.opAddSubChain.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.opAddSubChain.defaultAdditionalIndent",value250);
+		var value250 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[4].type"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[4].type",value250);
 		} else {
-			_g.h["wrapping.opAddSubChain.defaultAdditionalIndent"] = value250;
+			_g.h["wrapping.arrayWrap.rules[4].type"] = value250;
 		}
-		var value251 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.multiVar.defaultWrap"] != null) {
-			_g.setReserved("wrapping.multiVar.defaultWrap",value251);
+		var value251 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[4].location"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[4].location",value251);
 		} else {
-			_g.h["wrapping.multiVar.defaultWrap"] = value251;
+			_g.h["wrapping.arrayWrap.rules[4].location"] = value251;
 		}
-		var value252 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.multiVar.defaultLocation"] != null) {
-			_g.setReserved("wrapping.multiVar.defaultLocation",value252);
+		var value252 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[4].additionalIndent",value252);
 		} else {
-			_g.h["wrapping.multiVar.defaultLocation"] = value252;
+			_g.h["wrapping.arrayWrap.rules[4].additionalIndent"] = value252;
 		}
-		var value253 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.multiVar.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.multiVar.defaultAdditionalIndent",value253);
+		var value253 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[5].conditions[0].cond",value253);
 		} else {
-			_g.h["wrapping.multiVar.defaultAdditionalIndent"] = value253;
+			_g.h["wrapping.arrayWrap.rules[5].conditions[0].cond"] = value253;
 		}
-		var value254 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
-		if(__map_reserved["wrapping.casePattern.defaultWrap"] != null) {
-			_g.setReserved("wrapping.casePattern.defaultWrap",value254);
+		var value254 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[5].conditions[0].value",value254);
 		} else {
-			_g.h["wrapping.casePattern.defaultWrap"] = value254;
+			_g.h["wrapping.arrayWrap.rules[5].conditions[0].value"] = value254;
 		}
-		var value255 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
-		if(__map_reserved["wrapping.casePattern.defaultLocation"] != null) {
-			_g.setReserved("wrapping.casePattern.defaultLocation",value255);
+		var value255 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[5].conditions[1].cond",value255);
 		} else {
-			_g.h["wrapping.casePattern.defaultLocation"] = value255;
+			_g.h["wrapping.arrayWrap.rules[5].conditions[1].cond"] = value255;
 		}
 		var value256 = codesamples_config_ConfigFieldType.Number;
-		if(__map_reserved["wrapping.casePattern.defaultAdditionalIndent"] != null) {
-			_g.setReserved("wrapping.casePattern.defaultAdditionalIndent",value256);
+		if(__map_reserved["wrapping.arrayWrap.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[5].conditions[1].value",value256);
 		} else {
-			_g.h["wrapping.casePattern.defaultAdditionalIndent"] = value256;
+			_g.h["wrapping.arrayWrap.rules[5].conditions[1].value"] = value256;
+		}
+		var value257 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[5].type"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[5].type",value257);
+		} else {
+			_g.h["wrapping.arrayWrap.rules[5].type"] = value257;
+		}
+		var value258 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.arrayWrap.rules[5].location"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[5].location",value258);
+		} else {
+			_g.h["wrapping.arrayWrap.rules[5].location"] = value258;
+		}
+		var value259 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.arrayWrap.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.arrayWrap.rules[5].additionalIndent",value259);
+		} else {
+			_g.h["wrapping.arrayWrap.rules[5].additionalIndent"] = value259;
+		}
+		var value260 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.typeParameter.defaultWrap"] != null) {
+			_g.setReserved("wrapping.typeParameter.defaultWrap",value260);
+		} else {
+			_g.h["wrapping.typeParameter.defaultWrap"] = value260;
+		}
+		var value261 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.typeParameter.defaultLocation"] != null) {
+			_g.setReserved("wrapping.typeParameter.defaultLocation",value261);
+		} else {
+			_g.h["wrapping.typeParameter.defaultLocation"] = value261;
+		}
+		var value262 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.typeParameter.defaultAdditionalIndent",value262);
+		} else {
+			_g.h["wrapping.typeParameter.defaultAdditionalIndent"] = value262;
+		}
+		var value263 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[0].conditions[0].cond",value263);
+		} else {
+			_g.h["wrapping.typeParameter.rules[0].conditions[0].cond"] = value263;
+		}
+		var value264 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[0].conditions[0].value",value264);
+		} else {
+			_g.h["wrapping.typeParameter.rules[0].conditions[0].value"] = value264;
+		}
+		var value265 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[0].conditions[1].cond",value265);
+		} else {
+			_g.h["wrapping.typeParameter.rules[0].conditions[1].cond"] = value265;
+		}
+		var value266 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[0].conditions[1].value",value266);
+		} else {
+			_g.h["wrapping.typeParameter.rules[0].conditions[1].value"] = value266;
+		}
+		var value267 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[0].type"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[0].type",value267);
+		} else {
+			_g.h["wrapping.typeParameter.rules[0].type"] = value267;
+		}
+		var value268 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[0].location"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[0].location",value268);
+		} else {
+			_g.h["wrapping.typeParameter.rules[0].location"] = value268;
+		}
+		var value269 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[0].additionalIndent",value269);
+		} else {
+			_g.h["wrapping.typeParameter.rules[0].additionalIndent"] = value269;
+		}
+		var value270 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[1].conditions[0].cond",value270);
+		} else {
+			_g.h["wrapping.typeParameter.rules[1].conditions[0].cond"] = value270;
+		}
+		var value271 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[1].conditions[0].value",value271);
+		} else {
+			_g.h["wrapping.typeParameter.rules[1].conditions[0].value"] = value271;
+		}
+		var value272 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[1].conditions[1].cond",value272);
+		} else {
+			_g.h["wrapping.typeParameter.rules[1].conditions[1].cond"] = value272;
+		}
+		var value273 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[1].conditions[1].value",value273);
+		} else {
+			_g.h["wrapping.typeParameter.rules[1].conditions[1].value"] = value273;
+		}
+		var value274 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[1].type"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[1].type",value274);
+		} else {
+			_g.h["wrapping.typeParameter.rules[1].type"] = value274;
+		}
+		var value275 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[1].location"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[1].location",value275);
+		} else {
+			_g.h["wrapping.typeParameter.rules[1].location"] = value275;
+		}
+		var value276 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[1].additionalIndent",value276);
+		} else {
+			_g.h["wrapping.typeParameter.rules[1].additionalIndent"] = value276;
+		}
+		var value277 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[2].conditions[0].cond",value277);
+		} else {
+			_g.h["wrapping.typeParameter.rules[2].conditions[0].cond"] = value277;
+		}
+		var value278 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[2].conditions[0].value",value278);
+		} else {
+			_g.h["wrapping.typeParameter.rules[2].conditions[0].value"] = value278;
+		}
+		var value279 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[2].conditions[1].cond",value279);
+		} else {
+			_g.h["wrapping.typeParameter.rules[2].conditions[1].cond"] = value279;
+		}
+		var value280 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[2].conditions[1].value",value280);
+		} else {
+			_g.h["wrapping.typeParameter.rules[2].conditions[1].value"] = value280;
+		}
+		var value281 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[2].type"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[2].type",value281);
+		} else {
+			_g.h["wrapping.typeParameter.rules[2].type"] = value281;
+		}
+		var value282 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[2].location"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[2].location",value282);
+		} else {
+			_g.h["wrapping.typeParameter.rules[2].location"] = value282;
+		}
+		var value283 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[2].additionalIndent",value283);
+		} else {
+			_g.h["wrapping.typeParameter.rules[2].additionalIndent"] = value283;
+		}
+		var value284 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[3].conditions[0].cond",value284);
+		} else {
+			_g.h["wrapping.typeParameter.rules[3].conditions[0].cond"] = value284;
+		}
+		var value285 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[3].conditions[0].value",value285);
+		} else {
+			_g.h["wrapping.typeParameter.rules[3].conditions[0].value"] = value285;
+		}
+		var value286 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[3].conditions[1].cond",value286);
+		} else {
+			_g.h["wrapping.typeParameter.rules[3].conditions[1].cond"] = value286;
+		}
+		var value287 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[3].conditions[1].value",value287);
+		} else {
+			_g.h["wrapping.typeParameter.rules[3].conditions[1].value"] = value287;
+		}
+		var value288 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[3].type"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[3].type",value288);
+		} else {
+			_g.h["wrapping.typeParameter.rules[3].type"] = value288;
+		}
+		var value289 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[3].location"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[3].location",value289);
+		} else {
+			_g.h["wrapping.typeParameter.rules[3].location"] = value289;
+		}
+		var value290 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[3].additionalIndent",value290);
+		} else {
+			_g.h["wrapping.typeParameter.rules[3].additionalIndent"] = value290;
+		}
+		var value291 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[4].conditions[0].cond",value291);
+		} else {
+			_g.h["wrapping.typeParameter.rules[4].conditions[0].cond"] = value291;
+		}
+		var value292 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[4].conditions[0].value",value292);
+		} else {
+			_g.h["wrapping.typeParameter.rules[4].conditions[0].value"] = value292;
+		}
+		var value293 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[4].conditions[1].cond",value293);
+		} else {
+			_g.h["wrapping.typeParameter.rules[4].conditions[1].cond"] = value293;
+		}
+		var value294 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[4].conditions[1].value",value294);
+		} else {
+			_g.h["wrapping.typeParameter.rules[4].conditions[1].value"] = value294;
+		}
+		var value295 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[4].type"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[4].type",value295);
+		} else {
+			_g.h["wrapping.typeParameter.rules[4].type"] = value295;
+		}
+		var value296 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[4].location"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[4].location",value296);
+		} else {
+			_g.h["wrapping.typeParameter.rules[4].location"] = value296;
+		}
+		var value297 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[4].additionalIndent",value297);
+		} else {
+			_g.h["wrapping.typeParameter.rules[4].additionalIndent"] = value297;
+		}
+		var value298 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[5].conditions[0].cond",value298);
+		} else {
+			_g.h["wrapping.typeParameter.rules[5].conditions[0].cond"] = value298;
+		}
+		var value299 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[5].conditions[0].value",value299);
+		} else {
+			_g.h["wrapping.typeParameter.rules[5].conditions[0].value"] = value299;
+		}
+		var value300 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[5].conditions[1].cond",value300);
+		} else {
+			_g.h["wrapping.typeParameter.rules[5].conditions[1].cond"] = value300;
+		}
+		var value301 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[5].conditions[1].value",value301);
+		} else {
+			_g.h["wrapping.typeParameter.rules[5].conditions[1].value"] = value301;
+		}
+		var value302 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[5].type"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[5].type",value302);
+		} else {
+			_g.h["wrapping.typeParameter.rules[5].type"] = value302;
+		}
+		var value303 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.typeParameter.rules[5].location"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[5].location",value303);
+		} else {
+			_g.h["wrapping.typeParameter.rules[5].location"] = value303;
+		}
+		var value304 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.typeParameter.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.typeParameter.rules[5].additionalIndent",value304);
+		} else {
+			_g.h["wrapping.typeParameter.rules[5].additionalIndent"] = value304;
+		}
+		var value305 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.functionSignature.defaultWrap"] != null) {
+			_g.setReserved("wrapping.functionSignature.defaultWrap",value305);
+		} else {
+			_g.h["wrapping.functionSignature.defaultWrap"] = value305;
+		}
+		var value306 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.functionSignature.defaultLocation"] != null) {
+			_g.setReserved("wrapping.functionSignature.defaultLocation",value306);
+		} else {
+			_g.h["wrapping.functionSignature.defaultLocation"] = value306;
+		}
+		var value307 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.functionSignature.defaultAdditionalIndent",value307);
+		} else {
+			_g.h["wrapping.functionSignature.defaultAdditionalIndent"] = value307;
+		}
+		var value308 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[0].conditions[0].cond",value308);
+		} else {
+			_g.h["wrapping.functionSignature.rules[0].conditions[0].cond"] = value308;
+		}
+		var value309 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[0].conditions[0].value",value309);
+		} else {
+			_g.h["wrapping.functionSignature.rules[0].conditions[0].value"] = value309;
+		}
+		var value310 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[0].conditions[1].cond",value310);
+		} else {
+			_g.h["wrapping.functionSignature.rules[0].conditions[1].cond"] = value310;
+		}
+		var value311 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[0].conditions[1].value",value311);
+		} else {
+			_g.h["wrapping.functionSignature.rules[0].conditions[1].value"] = value311;
+		}
+		var value312 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[0].type"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[0].type",value312);
+		} else {
+			_g.h["wrapping.functionSignature.rules[0].type"] = value312;
+		}
+		var value313 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[0].location"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[0].location",value313);
+		} else {
+			_g.h["wrapping.functionSignature.rules[0].location"] = value313;
+		}
+		var value314 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[0].additionalIndent",value314);
+		} else {
+			_g.h["wrapping.functionSignature.rules[0].additionalIndent"] = value314;
+		}
+		var value315 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[1].conditions[0].cond",value315);
+		} else {
+			_g.h["wrapping.functionSignature.rules[1].conditions[0].cond"] = value315;
+		}
+		var value316 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[1].conditions[0].value",value316);
+		} else {
+			_g.h["wrapping.functionSignature.rules[1].conditions[0].value"] = value316;
+		}
+		var value317 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[1].conditions[1].cond",value317);
+		} else {
+			_g.h["wrapping.functionSignature.rules[1].conditions[1].cond"] = value317;
+		}
+		var value318 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[1].conditions[1].value",value318);
+		} else {
+			_g.h["wrapping.functionSignature.rules[1].conditions[1].value"] = value318;
+		}
+		var value319 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[1].type"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[1].type",value319);
+		} else {
+			_g.h["wrapping.functionSignature.rules[1].type"] = value319;
+		}
+		var value320 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[1].location"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[1].location",value320);
+		} else {
+			_g.h["wrapping.functionSignature.rules[1].location"] = value320;
+		}
+		var value321 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[1].additionalIndent",value321);
+		} else {
+			_g.h["wrapping.functionSignature.rules[1].additionalIndent"] = value321;
+		}
+		var value322 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[2].conditions[0].cond",value322);
+		} else {
+			_g.h["wrapping.functionSignature.rules[2].conditions[0].cond"] = value322;
+		}
+		var value323 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[2].conditions[0].value",value323);
+		} else {
+			_g.h["wrapping.functionSignature.rules[2].conditions[0].value"] = value323;
+		}
+		var value324 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[2].conditions[1].cond",value324);
+		} else {
+			_g.h["wrapping.functionSignature.rules[2].conditions[1].cond"] = value324;
+		}
+		var value325 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[2].conditions[1].value",value325);
+		} else {
+			_g.h["wrapping.functionSignature.rules[2].conditions[1].value"] = value325;
+		}
+		var value326 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[2].type"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[2].type",value326);
+		} else {
+			_g.h["wrapping.functionSignature.rules[2].type"] = value326;
+		}
+		var value327 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[2].location"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[2].location",value327);
+		} else {
+			_g.h["wrapping.functionSignature.rules[2].location"] = value327;
+		}
+		var value328 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[2].additionalIndent",value328);
+		} else {
+			_g.h["wrapping.functionSignature.rules[2].additionalIndent"] = value328;
+		}
+		var value329 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[3].conditions[0].cond",value329);
+		} else {
+			_g.h["wrapping.functionSignature.rules[3].conditions[0].cond"] = value329;
+		}
+		var value330 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[3].conditions[0].value",value330);
+		} else {
+			_g.h["wrapping.functionSignature.rules[3].conditions[0].value"] = value330;
+		}
+		var value331 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[3].conditions[1].cond",value331);
+		} else {
+			_g.h["wrapping.functionSignature.rules[3].conditions[1].cond"] = value331;
+		}
+		var value332 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[3].conditions[1].value",value332);
+		} else {
+			_g.h["wrapping.functionSignature.rules[3].conditions[1].value"] = value332;
+		}
+		var value333 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[3].type"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[3].type",value333);
+		} else {
+			_g.h["wrapping.functionSignature.rules[3].type"] = value333;
+		}
+		var value334 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[3].location"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[3].location",value334);
+		} else {
+			_g.h["wrapping.functionSignature.rules[3].location"] = value334;
+		}
+		var value335 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[3].additionalIndent",value335);
+		} else {
+			_g.h["wrapping.functionSignature.rules[3].additionalIndent"] = value335;
+		}
+		var value336 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[4].conditions[0].cond",value336);
+		} else {
+			_g.h["wrapping.functionSignature.rules[4].conditions[0].cond"] = value336;
+		}
+		var value337 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[4].conditions[0].value",value337);
+		} else {
+			_g.h["wrapping.functionSignature.rules[4].conditions[0].value"] = value337;
+		}
+		var value338 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[4].conditions[1].cond",value338);
+		} else {
+			_g.h["wrapping.functionSignature.rules[4].conditions[1].cond"] = value338;
+		}
+		var value339 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[4].conditions[1].value",value339);
+		} else {
+			_g.h["wrapping.functionSignature.rules[4].conditions[1].value"] = value339;
+		}
+		var value340 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[4].type"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[4].type",value340);
+		} else {
+			_g.h["wrapping.functionSignature.rules[4].type"] = value340;
+		}
+		var value341 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[4].location"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[4].location",value341);
+		} else {
+			_g.h["wrapping.functionSignature.rules[4].location"] = value341;
+		}
+		var value342 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[4].additionalIndent",value342);
+		} else {
+			_g.h["wrapping.functionSignature.rules[4].additionalIndent"] = value342;
+		}
+		var value343 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[5].conditions[0].cond",value343);
+		} else {
+			_g.h["wrapping.functionSignature.rules[5].conditions[0].cond"] = value343;
+		}
+		var value344 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[5].conditions[0].value",value344);
+		} else {
+			_g.h["wrapping.functionSignature.rules[5].conditions[0].value"] = value344;
+		}
+		var value345 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[5].conditions[1].cond",value345);
+		} else {
+			_g.h["wrapping.functionSignature.rules[5].conditions[1].cond"] = value345;
+		}
+		var value346 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[5].conditions[1].value",value346);
+		} else {
+			_g.h["wrapping.functionSignature.rules[5].conditions[1].value"] = value346;
+		}
+		var value347 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[5].type"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[5].type",value347);
+		} else {
+			_g.h["wrapping.functionSignature.rules[5].type"] = value347;
+		}
+		var value348 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.functionSignature.rules[5].location"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[5].location",value348);
+		} else {
+			_g.h["wrapping.functionSignature.rules[5].location"] = value348;
+		}
+		var value349 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.functionSignature.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.functionSignature.rules[5].additionalIndent",value349);
+		} else {
+			_g.h["wrapping.functionSignature.rules[5].additionalIndent"] = value349;
+		}
+		var value350 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.defaultWrap"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.defaultWrap",value350);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.defaultWrap"] = value350;
+		}
+		var value351 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.defaultLocation"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.defaultLocation",value351);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.defaultLocation"] = value351;
+		}
+		var value352 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.defaultAdditionalIndent",value352);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.defaultAdditionalIndent"] = value352;
+		}
+		var value353 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[0].conditions[0].cond",value353);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[0].conditions[0].cond"] = value353;
+		}
+		var value354 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[0].conditions[0].value",value354);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[0].conditions[0].value"] = value354;
+		}
+		var value355 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[0].conditions[1].cond",value355);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[0].conditions[1].cond"] = value355;
+		}
+		var value356 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[0].conditions[1].value",value356);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[0].conditions[1].value"] = value356;
+		}
+		var value357 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[0].type"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[0].type",value357);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[0].type"] = value357;
+		}
+		var value358 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[0].location"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[0].location",value358);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[0].location"] = value358;
+		}
+		var value359 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[0].additionalIndent",value359);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[0].additionalIndent"] = value359;
+		}
+		var value360 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[1].conditions[0].cond",value360);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[1].conditions[0].cond"] = value360;
+		}
+		var value361 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[1].conditions[0].value",value361);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[1].conditions[0].value"] = value361;
+		}
+		var value362 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[1].conditions[1].cond",value362);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[1].conditions[1].cond"] = value362;
+		}
+		var value363 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[1].conditions[1].value",value363);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[1].conditions[1].value"] = value363;
+		}
+		var value364 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[1].type"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[1].type",value364);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[1].type"] = value364;
+		}
+		var value365 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[1].location"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[1].location",value365);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[1].location"] = value365;
+		}
+		var value366 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[1].additionalIndent",value366);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[1].additionalIndent"] = value366;
+		}
+		var value367 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[2].conditions[0].cond",value367);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[2].conditions[0].cond"] = value367;
+		}
+		var value368 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[2].conditions[0].value",value368);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[2].conditions[0].value"] = value368;
+		}
+		var value369 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[2].conditions[1].cond",value369);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[2].conditions[1].cond"] = value369;
+		}
+		var value370 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[2].conditions[1].value",value370);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[2].conditions[1].value"] = value370;
+		}
+		var value371 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[2].type"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[2].type",value371);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[2].type"] = value371;
+		}
+		var value372 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[2].location"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[2].location",value372);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[2].location"] = value372;
+		}
+		var value373 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[2].additionalIndent",value373);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[2].additionalIndent"] = value373;
+		}
+		var value374 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[3].conditions[0].cond",value374);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[3].conditions[0].cond"] = value374;
+		}
+		var value375 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[3].conditions[0].value",value375);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[3].conditions[0].value"] = value375;
+		}
+		var value376 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[3].conditions[1].cond",value376);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[3].conditions[1].cond"] = value376;
+		}
+		var value377 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[3].conditions[1].value",value377);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[3].conditions[1].value"] = value377;
+		}
+		var value378 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[3].type"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[3].type",value378);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[3].type"] = value378;
+		}
+		var value379 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[3].location"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[3].location",value379);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[3].location"] = value379;
+		}
+		var value380 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[3].additionalIndent",value380);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[3].additionalIndent"] = value380;
+		}
+		var value381 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[4].conditions[0].cond",value381);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[4].conditions[0].cond"] = value381;
+		}
+		var value382 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[4].conditions[0].value",value382);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[4].conditions[0].value"] = value382;
+		}
+		var value383 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[4].conditions[1].cond",value383);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[4].conditions[1].cond"] = value383;
+		}
+		var value384 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[4].conditions[1].value",value384);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[4].conditions[1].value"] = value384;
+		}
+		var value385 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[4].type"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[4].type",value385);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[4].type"] = value385;
+		}
+		var value386 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[4].location"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[4].location",value386);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[4].location"] = value386;
+		}
+		var value387 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[4].additionalIndent",value387);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[4].additionalIndent"] = value387;
+		}
+		var value388 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[5].conditions[0].cond",value388);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[5].conditions[0].cond"] = value388;
+		}
+		var value389 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[5].conditions[0].value",value389);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[5].conditions[0].value"] = value389;
+		}
+		var value390 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[5].conditions[1].cond",value390);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[5].conditions[1].cond"] = value390;
+		}
+		var value391 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[5].conditions[1].value",value391);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[5].conditions[1].value"] = value391;
+		}
+		var value392 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[5].type"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[5].type",value392);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[5].type"] = value392;
+		}
+		var value393 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[5].location"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[5].location",value393);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[5].location"] = value393;
+		}
+		var value394 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonFunctionSignature.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonFunctionSignature.rules[5].additionalIndent",value394);
+		} else {
+			_g.h["wrapping.anonFunctionSignature.rules[5].additionalIndent"] = value394;
+		}
+		var value395 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.callParameter.defaultWrap"] != null) {
+			_g.setReserved("wrapping.callParameter.defaultWrap",value395);
+		} else {
+			_g.h["wrapping.callParameter.defaultWrap"] = value395;
+		}
+		var value396 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.callParameter.defaultLocation"] != null) {
+			_g.setReserved("wrapping.callParameter.defaultLocation",value396);
+		} else {
+			_g.h["wrapping.callParameter.defaultLocation"] = value396;
+		}
+		var value397 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.callParameter.defaultAdditionalIndent",value397);
+		} else {
+			_g.h["wrapping.callParameter.defaultAdditionalIndent"] = value397;
+		}
+		var value398 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[0].conditions[0].cond",value398);
+		} else {
+			_g.h["wrapping.callParameter.rules[0].conditions[0].cond"] = value398;
+		}
+		var value399 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[0].conditions[0].value",value399);
+		} else {
+			_g.h["wrapping.callParameter.rules[0].conditions[0].value"] = value399;
+		}
+		var value400 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[0].conditions[1].cond",value400);
+		} else {
+			_g.h["wrapping.callParameter.rules[0].conditions[1].cond"] = value400;
+		}
+		var value401 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[0].conditions[1].value",value401);
+		} else {
+			_g.h["wrapping.callParameter.rules[0].conditions[1].value"] = value401;
+		}
+		var value402 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[0].type"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[0].type",value402);
+		} else {
+			_g.h["wrapping.callParameter.rules[0].type"] = value402;
+		}
+		var value403 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[0].location"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[0].location",value403);
+		} else {
+			_g.h["wrapping.callParameter.rules[0].location"] = value403;
+		}
+		var value404 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[0].additionalIndent",value404);
+		} else {
+			_g.h["wrapping.callParameter.rules[0].additionalIndent"] = value404;
+		}
+		var value405 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[1].conditions[0].cond",value405);
+		} else {
+			_g.h["wrapping.callParameter.rules[1].conditions[0].cond"] = value405;
+		}
+		var value406 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[1].conditions[0].value",value406);
+		} else {
+			_g.h["wrapping.callParameter.rules[1].conditions[0].value"] = value406;
+		}
+		var value407 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[1].conditions[1].cond",value407);
+		} else {
+			_g.h["wrapping.callParameter.rules[1].conditions[1].cond"] = value407;
+		}
+		var value408 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[1].conditions[1].value",value408);
+		} else {
+			_g.h["wrapping.callParameter.rules[1].conditions[1].value"] = value408;
+		}
+		var value409 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[1].type"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[1].type",value409);
+		} else {
+			_g.h["wrapping.callParameter.rules[1].type"] = value409;
+		}
+		var value410 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[1].location"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[1].location",value410);
+		} else {
+			_g.h["wrapping.callParameter.rules[1].location"] = value410;
+		}
+		var value411 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[1].additionalIndent",value411);
+		} else {
+			_g.h["wrapping.callParameter.rules[1].additionalIndent"] = value411;
+		}
+		var value412 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[2].conditions[0].cond",value412);
+		} else {
+			_g.h["wrapping.callParameter.rules[2].conditions[0].cond"] = value412;
+		}
+		var value413 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[2].conditions[0].value",value413);
+		} else {
+			_g.h["wrapping.callParameter.rules[2].conditions[0].value"] = value413;
+		}
+		var value414 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[2].conditions[1].cond",value414);
+		} else {
+			_g.h["wrapping.callParameter.rules[2].conditions[1].cond"] = value414;
+		}
+		var value415 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[2].conditions[1].value",value415);
+		} else {
+			_g.h["wrapping.callParameter.rules[2].conditions[1].value"] = value415;
+		}
+		var value416 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[2].type"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[2].type",value416);
+		} else {
+			_g.h["wrapping.callParameter.rules[2].type"] = value416;
+		}
+		var value417 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[2].location"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[2].location",value417);
+		} else {
+			_g.h["wrapping.callParameter.rules[2].location"] = value417;
+		}
+		var value418 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[2].additionalIndent",value418);
+		} else {
+			_g.h["wrapping.callParameter.rules[2].additionalIndent"] = value418;
+		}
+		var value419 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[3].conditions[0].cond",value419);
+		} else {
+			_g.h["wrapping.callParameter.rules[3].conditions[0].cond"] = value419;
+		}
+		var value420 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[3].conditions[0].value",value420);
+		} else {
+			_g.h["wrapping.callParameter.rules[3].conditions[0].value"] = value420;
+		}
+		var value421 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[3].conditions[1].cond",value421);
+		} else {
+			_g.h["wrapping.callParameter.rules[3].conditions[1].cond"] = value421;
+		}
+		var value422 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[3].conditions[1].value",value422);
+		} else {
+			_g.h["wrapping.callParameter.rules[3].conditions[1].value"] = value422;
+		}
+		var value423 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[3].type"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[3].type",value423);
+		} else {
+			_g.h["wrapping.callParameter.rules[3].type"] = value423;
+		}
+		var value424 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[3].location"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[3].location",value424);
+		} else {
+			_g.h["wrapping.callParameter.rules[3].location"] = value424;
+		}
+		var value425 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[3].additionalIndent",value425);
+		} else {
+			_g.h["wrapping.callParameter.rules[3].additionalIndent"] = value425;
+		}
+		var value426 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[4].conditions[0].cond",value426);
+		} else {
+			_g.h["wrapping.callParameter.rules[4].conditions[0].cond"] = value426;
+		}
+		var value427 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[4].conditions[0].value",value427);
+		} else {
+			_g.h["wrapping.callParameter.rules[4].conditions[0].value"] = value427;
+		}
+		var value428 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[4].conditions[1].cond",value428);
+		} else {
+			_g.h["wrapping.callParameter.rules[4].conditions[1].cond"] = value428;
+		}
+		var value429 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[4].conditions[1].value",value429);
+		} else {
+			_g.h["wrapping.callParameter.rules[4].conditions[1].value"] = value429;
+		}
+		var value430 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[4].type"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[4].type",value430);
+		} else {
+			_g.h["wrapping.callParameter.rules[4].type"] = value430;
+		}
+		var value431 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[4].location"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[4].location",value431);
+		} else {
+			_g.h["wrapping.callParameter.rules[4].location"] = value431;
+		}
+		var value432 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[4].additionalIndent",value432);
+		} else {
+			_g.h["wrapping.callParameter.rules[4].additionalIndent"] = value432;
+		}
+		var value433 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[5].conditions[0].cond",value433);
+		} else {
+			_g.h["wrapping.callParameter.rules[5].conditions[0].cond"] = value433;
+		}
+		var value434 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[5].conditions[0].value",value434);
+		} else {
+			_g.h["wrapping.callParameter.rules[5].conditions[0].value"] = value434;
+		}
+		var value435 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[5].conditions[1].cond",value435);
+		} else {
+			_g.h["wrapping.callParameter.rules[5].conditions[1].cond"] = value435;
+		}
+		var value436 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[5].conditions[1].value",value436);
+		} else {
+			_g.h["wrapping.callParameter.rules[5].conditions[1].value"] = value436;
+		}
+		var value437 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[5].type"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[5].type",value437);
+		} else {
+			_g.h["wrapping.callParameter.rules[5].type"] = value437;
+		}
+		var value438 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.callParameter.rules[5].location"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[5].location",value438);
+		} else {
+			_g.h["wrapping.callParameter.rules[5].location"] = value438;
+		}
+		var value439 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.callParameter.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.callParameter.rules[5].additionalIndent",value439);
+		} else {
+			_g.h["wrapping.callParameter.rules[5].additionalIndent"] = value439;
+		}
+		var value440 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.defaultWrap"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.defaultWrap",value440);
+		} else {
+			_g.h["wrapping.metadataCallParameter.defaultWrap"] = value440;
+		}
+		var value441 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.defaultLocation"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.defaultLocation",value441);
+		} else {
+			_g.h["wrapping.metadataCallParameter.defaultLocation"] = value441;
+		}
+		var value442 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.defaultAdditionalIndent",value442);
+		} else {
+			_g.h["wrapping.metadataCallParameter.defaultAdditionalIndent"] = value442;
+		}
+		var value443 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[0].conditions[0].cond",value443);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[0].conditions[0].cond"] = value443;
+		}
+		var value444 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[0].conditions[0].value",value444);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[0].conditions[0].value"] = value444;
+		}
+		var value445 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[0].conditions[1].cond",value445);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[0].conditions[1].cond"] = value445;
+		}
+		var value446 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[0].conditions[1].value",value446);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[0].conditions[1].value"] = value446;
+		}
+		var value447 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[0].type"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[0].type",value447);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[0].type"] = value447;
+		}
+		var value448 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[0].location"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[0].location",value448);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[0].location"] = value448;
+		}
+		var value449 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[0].additionalIndent",value449);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[0].additionalIndent"] = value449;
+		}
+		var value450 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[1].conditions[0].cond",value450);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[1].conditions[0].cond"] = value450;
+		}
+		var value451 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[1].conditions[0].value",value451);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[1].conditions[0].value"] = value451;
+		}
+		var value452 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[1].conditions[1].cond",value452);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[1].conditions[1].cond"] = value452;
+		}
+		var value453 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[1].conditions[1].value",value453);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[1].conditions[1].value"] = value453;
+		}
+		var value454 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[1].type"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[1].type",value454);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[1].type"] = value454;
+		}
+		var value455 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[1].location"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[1].location",value455);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[1].location"] = value455;
+		}
+		var value456 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[1].additionalIndent",value456);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[1].additionalIndent"] = value456;
+		}
+		var value457 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[2].conditions[0].cond",value457);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[2].conditions[0].cond"] = value457;
+		}
+		var value458 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[2].conditions[0].value",value458);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[2].conditions[0].value"] = value458;
+		}
+		var value459 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[2].conditions[1].cond",value459);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[2].conditions[1].cond"] = value459;
+		}
+		var value460 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[2].conditions[1].value",value460);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[2].conditions[1].value"] = value460;
+		}
+		var value461 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[2].type"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[2].type",value461);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[2].type"] = value461;
+		}
+		var value462 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[2].location"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[2].location",value462);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[2].location"] = value462;
+		}
+		var value463 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[2].additionalIndent",value463);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[2].additionalIndent"] = value463;
+		}
+		var value464 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[3].conditions[0].cond",value464);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[3].conditions[0].cond"] = value464;
+		}
+		var value465 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[3].conditions[0].value",value465);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[3].conditions[0].value"] = value465;
+		}
+		var value466 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[3].conditions[1].cond",value466);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[3].conditions[1].cond"] = value466;
+		}
+		var value467 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[3].conditions[1].value",value467);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[3].conditions[1].value"] = value467;
+		}
+		var value468 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[3].type"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[3].type",value468);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[3].type"] = value468;
+		}
+		var value469 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[3].location"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[3].location",value469);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[3].location"] = value469;
+		}
+		var value470 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[3].additionalIndent",value470);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[3].additionalIndent"] = value470;
+		}
+		var value471 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[4].conditions[0].cond",value471);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[4].conditions[0].cond"] = value471;
+		}
+		var value472 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[4].conditions[0].value",value472);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[4].conditions[0].value"] = value472;
+		}
+		var value473 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[4].conditions[1].cond",value473);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[4].conditions[1].cond"] = value473;
+		}
+		var value474 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[4].conditions[1].value",value474);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[4].conditions[1].value"] = value474;
+		}
+		var value475 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[4].type"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[4].type",value475);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[4].type"] = value475;
+		}
+		var value476 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[4].location"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[4].location",value476);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[4].location"] = value476;
+		}
+		var value477 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[4].additionalIndent",value477);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[4].additionalIndent"] = value477;
+		}
+		var value478 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[5].conditions[0].cond",value478);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[5].conditions[0].cond"] = value478;
+		}
+		var value479 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[5].conditions[0].value",value479);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[5].conditions[0].value"] = value479;
+		}
+		var value480 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[5].conditions[1].cond",value480);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[5].conditions[1].cond"] = value480;
+		}
+		var value481 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[5].conditions[1].value",value481);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[5].conditions[1].value"] = value481;
+		}
+		var value482 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[5].type"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[5].type",value482);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[5].type"] = value482;
+		}
+		var value483 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.metadataCallParameter.rules[5].location"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[5].location",value483);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[5].location"] = value483;
+		}
+		var value484 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.metadataCallParameter.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.metadataCallParameter.rules[5].additionalIndent",value484);
+		} else {
+			_g.h["wrapping.metadataCallParameter.rules[5].additionalIndent"] = value484;
+		}
+		var value485 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.defaultWrap"] != null) {
+			_g.setReserved("wrapping.objectLiteral.defaultWrap",value485);
+		} else {
+			_g.h["wrapping.objectLiteral.defaultWrap"] = value485;
+		}
+		var value486 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.defaultLocation"] != null) {
+			_g.setReserved("wrapping.objectLiteral.defaultLocation",value486);
+		} else {
+			_g.h["wrapping.objectLiteral.defaultLocation"] = value486;
+		}
+		var value487 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.objectLiteral.defaultAdditionalIndent",value487);
+		} else {
+			_g.h["wrapping.objectLiteral.defaultAdditionalIndent"] = value487;
+		}
+		var value488 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[0].conditions[0].cond",value488);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[0].conditions[0].cond"] = value488;
+		}
+		var value489 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[0].conditions[0].value",value489);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[0].conditions[0].value"] = value489;
+		}
+		var value490 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[0].conditions[1].cond",value490);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[0].conditions[1].cond"] = value490;
+		}
+		var value491 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[0].conditions[1].value",value491);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[0].conditions[1].value"] = value491;
+		}
+		var value492 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[0].type"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[0].type",value492);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[0].type"] = value492;
+		}
+		var value493 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[0].location"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[0].location",value493);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[0].location"] = value493;
+		}
+		var value494 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[0].additionalIndent",value494);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[0].additionalIndent"] = value494;
+		}
+		var value495 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[1].conditions[0].cond",value495);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[1].conditions[0].cond"] = value495;
+		}
+		var value496 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[1].conditions[0].value",value496);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[1].conditions[0].value"] = value496;
+		}
+		var value497 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[1].conditions[1].cond",value497);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[1].conditions[1].cond"] = value497;
+		}
+		var value498 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[1].conditions[1].value",value498);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[1].conditions[1].value"] = value498;
+		}
+		var value499 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[1].type"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[1].type",value499);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[1].type"] = value499;
+		}
+		var value500 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[1].location"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[1].location",value500);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[1].location"] = value500;
+		}
+		var value501 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[1].additionalIndent",value501);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[1].additionalIndent"] = value501;
+		}
+		var value502 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[2].conditions[0].cond",value502);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[2].conditions[0].cond"] = value502;
+		}
+		var value503 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[2].conditions[0].value",value503);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[2].conditions[0].value"] = value503;
+		}
+		var value504 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[2].conditions[1].cond",value504);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[2].conditions[1].cond"] = value504;
+		}
+		var value505 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[2].conditions[1].value",value505);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[2].conditions[1].value"] = value505;
+		}
+		var value506 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[2].type"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[2].type",value506);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[2].type"] = value506;
+		}
+		var value507 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[2].location"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[2].location",value507);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[2].location"] = value507;
+		}
+		var value508 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[2].additionalIndent",value508);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[2].additionalIndent"] = value508;
+		}
+		var value509 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[3].conditions[0].cond",value509);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[3].conditions[0].cond"] = value509;
+		}
+		var value510 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[3].conditions[0].value",value510);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[3].conditions[0].value"] = value510;
+		}
+		var value511 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[3].conditions[1].cond",value511);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[3].conditions[1].cond"] = value511;
+		}
+		var value512 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[3].conditions[1].value",value512);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[3].conditions[1].value"] = value512;
+		}
+		var value513 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[3].type"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[3].type",value513);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[3].type"] = value513;
+		}
+		var value514 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[3].location"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[3].location",value514);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[3].location"] = value514;
+		}
+		var value515 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[3].additionalIndent",value515);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[3].additionalIndent"] = value515;
+		}
+		var value516 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[4].conditions[0].cond",value516);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[4].conditions[0].cond"] = value516;
+		}
+		var value517 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[4].conditions[0].value",value517);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[4].conditions[0].value"] = value517;
+		}
+		var value518 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[4].conditions[1].cond",value518);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[4].conditions[1].cond"] = value518;
+		}
+		var value519 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[4].conditions[1].value",value519);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[4].conditions[1].value"] = value519;
+		}
+		var value520 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[4].type"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[4].type",value520);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[4].type"] = value520;
+		}
+		var value521 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[4].location"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[4].location",value521);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[4].location"] = value521;
+		}
+		var value522 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[4].additionalIndent",value522);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[4].additionalIndent"] = value522;
+		}
+		var value523 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[5].conditions[0].cond",value523);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[5].conditions[0].cond"] = value523;
+		}
+		var value524 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[5].conditions[0].value",value524);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[5].conditions[0].value"] = value524;
+		}
+		var value525 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[5].conditions[1].cond",value525);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[5].conditions[1].cond"] = value525;
+		}
+		var value526 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[5].conditions[1].value",value526);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[5].conditions[1].value"] = value526;
+		}
+		var value527 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[5].type"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[5].type",value527);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[5].type"] = value527;
+		}
+		var value528 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.objectLiteral.rules[5].location"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[5].location",value528);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[5].location"] = value528;
+		}
+		var value529 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.objectLiteral.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.objectLiteral.rules[5].additionalIndent",value529);
+		} else {
+			_g.h["wrapping.objectLiteral.rules[5].additionalIndent"] = value529;
+		}
+		var value530 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonType.defaultWrap"] != null) {
+			_g.setReserved("wrapping.anonType.defaultWrap",value530);
+		} else {
+			_g.h["wrapping.anonType.defaultWrap"] = value530;
+		}
+		var value531 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonType.defaultLocation"] != null) {
+			_g.setReserved("wrapping.anonType.defaultLocation",value531);
+		} else {
+			_g.h["wrapping.anonType.defaultLocation"] = value531;
+		}
+		var value532 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.anonType.defaultAdditionalIndent",value532);
+		} else {
+			_g.h["wrapping.anonType.defaultAdditionalIndent"] = value532;
+		}
+		var value533 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[0].conditions[0].cond",value533);
+		} else {
+			_g.h["wrapping.anonType.rules[0].conditions[0].cond"] = value533;
+		}
+		var value534 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[0].conditions[0].value",value534);
+		} else {
+			_g.h["wrapping.anonType.rules[0].conditions[0].value"] = value534;
+		}
+		var value535 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[0].conditions[1].cond",value535);
+		} else {
+			_g.h["wrapping.anonType.rules[0].conditions[1].cond"] = value535;
+		}
+		var value536 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[0].conditions[1].value",value536);
+		} else {
+			_g.h["wrapping.anonType.rules[0].conditions[1].value"] = value536;
+		}
+		var value537 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[0].type"] != null) {
+			_g.setReserved("wrapping.anonType.rules[0].type",value537);
+		} else {
+			_g.h["wrapping.anonType.rules[0].type"] = value537;
+		}
+		var value538 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[0].location"] != null) {
+			_g.setReserved("wrapping.anonType.rules[0].location",value538);
+		} else {
+			_g.h["wrapping.anonType.rules[0].location"] = value538;
+		}
+		var value539 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonType.rules[0].additionalIndent",value539);
+		} else {
+			_g.h["wrapping.anonType.rules[0].additionalIndent"] = value539;
+		}
+		var value540 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[1].conditions[0].cond",value540);
+		} else {
+			_g.h["wrapping.anonType.rules[1].conditions[0].cond"] = value540;
+		}
+		var value541 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[1].conditions[0].value",value541);
+		} else {
+			_g.h["wrapping.anonType.rules[1].conditions[0].value"] = value541;
+		}
+		var value542 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[1].conditions[1].cond",value542);
+		} else {
+			_g.h["wrapping.anonType.rules[1].conditions[1].cond"] = value542;
+		}
+		var value543 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[1].conditions[1].value",value543);
+		} else {
+			_g.h["wrapping.anonType.rules[1].conditions[1].value"] = value543;
+		}
+		var value544 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[1].type"] != null) {
+			_g.setReserved("wrapping.anonType.rules[1].type",value544);
+		} else {
+			_g.h["wrapping.anonType.rules[1].type"] = value544;
+		}
+		var value545 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[1].location"] != null) {
+			_g.setReserved("wrapping.anonType.rules[1].location",value545);
+		} else {
+			_g.h["wrapping.anonType.rules[1].location"] = value545;
+		}
+		var value546 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonType.rules[1].additionalIndent",value546);
+		} else {
+			_g.h["wrapping.anonType.rules[1].additionalIndent"] = value546;
+		}
+		var value547 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[2].conditions[0].cond",value547);
+		} else {
+			_g.h["wrapping.anonType.rules[2].conditions[0].cond"] = value547;
+		}
+		var value548 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[2].conditions[0].value",value548);
+		} else {
+			_g.h["wrapping.anonType.rules[2].conditions[0].value"] = value548;
+		}
+		var value549 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[2].conditions[1].cond",value549);
+		} else {
+			_g.h["wrapping.anonType.rules[2].conditions[1].cond"] = value549;
+		}
+		var value550 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[2].conditions[1].value",value550);
+		} else {
+			_g.h["wrapping.anonType.rules[2].conditions[1].value"] = value550;
+		}
+		var value551 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[2].type"] != null) {
+			_g.setReserved("wrapping.anonType.rules[2].type",value551);
+		} else {
+			_g.h["wrapping.anonType.rules[2].type"] = value551;
+		}
+		var value552 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[2].location"] != null) {
+			_g.setReserved("wrapping.anonType.rules[2].location",value552);
+		} else {
+			_g.h["wrapping.anonType.rules[2].location"] = value552;
+		}
+		var value553 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonType.rules[2].additionalIndent",value553);
+		} else {
+			_g.h["wrapping.anonType.rules[2].additionalIndent"] = value553;
+		}
+		var value554 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[3].conditions[0].cond",value554);
+		} else {
+			_g.h["wrapping.anonType.rules[3].conditions[0].cond"] = value554;
+		}
+		var value555 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[3].conditions[0].value",value555);
+		} else {
+			_g.h["wrapping.anonType.rules[3].conditions[0].value"] = value555;
+		}
+		var value556 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[3].conditions[1].cond",value556);
+		} else {
+			_g.h["wrapping.anonType.rules[3].conditions[1].cond"] = value556;
+		}
+		var value557 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[3].conditions[1].value",value557);
+		} else {
+			_g.h["wrapping.anonType.rules[3].conditions[1].value"] = value557;
+		}
+		var value558 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[3].type"] != null) {
+			_g.setReserved("wrapping.anonType.rules[3].type",value558);
+		} else {
+			_g.h["wrapping.anonType.rules[3].type"] = value558;
+		}
+		var value559 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[3].location"] != null) {
+			_g.setReserved("wrapping.anonType.rules[3].location",value559);
+		} else {
+			_g.h["wrapping.anonType.rules[3].location"] = value559;
+		}
+		var value560 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonType.rules[3].additionalIndent",value560);
+		} else {
+			_g.h["wrapping.anonType.rules[3].additionalIndent"] = value560;
+		}
+		var value561 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[4].conditions[0].cond",value561);
+		} else {
+			_g.h["wrapping.anonType.rules[4].conditions[0].cond"] = value561;
+		}
+		var value562 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[4].conditions[0].value",value562);
+		} else {
+			_g.h["wrapping.anonType.rules[4].conditions[0].value"] = value562;
+		}
+		var value563 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[4].conditions[1].cond",value563);
+		} else {
+			_g.h["wrapping.anonType.rules[4].conditions[1].cond"] = value563;
+		}
+		var value564 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[4].conditions[1].value",value564);
+		} else {
+			_g.h["wrapping.anonType.rules[4].conditions[1].value"] = value564;
+		}
+		var value565 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[4].type"] != null) {
+			_g.setReserved("wrapping.anonType.rules[4].type",value565);
+		} else {
+			_g.h["wrapping.anonType.rules[4].type"] = value565;
+		}
+		var value566 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[4].location"] != null) {
+			_g.setReserved("wrapping.anonType.rules[4].location",value566);
+		} else {
+			_g.h["wrapping.anonType.rules[4].location"] = value566;
+		}
+		var value567 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonType.rules[4].additionalIndent",value567);
+		} else {
+			_g.h["wrapping.anonType.rules[4].additionalIndent"] = value567;
+		}
+		var value568 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[5].conditions[0].cond",value568);
+		} else {
+			_g.h["wrapping.anonType.rules[5].conditions[0].cond"] = value568;
+		}
+		var value569 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[5].conditions[0].value",value569);
+		} else {
+			_g.h["wrapping.anonType.rules[5].conditions[0].value"] = value569;
+		}
+		var value570 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.anonType.rules[5].conditions[1].cond",value570);
+		} else {
+			_g.h["wrapping.anonType.rules[5].conditions[1].cond"] = value570;
+		}
+		var value571 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.anonType.rules[5].conditions[1].value",value571);
+		} else {
+			_g.h["wrapping.anonType.rules[5].conditions[1].value"] = value571;
+		}
+		var value572 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[5].type"] != null) {
+			_g.setReserved("wrapping.anonType.rules[5].type",value572);
+		} else {
+			_g.h["wrapping.anonType.rules[5].type"] = value572;
+		}
+		var value573 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.anonType.rules[5].location"] != null) {
+			_g.setReserved("wrapping.anonType.rules[5].location",value573);
+		} else {
+			_g.h["wrapping.anonType.rules[5].location"] = value573;
+		}
+		var value574 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.anonType.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.anonType.rules[5].additionalIndent",value574);
+		} else {
+			_g.h["wrapping.anonType.rules[5].additionalIndent"] = value574;
+		}
+		var value575 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.methodChain.defaultWrap"] != null) {
+			_g.setReserved("wrapping.methodChain.defaultWrap",value575);
+		} else {
+			_g.h["wrapping.methodChain.defaultWrap"] = value575;
+		}
+		var value576 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.methodChain.defaultLocation"] != null) {
+			_g.setReserved("wrapping.methodChain.defaultLocation",value576);
+		} else {
+			_g.h["wrapping.methodChain.defaultLocation"] = value576;
+		}
+		var value577 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.methodChain.defaultAdditionalIndent",value577);
+		} else {
+			_g.h["wrapping.methodChain.defaultAdditionalIndent"] = value577;
+		}
+		var value578 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[0].conditions[0].cond",value578);
+		} else {
+			_g.h["wrapping.methodChain.rules[0].conditions[0].cond"] = value578;
+		}
+		var value579 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[0].conditions[0].value",value579);
+		} else {
+			_g.h["wrapping.methodChain.rules[0].conditions[0].value"] = value579;
+		}
+		var value580 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[0].conditions[1].cond",value580);
+		} else {
+			_g.h["wrapping.methodChain.rules[0].conditions[1].cond"] = value580;
+		}
+		var value581 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[0].conditions[1].value",value581);
+		} else {
+			_g.h["wrapping.methodChain.rules[0].conditions[1].value"] = value581;
+		}
+		var value582 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[0].type"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[0].type",value582);
+		} else {
+			_g.h["wrapping.methodChain.rules[0].type"] = value582;
+		}
+		var value583 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[0].location"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[0].location",value583);
+		} else {
+			_g.h["wrapping.methodChain.rules[0].location"] = value583;
+		}
+		var value584 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[0].additionalIndent",value584);
+		} else {
+			_g.h["wrapping.methodChain.rules[0].additionalIndent"] = value584;
+		}
+		var value585 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[1].conditions[0].cond",value585);
+		} else {
+			_g.h["wrapping.methodChain.rules[1].conditions[0].cond"] = value585;
+		}
+		var value586 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[1].conditions[0].value",value586);
+		} else {
+			_g.h["wrapping.methodChain.rules[1].conditions[0].value"] = value586;
+		}
+		var value587 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[1].conditions[1].cond",value587);
+		} else {
+			_g.h["wrapping.methodChain.rules[1].conditions[1].cond"] = value587;
+		}
+		var value588 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[1].conditions[1].value",value588);
+		} else {
+			_g.h["wrapping.methodChain.rules[1].conditions[1].value"] = value588;
+		}
+		var value589 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[1].type"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[1].type",value589);
+		} else {
+			_g.h["wrapping.methodChain.rules[1].type"] = value589;
+		}
+		var value590 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[1].location"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[1].location",value590);
+		} else {
+			_g.h["wrapping.methodChain.rules[1].location"] = value590;
+		}
+		var value591 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[1].additionalIndent",value591);
+		} else {
+			_g.h["wrapping.methodChain.rules[1].additionalIndent"] = value591;
+		}
+		var value592 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[2].conditions[0].cond",value592);
+		} else {
+			_g.h["wrapping.methodChain.rules[2].conditions[0].cond"] = value592;
+		}
+		var value593 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[2].conditions[0].value",value593);
+		} else {
+			_g.h["wrapping.methodChain.rules[2].conditions[0].value"] = value593;
+		}
+		var value594 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[2].conditions[1].cond",value594);
+		} else {
+			_g.h["wrapping.methodChain.rules[2].conditions[1].cond"] = value594;
+		}
+		var value595 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[2].conditions[1].value",value595);
+		} else {
+			_g.h["wrapping.methodChain.rules[2].conditions[1].value"] = value595;
+		}
+		var value596 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[2].type"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[2].type",value596);
+		} else {
+			_g.h["wrapping.methodChain.rules[2].type"] = value596;
+		}
+		var value597 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[2].location"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[2].location",value597);
+		} else {
+			_g.h["wrapping.methodChain.rules[2].location"] = value597;
+		}
+		var value598 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[2].additionalIndent",value598);
+		} else {
+			_g.h["wrapping.methodChain.rules[2].additionalIndent"] = value598;
+		}
+		var value599 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[3].conditions[0].cond",value599);
+		} else {
+			_g.h["wrapping.methodChain.rules[3].conditions[0].cond"] = value599;
+		}
+		var value600 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[3].conditions[0].value",value600);
+		} else {
+			_g.h["wrapping.methodChain.rules[3].conditions[0].value"] = value600;
+		}
+		var value601 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[3].conditions[1].cond",value601);
+		} else {
+			_g.h["wrapping.methodChain.rules[3].conditions[1].cond"] = value601;
+		}
+		var value602 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[3].conditions[1].value",value602);
+		} else {
+			_g.h["wrapping.methodChain.rules[3].conditions[1].value"] = value602;
+		}
+		var value603 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[3].type"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[3].type",value603);
+		} else {
+			_g.h["wrapping.methodChain.rules[3].type"] = value603;
+		}
+		var value604 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[3].location"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[3].location",value604);
+		} else {
+			_g.h["wrapping.methodChain.rules[3].location"] = value604;
+		}
+		var value605 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[3].additionalIndent",value605);
+		} else {
+			_g.h["wrapping.methodChain.rules[3].additionalIndent"] = value605;
+		}
+		var value606 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[4].conditions[0].cond",value606);
+		} else {
+			_g.h["wrapping.methodChain.rules[4].conditions[0].cond"] = value606;
+		}
+		var value607 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[4].conditions[0].value",value607);
+		} else {
+			_g.h["wrapping.methodChain.rules[4].conditions[0].value"] = value607;
+		}
+		var value608 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[4].conditions[1].cond",value608);
+		} else {
+			_g.h["wrapping.methodChain.rules[4].conditions[1].cond"] = value608;
+		}
+		var value609 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[4].conditions[1].value",value609);
+		} else {
+			_g.h["wrapping.methodChain.rules[4].conditions[1].value"] = value609;
+		}
+		var value610 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[4].type"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[4].type",value610);
+		} else {
+			_g.h["wrapping.methodChain.rules[4].type"] = value610;
+		}
+		var value611 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[4].location"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[4].location",value611);
+		} else {
+			_g.h["wrapping.methodChain.rules[4].location"] = value611;
+		}
+		var value612 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[4].additionalIndent",value612);
+		} else {
+			_g.h["wrapping.methodChain.rules[4].additionalIndent"] = value612;
+		}
+		var value613 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[5].conditions[0].cond",value613);
+		} else {
+			_g.h["wrapping.methodChain.rules[5].conditions[0].cond"] = value613;
+		}
+		var value614 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[5].conditions[0].value",value614);
+		} else {
+			_g.h["wrapping.methodChain.rules[5].conditions[0].value"] = value614;
+		}
+		var value615 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[5].conditions[1].cond",value615);
+		} else {
+			_g.h["wrapping.methodChain.rules[5].conditions[1].cond"] = value615;
+		}
+		var value616 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[5].conditions[1].value",value616);
+		} else {
+			_g.h["wrapping.methodChain.rules[5].conditions[1].value"] = value616;
+		}
+		var value617 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[5].type"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[5].type",value617);
+		} else {
+			_g.h["wrapping.methodChain.rules[5].type"] = value617;
+		}
+		var value618 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.methodChain.rules[5].location"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[5].location",value618);
+		} else {
+			_g.h["wrapping.methodChain.rules[5].location"] = value618;
+		}
+		var value619 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.methodChain.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.methodChain.rules[5].additionalIndent",value619);
+		} else {
+			_g.h["wrapping.methodChain.rules[5].additionalIndent"] = value619;
+		}
+		var value620 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.defaultWrap"] != null) {
+			_g.setReserved("wrapping.opBoolChain.defaultWrap",value620);
+		} else {
+			_g.h["wrapping.opBoolChain.defaultWrap"] = value620;
+		}
+		var value621 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.defaultLocation"] != null) {
+			_g.setReserved("wrapping.opBoolChain.defaultLocation",value621);
+		} else {
+			_g.h["wrapping.opBoolChain.defaultLocation"] = value621;
+		}
+		var value622 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.opBoolChain.defaultAdditionalIndent",value622);
+		} else {
+			_g.h["wrapping.opBoolChain.defaultAdditionalIndent"] = value622;
+		}
+		var value623 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[0].conditions[0].cond",value623);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[0].conditions[0].cond"] = value623;
+		}
+		var value624 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[0].conditions[0].value",value624);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[0].conditions[0].value"] = value624;
+		}
+		var value625 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[0].conditions[1].cond",value625);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[0].conditions[1].cond"] = value625;
+		}
+		var value626 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[0].conditions[1].value",value626);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[0].conditions[1].value"] = value626;
+		}
+		var value627 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[0].type"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[0].type",value627);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[0].type"] = value627;
+		}
+		var value628 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[0].location"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[0].location",value628);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[0].location"] = value628;
+		}
+		var value629 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[0].additionalIndent",value629);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[0].additionalIndent"] = value629;
+		}
+		var value630 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[1].conditions[0].cond",value630);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[1].conditions[0].cond"] = value630;
+		}
+		var value631 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[1].conditions[0].value",value631);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[1].conditions[0].value"] = value631;
+		}
+		var value632 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[1].conditions[1].cond",value632);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[1].conditions[1].cond"] = value632;
+		}
+		var value633 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[1].conditions[1].value",value633);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[1].conditions[1].value"] = value633;
+		}
+		var value634 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[1].type"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[1].type",value634);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[1].type"] = value634;
+		}
+		var value635 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[1].location"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[1].location",value635);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[1].location"] = value635;
+		}
+		var value636 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[1].additionalIndent",value636);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[1].additionalIndent"] = value636;
+		}
+		var value637 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[2].conditions[0].cond",value637);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[2].conditions[0].cond"] = value637;
+		}
+		var value638 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[2].conditions[0].value",value638);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[2].conditions[0].value"] = value638;
+		}
+		var value639 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[2].conditions[1].cond",value639);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[2].conditions[1].cond"] = value639;
+		}
+		var value640 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[2].conditions[1].value",value640);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[2].conditions[1].value"] = value640;
+		}
+		var value641 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[2].type"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[2].type",value641);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[2].type"] = value641;
+		}
+		var value642 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[2].location"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[2].location",value642);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[2].location"] = value642;
+		}
+		var value643 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[2].additionalIndent",value643);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[2].additionalIndent"] = value643;
+		}
+		var value644 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[3].conditions[0].cond",value644);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[3].conditions[0].cond"] = value644;
+		}
+		var value645 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[3].conditions[0].value",value645);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[3].conditions[0].value"] = value645;
+		}
+		var value646 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[3].conditions[1].cond",value646);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[3].conditions[1].cond"] = value646;
+		}
+		var value647 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[3].conditions[1].value",value647);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[3].conditions[1].value"] = value647;
+		}
+		var value648 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[3].type"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[3].type",value648);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[3].type"] = value648;
+		}
+		var value649 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[3].location"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[3].location",value649);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[3].location"] = value649;
+		}
+		var value650 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[3].additionalIndent",value650);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[3].additionalIndent"] = value650;
+		}
+		var value651 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[4].conditions[0].cond",value651);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[4].conditions[0].cond"] = value651;
+		}
+		var value652 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[4].conditions[0].value",value652);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[4].conditions[0].value"] = value652;
+		}
+		var value653 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[4].conditions[1].cond",value653);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[4].conditions[1].cond"] = value653;
+		}
+		var value654 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[4].conditions[1].value",value654);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[4].conditions[1].value"] = value654;
+		}
+		var value655 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[4].type"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[4].type",value655);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[4].type"] = value655;
+		}
+		var value656 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[4].location"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[4].location",value656);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[4].location"] = value656;
+		}
+		var value657 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[4].additionalIndent",value657);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[4].additionalIndent"] = value657;
+		}
+		var value658 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[5].conditions[0].cond",value658);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[5].conditions[0].cond"] = value658;
+		}
+		var value659 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[5].conditions[0].value",value659);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[5].conditions[0].value"] = value659;
+		}
+		var value660 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[5].conditions[1].cond",value660);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[5].conditions[1].cond"] = value660;
+		}
+		var value661 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[5].conditions[1].value",value661);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[5].conditions[1].value"] = value661;
+		}
+		var value662 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[5].type"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[5].type",value662);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[5].type"] = value662;
+		}
+		var value663 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opBoolChain.rules[5].location"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[5].location",value663);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[5].location"] = value663;
+		}
+		var value664 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opBoolChain.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opBoolChain.rules[5].additionalIndent",value664);
+		} else {
+			_g.h["wrapping.opBoolChain.rules[5].additionalIndent"] = value664;
+		}
+		var value665 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.defaultWrap"] != null) {
+			_g.setReserved("wrapping.implementsExtends.defaultWrap",value665);
+		} else {
+			_g.h["wrapping.implementsExtends.defaultWrap"] = value665;
+		}
+		var value666 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.defaultLocation"] != null) {
+			_g.setReserved("wrapping.implementsExtends.defaultLocation",value666);
+		} else {
+			_g.h["wrapping.implementsExtends.defaultLocation"] = value666;
+		}
+		var value667 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.implementsExtends.defaultAdditionalIndent",value667);
+		} else {
+			_g.h["wrapping.implementsExtends.defaultAdditionalIndent"] = value667;
+		}
+		var value668 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[0].conditions[0].cond",value668);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[0].conditions[0].cond"] = value668;
+		}
+		var value669 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[0].conditions[0].value",value669);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[0].conditions[0].value"] = value669;
+		}
+		var value670 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[0].conditions[1].cond",value670);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[0].conditions[1].cond"] = value670;
+		}
+		var value671 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[0].conditions[1].value",value671);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[0].conditions[1].value"] = value671;
+		}
+		var value672 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[0].type"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[0].type",value672);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[0].type"] = value672;
+		}
+		var value673 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[0].location"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[0].location",value673);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[0].location"] = value673;
+		}
+		var value674 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[0].additionalIndent",value674);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[0].additionalIndent"] = value674;
+		}
+		var value675 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[1].conditions[0].cond",value675);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[1].conditions[0].cond"] = value675;
+		}
+		var value676 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[1].conditions[0].value",value676);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[1].conditions[0].value"] = value676;
+		}
+		var value677 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[1].conditions[1].cond",value677);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[1].conditions[1].cond"] = value677;
+		}
+		var value678 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[1].conditions[1].value",value678);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[1].conditions[1].value"] = value678;
+		}
+		var value679 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[1].type"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[1].type",value679);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[1].type"] = value679;
+		}
+		var value680 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[1].location"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[1].location",value680);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[1].location"] = value680;
+		}
+		var value681 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[1].additionalIndent",value681);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[1].additionalIndent"] = value681;
+		}
+		var value682 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[2].conditions[0].cond",value682);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[2].conditions[0].cond"] = value682;
+		}
+		var value683 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[2].conditions[0].value",value683);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[2].conditions[0].value"] = value683;
+		}
+		var value684 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[2].conditions[1].cond",value684);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[2].conditions[1].cond"] = value684;
+		}
+		var value685 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[2].conditions[1].value",value685);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[2].conditions[1].value"] = value685;
+		}
+		var value686 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[2].type"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[2].type",value686);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[2].type"] = value686;
+		}
+		var value687 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[2].location"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[2].location",value687);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[2].location"] = value687;
+		}
+		var value688 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[2].additionalIndent",value688);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[2].additionalIndent"] = value688;
+		}
+		var value689 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[3].conditions[0].cond",value689);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[3].conditions[0].cond"] = value689;
+		}
+		var value690 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[3].conditions[0].value",value690);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[3].conditions[0].value"] = value690;
+		}
+		var value691 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[3].conditions[1].cond",value691);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[3].conditions[1].cond"] = value691;
+		}
+		var value692 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[3].conditions[1].value",value692);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[3].conditions[1].value"] = value692;
+		}
+		var value693 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[3].type"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[3].type",value693);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[3].type"] = value693;
+		}
+		var value694 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[3].location"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[3].location",value694);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[3].location"] = value694;
+		}
+		var value695 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[3].additionalIndent",value695);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[3].additionalIndent"] = value695;
+		}
+		var value696 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[4].conditions[0].cond",value696);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[4].conditions[0].cond"] = value696;
+		}
+		var value697 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[4].conditions[0].value",value697);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[4].conditions[0].value"] = value697;
+		}
+		var value698 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[4].conditions[1].cond",value698);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[4].conditions[1].cond"] = value698;
+		}
+		var value699 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[4].conditions[1].value",value699);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[4].conditions[1].value"] = value699;
+		}
+		var value700 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[4].type"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[4].type",value700);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[4].type"] = value700;
+		}
+		var value701 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[4].location"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[4].location",value701);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[4].location"] = value701;
+		}
+		var value702 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[4].additionalIndent",value702);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[4].additionalIndent"] = value702;
+		}
+		var value703 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[5].conditions[0].cond",value703);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[5].conditions[0].cond"] = value703;
+		}
+		var value704 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[5].conditions[0].value",value704);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[5].conditions[0].value"] = value704;
+		}
+		var value705 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[5].conditions[1].cond",value705);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[5].conditions[1].cond"] = value705;
+		}
+		var value706 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[5].conditions[1].value",value706);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[5].conditions[1].value"] = value706;
+		}
+		var value707 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[5].type"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[5].type",value707);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[5].type"] = value707;
+		}
+		var value708 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.implementsExtends.rules[5].location"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[5].location",value708);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[5].location"] = value708;
+		}
+		var value709 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.implementsExtends.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.implementsExtends.rules[5].additionalIndent",value709);
+		} else {
+			_g.h["wrapping.implementsExtends.rules[5].additionalIndent"] = value709;
+		}
+		var value710 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.defaultWrap"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.defaultWrap",value710);
+		} else {
+			_g.h["wrapping.opAddSubChain.defaultWrap"] = value710;
+		}
+		var value711 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.defaultLocation"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.defaultLocation",value711);
+		} else {
+			_g.h["wrapping.opAddSubChain.defaultLocation"] = value711;
+		}
+		var value712 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.defaultAdditionalIndent",value712);
+		} else {
+			_g.h["wrapping.opAddSubChain.defaultAdditionalIndent"] = value712;
+		}
+		var value713 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[0].conditions[0].cond",value713);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[0].conditions[0].cond"] = value713;
+		}
+		var value714 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[0].conditions[0].value",value714);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[0].conditions[0].value"] = value714;
+		}
+		var value715 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[0].conditions[1].cond",value715);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[0].conditions[1].cond"] = value715;
+		}
+		var value716 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[0].conditions[1].value",value716);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[0].conditions[1].value"] = value716;
+		}
+		var value717 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[0].type"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[0].type",value717);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[0].type"] = value717;
+		}
+		var value718 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[0].location"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[0].location",value718);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[0].location"] = value718;
+		}
+		var value719 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[0].additionalIndent",value719);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[0].additionalIndent"] = value719;
+		}
+		var value720 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[1].conditions[0].cond",value720);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[1].conditions[0].cond"] = value720;
+		}
+		var value721 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[1].conditions[0].value",value721);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[1].conditions[0].value"] = value721;
+		}
+		var value722 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[1].conditions[1].cond",value722);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[1].conditions[1].cond"] = value722;
+		}
+		var value723 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[1].conditions[1].value",value723);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[1].conditions[1].value"] = value723;
+		}
+		var value724 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[1].type"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[1].type",value724);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[1].type"] = value724;
+		}
+		var value725 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[1].location"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[1].location",value725);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[1].location"] = value725;
+		}
+		var value726 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[1].additionalIndent",value726);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[1].additionalIndent"] = value726;
+		}
+		var value727 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[2].conditions[0].cond",value727);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[2].conditions[0].cond"] = value727;
+		}
+		var value728 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[2].conditions[0].value",value728);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[2].conditions[0].value"] = value728;
+		}
+		var value729 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[2].conditions[1].cond",value729);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[2].conditions[1].cond"] = value729;
+		}
+		var value730 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[2].conditions[1].value",value730);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[2].conditions[1].value"] = value730;
+		}
+		var value731 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[2].type"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[2].type",value731);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[2].type"] = value731;
+		}
+		var value732 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[2].location"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[2].location",value732);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[2].location"] = value732;
+		}
+		var value733 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[2].additionalIndent",value733);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[2].additionalIndent"] = value733;
+		}
+		var value734 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[3].conditions[0].cond",value734);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[3].conditions[0].cond"] = value734;
+		}
+		var value735 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[3].conditions[0].value",value735);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[3].conditions[0].value"] = value735;
+		}
+		var value736 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[3].conditions[1].cond",value736);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[3].conditions[1].cond"] = value736;
+		}
+		var value737 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[3].conditions[1].value",value737);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[3].conditions[1].value"] = value737;
+		}
+		var value738 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[3].type"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[3].type",value738);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[3].type"] = value738;
+		}
+		var value739 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[3].location"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[3].location",value739);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[3].location"] = value739;
+		}
+		var value740 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[3].additionalIndent",value740);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[3].additionalIndent"] = value740;
+		}
+		var value741 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[4].conditions[0].cond",value741);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[4].conditions[0].cond"] = value741;
+		}
+		var value742 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[4].conditions[0].value",value742);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[4].conditions[0].value"] = value742;
+		}
+		var value743 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[4].conditions[1].cond",value743);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[4].conditions[1].cond"] = value743;
+		}
+		var value744 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[4].conditions[1].value",value744);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[4].conditions[1].value"] = value744;
+		}
+		var value745 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[4].type"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[4].type",value745);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[4].type"] = value745;
+		}
+		var value746 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[4].location"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[4].location",value746);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[4].location"] = value746;
+		}
+		var value747 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[4].additionalIndent",value747);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[4].additionalIndent"] = value747;
+		}
+		var value748 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[5].conditions[0].cond",value748);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[5].conditions[0].cond"] = value748;
+		}
+		var value749 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[5].conditions[0].value",value749);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[5].conditions[0].value"] = value749;
+		}
+		var value750 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[5].conditions[1].cond",value750);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[5].conditions[1].cond"] = value750;
+		}
+		var value751 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[5].conditions[1].value",value751);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[5].conditions[1].value"] = value751;
+		}
+		var value752 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[5].type"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[5].type",value752);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[5].type"] = value752;
+		}
+		var value753 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.opAddSubChain.rules[5].location"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[5].location",value753);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[5].location"] = value753;
+		}
+		var value754 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.opAddSubChain.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.opAddSubChain.rules[5].additionalIndent",value754);
+		} else {
+			_g.h["wrapping.opAddSubChain.rules[5].additionalIndent"] = value754;
+		}
+		var value755 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.multiVar.defaultWrap"] != null) {
+			_g.setReserved("wrapping.multiVar.defaultWrap",value755);
+		} else {
+			_g.h["wrapping.multiVar.defaultWrap"] = value755;
+		}
+		var value756 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.multiVar.defaultLocation"] != null) {
+			_g.setReserved("wrapping.multiVar.defaultLocation",value756);
+		} else {
+			_g.h["wrapping.multiVar.defaultLocation"] = value756;
+		}
+		var value757 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.multiVar.defaultAdditionalIndent",value757);
+		} else {
+			_g.h["wrapping.multiVar.defaultAdditionalIndent"] = value757;
+		}
+		var value758 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[0].conditions[0].cond",value758);
+		} else {
+			_g.h["wrapping.multiVar.rules[0].conditions[0].cond"] = value758;
+		}
+		var value759 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[0].conditions[0].value",value759);
+		} else {
+			_g.h["wrapping.multiVar.rules[0].conditions[0].value"] = value759;
+		}
+		var value760 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[0].conditions[1].cond",value760);
+		} else {
+			_g.h["wrapping.multiVar.rules[0].conditions[1].cond"] = value760;
+		}
+		var value761 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[0].conditions[1].value",value761);
+		} else {
+			_g.h["wrapping.multiVar.rules[0].conditions[1].value"] = value761;
+		}
+		var value762 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[0].type"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[0].type",value762);
+		} else {
+			_g.h["wrapping.multiVar.rules[0].type"] = value762;
+		}
+		var value763 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[0].location"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[0].location",value763);
+		} else {
+			_g.h["wrapping.multiVar.rules[0].location"] = value763;
+		}
+		var value764 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[0].additionalIndent",value764);
+		} else {
+			_g.h["wrapping.multiVar.rules[0].additionalIndent"] = value764;
+		}
+		var value765 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[1].conditions[0].cond",value765);
+		} else {
+			_g.h["wrapping.multiVar.rules[1].conditions[0].cond"] = value765;
+		}
+		var value766 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[1].conditions[0].value",value766);
+		} else {
+			_g.h["wrapping.multiVar.rules[1].conditions[0].value"] = value766;
+		}
+		var value767 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[1].conditions[1].cond",value767);
+		} else {
+			_g.h["wrapping.multiVar.rules[1].conditions[1].cond"] = value767;
+		}
+		var value768 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[1].conditions[1].value",value768);
+		} else {
+			_g.h["wrapping.multiVar.rules[1].conditions[1].value"] = value768;
+		}
+		var value769 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[1].type"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[1].type",value769);
+		} else {
+			_g.h["wrapping.multiVar.rules[1].type"] = value769;
+		}
+		var value770 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[1].location"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[1].location",value770);
+		} else {
+			_g.h["wrapping.multiVar.rules[1].location"] = value770;
+		}
+		var value771 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[1].additionalIndent",value771);
+		} else {
+			_g.h["wrapping.multiVar.rules[1].additionalIndent"] = value771;
+		}
+		var value772 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[2].conditions[0].cond",value772);
+		} else {
+			_g.h["wrapping.multiVar.rules[2].conditions[0].cond"] = value772;
+		}
+		var value773 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[2].conditions[0].value",value773);
+		} else {
+			_g.h["wrapping.multiVar.rules[2].conditions[0].value"] = value773;
+		}
+		var value774 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[2].conditions[1].cond",value774);
+		} else {
+			_g.h["wrapping.multiVar.rules[2].conditions[1].cond"] = value774;
+		}
+		var value775 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[2].conditions[1].value",value775);
+		} else {
+			_g.h["wrapping.multiVar.rules[2].conditions[1].value"] = value775;
+		}
+		var value776 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[2].type"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[2].type",value776);
+		} else {
+			_g.h["wrapping.multiVar.rules[2].type"] = value776;
+		}
+		var value777 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[2].location"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[2].location",value777);
+		} else {
+			_g.h["wrapping.multiVar.rules[2].location"] = value777;
+		}
+		var value778 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[2].additionalIndent",value778);
+		} else {
+			_g.h["wrapping.multiVar.rules[2].additionalIndent"] = value778;
+		}
+		var value779 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[3].conditions[0].cond",value779);
+		} else {
+			_g.h["wrapping.multiVar.rules[3].conditions[0].cond"] = value779;
+		}
+		var value780 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[3].conditions[0].value",value780);
+		} else {
+			_g.h["wrapping.multiVar.rules[3].conditions[0].value"] = value780;
+		}
+		var value781 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[3].conditions[1].cond",value781);
+		} else {
+			_g.h["wrapping.multiVar.rules[3].conditions[1].cond"] = value781;
+		}
+		var value782 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[3].conditions[1].value",value782);
+		} else {
+			_g.h["wrapping.multiVar.rules[3].conditions[1].value"] = value782;
+		}
+		var value783 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[3].type"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[3].type",value783);
+		} else {
+			_g.h["wrapping.multiVar.rules[3].type"] = value783;
+		}
+		var value784 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[3].location"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[3].location",value784);
+		} else {
+			_g.h["wrapping.multiVar.rules[3].location"] = value784;
+		}
+		var value785 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[3].additionalIndent",value785);
+		} else {
+			_g.h["wrapping.multiVar.rules[3].additionalIndent"] = value785;
+		}
+		var value786 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[4].conditions[0].cond",value786);
+		} else {
+			_g.h["wrapping.multiVar.rules[4].conditions[0].cond"] = value786;
+		}
+		var value787 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[4].conditions[0].value",value787);
+		} else {
+			_g.h["wrapping.multiVar.rules[4].conditions[0].value"] = value787;
+		}
+		var value788 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[4].conditions[1].cond",value788);
+		} else {
+			_g.h["wrapping.multiVar.rules[4].conditions[1].cond"] = value788;
+		}
+		var value789 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[4].conditions[1].value",value789);
+		} else {
+			_g.h["wrapping.multiVar.rules[4].conditions[1].value"] = value789;
+		}
+		var value790 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[4].type"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[4].type",value790);
+		} else {
+			_g.h["wrapping.multiVar.rules[4].type"] = value790;
+		}
+		var value791 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[4].location"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[4].location",value791);
+		} else {
+			_g.h["wrapping.multiVar.rules[4].location"] = value791;
+		}
+		var value792 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[4].additionalIndent",value792);
+		} else {
+			_g.h["wrapping.multiVar.rules[4].additionalIndent"] = value792;
+		}
+		var value793 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[5].conditions[0].cond",value793);
+		} else {
+			_g.h["wrapping.multiVar.rules[5].conditions[0].cond"] = value793;
+		}
+		var value794 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[5].conditions[0].value",value794);
+		} else {
+			_g.h["wrapping.multiVar.rules[5].conditions[0].value"] = value794;
+		}
+		var value795 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[5].conditions[1].cond",value795);
+		} else {
+			_g.h["wrapping.multiVar.rules[5].conditions[1].cond"] = value795;
+		}
+		var value796 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[5].conditions[1].value",value796);
+		} else {
+			_g.h["wrapping.multiVar.rules[5].conditions[1].value"] = value796;
+		}
+		var value797 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[5].type"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[5].type",value797);
+		} else {
+			_g.h["wrapping.multiVar.rules[5].type"] = value797;
+		}
+		var value798 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.multiVar.rules[5].location"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[5].location",value798);
+		} else {
+			_g.h["wrapping.multiVar.rules[5].location"] = value798;
+		}
+		var value799 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.multiVar.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.multiVar.rules[5].additionalIndent",value799);
+		} else {
+			_g.h["wrapping.multiVar.rules[5].additionalIndent"] = value799;
+		}
+		var value800 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.casePattern.defaultWrap"] != null) {
+			_g.setReserved("wrapping.casePattern.defaultWrap",value800);
+		} else {
+			_g.h["wrapping.casePattern.defaultWrap"] = value800;
+		}
+		var value801 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.casePattern.defaultLocation"] != null) {
+			_g.setReserved("wrapping.casePattern.defaultLocation",value801);
+		} else {
+			_g.h["wrapping.casePattern.defaultLocation"] = value801;
+		}
+		var value802 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.defaultAdditionalIndent"] != null) {
+			_g.setReserved("wrapping.casePattern.defaultAdditionalIndent",value802);
+		} else {
+			_g.h["wrapping.casePattern.defaultAdditionalIndent"] = value802;
+		}
+		var value803 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[0].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[0].conditions[0].cond",value803);
+		} else {
+			_g.h["wrapping.casePattern.rules[0].conditions[0].cond"] = value803;
+		}
+		var value804 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[0].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[0].conditions[0].value",value804);
+		} else {
+			_g.h["wrapping.casePattern.rules[0].conditions[0].value"] = value804;
+		}
+		var value805 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[0].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[0].conditions[1].cond",value805);
+		} else {
+			_g.h["wrapping.casePattern.rules[0].conditions[1].cond"] = value805;
+		}
+		var value806 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[0].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[0].conditions[1].value",value806);
+		} else {
+			_g.h["wrapping.casePattern.rules[0].conditions[1].value"] = value806;
+		}
+		var value807 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[0].type"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[0].type",value807);
+		} else {
+			_g.h["wrapping.casePattern.rules[0].type"] = value807;
+		}
+		var value808 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[0].location"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[0].location",value808);
+		} else {
+			_g.h["wrapping.casePattern.rules[0].location"] = value808;
+		}
+		var value809 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[0].additionalIndent"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[0].additionalIndent",value809);
+		} else {
+			_g.h["wrapping.casePattern.rules[0].additionalIndent"] = value809;
+		}
+		var value810 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[1].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[1].conditions[0].cond",value810);
+		} else {
+			_g.h["wrapping.casePattern.rules[1].conditions[0].cond"] = value810;
+		}
+		var value811 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[1].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[1].conditions[0].value",value811);
+		} else {
+			_g.h["wrapping.casePattern.rules[1].conditions[0].value"] = value811;
+		}
+		var value812 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[1].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[1].conditions[1].cond",value812);
+		} else {
+			_g.h["wrapping.casePattern.rules[1].conditions[1].cond"] = value812;
+		}
+		var value813 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[1].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[1].conditions[1].value",value813);
+		} else {
+			_g.h["wrapping.casePattern.rules[1].conditions[1].value"] = value813;
+		}
+		var value814 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[1].type"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[1].type",value814);
+		} else {
+			_g.h["wrapping.casePattern.rules[1].type"] = value814;
+		}
+		var value815 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[1].location"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[1].location",value815);
+		} else {
+			_g.h["wrapping.casePattern.rules[1].location"] = value815;
+		}
+		var value816 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[1].additionalIndent"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[1].additionalIndent",value816);
+		} else {
+			_g.h["wrapping.casePattern.rules[1].additionalIndent"] = value816;
+		}
+		var value817 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[2].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[2].conditions[0].cond",value817);
+		} else {
+			_g.h["wrapping.casePattern.rules[2].conditions[0].cond"] = value817;
+		}
+		var value818 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[2].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[2].conditions[0].value",value818);
+		} else {
+			_g.h["wrapping.casePattern.rules[2].conditions[0].value"] = value818;
+		}
+		var value819 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[2].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[2].conditions[1].cond",value819);
+		} else {
+			_g.h["wrapping.casePattern.rules[2].conditions[1].cond"] = value819;
+		}
+		var value820 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[2].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[2].conditions[1].value",value820);
+		} else {
+			_g.h["wrapping.casePattern.rules[2].conditions[1].value"] = value820;
+		}
+		var value821 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[2].type"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[2].type",value821);
+		} else {
+			_g.h["wrapping.casePattern.rules[2].type"] = value821;
+		}
+		var value822 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[2].location"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[2].location",value822);
+		} else {
+			_g.h["wrapping.casePattern.rules[2].location"] = value822;
+		}
+		var value823 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[2].additionalIndent"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[2].additionalIndent",value823);
+		} else {
+			_g.h["wrapping.casePattern.rules[2].additionalIndent"] = value823;
+		}
+		var value824 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[3].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[3].conditions[0].cond",value824);
+		} else {
+			_g.h["wrapping.casePattern.rules[3].conditions[0].cond"] = value824;
+		}
+		var value825 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[3].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[3].conditions[0].value",value825);
+		} else {
+			_g.h["wrapping.casePattern.rules[3].conditions[0].value"] = value825;
+		}
+		var value826 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[3].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[3].conditions[1].cond",value826);
+		} else {
+			_g.h["wrapping.casePattern.rules[3].conditions[1].cond"] = value826;
+		}
+		var value827 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[3].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[3].conditions[1].value",value827);
+		} else {
+			_g.h["wrapping.casePattern.rules[3].conditions[1].value"] = value827;
+		}
+		var value828 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[3].type"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[3].type",value828);
+		} else {
+			_g.h["wrapping.casePattern.rules[3].type"] = value828;
+		}
+		var value829 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[3].location"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[3].location",value829);
+		} else {
+			_g.h["wrapping.casePattern.rules[3].location"] = value829;
+		}
+		var value830 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[3].additionalIndent"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[3].additionalIndent",value830);
+		} else {
+			_g.h["wrapping.casePattern.rules[3].additionalIndent"] = value830;
+		}
+		var value831 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[4].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[4].conditions[0].cond",value831);
+		} else {
+			_g.h["wrapping.casePattern.rules[4].conditions[0].cond"] = value831;
+		}
+		var value832 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[4].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[4].conditions[0].value",value832);
+		} else {
+			_g.h["wrapping.casePattern.rules[4].conditions[0].value"] = value832;
+		}
+		var value833 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[4].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[4].conditions[1].cond",value833);
+		} else {
+			_g.h["wrapping.casePattern.rules[4].conditions[1].cond"] = value833;
+		}
+		var value834 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[4].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[4].conditions[1].value",value834);
+		} else {
+			_g.h["wrapping.casePattern.rules[4].conditions[1].value"] = value834;
+		}
+		var value835 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[4].type"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[4].type",value835);
+		} else {
+			_g.h["wrapping.casePattern.rules[4].type"] = value835;
+		}
+		var value836 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[4].location"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[4].location",value836);
+		} else {
+			_g.h["wrapping.casePattern.rules[4].location"] = value836;
+		}
+		var value837 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[4].additionalIndent"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[4].additionalIndent",value837);
+		} else {
+			_g.h["wrapping.casePattern.rules[4].additionalIndent"] = value837;
+		}
+		var value838 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[5].conditions[0].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[5].conditions[0].cond",value838);
+		} else {
+			_g.h["wrapping.casePattern.rules[5].conditions[0].cond"] = value838;
+		}
+		var value839 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[5].conditions[0].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[5].conditions[0].value",value839);
+		} else {
+			_g.h["wrapping.casePattern.rules[5].conditions[0].value"] = value839;
+		}
+		var value840 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("itemCount >= n" , String),js_Boot.__cast("itemCount <= n" , String),js_Boot.__cast("anyItemLength >= n" , String),js_Boot.__cast("anyItemLength <= n" , String),js_Boot.__cast("totalItemLength >= n" , String),js_Boot.__cast("totalItemLength <= n" , String),js_Boot.__cast("lineLength >= n" , String),js_Boot.__cast("lineLength <= n" , String),js_Boot.__cast("hasMultilineItems" , String),js_Boot.__cast("exceedsMaxLineLength" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[5].conditions[1].cond"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[5].conditions[1].cond",value840);
+		} else {
+			_g.h["wrapping.casePattern.rules[5].conditions[1].cond"] = value840;
+		}
+		var value841 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[5].conditions[1].value"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[5].conditions[1].value",value841);
+		} else {
+			_g.h["wrapping.casePattern.rules[5].conditions[1].value"] = value841;
+		}
+		var value842 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("onePerLine" , String),js_Boot.__cast("onePerLineAfterFirst" , String),js_Boot.__cast("equalNumber" , String),js_Boot.__cast("fillLine" , String),js_Boot.__cast("fillLineWithLeadingBreak" , String),js_Boot.__cast("noWrap" , String),js_Boot.__cast("keep" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[5].type"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[5].type",value842);
+		} else {
+			_g.h["wrapping.casePattern.rules[5].type"] = value842;
+		}
+		var value843 = codesamples_config_ConfigFieldType.Combo([js_Boot.__cast("beforeLast" , String),js_Boot.__cast("afterLast" , String)]);
+		if(__map_reserved["wrapping.casePattern.rules[5].location"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[5].location",value843);
+		} else {
+			_g.h["wrapping.casePattern.rules[5].location"] = value843;
+		}
+		var value844 = codesamples_config_ConfigFieldType.Number;
+		if(__map_reserved["wrapping.casePattern.rules[5].additionalIndent"] != null) {
+			_g.setReserved("wrapping.casePattern.rules[5].additionalIndent",value844);
+		} else {
+			_g.h["wrapping.casePattern.rules[5].additionalIndent"] = value844;
 		}
 		this.configFields = _g;
 		this.currentConfig = new formatter_config_Config();
@@ -4599,12 +8127,12 @@ class codesamples_config_ConfigFieldRegistry {
 			var fieldPath = _g11.key;
 			var _ = _g11.value;
 			var this1 = this.configFieldValues;
-			var value257 = { defaultValue : this.getConfigFieldValue(this.currentConfig,fieldPath)};
+			var value845 = { defaultValue : this.getConfigFieldValue(this.currentConfig,fieldPath)};
 			var _this = this1;
 			if(__map_reserved[fieldPath] != null) {
-				_this.setReserved(fieldPath,value257);
+				_this.setReserved(fieldPath,value845);
 			} else {
-				_this.h[fieldPath] = value257;
+				_this.h[fieldPath] = value845;
 			}
 		}
 	}
@@ -4796,7 +8324,7 @@ class doc_Docs extends doc_DocBase {
 		super();
 	}
 	compile_dev_version(container) {
-		this.buildDocPage(container,"compile.dev.version","### compile command line version (Haxe 4)\n\n- `git clone https://github.com/HaxeCheckstyle/haxe-formatter.git`\n- `cd haxe-formatter`\n- `npm install`\n- `npx lix download`\n- `npx haxe buildAll.hxml` - for Neko, NodeJS and Java version + JSON schema\n- `npx haxe buildCpp.hxml` - for C++ version\n\n### compile command line version (Haxe 3)\n\n- `git clone https://github.com/HaxeCheckstyle/haxe-formatter.git`\n- `cd haxe-formatter`\n- `npm install`\n- `mv haxe_libraries haxe4_libraries`\n- `mv haxe3_libraries haxe_libraries`\n- `npx lix install haxe 3.4.7`\n- `npx lix download`\n- `npx haxe buildAll.hxml` - for Neko, NodeJS and Java version + JSON schema\n- `npx haxe buildCpp.hxml` - for C++ version\n\n### compile haxe-language server\n\n- `git clone https://github.com/vshaxe/haxe-languageserver.git`\n- `cd haxe-languageserver`\n- `npm install`\n- `npx lix download`\n- `npx lix install gh:HaxeCheckstyle/tokentree`\n- `npx lix install gh:HaxeCheckstyle/haxe-formatter`\n- `npx lix run vshaxe-build --target language-server`\n- `cp bin/server.js ~/.vscode/extensions/nadako.vshaxe-$VSHAXE_VERSION/server/bin`\n- restart Haxe language server or restart VSCode\n");
+		this.buildDocPage(container,"compile.dev.version","### compile command line version (Haxe 4)\n\n- `git clone https://github.com/HaxeCheckstyle/haxe-formatter.git`\n- `cd haxe-formatter`\n- `npm install`\n- `npx lix download`\n- `npx haxe buildAll.hxml` - for Neko, NodeJS and Java version + JSON schema\n- `npx haxe buildCpp.hxml` - for C++ version\n\n### compile command line version (Haxe 3)\n\n- `git clone https://github.com/HaxeCheckstyle/haxe-formatter.git`\n- `cd haxe-formatter`\n- `npm install`\n- `mv haxe_libraries haxe4_libraries`\n- `mv haxe3_libraries haxe_libraries`\n- `npx lix install haxe 3.4.7`\n- `npx lix download`\n- `npx haxe buildAll.hxml` - for Neko, NodeJS and Java version + JSON schema\n- `npx haxe buildCpp.hxml` - for C++ version\n\n### compile haxe-language server\n\n- `git clone https://github.com/vshaxe/haxe-languageserver.git`\n- `cd haxe-languageserver`\n- `npm install`\n- `npx lix download`\n- `npx lix install gh:HaxeCheckstyle/tokentree`\n- `npx lix install gh:HaxeCheckstyle/haxe-formatter`\n- `npx lix run vshaxe-build --target language-server`\n- `cp bin/server.js ~/.vscode/extensions/nadako.vshaxe-$VSHAXE_VERSION/server/bin/` - replace `$VSHAXE_VERSION` with actual version (assuming you have it installed)\n- restart Haxe language server or restart VSCode\n\n> **Note**: You will have to replace `server.js` whenever there is a new marketplace release, since it will wipe your `~/.vscode/extensions/nadako.vshaxe-$VSHAXE_VERSION` folder.\n");
 	}
 }
 $hxClasses["doc.Docs"] = doc_Docs;
