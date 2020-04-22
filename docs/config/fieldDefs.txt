@@ -239,59 +239,733 @@ whitespace.formatStringInterpolation = bool
 whitespace.addLineCommentSpace = bool
 
 wrapping.maxLineLength = number
+
 wrapping.arrayMatrixWrap = combo,formatter.config.ArrayMatrixWrap
+
 wrapping.arrayWrap.defaultWrap = combo,formatter.config.WrappingType
 wrapping.arrayWrap.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.arrayWrap.defaultAdditionalIndent = number
+
+wrapping.arrayWrap.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[0].conditions[0].value = number
+wrapping.arrayWrap.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[0].conditions[1].value = number
+wrapping.arrayWrap.rules[0].type = combo,formatter.config.WrappingType
+wrapping.arrayWrap.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.arrayWrap.rules[0].additionalIndent = number
+
+wrapping.arrayWrap.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[1].conditions[0].value = number
+wrapping.arrayWrap.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[1].conditions[1].value = number
+wrapping.arrayWrap.rules[1].type = combo,formatter.config.WrappingType
+wrapping.arrayWrap.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.arrayWrap.rules[1].additionalIndent = number
+
+wrapping.arrayWrap.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[2].conditions[0].value = number
+wrapping.arrayWrap.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[2].conditions[1].value = number
+wrapping.arrayWrap.rules[2].type = combo,formatter.config.WrappingType
+wrapping.arrayWrap.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.arrayWrap.rules[2].additionalIndent = number
+
+wrapping.arrayWrap.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[3].conditions[0].value = number
+wrapping.arrayWrap.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[3].conditions[1].value = number
+wrapping.arrayWrap.rules[3].type = combo,formatter.config.WrappingType
+wrapping.arrayWrap.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.arrayWrap.rules[3].additionalIndent = number
+
+wrapping.arrayWrap.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[4].conditions[0].value = number
+wrapping.arrayWrap.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[4].conditions[1].value = number
+wrapping.arrayWrap.rules[4].type = combo,formatter.config.WrappingType
+wrapping.arrayWrap.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.arrayWrap.rules[4].additionalIndent = number
+
+wrapping.arrayWrap.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[5].conditions[0].value = number
+wrapping.arrayWrap.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.arrayWrap.rules[5].conditions[1].value = number
+wrapping.arrayWrap.rules[5].type = combo,formatter.config.WrappingType
+wrapping.arrayWrap.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.arrayWrap.rules[5].additionalIndent = number
 
 wrapping.typeParameter.defaultWrap = combo,formatter.config.WrappingType
 wrapping.typeParameter.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.typeParameter.defaultAdditionalIndent = number
 
+wrapping.typeParameter.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[0].conditions[0].value = number
+wrapping.typeParameter.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[0].conditions[1].value = number
+wrapping.typeParameter.rules[0].type = combo,formatter.config.WrappingType
+wrapping.typeParameter.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.typeParameter.rules[0].additionalIndent = number
+
+wrapping.typeParameter.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[1].conditions[0].value = number
+wrapping.typeParameter.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[1].conditions[1].value = number
+wrapping.typeParameter.rules[1].type = combo,formatter.config.WrappingType
+wrapping.typeParameter.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.typeParameter.rules[1].additionalIndent = number
+
+wrapping.typeParameter.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[2].conditions[0].value = number
+wrapping.typeParameter.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[2].conditions[1].value = number
+wrapping.typeParameter.rules[2].type = combo,formatter.config.WrappingType
+wrapping.typeParameter.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.typeParameter.rules[2].additionalIndent = number
+
+wrapping.typeParameter.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[3].conditions[0].value = number
+wrapping.typeParameter.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[3].conditions[1].value = number
+wrapping.typeParameter.rules[3].type = combo,formatter.config.WrappingType
+wrapping.typeParameter.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.typeParameter.rules[3].additionalIndent = number
+
+wrapping.typeParameter.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[4].conditions[0].value = number
+wrapping.typeParameter.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[4].conditions[1].value = number
+wrapping.typeParameter.rules[4].type = combo,formatter.config.WrappingType
+wrapping.typeParameter.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.typeParameter.rules[4].additionalIndent = number
+
+wrapping.typeParameter.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[5].conditions[0].value = number
+wrapping.typeParameter.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.typeParameter.rules[5].conditions[1].value = number
+wrapping.typeParameter.rules[5].type = combo,formatter.config.WrappingType
+wrapping.typeParameter.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.typeParameter.rules[5].additionalIndent = number
+
 wrapping.functionSignature.defaultWrap = combo,formatter.config.WrappingType
 wrapping.functionSignature.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.functionSignature.defaultAdditionalIndent = number
+
+wrapping.functionSignature.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[0].conditions[0].value = number
+wrapping.functionSignature.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[0].conditions[1].value = number
+wrapping.functionSignature.rules[0].type = combo,formatter.config.WrappingType
+wrapping.functionSignature.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.functionSignature.rules[0].additionalIndent = number
+
+wrapping.functionSignature.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[1].conditions[0].value = number
+wrapping.functionSignature.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[1].conditions[1].value = number
+wrapping.functionSignature.rules[1].type = combo,formatter.config.WrappingType
+wrapping.functionSignature.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.functionSignature.rules[1].additionalIndent = number
+
+wrapping.functionSignature.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[2].conditions[0].value = number
+wrapping.functionSignature.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[2].conditions[1].value = number
+wrapping.functionSignature.rules[2].type = combo,formatter.config.WrappingType
+wrapping.functionSignature.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.functionSignature.rules[2].additionalIndent = number
+
+wrapping.functionSignature.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[3].conditions[0].value = number
+wrapping.functionSignature.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[3].conditions[1].value = number
+wrapping.functionSignature.rules[3].type = combo,formatter.config.WrappingType
+wrapping.functionSignature.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.functionSignature.rules[3].additionalIndent = number
+
+wrapping.functionSignature.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[4].conditions[0].value = number
+wrapping.functionSignature.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[4].conditions[1].value = number
+wrapping.functionSignature.rules[4].type = combo,formatter.config.WrappingType
+wrapping.functionSignature.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.functionSignature.rules[4].additionalIndent = number
+
+wrapping.functionSignature.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[5].conditions[0].value = number
+wrapping.functionSignature.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.functionSignature.rules[5].conditions[1].value = number
+wrapping.functionSignature.rules[5].type = combo,formatter.config.WrappingType
+wrapping.functionSignature.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.functionSignature.rules[5].additionalIndent = number
 
 wrapping.anonFunctionSignature.defaultWrap = combo,formatter.config.WrappingType
 wrapping.anonFunctionSignature.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.anonFunctionSignature.defaultAdditionalIndent = number
 
+wrapping.anonFunctionSignature.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[0].conditions[0].value = number
+wrapping.anonFunctionSignature.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[0].conditions[1].value = number
+wrapping.anonFunctionSignature.rules[0].type = combo,formatter.config.WrappingType
+wrapping.anonFunctionSignature.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.anonFunctionSignature.rules[0].additionalIndent = number
+
+wrapping.anonFunctionSignature.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[1].conditions[0].value = number
+wrapping.anonFunctionSignature.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[1].conditions[1].value = number
+wrapping.anonFunctionSignature.rules[1].type = combo,formatter.config.WrappingType
+wrapping.anonFunctionSignature.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.anonFunctionSignature.rules[1].additionalIndent = number
+
+wrapping.anonFunctionSignature.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[2].conditions[0].value = number
+wrapping.anonFunctionSignature.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[2].conditions[1].value = number
+wrapping.anonFunctionSignature.rules[2].type = combo,formatter.config.WrappingType
+wrapping.anonFunctionSignature.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.anonFunctionSignature.rules[2].additionalIndent = number
+
+wrapping.anonFunctionSignature.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[3].conditions[0].value = number
+wrapping.anonFunctionSignature.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[3].conditions[1].value = number
+wrapping.anonFunctionSignature.rules[3].type = combo,formatter.config.WrappingType
+wrapping.anonFunctionSignature.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.anonFunctionSignature.rules[3].additionalIndent = number
+
+wrapping.anonFunctionSignature.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[4].conditions[0].value = number
+wrapping.anonFunctionSignature.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[4].conditions[1].value = number
+wrapping.anonFunctionSignature.rules[4].type = combo,formatter.config.WrappingType
+wrapping.anonFunctionSignature.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.anonFunctionSignature.rules[4].additionalIndent = number
+
+wrapping.anonFunctionSignature.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[5].conditions[0].value = number
+wrapping.anonFunctionSignature.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonFunctionSignature.rules[5].conditions[1].value = number
+wrapping.anonFunctionSignature.rules[5].type = combo,formatter.config.WrappingType
+wrapping.anonFunctionSignature.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.anonFunctionSignature.rules[5].additionalIndent = number
+
 wrapping.callParameter.defaultWrap = combo,formatter.config.WrappingType
 wrapping.callParameter.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.callParameter.defaultAdditionalIndent = number
+
+wrapping.callParameter.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[0].conditions[0].value = number
+wrapping.callParameter.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[0].conditions[1].value = number
+wrapping.callParameter.rules[0].type = combo,formatter.config.WrappingType
+wrapping.callParameter.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.callParameter.rules[0].additionalIndent = number
+
+wrapping.callParameter.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[1].conditions[0].value = number
+wrapping.callParameter.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[1].conditions[1].value = number
+wrapping.callParameter.rules[1].type = combo,formatter.config.WrappingType
+wrapping.callParameter.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.callParameter.rules[1].additionalIndent = number
+
+wrapping.callParameter.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[2].conditions[0].value = number
+wrapping.callParameter.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[2].conditions[1].value = number
+wrapping.callParameter.rules[2].type = combo,formatter.config.WrappingType
+wrapping.callParameter.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.callParameter.rules[2].additionalIndent = number
+
+wrapping.callParameter.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[3].conditions[0].value = number
+wrapping.callParameter.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[3].conditions[1].value = number
+wrapping.callParameter.rules[3].type = combo,formatter.config.WrappingType
+wrapping.callParameter.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.callParameter.rules[3].additionalIndent = number
+
+wrapping.callParameter.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[4].conditions[0].value = number
+wrapping.callParameter.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[4].conditions[1].value = number
+wrapping.callParameter.rules[4].type = combo,formatter.config.WrappingType
+wrapping.callParameter.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.callParameter.rules[4].additionalIndent = number
+
+wrapping.callParameter.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[5].conditions[0].value = number
+wrapping.callParameter.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.callParameter.rules[5].conditions[1].value = number
+wrapping.callParameter.rules[5].type = combo,formatter.config.WrappingType
+wrapping.callParameter.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.callParameter.rules[5].additionalIndent = number
 
 wrapping.metadataCallParameter.defaultWrap = combo,formatter.config.WrappingType
 wrapping.metadataCallParameter.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.metadataCallParameter.defaultAdditionalIndent = number
 
+wrapping.metadataCallParameter.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[0].conditions[0].value = number
+wrapping.metadataCallParameter.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[0].conditions[1].value = number
+wrapping.metadataCallParameter.rules[0].type = combo,formatter.config.WrappingType
+wrapping.metadataCallParameter.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.metadataCallParameter.rules[0].additionalIndent = number
+
+wrapping.metadataCallParameter.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[1].conditions[0].value = number
+wrapping.metadataCallParameter.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[1].conditions[1].value = number
+wrapping.metadataCallParameter.rules[1].type = combo,formatter.config.WrappingType
+wrapping.metadataCallParameter.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.metadataCallParameter.rules[1].additionalIndent = number
+
+wrapping.metadataCallParameter.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[2].conditions[0].value = number
+wrapping.metadataCallParameter.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[2].conditions[1].value = number
+wrapping.metadataCallParameter.rules[2].type = combo,formatter.config.WrappingType
+wrapping.metadataCallParameter.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.metadataCallParameter.rules[2].additionalIndent = number
+
+wrapping.metadataCallParameter.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[3].conditions[0].value = number
+wrapping.metadataCallParameter.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[3].conditions[1].value = number
+wrapping.metadataCallParameter.rules[3].type = combo,formatter.config.WrappingType
+wrapping.metadataCallParameter.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.metadataCallParameter.rules[3].additionalIndent = number
+
+wrapping.metadataCallParameter.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[4].conditions[0].value = number
+wrapping.metadataCallParameter.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[4].conditions[1].value = number
+wrapping.metadataCallParameter.rules[4].type = combo,formatter.config.WrappingType
+wrapping.metadataCallParameter.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.metadataCallParameter.rules[4].additionalIndent = number
+
+wrapping.metadataCallParameter.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[5].conditions[0].value = number
+wrapping.metadataCallParameter.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.metadataCallParameter.rules[5].conditions[1].value = number
+wrapping.metadataCallParameter.rules[5].type = combo,formatter.config.WrappingType
+wrapping.metadataCallParameter.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.metadataCallParameter.rules[5].additionalIndent = number
+
 wrapping.objectLiteral.defaultWrap = combo,formatter.config.WrappingType
 wrapping.objectLiteral.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.objectLiteral.defaultAdditionalIndent = number
+
+wrapping.objectLiteral.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[0].conditions[0].value = number
+wrapping.objectLiteral.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[0].conditions[1].value = number
+wrapping.objectLiteral.rules[0].type = combo,formatter.config.WrappingType
+wrapping.objectLiteral.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.objectLiteral.rules[0].additionalIndent = number
+
+wrapping.objectLiteral.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[1].conditions[0].value = number
+wrapping.objectLiteral.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[1].conditions[1].value = number
+wrapping.objectLiteral.rules[1].type = combo,formatter.config.WrappingType
+wrapping.objectLiteral.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.objectLiteral.rules[1].additionalIndent = number
+
+wrapping.objectLiteral.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[2].conditions[0].value = number
+wrapping.objectLiteral.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[2].conditions[1].value = number
+wrapping.objectLiteral.rules[2].type = combo,formatter.config.WrappingType
+wrapping.objectLiteral.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.objectLiteral.rules[2].additionalIndent = number
+
+wrapping.objectLiteral.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[3].conditions[0].value = number
+wrapping.objectLiteral.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[3].conditions[1].value = number
+wrapping.objectLiteral.rules[3].type = combo,formatter.config.WrappingType
+wrapping.objectLiteral.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.objectLiteral.rules[3].additionalIndent = number
+
+wrapping.objectLiteral.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[4].conditions[0].value = number
+wrapping.objectLiteral.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[4].conditions[1].value = number
+wrapping.objectLiteral.rules[4].type = combo,formatter.config.WrappingType
+wrapping.objectLiteral.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.objectLiteral.rules[4].additionalIndent = number
+
+wrapping.objectLiteral.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[5].conditions[0].value = number
+wrapping.objectLiteral.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.objectLiteral.rules[5].conditions[1].value = number
+wrapping.objectLiteral.rules[5].type = combo,formatter.config.WrappingType
+wrapping.objectLiteral.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.objectLiteral.rules[5].additionalIndent = number
 
 wrapping.anonType.defaultWrap = combo,formatter.config.WrappingType
 wrapping.anonType.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.anonType.defaultAdditionalIndent = number
 
+wrapping.anonType.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[0].conditions[0].value = number
+wrapping.anonType.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[0].conditions[1].value = number
+wrapping.anonType.rules[0].type = combo,formatter.config.WrappingType
+wrapping.anonType.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.anonType.rules[0].additionalIndent = number
+
+wrapping.anonType.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[1].conditions[0].value = number
+wrapping.anonType.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[1].conditions[1].value = number
+wrapping.anonType.rules[1].type = combo,formatter.config.WrappingType
+wrapping.anonType.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.anonType.rules[1].additionalIndent = number
+
+wrapping.anonType.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[2].conditions[0].value = number
+wrapping.anonType.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[2].conditions[1].value = number
+wrapping.anonType.rules[2].type = combo,formatter.config.WrappingType
+wrapping.anonType.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.anonType.rules[2].additionalIndent = number
+
+wrapping.anonType.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[3].conditions[0].value = number
+wrapping.anonType.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[3].conditions[1].value = number
+wrapping.anonType.rules[3].type = combo,formatter.config.WrappingType
+wrapping.anonType.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.anonType.rules[3].additionalIndent = number
+
+wrapping.anonType.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[4].conditions[0].value = number
+wrapping.anonType.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[4].conditions[1].value = number
+wrapping.anonType.rules[4].type = combo,formatter.config.WrappingType
+wrapping.anonType.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.anonType.rules[4].additionalIndent = number
+
+wrapping.anonType.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[5].conditions[0].value = number
+wrapping.anonType.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.anonType.rules[5].conditions[1].value = number
+wrapping.anonType.rules[5].type = combo,formatter.config.WrappingType
+wrapping.anonType.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.anonType.rules[5].additionalIndent = number
+
 wrapping.methodChain.defaultWrap = combo,formatter.config.WrappingType
 wrapping.methodChain.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.methodChain.defaultAdditionalIndent = number
+
+wrapping.methodChain.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[0].conditions[0].value = number
+wrapping.methodChain.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[0].conditions[1].value = number
+wrapping.methodChain.rules[0].type = combo,formatter.config.WrappingType
+wrapping.methodChain.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.methodChain.rules[0].additionalIndent = number
+
+wrapping.methodChain.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[1].conditions[0].value = number
+wrapping.methodChain.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[1].conditions[1].value = number
+wrapping.methodChain.rules[1].type = combo,formatter.config.WrappingType
+wrapping.methodChain.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.methodChain.rules[1].additionalIndent = number
+
+wrapping.methodChain.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[2].conditions[0].value = number
+wrapping.methodChain.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[2].conditions[1].value = number
+wrapping.methodChain.rules[2].type = combo,formatter.config.WrappingType
+wrapping.methodChain.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.methodChain.rules[2].additionalIndent = number
+
+wrapping.methodChain.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[3].conditions[0].value = number
+wrapping.methodChain.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[3].conditions[1].value = number
+wrapping.methodChain.rules[3].type = combo,formatter.config.WrappingType
+wrapping.methodChain.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.methodChain.rules[3].additionalIndent = number
+
+wrapping.methodChain.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[4].conditions[0].value = number
+wrapping.methodChain.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[4].conditions[1].value = number
+wrapping.methodChain.rules[4].type = combo,formatter.config.WrappingType
+wrapping.methodChain.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.methodChain.rules[4].additionalIndent = number
+
+wrapping.methodChain.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[5].conditions[0].value = number
+wrapping.methodChain.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.methodChain.rules[5].conditions[1].value = number
+wrapping.methodChain.rules[5].type = combo,formatter.config.WrappingType
+wrapping.methodChain.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.methodChain.rules[5].additionalIndent = number
 
 wrapping.opBoolChain.defaultWrap = combo,formatter.config.WrappingType
 wrapping.opBoolChain.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.opBoolChain.defaultAdditionalIndent = number
 
+wrapping.opBoolChain.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[0].conditions[0].value = number
+wrapping.opBoolChain.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[0].conditions[1].value = number
+wrapping.opBoolChain.rules[0].type = combo,formatter.config.WrappingType
+wrapping.opBoolChain.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.opBoolChain.rules[0].additionalIndent = number
+
+wrapping.opBoolChain.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[1].conditions[0].value = number
+wrapping.opBoolChain.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[1].conditions[1].value = number
+wrapping.opBoolChain.rules[1].type = combo,formatter.config.WrappingType
+wrapping.opBoolChain.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.opBoolChain.rules[1].additionalIndent = number
+
+wrapping.opBoolChain.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[2].conditions[0].value = number
+wrapping.opBoolChain.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[2].conditions[1].value = number
+wrapping.opBoolChain.rules[2].type = combo,formatter.config.WrappingType
+wrapping.opBoolChain.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.opBoolChain.rules[2].additionalIndent = number
+
+wrapping.opBoolChain.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[3].conditions[0].value = number
+wrapping.opBoolChain.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[3].conditions[1].value = number
+wrapping.opBoolChain.rules[3].type = combo,formatter.config.WrappingType
+wrapping.opBoolChain.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.opBoolChain.rules[3].additionalIndent = number
+
+wrapping.opBoolChain.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[4].conditions[0].value = number
+wrapping.opBoolChain.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[4].conditions[1].value = number
+wrapping.opBoolChain.rules[4].type = combo,formatter.config.WrappingType
+wrapping.opBoolChain.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.opBoolChain.rules[4].additionalIndent = number
+
+wrapping.opBoolChain.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[5].conditions[0].value = number
+wrapping.opBoolChain.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opBoolChain.rules[5].conditions[1].value = number
+wrapping.opBoolChain.rules[5].type = combo,formatter.config.WrappingType
+wrapping.opBoolChain.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.opBoolChain.rules[5].additionalIndent = number
+
 wrapping.implementsExtends.defaultWrap = combo,formatter.config.WrappingType
 wrapping.implementsExtends.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.implementsExtends.defaultAdditionalIndent = number
+
+wrapping.implementsExtends.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[0].conditions[0].value = number
+wrapping.implementsExtends.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[0].conditions[1].value = number
+wrapping.implementsExtends.rules[0].type = combo,formatter.config.WrappingType
+wrapping.implementsExtends.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.implementsExtends.rules[0].additionalIndent = number
+
+wrapping.implementsExtends.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[1].conditions[0].value = number
+wrapping.implementsExtends.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[1].conditions[1].value = number
+wrapping.implementsExtends.rules[1].type = combo,formatter.config.WrappingType
+wrapping.implementsExtends.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.implementsExtends.rules[1].additionalIndent = number
+
+wrapping.implementsExtends.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[2].conditions[0].value = number
+wrapping.implementsExtends.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[2].conditions[1].value = number
+wrapping.implementsExtends.rules[2].type = combo,formatter.config.WrappingType
+wrapping.implementsExtends.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.implementsExtends.rules[2].additionalIndent = number
+
+wrapping.implementsExtends.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[3].conditions[0].value = number
+wrapping.implementsExtends.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[3].conditions[1].value = number
+wrapping.implementsExtends.rules[3].type = combo,formatter.config.WrappingType
+wrapping.implementsExtends.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.implementsExtends.rules[3].additionalIndent = number
+
+wrapping.implementsExtends.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[4].conditions[0].value = number
+wrapping.implementsExtends.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[4].conditions[1].value = number
+wrapping.implementsExtends.rules[4].type = combo,formatter.config.WrappingType
+wrapping.implementsExtends.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.implementsExtends.rules[4].additionalIndent = number
+
+wrapping.implementsExtends.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[5].conditions[0].value = number
+wrapping.implementsExtends.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.implementsExtends.rules[5].conditions[1].value = number
+wrapping.implementsExtends.rules[5].type = combo,formatter.config.WrappingType
+wrapping.implementsExtends.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.implementsExtends.rules[5].additionalIndent = number
 
 wrapping.opAddSubChain.defaultWrap = combo,formatter.config.WrappingType
 wrapping.opAddSubChain.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.opAddSubChain.defaultAdditionalIndent = number
 
+wrapping.opAddSubChain.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[0].conditions[0].value = number
+wrapping.opAddSubChain.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[0].conditions[1].value = number
+wrapping.opAddSubChain.rules[0].type = combo,formatter.config.WrappingType
+wrapping.opAddSubChain.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.opAddSubChain.rules[0].additionalIndent = number
+
+wrapping.opAddSubChain.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[1].conditions[0].value = number
+wrapping.opAddSubChain.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[1].conditions[1].value = number
+wrapping.opAddSubChain.rules[1].type = combo,formatter.config.WrappingType
+wrapping.opAddSubChain.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.opAddSubChain.rules[1].additionalIndent = number
+
+wrapping.opAddSubChain.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[2].conditions[0].value = number
+wrapping.opAddSubChain.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[2].conditions[1].value = number
+wrapping.opAddSubChain.rules[2].type = combo,formatter.config.WrappingType
+wrapping.opAddSubChain.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.opAddSubChain.rules[2].additionalIndent = number
+
+wrapping.opAddSubChain.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[3].conditions[0].value = number
+wrapping.opAddSubChain.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[3].conditions[1].value = number
+wrapping.opAddSubChain.rules[3].type = combo,formatter.config.WrappingType
+wrapping.opAddSubChain.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.opAddSubChain.rules[3].additionalIndent = number
+
+wrapping.opAddSubChain.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[4].conditions[0].value = number
+wrapping.opAddSubChain.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[4].conditions[1].value = number
+wrapping.opAddSubChain.rules[4].type = combo,formatter.config.WrappingType
+wrapping.opAddSubChain.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.opAddSubChain.rules[4].additionalIndent = number
+
+wrapping.opAddSubChain.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[5].conditions[0].value = number
+wrapping.opAddSubChain.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.opAddSubChain.rules[5].conditions[1].value = number
+wrapping.opAddSubChain.rules[5].type = combo,formatter.config.WrappingType
+wrapping.opAddSubChain.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.opAddSubChain.rules[5].additionalIndent = number
+
 wrapping.multiVar.defaultWrap = combo,formatter.config.WrappingType
 wrapping.multiVar.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.multiVar.defaultAdditionalIndent = number
 
+wrapping.multiVar.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[0].conditions[0].value = number
+wrapping.multiVar.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[0].conditions[1].value = number
+wrapping.multiVar.rules[0].type = combo,formatter.config.WrappingType
+wrapping.multiVar.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.multiVar.rules[0].additionalIndent = number
+
+wrapping.multiVar.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[1].conditions[0].value = number
+wrapping.multiVar.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[1].conditions[1].value = number
+wrapping.multiVar.rules[1].type = combo,formatter.config.WrappingType
+wrapping.multiVar.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.multiVar.rules[1].additionalIndent = number
+
+wrapping.multiVar.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[2].conditions[0].value = number
+wrapping.multiVar.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[2].conditions[1].value = number
+wrapping.multiVar.rules[2].type = combo,formatter.config.WrappingType
+wrapping.multiVar.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.multiVar.rules[2].additionalIndent = number
+
+wrapping.multiVar.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[3].conditions[0].value = number
+wrapping.multiVar.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[3].conditions[1].value = number
+wrapping.multiVar.rules[3].type = combo,formatter.config.WrappingType
+wrapping.multiVar.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.multiVar.rules[3].additionalIndent = number
+
+wrapping.multiVar.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[4].conditions[0].value = number
+wrapping.multiVar.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[4].conditions[1].value = number
+wrapping.multiVar.rules[4].type = combo,formatter.config.WrappingType
+wrapping.multiVar.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.multiVar.rules[4].additionalIndent = number
+
+wrapping.multiVar.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[5].conditions[0].value = number
+wrapping.multiVar.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.multiVar.rules[5].conditions[1].value = number
+wrapping.multiVar.rules[5].type = combo,formatter.config.WrappingType
+wrapping.multiVar.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.multiVar.rules[5].additionalIndent = number
+
 wrapping.casePattern.defaultWrap = combo,formatter.config.WrappingType
 wrapping.casePattern.defaultLocation = combo,formatter.config.WrappingLocation
 wrapping.casePattern.defaultAdditionalIndent = number
+
+wrapping.casePattern.rules[0].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[0].conditions[0].value = number
+wrapping.casePattern.rules[0].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[0].conditions[1].value = number
+wrapping.casePattern.rules[0].type = combo,formatter.config.WrappingType
+wrapping.casePattern.rules[0].location = combo,formatter.config.WrappingLocation
+wrapping.casePattern.rules[0].additionalIndent = number
+
+wrapping.casePattern.rules[1].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[1].conditions[0].value = number
+wrapping.casePattern.rules[1].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[1].conditions[1].value = number
+wrapping.casePattern.rules[1].type = combo,formatter.config.WrappingType
+wrapping.casePattern.rules[1].location = combo,formatter.config.WrappingLocation
+wrapping.casePattern.rules[1].additionalIndent = number
+
+wrapping.casePattern.rules[2].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[2].conditions[0].value = number
+wrapping.casePattern.rules[2].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[2].conditions[1].value = number
+wrapping.casePattern.rules[2].type = combo,formatter.config.WrappingType
+wrapping.casePattern.rules[2].location = combo,formatter.config.WrappingLocation
+wrapping.casePattern.rules[2].additionalIndent = number
+
+wrapping.casePattern.rules[3].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[3].conditions[0].value = number
+wrapping.casePattern.rules[3].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[3].conditions[1].value = number
+wrapping.casePattern.rules[3].type = combo,formatter.config.WrappingType
+wrapping.casePattern.rules[3].location = combo,formatter.config.WrappingLocation
+wrapping.casePattern.rules[3].additionalIndent = number
+
+wrapping.casePattern.rules[4].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[4].conditions[0].value = number
+wrapping.casePattern.rules[4].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[4].conditions[1].value = number
+wrapping.casePattern.rules[4].type = combo,formatter.config.WrappingType
+wrapping.casePattern.rules[4].location = combo,formatter.config.WrappingLocation
+wrapping.casePattern.rules[4].additionalIndent = number
+
+wrapping.casePattern.rules[5].conditions[0].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[5].conditions[0].value = number
+wrapping.casePattern.rules[5].conditions[1].cond = combo,formatter.config.WrapConditionType
+wrapping.casePattern.rules[5].conditions[1].value = number
+wrapping.casePattern.rules[5].type = combo,formatter.config.WrappingType
+wrapping.casePattern.rules[5].location = combo,formatter.config.WrappingLocation
+wrapping.casePattern.rules[5].additionalIndent = number

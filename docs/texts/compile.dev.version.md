@@ -28,5 +28,7 @@
 - `npx lix install gh:HaxeCheckstyle/tokentree`
 - `npx lix install gh:HaxeCheckstyle/haxe-formatter`
 - `npx lix run vshaxe-build --target language-server`
-- `cp bin/server.js ~/.vscode/extensions/nadako.vshaxe-$VSHAXE_VERSION/server/bin`
+- `cp bin/server.js ~/.vscode/extensions/nadako.vshaxe-$VSHAXE_VERSION/server/bin/` - replace `$VSHAXE_VERSION` with actual version (assuming you have it installed)
 - restart Haxe language server or restart VSCode
+
+> **Note**: You will have to replace `server.js` whenever there is a new marketplace release, since it will wipe your `~/.vscode/extensions/nadako.vshaxe-$VSHAXE_VERSION` folder.

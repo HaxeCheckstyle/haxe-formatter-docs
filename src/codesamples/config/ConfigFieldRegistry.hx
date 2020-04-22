@@ -99,7 +99,7 @@ class ConfigFieldRegistry {
 				case "string" | "boolean" | "number":
 					lines.push(indent + fieldName + ": " + buildFieldValue(field, newPath) + ",");
 				case "object":
-					if (Syntax.code('Array.isArray({0})', field)) {
+					if (Syntax.code("Array.isArray({0})", field)) {
 						lines.push(indent + fieldName + ": [");
 						var arrayField:Array<Any> = field;
 						for (index in 0...arrayField.length) {
