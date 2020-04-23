@@ -1,0 +1,31 @@
+
+> **Note**: whitespace policies can be overruled by code parts preceeding or following a whitespace location,
+> because these code parts might have whitespace policies that contradict their neighbours.
+
+---
+
+{
+    "whitespace": {
+		"colonPolicy": "none",
+		"caseColonPolicy": "onlyAfter",
+		"objectFieldColonPolicy": "after",
+		"typeHintColonPolicy": "none",
+		"typeCheckColonPolicy": "around",
+		"ternaryPolicy": "around"
+    }
+}
+
+---
+
+class Main {
+	function test(param1:Int,param2:Array<String>, callback:(index:Int)->String) {
+
+		switch((param1:Float)) {
+			case _: doSomething();
+		}
+		return {x:10, y:20, z:30}
+	}
+	function test2(param1:Int) {
+		return (param1 < 100)?true:false;
+	}
+}
