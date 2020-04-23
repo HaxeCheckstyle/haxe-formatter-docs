@@ -94,6 +94,11 @@ class DocMacro {
 						}
 					],
 					pos: Context.currentPos()
+				},
+				{
+					name: "keywords",
+					params: [KeywordHelper.makeKeywords(docName + " " + doc)],
+					pos: Context.currentPos()
 				}
 			]
 		};

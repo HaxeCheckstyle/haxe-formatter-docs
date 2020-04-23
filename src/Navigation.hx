@@ -1,3 +1,4 @@
+import Keywords.SearchResult;
 import haxe.rtti.Meta;
 import js.Browser;
 import js.jquery.Event;
@@ -16,14 +17,18 @@ class Navigation {
 	static inline var CONTENT_ID = "#content";
 
 	var configFieldRegistry:ConfigFieldRegistry;
+	var keywords:Keywords;
 
 	public function new() {
 		configFieldRegistry = new ConfigFieldRegistry();
+		keywords = new Keywords();
 		buildNavigation();
 	}
 
 	function buildNavigation() {
 		var content:String = "";
+
+		content += '<div id="searchContainer"><input type="text" placeholder="search" id="searchBox" /><button id="searchBtn">Go</button></div>\n';
 
 		content += '<ul class="sections">\n';
 		content += buildNavigationsection(Docs);
@@ -37,6 +42,11 @@ class Navigation {
 		content += "</ul>\n";
 		new JQuery("#navigation").html(content);
 		new JQuery(Browser.window).on("hashchange", onHashChange);
+
+		untyped new JQuery("#searchBox").autocomplete({
+			source: keywords.getKeywordList()
+		});
+		new JQuery("#searchBtn").click(onClickSearch);
 
 		if (Browser.window.location.hash.length > 1) {
 			onHashChange(null);
@@ -60,6 +70,11 @@ class Navigation {
 			if (name == null) {
 				continue;
 			}
+			var words:Null<Array<Array<String>>> = Reflect.field(fieldMeta, "keywords");
+			if (words.length > 0) {
+				keywords.addKeywords('$className.$field', name[0], words[0]);
+			}
+
 			content += '<li data-class-name="$className" data-field-name="$field">'
 				+ '<a href="#$className.$field" data-class-name="$className" data-field-name="$field">${name[0].replace(".", " ")}</a></li>';
 		}
@@ -71,6 +86,10 @@ class Navigation {
 		var name:String = Browser.window.location.hash;
 		if (name.startsWith("#")) {
 			name = name.substr(1);
+		}
+		if (name.startsWith("search=")) {
+			showSearchResults(name.substr(7));
+			return;
 		}
 
 		var parts:Array<String> = name.split(".");
@@ -91,5 +110,25 @@ class Navigation {
 
 		new JQuery(".sectionEntries li").removeClass("active");
 		new JQuery(".sectionEntries li").filter('[data-class-name="$className"]').filter('[data-field-name="$fieldName"]').addClass("active");
+	}
+
+	function onClickSearch(event:Event) {
+		Browser.window.location.hash = "#search=" + new JQuery("#searchBox").val();
+	}
+
+	function showSearchResults(search:String) {
+		var content:String = "<h1>search results</h1>\n";
+
+		var results:Array<SearchResult> = keywords.getSearchResults(search);
+		if (results.length <= 0) {
+			return;
+		}
+		content += '<ul id="searchResultContainer">\n';
+		for (result in results) {
+			content += '<li><a href="#${result.hash}">${result.name.replace(".", " ")}</a></li>\n';
+		}
+		content += "</ul>\n";
+
+		new JQuery("#content").html(content);
 	}
 }

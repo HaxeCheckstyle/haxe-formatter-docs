@@ -98,6 +98,7 @@ button {
 		background-color: #0e0e1e;
 		border: 1px solid #3c3c3c;
 		box-shadow: 2px 2px 5px 2px #0e0e1e;
+		flex-direction: column;
 
 		ul {
 			list-style: none;
@@ -114,6 +115,21 @@ button {
 		li.active  {
 			a {
 				color: #d0d060;
+			}
+		}
+
+		#searchContainer {
+			width: 100%;
+
+			input {
+				padding: 0 2px;
+				margin-right: 2px;
+				width: 176px;
+				height: 20px;
+			}
+			button {
+				width: 30px;
+				height: 20px;
 			}
 		}
 	}
@@ -220,6 +236,27 @@ button {
 				font-size: 12px;
 			}
 		}
+		#searchResultContainer {
+			list-style: none;
+			padding: 0;
+
+			li {
+				margin: 5px 0;
+			}
+		}
 	}
 }
 
+.ui-autocomplete {
+	background-color: #1e1e1e;
+	width: 180px;
+	list-style: none;
+	padding: 5px;
+	overflow: auto;
+	font-size: 13px;
+	border: 1px solid #3e3e3e;
+
+	.ui-state-active {
+		background-color: #2e2e4e;
+	}
+}

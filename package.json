@@ -19,7 +19,8 @@
     "url": "https://github.com/HaxeCheckstyle/formatter-docs/issues"
   },
   "dependencies": {
-    "jquery": ""
+    "jquery": "",
+    "jquery-ui": ""
   },
   "devDependencies": {
     "lix": "^15.8.11",

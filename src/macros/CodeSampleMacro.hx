@@ -130,6 +130,11 @@ class CodeSampleMacro {
 						}
 					],
 					pos: Context.currentPos()
+				},
+				{
+					name: "keywords",
+					params: [KeywordHelper.makeKeywords(codeSampleName + " " + doc + " " + config)],
+					pos: Context.currentPos()
 				}
 			]
 		};
