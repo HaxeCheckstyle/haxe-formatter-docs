@@ -2286,6 +2286,107 @@ JsonParser_$96.__super__ = json2object_reader_BaseParser;
 Object.assign(JsonParser_$96.prototype, {
 	__class__: JsonParser_$96
 });
+class Keywords {
+	constructor() {
+		this.words = new haxe_ds_StringMap();
+		this.names = new haxe_ds_StringMap();
+		this.pageKeywords = new haxe_ds_StringMap();
+	}
+	addKeywords(hash,name,keywords) {
+		var _this = this.pageKeywords;
+		if(__map_reserved[hash] != null) {
+			_this.setReserved(hash,keywords);
+		} else {
+			_this.h[hash] = keywords;
+		}
+		var _this1 = this.names;
+		if(__map_reserved[hash] != null) {
+			_this1.setReserved(hash,name);
+		} else {
+			_this1.h[hash] = name;
+		}
+		var _g = 0;
+		while(_g < keywords.length) {
+			var word = keywords[_g];
+			++_g;
+			var _this2 = this.words;
+			var pageList = __map_reserved[word] != null ? _this2.getReserved(word) : _this2.h[word];
+			if(pageList == null) {
+				pageList = [];
+				var _this3 = this.words;
+				if(__map_reserved[word] != null) {
+					_this3.setReserved(word,pageList);
+				} else {
+					_this3.h[word] = pageList;
+				}
+			}
+			pageList.push(hash);
+		}
+	}
+	getKeywordList() {
+		var keywords = [];
+		var word = this.words.keys();
+		while(word.hasNext()) {
+			var word1 = word.next();
+			keywords.push(word1);
+		}
+		haxe_ds_ArraySort.sort(keywords,function(s1,s2) {
+			if(s1 == s2) {
+				return 0;
+			} else if(s1 < s2) {
+				return -1;
+			} else {
+				return 1;
+			}
+		});
+		return keywords;
+	}
+	getSearchResults(keyword) {
+		var results = [];
+		keyword = keyword.toLowerCase();
+		var _this = this.words;
+		var pageList = __map_reserved[keyword] != null ? _this.getReserved(keyword) : _this.h[keyword];
+		if(pageList == null) {
+			pageList = [];
+		}
+		var pages = [];
+		var word = this.words.keys();
+		while(word.hasNext()) {
+			var word1 = word.next();
+			if(word1.indexOf(keyword) == -1) {
+				continue;
+			}
+			var _this1 = this.words;
+			pages = pages.concat(__map_reserved[word1] != null ? _this1.getReserved(word1) : _this1.h[word1]);
+		}
+		var _g = 0;
+		while(_g < pages.length) {
+			var page = pages[_g];
+			++_g;
+			if(pageList.indexOf(page) >= 0) {
+				continue;
+			}
+			pageList.push(page);
+		}
+		var _g1 = 0;
+		while(_g1 < pageList.length) {
+			var page1 = pageList[_g1];
+			++_g1;
+			var _this2 = this.names;
+			var name = __map_reserved[page1] != null ? _this2.getReserved(page1) : _this2.h[page1];
+			results.push({ name : name, hash : page1});
+		}
+		return results;
+	}
+}
+$hxClasses["Keywords"] = Keywords;
+Keywords.__name__ = "Keywords";
+Object.assign(Keywords.prototype, {
+	__class__: Keywords
+	,words: null
+	,pageKeywords: null
+	,names: null
+});
 class Main {
 	static main() {
 		new Navigation();
@@ -2413,10 +2514,12 @@ Math.__name__ = "Math";
 class Navigation {
 	constructor() {
 		this.configFieldRegistry = new codesamples_config_ConfigFieldRegistry();
+		this.keywords = new Keywords();
 		this.buildNavigation();
 	}
 	buildNavigation() {
 		var content = "";
+		content += "<div id=\"searchContainer\"><input type=\"text\" placeholder=\"search\" id=\"searchBox\" /><button id=\"searchBtn\">Go</button></div>\n";
 		content += "<ul class=\"sections\">\n";
 		content += this.buildNavigationsection(doc_Docs);
 		content += this.buildNavigationsection(codesamples_CommonSamples);
@@ -2429,6 +2532,8 @@ class Navigation {
 		content += "</ul>\n";
 		$("#navigation").html(content);
 		$(window).on("hashchange",null,$bind(this,this.onHashChange));
+		$("#searchBox").autocomplete({ source : this.keywords.getKeywordList()});
+		$("#searchBtn").click($bind(this,this.onClickSearch));
 		if(window.location.hash.length > 1) {
 			this.onHashChange(null);
 		}
@@ -2453,6 +2558,10 @@ class Navigation {
 			if(name == null) {
 				continue;
 			}
+			var words = Reflect.field(fieldMeta,"keywords");
+			if(words.length > 0) {
+				this.keywords.addKeywords("" + className + "." + field,name[0],words[0]);
+			}
 			content += "<li data-class-name=\"" + className + "\" data-field-name=\"" + field + "\">" + ("<a href=\"#" + className + "." + field + "\" data-class-name=\"" + className + "\" data-field-name=\"" + field + "\">" + StringTools.replace(name[0],"."," ") + "</a></li>");
 		}
 		content += "</ul>\n</li>\n";
@@ -2462,6 +2571,10 @@ class Navigation {
 		var name = window.location.hash;
 		if(StringTools.startsWith(name,"#")) {
 			name = HxOverrides.substr(name,1,null);
+		}
+		if(StringTools.startsWith(name,"search=")) {
+			this.showSearchResults(HxOverrides.substr(name,7,null));
+			return;
 		}
 		var parts = name.split(".");
 		var fieldName = parts.pop();
@@ -2480,12 +2593,33 @@ class Navigation {
 		$(".sectionEntries li").removeClass("active");
 		$(".sectionEntries li").filter("[data-class-name=\"" + className + "\"]").filter("[data-field-name=\"" + fieldName + "\"]").addClass("active");
 	}
+	onClickSearch(event) {
+		var tmp = Std.string($("#searchBox").val());
+		window.location.hash = "#search=" + tmp;
+	}
+	showSearchResults(search) {
+		var content = "<h1>search results</h1>\n";
+		var results = this.keywords.getSearchResults(search);
+		if(results.length <= 0) {
+			return;
+		}
+		content += "<ul id=\"searchResultContainer\">\n";
+		var _g = 0;
+		while(_g < results.length) {
+			var result = results[_g];
+			++_g;
+			content += "<li><a href=\"#" + result.hash + "\">" + StringTools.replace(result.name,"."," ") + "</a></li>\n";
+		}
+		content += "</ul>\n";
+		$("#content").html(content);
+	}
 }
 $hxClasses["Navigation"] = Navigation;
 Navigation.__name__ = "Navigation";
 Object.assign(Navigation.prototype, {
 	__class__: Navigation
 	,configFieldRegistry: null
+	,keywords: null
 });
 class Reflect {
 	static field(o,field) {
@@ -17913,6 +18047,136 @@ Object.assign(haxe_IMap.prototype, {
 	,get: null
 	,keys: null
 });
+class haxe_ds_ArraySort {
+	static sort(a,cmp) {
+		haxe_ds_ArraySort.rec(a,cmp,0,a.length);
+	}
+	static rec(a,cmp,from,to) {
+		var middle = from + to >> 1;
+		if(to - from < 12) {
+			if(to <= from) {
+				return;
+			}
+			var _g = from + 1;
+			var _g1 = to;
+			while(_g < _g1) {
+				var i = _g++;
+				var j = i;
+				while(j > from) {
+					if(cmp(a[j],a[j - 1]) < 0) {
+						haxe_ds_ArraySort.swap(a,j - 1,j);
+					} else {
+						break;
+					}
+					--j;
+				}
+			}
+			return;
+		}
+		haxe_ds_ArraySort.rec(a,cmp,from,middle);
+		haxe_ds_ArraySort.rec(a,cmp,middle,to);
+		haxe_ds_ArraySort.doMerge(a,cmp,from,middle,to,middle - from,to - middle);
+	}
+	static doMerge(a,cmp,from,pivot,to,len1,len2) {
+		var first_cut;
+		var second_cut;
+		var len11;
+		var len22;
+		if(len1 == 0 || len2 == 0) {
+			return;
+		}
+		if(len1 + len2 == 2) {
+			if(cmp(a[pivot],a[from]) < 0) {
+				haxe_ds_ArraySort.swap(a,pivot,from);
+			}
+			return;
+		}
+		if(len1 > len2) {
+			len11 = len1 >> 1;
+			first_cut = from + len11;
+			second_cut = haxe_ds_ArraySort.lower(a,cmp,pivot,to,first_cut);
+			len22 = second_cut - pivot;
+		} else {
+			len22 = len2 >> 1;
+			second_cut = pivot + len22;
+			first_cut = haxe_ds_ArraySort.upper(a,cmp,from,pivot,second_cut);
+			len11 = first_cut - from;
+		}
+		haxe_ds_ArraySort.rotate(a,cmp,first_cut,pivot,second_cut);
+		var new_mid = first_cut + len22;
+		haxe_ds_ArraySort.doMerge(a,cmp,from,first_cut,new_mid,len11,len22);
+		haxe_ds_ArraySort.doMerge(a,cmp,new_mid,second_cut,to,len1 - len11,len2 - len22);
+	}
+	static rotate(a,cmp,from,mid,to) {
+		if(from == mid || mid == to) {
+			return;
+		}
+		var n = haxe_ds_ArraySort.gcd(to - from,mid - from);
+		while(n-- != 0) {
+			var val = a[from + n];
+			var shift = mid - from;
+			var p1 = from + n;
+			var p2 = from + n + shift;
+			while(p2 != from + n) {
+				a[p1] = a[p2];
+				p1 = p2;
+				if(to - p2 > shift) {
+					p2 += shift;
+				} else {
+					p2 = from + (shift - (to - p2));
+				}
+			}
+			a[p1] = val;
+		}
+	}
+	static gcd(m,n) {
+		while(n != 0) {
+			var t = m % n;
+			m = n;
+			n = t;
+		}
+		return m;
+	}
+	static upper(a,cmp,from,to,val) {
+		var len = to - from;
+		var half;
+		var mid;
+		while(len > 0) {
+			half = len >> 1;
+			mid = from + half;
+			if(cmp(a[val],a[mid]) < 0) {
+				len = half;
+			} else {
+				from = mid + 1;
+				len = len - half - 1;
+			}
+		}
+		return from;
+	}
+	static lower(a,cmp,from,to,val) {
+		var len = to - from;
+		var half;
+		var mid;
+		while(len > 0) {
+			half = len >> 1;
+			mid = from + half;
+			if(cmp(a[mid],a[val]) < 0) {
+				from = mid + 1;
+				len = len - half - 1;
+			} else {
+				len = half;
+			}
+		}
+		return from;
+	}
+	static swap(a,i,j) {
+		var tmp = a[i];
+		a[i] = a[j];
+		a[j] = tmp;
+	}
+}
+$hxClasses["haxe.ds.ArraySort"] = haxe_ds_ArraySort;
+haxe_ds_ArraySort.__name__ = "haxe.ds.ArraySort";
 class haxe_ds_IntMap {
 	constructor() {
 		this.h = { };
@@ -25985,14 +26249,14 @@ Object.defineProperty(js__$Boot_HaxeError.prototype,"message",{ get : function()
 	return String(this.val);
 }});
 codesamples_SampleBase.DATA_FIELD_PATH = "field-path";
-codesamples_CommonSamples.__meta__ = { obj : { sectionName : ["Common samples"]}, fields : { allman_curlies : { codeSampleName : ["allman.curlies"]}, haxeflixel_style : { codeSampleName : ["haxeflixel.style"]}, indentation_with_space : { codeSampleName : ["indentation.with.space"]}}};
-codesamples_EmptylinesSamples.__meta__ = { obj : { sectionName : ["Emptylines samples"]}, fields : { import_and_using_emptylines : { codeSampleName : ["import.and.using.emptylines"]}}};
-codesamples_IndentationSamples.__meta__ = { obj : { sectionName : ["Indentation samples"]}, fields : { trailing_whitespace : { codeSampleName : ["trailing.whitespace"]}}};
+codesamples_CommonSamples.__meta__ = { obj : { sectionName : ["Common samples"]}, fields : { allman_curlies : { codeSampleName : ["allman.curlies"], keywords : [["allman","curlies","probably","most","searched","option","formatter","note","lineends","leftcurly","affects","left","there","specialised","options","different","curly","places","blockcurly","objectliteralcurly","haxeflixel","style","sample","codesamples","commonsamples","haxeflixel_style","both","emptycurly","break"]]}, haxeflixel_style : { codeSampleName : ["haxeflixel.style"], keywords : [["haxeflixel","style","formatter","configuration","used","lineends","leftcurly","both","rightcurly","objectliteralcurly","after","sameline","ifelse","next","dowhile","trybody","trycatch"]]}, indentation_with_space : { codeSampleName : ["indentation.with.space"], keywords : [["indentation","with","space","character","takes","string","that","either","number","literal","spaces","text","tabs"]]}}};
+codesamples_EmptylinesSamples.__meta__ = { obj : { sectionName : ["Emptylines samples"]}, fields : { import_and_using_emptylines : { codeSampleName : ["import.and.using.emptylines"], keywords : [["import","using","emptylines","showcases","different","empty","lines","settings","imports","goes","great","with","vscode","organise","code","action","importandusing","betweenimportslevel","firstlevelpackage","betweenimports","beforeusing","maxanywhereinfile"]]}}};
+codesamples_IndentationSamples.__meta__ = { obj : { sectionName : ["Indentation samples"]}, fields : { trailing_whitespace : { codeSampleName : ["trailing.whitespace"], keywords : [["trailing","whitespace","adds","empty","lines","copying","indentation","from","previous","line","trailingwhitespace","true"]]}}};
 codesamples_LineendsSamples.__meta__ = { obj : { sectionName : ["Lineends samples"]}};
-codesamples_SamelineSamples.__meta__ = { obj : { sectionName : ["Sameline samples"]}, fields : { blockless_function_body : { codeSampleName : ["blockless.function.body"]}}};
-codesamples_WhitespaceSamples.__meta__ = { obj : { sectionName : ["Whitespace samples"]}, fields : { colon_whitespace : { codeSampleName : ["colon.whitespace"]}, conditional_parens_detailed : { codeSampleName : ["conditional.parens.detailed"]}, conditional_parens_short : { codeSampleName : ["conditional.parens.short"]}, function_parens : { codeSampleName : ["function.parens"]}, function_types_and_arrows : { codeSampleName : ["function.types.and.arrows"]}}};
-codesamples_WrappingSamples.__meta__ = { obj : { sectionName : ["Wrapping samples"]}, fields : { array_matrix_wrapping : { codeSampleName : ["array.matrix.wrapping"]}, case_pattern_wrapping : { codeSampleName : ["case.pattern.wrapping"]}, method_chain_wrapping : { codeSampleName : ["method.chain.wrapping"]}, operator_add_chain_wrapping : { codeSampleName : ["operator.add.chain.wrapping"]}}};
-doc_Docs.__meta__ = { obj : { sectionName : ["Documentation"]}, fields : { compile_dev_version : { docName : ["compile.dev.version"]}}};
+codesamples_SamelineSamples.__meta__ = { obj : { sectionName : ["Sameline samples"]}, fields : { blockless_function_body : { codeSampleName : ["blockless.function.body"], keywords : [["blockless","function","body","keep","tries","linebreaks","from","input","source","sameline","functionbody","same","anonfunctionbody"]]}}};
+codesamples_WhitespaceSamples.__meta__ = { obj : { sectionName : ["Whitespace samples"]}, fields : { colon_whitespace : { codeSampleName : ["colon.whitespace"], keywords : [["colon","whitespace","note","policies","overruled","code","parts","preceeding","following","location","because","these","might","have","that","contradict","their","neighbours","colonpolicy","none","casecolonpolicy","onlyafter","objectfieldcolonpolicy","after","typehintcolonpolicy","typecheckcolonpolicy","around","ternarypolicy"]]}, conditional_parens_detailed : { codeSampleName : ["conditional.parens.detailed"], keywords : [["conditional","parens","detailed","following","whitespace","settings","were","added","version","childs","parenconfig","catchparens","catch","expr","ifconditionparens","sharpconditionparens","switchconditionparens","switch","whileconditionparens","while","same","structure","conditionparens","short","codesamples","whitespacesamples","conditional_parens_short","allow","finer","control","over","each","location","default","null","which","means","applies","locations","also","only","have","values","those","where","want","formatter","behave","differently","note","using","removeinnerwhenempty","technically","possible","since","code","with","empty","condtion","expression","doesn","make","sense","probably","compile","there","much","openingpolicy","onlyafter","closingpolicy","before"]]}, conditional_parens_short : { codeSampleName : ["conditional.parens.short"], keywords : [["conditional","parens","short","whitespace","policies","parenconfig","well","bracesconfig","curyl","braces","data","structure","that","three","fields","each","their","locations","openingpolicy","policy","opening","curly","closingpolicy","closing","removeinnerwhenempty","true","when","want","remove","inner","curlies","empty","following","element","being","either","none","before","after","nonebefore","never","onlybefore","only","noneafter","onlyafter","around","note","overruled","code","parts","preceeding","location","because","these","might","have","contradict","neighbours","conditionparens"]]}, function_parens : { codeSampleName : ["function.parens"], keywords : [["function","parens","conditional","short","codesamples","whitespacesamples","conditional_parens_short","details","about","structure","values","note","whitespace","policies","overruled","code","parts","preceeding","following","location","because","these","might","have","that","contradict","their","neighbours","parenconfig","funcparamparens","openingpolicy","before","closingpolicy","none","removeinnerwhenempty","true","anonfuncparamparens","onlyafter"]]}, function_types_and_arrows : { codeSampleName : ["function.types.and.arrows"], keywords : [["function","types","arrows","note","whitespace","policies","overruled","code","parts","preceeding","following","location","because","these","might","have","that","contradict","their","neighbours","arrowfunctionspolicy","around","functiontypehaxe","policy","none"]]}}};
+codesamples_WrappingSamples.__meta__ = { obj : { sectionName : ["Wrapping samples"]}, fields : { array_matrix_wrapping : { codeSampleName : ["array.matrix.wrapping"], keywords : [["array","matrix","wrapping","arrays","layout","only","works","that","have","equal","number","elements","line","your","input","source","code","should","already","shape","note","equalnumber","implemented","arraymatrixwrap","matrixwrapwithalign","arraywrap","defaultwrap","fillline","defaultlocation","afterlast","maxlinelength"]]}, case_pattern_wrapping : { codeSampleName : ["case.pattern.wrapping"], keywords : [["case","pattern","wrapping","large","amounts","patterns","note","equalnumber","implemented","casepattern","defaultwrap","fillline","defaultlocation","beforelast","maxlinelength"]]}, method_chain_wrapping : { codeSampleName : ["method.chain.wrapping"], keywords : [["method","chain","wrapping","chains","calls","note","equalnumber","implemented","methodchain","defaultwrap","oneperline","defaultlocation","afterlast","rules","maxlinelength"]]}, operator_add_chain_wrapping : { codeSampleName : ["operator.add.chain.wrapping"], keywords : [["operator","chain","wrapping","chains","note","equalnumber","implemented","opaddsubchain","defaultwrap","fillline","defaultlocation","beforelast","rules","maxlinelength"]]}}};
+doc_Docs.__meta__ = { obj : { sectionName : ["Documentation"]}, fields : { compile_dev_version : { docName : ["compile.dev.version"], keywords : [["compile","version","command","line","haxe","clone","https","github","haxecheckstyle","formatter","install","download","buildall","hxml","neko","nodejs","java","json","schema","buildcpp","haxe_libraries","_libraries","language","server","vshaxe","languageserver","tokentree","build","target","vscode","extensions","nadako","vshaxe_version","replace","with","actual","assuming","have","installed","restart","note","will","whenever","there","marketplace","release","since","wipe","your","folder"]]}}};
 formatter_FormatStats.totalLinesOrig = 0;
 formatter_FormatStats.totalLinesFormatted = 0;
 hxparse_LexEngine.EMPTY = [];
