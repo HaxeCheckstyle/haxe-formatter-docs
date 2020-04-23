@@ -23,7 +23,6 @@ input {
 	background-color: #1e1e1e;
 	color: #eeeeee;
 	border: 1px solid #3c3c3c;
-	box-shadow: 2px 2px 5px 2px #1e1e1e;
 }
 
 input[type="number"] {
@@ -250,6 +249,7 @@ button {
 .ui-autocomplete {
 	background-color: #1e1e1e;
 	width: 180px;
+	height: 400px;
 	list-style: none;
 	padding: 5px;
 	overflow: auto;
@@ -259,4 +259,8 @@ button {
 	.ui-state-active {
 		background-color: #2e2e4e;
 	}
+}
+
+.ui-helper-hidden-accessible {
+	// display: none;
 }

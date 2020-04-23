@@ -1,4 +1,4 @@
-Whitespace policies for parens in `whitespace.parenConfig` as well as `whitespace.bracesConfig` for curyl braces
+Whitespace policies for parens in `whitespace.parenConfig` as well as `whitespace.bracesConfig` for curly braces
 use a data structure that has three fields for each of their locations:
 
 - `openingPolicy` - whitespace policy for opening parens or curly
