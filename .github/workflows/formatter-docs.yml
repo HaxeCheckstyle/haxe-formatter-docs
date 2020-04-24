@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Formatter sources
+    - name: Checkout Formatter-Doc sources
       uses: actions/checkout@v1
     - name: Use Node.js 10
       uses: actions/setup-node@v1
