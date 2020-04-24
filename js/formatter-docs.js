@@ -3141,7 +3141,7 @@ class codesamples_WhitespaceSamples extends codesamples_SampleBase {
 		super();
 	}
 	colon_whitespace(container,configFieldRegistry) {
-		this.buildDocSamplePage(container,"colon.whitespace","\n> **Note**: whitespace policies can be overruled by code parts preceeding or following a whitespace location,\n> because these code parts might have whitespace policies that contradict their neighbours.","{\n    \"whitespace\": {\n\t\t\"colonPolicy\": \"none\",\n\t\t\"caseColonPolicy\": \"onlyAfter\",\n\t\t\"objectFieldColonPolicy\": \"after\",\n\t\t\"typeHintColonPolicy\": \"none\",\n\t\t\"typeCheckColonPolicy\": \"around\",\n\t\t\"ternaryPolicy\": \"around\"\n    }\n}","","class Main {\n\tfunction test(param1:Int,param2:Array<String>, callback:(index:Int)->String) {\n\n\t\tswitch((param1:Float)) {\n\t\t\tcase _: doSomething();\n\t\t}\n\t\treturn {x:10, y:20, z:30}\n\t}\n\tfunction test2(param1:Int) {\n\t\treturn (param1 < 100)?true:false;\n\t}\n}\n",configFieldRegistry);
+		this.buildDocSamplePage(container,"colon.whitespace","\n> **Note**: whitespace policies can be overruled by code parts preceeding or following a whitespace location,\n> because these code parts might have whitespace policies that contradict their neighbours.","{\n    \"whitespace\": {\n\t\t\"colonPolicy\": \"none\",\n\t\t\"caseColonPolicy\": \"onlyAfter\",\n\t\t\"objectFieldColonPolicy\": \"after\",\n\t\t\"typeHintColonPolicy\": \"none\",\n\t\t\"typeCheckColonPolicy\": \"around\",\n\t\t\"ternaryPolicy\": \"around\"\n    }\n}","","class Main {\n\tfunction test(param1:Int,param2:Array<String>, callback:(index:Int)->String) {\n\n\t\tswitch((param1:Float)) {\n\t\t\tcase _: doSomething();\n\t\t}\n\t\treturn {x:10, y:20, z:30}\n\t}\n\tfunction test2(param1:Int) {\n\t\treturn (param1 < 100)?true:false;\n\t}\n\tfunction foo():Void {\n\t\tfinal test:Void->Void = () -> trace(1);\n\t\tfinal test:() -> Void = () -> trace(1);\n\t\tfinal obj:{f: Int} = {f: 1};\n\t\tfinal obj:{f: {f: Int}} = {f: {f: 1}};\n\t\tfinal int:Int = 1;\n\t}\n}\n\nextern class TouchEvent extends Event {\n\tpublic function new(isTouchPointCanceled:Bool = false\n\t\t#if air, commandKey:Bool = false, controlKey:Bool = false, ?timestamp:Float,\n\t\t?touchIntent:TouchEventIntent, ?samples:flash.utils.ByteArray,\n\t\tisTouchPointCanceled:Bool = false #end);\n}\n\ntypedef Type = {f:Int}\ntypedef Type = {f:{f:Int}}\n\n",configFieldRegistry);
 	}
 	conditional_parens_detailed(container,configFieldRegistry) {
 		this.buildDocSamplePage(container,"conditional.parens.detailed","The following whitespace settings were added in version 1.11.0 (all childs of `whitespace.parenConfig`):\n\n- `catchParens` - for `catch (expr)`\n- `ifConditionParens` - for `if (expr)`\n- `sharpConditionParens` - for `#if (expr)`\n- `switchConditionParens` - for `switch (expr)`\n- `whileConditionParens` - for `while (expr)`\n\nAll use the same structure as `whitespace.parenConfig.conditionParens` (see [conditional parens short](#codesamples.WhitespaceSamples.conditional_parens_short))\nand allow a finer control over whitespace settings for each location.\nThe new settings default to `null` which means `conditionParens` applies to all locations.\nIt also means you only have to set values for those locations where you want formatter to behave differently.\n\n> **Note**: Using `removeInnerWhenEmpty` is technically possible, but since code with an empty condtion expression\n> doesn't make sense and probably won't compile there isn't much use to it.","{\n\t\"whitespace\": {\n\t\t\"parenConfig\": {\n\t\t\t\"catchParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t},\n\t\t\t\"ifConditionParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t},\n\t\t\t\"sharpConditionParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t},\n\t\t\t\"switchConditionParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t},\n\t\t\t\"whileConditionParens\": {\n\t\t\t\t\"openingPolicy\": \"onlyAfter\",\n\t\t\t\t\"closingPolicy\": \"before\"\n\t\t\t}\n\t\t}\n\t}\n}","","class Main {\n\tstatic function main() {\n\t\ttry {\n\t\t\t#if (haxe_ver > 4.0)\n\t\t\t#end\n\n\t\t\tswitch (a) {\n\t\t\t\tdefault:\n\t\t\t\t\tv = (a + b);\n\t\t\t}\n\n\t\t\tif (a) {\n\t\t\t\tv = (a + b);\n\t\t\t}\n\n\t\t\twhile (true) {\n\t\t\t\tv = (a + b);\n\t\t\t}\n\n\t\t\tdo {\n\t\t\t\tv = (a + b);\n\t\t\t} while (true);\n\t\t} catch (e:Any)\n\t}\n}\n",configFieldRegistry);
@@ -15446,40 +15446,51 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 			policy = this.config.whitespace.colonPolicy;
 			break;
 		}
-		var prev = this.getPreviousToken(token);
-		if(prev != null) {
-			var _g = prev.token.tok;
-			switch(_g._hx_index) {
-			case 1:
-				var _g2 = _g.c;
-				if(token.parent != null && token.parent.tok != null) {
-					var _g1 = token.parent.tok;
-					if(_g1._hx_index == 2) {
-						if(_g1.s == "if") {
-							policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"before");
-						}
-					}
-				}
-				break;
-			case 2:
-				if(_g.s != "end") {
-					policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"before");
-				}
-				break;
-			case 19:
-				if(token.parent != null && token.parent.tok != null) {
-					var _g3 = token.parent.tok;
-					if(_g3._hx_index == 2) {
-						if(_g3.s == "if") {
-							policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"before");
-						}
-					}
-				}
-				break;
-			default:
-			}
-		}
+		policy = this.correctDblDotSharp(token,policy);
 		this.whitespace(token,policy);
+	}
+	correctDblDotSharp(token,policy) {
+		var prev = this.getPreviousToken(token);
+		if(prev == null) {
+			return policy;
+		}
+		var _g = prev.token.tok;
+		switch(_g._hx_index) {
+		case 1:
+			var _g2 = _g.c;
+			if(prev.token.parent == null || prev.token.parent.tok == null) {
+				return policy;
+			}
+			var _g1 = prev.token.parent.tok;
+			if(_g1._hx_index == 2) {
+				if(_g1.s == "if") {
+					if(prev.token.parent.getFirstChild().index == prev.token.index) {
+						policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"before");
+					}
+				}
+			}
+			break;
+		case 2:
+			if(_g.s != "end") {
+				policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"before");
+			}
+			break;
+		case 19:
+			if(prev.token.parent == null || prev.token.parent.tok == null) {
+				return policy;
+			}
+			var _g3 = prev.token.parent.tok;
+			if(_g3._hx_index == 2) {
+				if(_g3.s == "if") {
+					if(prev.token.parent.getFirstChild().index == prev.token.index) {
+						policy = formatter_config__$WhitespacePolicy_WhitespacePolicy_$Impl_$.add(policy,"before");
+					}
+				}
+			}
+			break;
+		default:
+		}
+		return policy;
 	}
 	markSemicolon(token) {
 		var next = this.getNextToken(token);
@@ -22823,7 +22834,21 @@ class tokentree_utils_TokenTreeCheckUtils {
 					return tokentree_utils_BrOpenType.ANONTYPE;
 				case 2:
 					return tokentree_utils_BrOpenType.ANONTYPE;
+				case 41:
+					return tokentree_utils_BrOpenType.ANONTYPE;
 				default:
+					return tokentree_utils_BrOpenType.OBJECTDECL;
+				}
+				break;
+			case 1:
+				var _g9 = _g6.c;
+				if(_g9._hx_index == 3) {
+					if(_g9.s == "final") {
+						return tokentree_utils_BrOpenType.ANONTYPE;
+					} else {
+						return tokentree_utils_BrOpenType.OBJECTDECL;
+					}
+				} else {
 					return tokentree_utils_BrOpenType.OBJECTDECL;
 				}
 				break;
@@ -23403,9 +23428,17 @@ class tokentree_utils_TokenTreeCheckUtils {
 			return tokentree_utils_ColonType.UNKNOWN;
 		}
 		var _g = parent.tok;
-		switch(_g._hx_index) {
+		if(_g._hx_index == 2) {
+			var _g1 = _g.s;
+			parent = parent.parent;
+			if(parent == null || parent.tok == null) {
+				return tokentree_utils_ColonType.UNKNOWN;
+			}
+		}
+		var _g2 = parent.tok;
+		switch(_g2._hx_index) {
 		case 0:
-			switch(_g.k._hx_index) {
+			switch(_g2.k._hx_index) {
 			case 0:
 				return tokentree_utils_ColonType.TYPE_HINT;
 			case 15:case 16:
@@ -23418,10 +23451,10 @@ class tokentree_utils_TokenTreeCheckUtils {
 			}
 			break;
 		case 1:
-			var _g3 = _g.c;
+			var _g5 = _g2.c;
 			return tokentree_utils_TokenTreeCheckUtils.findColonParent(parent);
 		case 5:
-			if(_g.op._hx_index == 9) {
+			if(_g2.op._hx_index == 9) {
 				return tokentree_utils_TokenTreeCheckUtils.findColonParent(parent);
 			}
 			break;
@@ -25108,11 +25141,27 @@ class tokentree_walk_WalkStatement {
 		var _g = stream.token();
 		switch(_g._hx_index) {
 		case 0:
-			var _g5 = _g.k;
+			var _g7 = _g.k;
 			if(tokentree_walk_WalkStatement.walkKeyword(stream,parent)) {
 				wantMore = true;
 			} else {
 				return;
+			}
+			break;
+		case 1:
+			var _g5 = _g.c;
+			if(_g5._hx_index == 3) {
+				if(_g5.s == "final") {
+					if(tokentree_walk_WalkStatement.walkKeyword(stream,parent)) {
+						wantMore = true;
+					} else {
+						return;
+					}
+				} else {
+					wantMore = false;
+				}
+			} else {
+				wantMore = false;
 			}
 			break;
 		case 2:
