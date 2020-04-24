@@ -9,7 +9,7 @@ class KeywordHelper {
 		text = text.replace("\r", "");
 		text = text.replace("\n", " ");
 		text = text.toLowerCase();
-		text = ~/[^a-zA-Z_]/g.replace(text, " ");
+		text = ~/[^a-zA-Z0-9_]/g.replace(text, " ");
 
 		var uniqueWords:Array<String> = [];
 		for (word in text.split(" ")) {
