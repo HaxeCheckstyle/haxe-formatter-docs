@@ -28,4 +28,22 @@ class Main {
 	function test2(param1:Int) {
 		return (param1 < 100)?true:false;
 	}
+	function foo():Void {
+		final test:Void->Void = () -> trace(1);
+		final test:() -> Void = () -> trace(1);
+		final obj:{f: Int} = {f: 1};
+		final obj:{f: {f: Int}} = {f: {f: 1}};
+		final int:Int = 1;
+	}
 }
+
+extern class TouchEvent extends Event {
+	public function new(isTouchPointCanceled:Bool = false
+		#if air, commandKey:Bool = false, controlKey:Bool = false, ?timestamp:Float,
+		?touchIntent:TouchEventIntent, ?samples:flash.utils.ByteArray,
+		isTouchPointCanceled:Bool = false #end);
+}
+
+typedef Type = {f:Int}
+typedef Type = {f:{f:Int}}
+

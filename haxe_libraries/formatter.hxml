@@ -1,3 +1,3 @@
-# @install: lix --silent download "gh://github.com/HaxeCheckstyle/haxe-formatter#d0168ba90f55742b71b41d2f827d57c6a477834a" into formatter/1.10.2/github/d0168ba90f55742b71b41d2f827d57c6a477834a
--cp ${HAXE_LIBCACHE}/formatter/1.10.2/github/d0168ba90f55742b71b41d2f827d57c6a477834a/src
+# @install: lix --silent download "gh://github.com/HaxeCheckstyle/haxe-formatter#48265c8cb97b1c7752afd49f11b2d03f891fdfc4" into formatter/1.10.2/github/48265c8cb97b1c7752afd49f11b2d03f891fdfc4
+-cp ${HAXE_LIBCACHE}/formatter/1.10.2/github/48265c8cb97b1c7752afd49f11b2d03f891fdfc4/src
 -D formatter=1.10.2
