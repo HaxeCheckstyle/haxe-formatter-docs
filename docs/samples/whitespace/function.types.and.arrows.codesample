@@ -23,6 +23,8 @@ class Main {
 	var f = arg-> {};
 	var f = (arg) -> {};
 	var f = (arg1:Int, arg2:String) -> {};
+	final test:Void->Void = () -> trace(1);
+	final test:() -> Void = () -> trace(1);
 
 	// old function type syntax
 	var f:Void->Void;
