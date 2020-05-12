@@ -1,0 +1,17 @@
+See [conditional parens short](#codesamples.WhitespaceSamples.conditional_parens_short) for details about values.
+
+> **Note**: whitespace policies can be overruled by code parts preceeding or following a whitespace location,
+> because these code parts might have whitespace policies that contradict their neighbours.
+
+---
+
+{
+  "whitespace": {
+    "typeParamOpenPolicy": "after",
+    "typeParamClosePolicy": "before"
+  }
+}
+
+---
+
+typedef Type = Array< {key:Int} >;
