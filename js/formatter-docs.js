@@ -17056,7 +17056,6 @@ class formatter_marker_wrapping_MarkWrapping extends formatter_marker_wrapping_M
 			case 5:
 				if(_g.op._hx_index == 7) {
 					this.noLineEndAfter(brClose);
-					this.whitespace(brClose,"noneAfter");
 				}
 				break;
 			case 16:
