@@ -1,0 +1,37 @@
+
+
+---
+
+{
+	"emptyLines" : {
+		"enumAbstractEmptyLines": {
+			"beginType": 0,
+			"endType": 0,
+			"betweenVars": 0,
+			"afterVars": 1,
+			"betweenFunctions": 1,
+			"existingBetweenFields": "keep"
+		},
+		"maxAnywhereInFile": 1
+	}
+}
+
+---
+
+enum abstract EnumAbstract(String) {
+	var A;
+	var B;
+	var C;
+
+	function new(s)
+		this = s;
+}
+
+enum abstract EnumAbstract(String) {
+	final A;
+	final B;
+	final C;
+
+	function new(s)
+		this = s;
+}

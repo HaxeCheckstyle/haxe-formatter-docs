@@ -23,7 +23,7 @@
     "jquery-ui": ""
   },
   "devDependencies": {
-    "lix": "^15.8.11",
+    "lix": "^15.9.0",
     "sass": ""
   },
   "homepage": "https://github.com/HaxeCheckstyle/formatter-docs#readme"
