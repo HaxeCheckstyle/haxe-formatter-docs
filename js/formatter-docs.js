@@ -6227,7 +6227,14 @@ class formatter_marker_Indenter {
 				if(parent2.tok == tokentree_TokenTreeDef.Root) {
 					return token;
 				}
-				if(parent2 != null && parent2.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdDo))) {
+				let tmp;
+				if(parent2 != null) {
+					let _g = parent2.tok;
+					tmp = _g._hx_index == 1 && _g.k._hx_index == 6;
+				} else {
+					tmp = false;
+				}
+				if(tmp) {
 					return this.findEffectiveParent(token.parent);
 				}
 				break;
@@ -6321,7 +6328,8 @@ class formatter_marker_Indenter {
 				case 20:case 21:
 					return this.findEffectiveParent(parent3);
 				case 22:
-					if(parent3.parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdFunction))) {
+					let _g8 = parent3.parent.tok;
+					if(_g8._hx_index == 1 && _g8.k._hx_index == 0) {
 						return this.findEffectiveParent(parent3.parent);
 					}
 					break;
@@ -6329,26 +6337,27 @@ class formatter_marker_Indenter {
 				}
 				break;
 			case 2:
-				let _g8 = _g7.c;
-				if(_g8._hx_index == 3) {
-					let _g = _g8.s;
-					if(parent3.parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdFunction))) {
+				let _g9 = _g7.c;
+				if(_g9._hx_index == 3) {
+					let _g = _g9.s;
+					let _g1 = parent3.parent.tok;
+					if(_g1._hx_index == 1 && _g1.k._hx_index == 0) {
 						return this.findEffectiveParent(parent3.parent);
 					}
 				}
 				break;
 			case 6:
-				let _g9 = _g7.op;
-				switch(_g9._hx_index) {
+				let _g10 = _g7.op;
+				switch(_g10._hx_index) {
 				case 4:
-					let access = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.parent(parent3)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTypedef));
+					let access = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.parent(parent3)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTypedef));
 					if(access != null) {
 						return access;
 					}
 					break;
 				case 20:
-					let _g10 = _g9.op;
-					let access1 = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.parent(parent3)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTypedef));
+					let _g11 = _g10.op;
+					let access1 = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.parent(parent3)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTypedef));
 					if(access1 != null) {
 						return access1;
 					}
@@ -6503,7 +6512,8 @@ class formatter_marker_Indenter {
 					}
 					break;
 				case 21:
-					if(currentToken.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTry))) {
+					let _g4 = currentToken.tok;
+					if(_g4._hx_index == 1 && _g4.k._hx_index == 20) {
 						continue;
 					}
 					break;
@@ -6511,9 +6521,9 @@ class formatter_marker_Indenter {
 				}
 				break;
 			case 2:
-				let _g4 = _g1.c;
-				if(_g4._hx_index == 3) {
-					switch(_g4.s) {
+				let _g5 = _g1.c;
+				if(_g5._hx_index == 3) {
+					switch(_g5.s) {
 					case "from":case "to":
 						if(this.isAbstractFromTo(token) && this.parsedCode.tokenList.isNewLineBefore(prevToken)) {
 							mustIndent = true;
@@ -6524,10 +6534,10 @@ class formatter_marker_Indenter {
 				}
 				break;
 			case 11:
-				let _g5 = currentToken.tok;
-				switch(_g5._hx_index) {
+				let _g6 = currentToken.tok;
+				switch(_g6._hx_index) {
 				case 1:
-					switch(_g5.k._hx_index) {
+					switch(_g6.k._hx_index) {
 					case 15:case 16:
 						continue;
 					case 10:case 22:case 28:
@@ -6543,8 +6553,8 @@ class formatter_marker_Indenter {
 					}
 					break;
 				case 6:
-					let _g6 = _g5.op;
-					switch(_g6._hx_index) {
+					let _g7 = _g6.op;
+					switch(_g7._hx_index) {
 					case 4:
 						if(this.parsedCode.tokenList.isSameLineBetween(currentToken,prevToken,false)) {
 							continue;
@@ -6556,7 +6566,7 @@ class formatter_marker_Indenter {
 						}
 						break;
 					case 20:
-						let _g7 = _g6.op;
+						let _g8 = _g7.op;
 						if(this.parsedCode.tokenList.isSameLineBetween(currentToken,prevToken,false)) {
 							continue;
 						}
@@ -6592,9 +6602,9 @@ class formatter_marker_Indenter {
 				}
 				break;
 			case 12:
-				let _g8 = currentToken.tok;
-				if(_g8._hx_index == 1) {
-					switch(_g8.k._hx_index) {
+				let _g9 = currentToken.tok;
+				if(_g9._hx_index == 1) {
+					switch(_g9.k._hx_index) {
 					case 15:case 16:
 						if(lastIndentingToken != null && lastIndentingToken.pos.min == prevToken.pos.min) {
 							continue;
@@ -6624,10 +6634,10 @@ class formatter_marker_Indenter {
 				}
 				break;
 			case 17:
-				let _g9 = currentToken.tok;
-				switch(_g9._hx_index) {
+				let _g10 = currentToken.tok;
+				switch(_g10._hx_index) {
 				case 1:
-					switch(_g9.k._hx_index) {
+					switch(_g10.k._hx_index) {
 					case 0:case 3:case 4:case 5:case 6:case 7:case 10:case 14:case 20:case 21:case 28:
 						let type1 = tokentree_utils_TokenTreeCheckUtils.getBrOpenType(prevToken);
 						if(type1._hx_index == 2) {
@@ -6643,8 +6653,8 @@ class formatter_marker_Indenter {
 					}
 					break;
 				case 6:
-					let _g10 = _g9.op;
-					switch(_g10._hx_index) {
+					let _g11 = _g10.op;
+					switch(_g11._hx_index) {
 					case 4:
 						let type2 = tokentree_utils_TokenTreeCheckUtils.getBrOpenType(prevToken);
 						switch(type2._hx_index) {
@@ -6660,7 +6670,7 @@ class formatter_marker_Indenter {
 						}
 						break;
 					case 20:
-						let _g11 = _g10.op;
+						let _g12 = _g11.op;
 						let type3 = tokentree_utils_TokenTreeCheckUtils.getBrOpenType(prevToken);
 						switch(type3._hx_index) {
 						case 1:
@@ -6853,7 +6863,7 @@ class formatter_marker_Indenter {
 			}
 			if(this.isIndentingToken(parent)) {
 				if(lastIndentingToken != null) {
-					if(lastIndentingToken.is(tokentree_TokenTreeDef.Dot) && parent.is(tokentree_TokenTreeDef.Dot)) {
+					if(lastIndentingToken.tok._hx_index == 11 && parent.tok._hx_index == 11) {
 						continue;
 					}
 				}
@@ -6923,7 +6933,14 @@ class formatter_marker_Indenter {
 				return true;
 			case 5:
 				let parent = token.parent;
-				if(parent != null && parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdDo))) {
+				let tmp;
+				if(parent != null) {
+					let _g = parent.tok;
+					tmp = _g._hx_index == 1 && _g.k._hx_index == 6;
+				} else {
+					tmp = false;
+				}
+				if(tmp) {
 					return false;
 				}
 				return true;
@@ -6992,7 +7009,15 @@ class formatter_marker_Indenter {
 			}
 			break;
 		case 12:
-			if(token.parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdCase)) || token.parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdDefault))) {
+			let tmp1;
+			let _g5 = token.parent.tok;
+			if(!(_g5._hx_index == 1 && _g5.k._hx_index == 15)) {
+				let _g = token.parent.tok;
+				tmp1 = _g._hx_index == 1 && _g.k._hx_index == 16;
+			} else {
+				tmp1 = true;
+			}
+			if(tmp1) {
 				return true;
 			}
 			let info = this.parsedCode.tokenList.getTokenAt(token.index);
@@ -7290,7 +7315,7 @@ class formatter_marker_MarkAdditionalIndentation extends formatter_marker_Marker
 			while(_g2 < brClose.length) {
 				let brClose1 = brClose[_g2];
 				++_g2;
-				if(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(brClose1),tokentree_TokenTreeDef.BrOpen) != null) {
+				if(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(brClose1),tokentree_TokenTreeDef.BrOpen) != null) {
 					continue;
 				}
 				++depth;
@@ -7314,7 +7339,18 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 	}
 	run() {
 		this.keepExistingEmptyLines();
-		let packs = this.parsedCode.root.filter([tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdPackage)],tokentree_TokenFilterMode.All);
+		let packs = this.parsedCode.root.filterCallback(function(token,index) {
+			let _g = token.tok;
+			if(_g._hx_index == 1) {
+				if(_g.k._hx_index == 33) {
+					return tokentree_FilterResult.FoundSkipSubtree;
+				} else {
+					return tokentree_FilterResult.SkipSubtree;
+				}
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		packs.reverse();
 		let _g = 0;
 		while(_g < packs.length) {
@@ -7511,7 +7547,7 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 			default:
 			}
 			token = token.getFirstChild();
-			if(token == null || !token.is(tokentree_TokenTreeDef.Dot)) {
+			if(token == null || token.tok._hx_index != 11) {
 				break;
 			}
 			token = token.getFirstChild();
@@ -7935,7 +7971,18 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 		}
 	}
 	markInterfaces() {
-		let interfaces = this.parsedCode.root.filter([tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdInterface)],tokentree_TokenFilterMode.All);
+		let interfaces = this.parsedCode.root.filterCallback(function(token,index) {
+			let _g = token.tok;
+			if(_g._hx_index == 1) {
+				if(_g.k._hx_index == 27) {
+					return tokentree_FilterResult.FoundSkipSubtree;
+				} else {
+					return tokentree_FilterResult.SkipSubtree;
+				}
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < interfaces.length) {
 			let i = interfaces[_g];
@@ -8137,7 +8184,18 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 		}
 	}
 	markEnums() {
-		let enums = this.parsedCode.root.filter([tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdEnum)],tokentree_TokenFilterMode.All);
+		let enums = this.parsedCode.root.filterCallback(function(token,index) {
+			let _g = token.tok;
+			if(_g._hx_index == 1) {
+				if(_g.k._hx_index == 26) {
+					return tokentree_FilterResult.FoundSkipSubtree;
+				} else {
+					return tokentree_FilterResult.SkipSubtree;
+				}
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < enums.length) {
 			let e = enums[_g];
@@ -8198,7 +8256,18 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 		}
 	}
 	markTypedefs() {
-		let typedefs = this.parsedCode.root.filter([tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTypedef)],tokentree_TokenFilterMode.All);
+		let typedefs = this.parsedCode.root.filterCallback(function(token,index) {
+			let _g = token.tok;
+			if(_g._hx_index == 1) {
+				if(_g.k._hx_index == 31) {
+					return tokentree_FilterResult.FoundSkipSubtree;
+				} else {
+					return tokentree_FilterResult.SkipSubtree;
+				}
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < typedefs.length) {
 			let t = typedefs[_g];
@@ -8331,7 +8400,13 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 		return info;
 	}
 	markLeftCurly() {
-		let brOpens = this.parsedCode.root.filter([tokentree_TokenTreeDef.BrOpen],tokentree_TokenFilterMode.All);
+		let brOpens = this.parsedCode.root.filterCallback(function(token,index) {
+			if(token.tok._hx_index == 17) {
+				return tokentree_FilterResult.FoundGoDeeper;
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < brOpens.length) {
 			let br = brOpens[_g];
@@ -8340,7 +8415,13 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 		}
 	}
 	markRightCurly() {
-		let brCloses = this.parsedCode.root.filter([tokentree_TokenTreeDef.BrClose],tokentree_TokenFilterMode.All);
+		let brCloses = this.parsedCode.root.filterCallback(function(token,index) {
+			if(token.tok._hx_index == 18) {
+				return tokentree_FilterResult.FoundGoDeeper;
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < brCloses.length) {
 			let br = brCloses[_g];
@@ -8349,7 +8430,18 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 		}
 	}
 	markReturn() {
-		let returns = this.parsedCode.root.filter([tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdReturn)],tokentree_TokenFilterMode.All);
+		let returns = this.parsedCode.root.filterCallback(function(token,index) {
+			let _g = token.tok;
+			if(_g._hx_index == 1) {
+				if(_g.k._hx_index == 10) {
+					return tokentree_FilterResult.FoundGoDeeper;
+				} else {
+					return tokentree_FilterResult.GoDeeper;
+				}
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < returns.length) {
 			let ret = returns[_g];
@@ -8614,7 +8706,14 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 					_gthis.removeEmptyLinesAroundBlock(token.getFirstChild(),_gthis.config.emptyLines.beforeBlocks,"keep");
 					break;
 				case 5:
-					if(token.parent == null || !token.parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdDo))) {
+					let tmp;
+					if(token.parent != null) {
+						let _g = token.parent.tok;
+						tmp = !(_g._hx_index == 1 && _g.k._hx_index == 6);
+					} else {
+						tmp = true;
+					}
+					if(tmp) {
 						_gthis.removeEmptyLinesAroundBlock(token.children[1],_gthis.config.emptyLines.beforeBlocks,"keep");
 					}
 					break;
@@ -8659,12 +8758,23 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 		}
 	}
 	keepExistingEmptyLines() {
-		let funcs = this.parsedCode.root.filter([tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdFunction)],tokentree_TokenFilterMode.All);
+		let funcs = this.parsedCode.root.filterCallback(function(token,index) {
+			let _g = token.tok;
+			if(_g._hx_index == 1) {
+				if(_g.k._hx_index == 0) {
+					return tokentree_FilterResult.FoundGoDeeper;
+				} else {
+					return tokentree_FilterResult.GoDeeper;
+				}
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < funcs.length) {
 			let func = funcs[_g];
 			++_g;
-			let block = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.firstChild(func),tokentree_TokenTreeDef.BrOpen);
+			let block = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.firstChild(func),tokentree_TokenTreeDef.BrOpen);
 			if(block == null) {
 				block = tokentree_TokenTreeAccessHelper.firstOf(tokentree_TokenTreeAccessHelper.firstChild(func),tokentree_TokenTreeDef.BrOpen);
 			}
@@ -8697,7 +8807,19 @@ class formatter_marker_MarkEmptyLines extends formatter_marker_MarkerBase {
 	markFileHeader() {
 		let info = this.getTokenAt(0);
 		let info2 = this.getTokenAt(1);
-		let packagesAndImports = this.parsedCode.root.filter([tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdPackage),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdImport),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdUsing)],tokentree_TokenFilterMode.All);
+		let packagesAndImports = this.parsedCode.root.filterCallback(function(token,index) {
+			let _g = token.tok;
+			if(_g._hx_index == 1) {
+				switch(_g.k._hx_index) {
+				case 13:case 33:case 35:
+					return tokentree_FilterResult.FoundSkipSubtree;
+				default:
+					return tokentree_FilterResult.SkipSubtree;
+				}
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		if(info == null) {
 			return;
 		}
@@ -8727,7 +8849,13 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 		super(config,parsedCode,indenter);
 	}
 	run() {
-		let semicolonTokens = this.parsedCode.root.filter([tokentree_TokenTreeDef.Semicolon],tokentree_TokenFilterMode.All);
+		let semicolonTokens = this.parsedCode.root.filterCallback(function(token,index) {
+			if(token.tok._hx_index == 10) {
+				return tokentree_FilterResult.FoundGoDeeper;
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < semicolonTokens.length) {
 			let token = semicolonTokens[_g];
@@ -8879,7 +9007,7 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 			}
 			let next = this.getNextToken(brOpen);
 			let isEmpty = false;
-			if(next != null && next.token.is(tokentree_TokenTreeDef.BrClose) && curlyPolicy.emptyCurly == "noBreak") {
+			if(next != null && next.token.tok._hx_index == 18 && curlyPolicy.emptyCurly == "noBreak") {
 				isEmpty = true;
 			}
 			if(!isEmpty) {
@@ -8991,6 +9119,16 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 		}
 		let _g = nextToken.token.tok;
 		switch(_g._hx_index) {
+		case 2:
+			let _g1 = _g.c;
+			if(_g1._hx_index == 3) {
+				if(_g1.s != "is") {
+					this.lineEndAfter(token);
+				}
+			} else {
+				this.lineEndAfter(token);
+			}
+			break;
 		case 6:
 			switch(_g.op._hx_index) {
 			case 4:
@@ -9032,7 +9170,13 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 		}
 	}
 	markAt() {
-		let atTokens = this.parsedCode.root.filter([tokentree_TokenTreeDef.At],tokentree_TokenFilterMode.All);
+		let atTokens = this.parsedCode.root.filterCallback(function(token,index) {
+			if(token.tok._hx_index == 22) {
+				return tokentree_FilterResult.FoundGoDeeper;
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < atTokens.length) {
 			let token = atTokens[_g];
@@ -9046,12 +9190,12 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 				this.lineEndAfter(lastChild);
 				continue;
 			}
-			if(token.previousSibling != null && token.previousSibling.is(tokentree_TokenTreeDef.At)) {
+			if(token.previousSibling != null && token.previousSibling.tok._hx_index == 22) {
 				continue;
 			}
 			let next = token.nextSibling;
 			let metadata = [token];
-			while(next != null && next.is(tokentree_TokenTreeDef.At)) {
+			while(next != null && next.tok._hx_index == 22) {
 				metadata.push(next);
 				next = next.nextSibling;
 			}
@@ -9186,12 +9330,26 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 		}
 	}
 	markDblDot() {
-		let dblDotTokens = this.parsedCode.root.filter([tokentree_TokenTreeDef.DblDot],tokentree_TokenFilterMode.All);
+		let dblDotTokens = this.parsedCode.root.filterCallback(function(token,index) {
+			if(token.tok._hx_index == 12) {
+				return tokentree_FilterResult.FoundGoDeeper;
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < dblDotTokens.length) {
 			let token = dblDotTokens[_g];
 			++_g;
-			if(!token.parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdCase)) && !token.parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdDefault))) {
+			let tmp;
+			let _g1 = token.parent.tok;
+			if(!(_g1._hx_index == 1 && _g1.k._hx_index == 15)) {
+				let _g = token.parent.tok;
+				tmp = !(_g._hx_index == 1 && _g.k._hx_index == 16);
+			} else {
+				tmp = false;
+			}
+			if(tmp) {
 				continue;
 			}
 			if(this.config.lineEnds.caseColon != "none") {
@@ -9205,7 +9363,19 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 		}
 	}
 	markSharp() {
-		let sharpTokens = this.parsedCode.root.filter([tokentree_TokenTreeDef.Sharp("if"),tokentree_TokenTreeDef.Sharp("else"),tokentree_TokenTreeDef.Sharp("elseif"),tokentree_TokenTreeDef.Sharp("end"),tokentree_TokenTreeDef.Sharp("error")],tokentree_TokenFilterMode.All);
+		let sharpTokens = this.parsedCode.root.filterCallback(function(token,index) {
+			let _g = token.tok;
+			if(_g._hx_index == 3) {
+				switch(_g.s) {
+				case "else":case "elseif":case "end":case "error":case "if":
+					return tokentree_FilterResult.FoundGoDeeper;
+				default:
+					return tokentree_FilterResult.GoDeeper;
+				}
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < sharpTokens.length) {
 			let token = sharpTokens[_g];
@@ -9257,7 +9427,8 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 						continue;
 					}
 					if(this.isInlineSharp(token)) {
-						if(token.is(tokentree_TokenTreeDef.Sharp("if")) && this.isOnlyWhitespaceBeforeToken(token)) {
+						let _g = token.tok;
+						if(_g._hx_index == 3 && _g.s == "if" && this.isOnlyWhitespaceBeforeToken(token)) {
 							continue;
 						}
 						this.noLineEndBefore(token);
@@ -9305,7 +9476,8 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 					if(sharpEnd == null) {
 						return false;
 					}
-					if(!sharpEnd.is(tokentree_TokenTreeDef.Sharp("end"))) {
+					let _g2 = sharpEnd.tok;
+					if(!(_g2._hx_index == 3 && _g2.s == "end")) {
 						return false;
 					}
 					break;
@@ -9325,13 +9497,13 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 				if(prev.whitespaceAfter == formatter_codedata_WhitespaceAfterType.Newline) {
 					return false;
 				}
-				let _g2 = prev.token.tok;
-				switch(_g2._hx_index) {
+				let _g3 = prev.token.tok;
+				switch(_g3._hx_index) {
 				case 7:
-					let _g3 = _g2.s;
+					let _g4 = _g3.s;
 					return false;
 				case 8:
-					let _g4 = _g2.s;
+					let _g5 = _g3.s;
 					return false;
 				case 10:
 					return false;
@@ -9375,7 +9547,18 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 		return tokentree_TokenTreeAccessHelper.firstOf(assign,tokentree_TokenTreeDef.BrOpen);
 	}
 	markStructureExtension() {
-		let typedefTokens = this.parsedCode.root.filter([tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTypedef)],tokentree_TokenFilterMode.All);
+		let typedefTokens = this.parsedCode.root.filterCallback(function(token,index) {
+			let _g = token.tok;
+			if(_g._hx_index == 1) {
+				if(_g.k._hx_index == 31) {
+					return tokentree_FilterResult.FoundSkipSubtree;
+				} else {
+					return tokentree_FilterResult.SkipSubtree;
+				}
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		let _g = 0;
 		while(_g < typedefTokens.length) {
 			let token = typedefTokens[_g];
@@ -9403,7 +9586,7 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 					if(next == null) {
 						continue;
 					}
-					if(lastChild.is(tokentree_TokenTreeDef.BrClose)) {
+					if(lastChild.tok._hx_index == 18) {
 						let _g = next.token.tok;
 						switch(_g._hx_index) {
 						case 6:
@@ -9421,7 +9604,7 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 						default:
 						}
 					}
-					if(next.token.is(tokentree_TokenTreeDef.BrOpen)) {
+					if(next.token.tok._hx_index == 17) {
 						continue;
 					}
 					this.lineEndAfter(lastChild);
@@ -9459,10 +9642,12 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 					if(next == null) {
 						continue;
 					}
-					if(next.token.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAnd))) {
+					let _g4 = next.token.tok;
+					if(_g4._hx_index == 6 && _g4.op._hx_index == 11) {
 						this.noLineEndAfter(child);
 					}
-					if(next.token.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpGt))) {
+					let _g5 = next.token.tok;
+					if(_g5._hx_index == 6 && _g5.op._hx_index == 7) {
 						this.whitespace(child,"noneAfter");
 					}
 					break;
@@ -9516,7 +9701,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		this.markDollarSameLine();
 		let _gthis = this;
 		this.parsedCode.root.filterCallback(function(token,index) {
-			if(token.parent != null && token.parent.is(tokentree_TokenTreeDef.At)) {
+			if(token.parent != null && token.parent.tok._hx_index == 22) {
 				return tokentree_FilterResult.GoDeeper;
 			}
 			let _g = token.tok;
@@ -9532,7 +9717,14 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 					_gthis.markElse(token);
 					break;
 				case 5:
-					if(token.parent != null && token.parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdDo))) {
+					let tmp;
+					if(token.parent != null) {
+						let _g = token.parent.tok;
+						tmp = _g._hx_index == 1 && _g.k._hx_index == 6;
+					} else {
+						tmp = false;
+					}
+					if(tmp) {
 						return tokentree_FilterResult.GoDeeper;
 					}
 					_gthis.markWhile(token);
@@ -9582,7 +9774,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 			case 4:
 				return this.shouldElseBeSameLine(parent);
 			case 5:case 7:
-				if(parent.parent.is(tokentree_TokenTreeDef.BkOpen)) {
+				if(parent.parent.tok._hx_index == 15) {
 					return true;
 				}
 				break;
@@ -9667,7 +9859,8 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		if(token == null) {
 			return false;
 		}
-		if(!token.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdIf))) {
+		let _g = token.tok;
+		if(!(_g._hx_index == 1 && _g.k._hx_index == 3)) {
 			return false;
 		}
 		let body = this.getBodyAfterCondition(token);
@@ -9680,7 +9873,8 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		if(token == null) {
 			return false;
 		}
-		if(!token.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdElse))) {
+		let _g = token.tok;
+		if(!(_g._hx_index == 1 && _g.k._hx_index == 4)) {
 			return false;
 		}
 		return this.shouldIfBeSameLine(token.parent);
@@ -9689,7 +9883,8 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		if(token == null) {
 			return false;
 		}
-		if(!token.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTry))) {
+		let _g = token.tok;
+		if(!(_g._hx_index == 1 && _g.k._hx_index == 20)) {
 			return false;
 		}
 		return this.isExpression(token);
@@ -9698,7 +9893,8 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		if(token == null) {
 			return false;
 		}
-		if(!token.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdCatch))) {
+		let _g = token.tok;
+		if(!(_g._hx_index == 1 && _g.k._hx_index == 21)) {
 			return false;
 		}
 		return this.shouldTryBeSameLine(token.parent);
@@ -9718,7 +9914,14 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		}
 		this.markBodyAfterPOpen(token,this.config.sameLine.ifBody,false);
 		let prev = this.getPreviousToken(token);
-		if(prev != null && prev.token.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdElse))) {
+		let tmp;
+		if(prev != null) {
+			let _g = prev.token.tok;
+			tmp = _g._hx_index == 1 && _g.k._hx_index == 4;
+		} else {
+			tmp = false;
+		}
+		if(tmp) {
 			this.applySameLinePolicy(token,this.config.sameLine.elseIf);
 		}
 	}
@@ -9734,7 +9937,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 				if(prev == null) {
 					return;
 				}
-				if(prev.token.is(tokentree_TokenTreeDef.BrClose)) {
+				if(prev.token.tok._hx_index == 18) {
 					this.applySameLinePolicyChained(token,"keep","keep");
 				}
 				return;
@@ -9746,7 +9949,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 				if(prev1 == null) {
 					return;
 				}
-				if(prev1.token.is(tokentree_TokenTreeDef.BrClose)) {
+				if(prev1.token.tok._hx_index == 18) {
 					this.applySameLinePolicyChained(token,this.config.sameLine.ifBody,this.config.sameLine.ifElse);
 				}
 				return;
@@ -9757,7 +9960,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		let prev2 = this.getPreviousToken(token);
 		if(prev2 != null) {
 			if(prev2.token.tok._hx_index == 18) {
-				if(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(prev2.token),tokentree_TokenTreeDef.BrOpen)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdIf)) == null) {
+				if(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(prev2.token),tokentree_TokenTreeDef.BrOpen)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdIf)) == null) {
 					switch(policy) {
 					case "keep":
 						break;
@@ -10059,7 +10262,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		if(body == null) {
 			return;
 		}
-		if(body.is(tokentree_TokenTreeDef.BrOpen)) {
+		if(body.tok._hx_index == 17) {
 			let type = tokentree_utils_TokenTreeCheckUtils.getBrOpenType(body);
 			switch(type._hx_index) {
 			case 0:
@@ -10085,14 +10288,14 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		if(token == null) {
 			return;
 		}
-		if(!token.is(tokentree_TokenTreeDef.BrOpen)) {
+		if(token.tok._hx_index != 17) {
 			return;
 		}
 		if(token.children == null) {
 			return;
 		}
 		let lastChild = token.getLastChild();
-		if(lastChild.is(tokentree_TokenTreeDef.Semicolon)) {
+		if(lastChild.tok._hx_index == 10) {
 			if(token.children.length > 3) {
 				return;
 			}
@@ -10144,7 +10347,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 			if(prev == null) {
 				policy = "next";
 			}
-			if(!prev.token.is(tokentree_TokenTreeDef.BrClose) && previousBlockPolicy != "same") {
+			if(prev.token.tok._hx_index != 18 && previousBlockPolicy != "same") {
 				policy = "next";
 			}
 		}
@@ -10169,7 +10372,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 				}
 				break;
 			case 15:
-				if(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(token),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdFor)) != null) {
+				if(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(token),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdFor)) != null) {
 					return;
 				}
 				break;
@@ -10231,7 +10434,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		while(_g < tokens.length) {
 			let token = tokens[_g];
 			++_g;
-			let brOpen = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.firstChild(token),tokentree_TokenTreeDef.BrOpen);
+			let brOpen = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.firstChild(token),tokentree_TokenTreeDef.BrOpen);
 			if(brOpen == null) {
 				continue;
 			}
@@ -10263,7 +10466,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 	markFunction(token) {
 		let body = tokentree_TokenTreeAccessHelper.isCIdent(tokentree_TokenTreeAccessHelper.firstChild(token));
 		if(body == null) {
-			body = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.firstChild(token),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdNew));
+			body = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.firstChild(token),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdNew));
 		}
 		let policy = this.config.sameLine.functionBody;
 		if(body == null) {
@@ -10315,7 +10518,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 	}
 	markMacro(token) {
 		let brOpen = this.getNextToken(token);
-		if(brOpen == null || !brOpen.token.is(tokentree_TokenTreeDef.BrOpen)) {
+		if(brOpen == null || brOpen.token.tok._hx_index != 17) {
 			return;
 		}
 		let brClose = this.getCloseToken(brOpen.token);
@@ -10333,7 +10536,7 @@ class formatter_marker_MarkSameLine extends formatter_marker_MarkerBase {
 		}
 	}
 	markUntyped(token) {
-		if(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.firstChild(token),tokentree_TokenTreeDef.BrOpen) == null) {
+		if(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.firstChild(token),tokentree_TokenTreeDef.BrOpen) == null) {
 			return;
 		}
 		let parent = token.parent;
@@ -10703,18 +10906,11 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 						_gthis.whitespace(token,"after");
 						break;
 					case "is":
-						let parent = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(token),tokentree_TokenTreeDef.POpen);
-						if(parent != null) {
-							let prev = _gthis.getPreviousToken(parent);
-							if(prev != null && prev.token.is(tokentree_TokenTreeDef.POpen)) {
-								_gthis.whitespace(token,"around");
-							}
-						}
-						_gthis.fixConstAfterConst(token);
+						_gthis.markIs(token);
 						break;
 					case "from":case "to":
-						let parent1 = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.parent(token)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdAbstract));
-						if(parent1 != null) {
+						let parent = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.parent(token)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdAbstract));
+						if(parent != null) {
 							_gthis.whitespace(token,"around");
 							_gthis.wrapBefore(token,true);
 						}
@@ -10901,7 +11097,7 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 			case 6:
 				switch(_g.op._hx_index) {
 				case 7:
-					if(token.is(tokentree_TokenTreeDef.BrClose)) {
+					if(token.tok._hx_index == 18) {
 						policy = formatter_config_WhitespacePolicy.remove(policy,"after");
 					}
 					break;
@@ -10936,7 +11132,7 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 					policy = formatter_config_WhitespacePolicy.remove(policy,"after");
 					break;
 				case 15:case 16:case 17:case 19:case 20:
-					if(token.is(tokentree_TokenTreeDef.PClose)) {
+					if(token.tok._hx_index == 20) {
 						switch(tokentree_utils_TokenTreeCheckUtils.getPOpenType(token.parent)._hx_index) {
 						case 1:
 							policy = formatter_config_WhitespacePolicy.add(policy,"after");
@@ -10966,7 +11162,7 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 				case 6:
 					switch(_g.op._hx_index) {
 					case 9:
-						if(token.is(tokentree_TokenTreeDef.BrOpen)) {
+						if(token.tok._hx_index == 17) {
 							return;
 						}
 						break;
@@ -11115,6 +11311,17 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 				this.whitespace(token,"after");
 			}
 		}
+	}
+	markIs(token) {
+		let prev = this.getPreviousToken(token);
+		if(prev != null) {
+			switch(prev.token.tok._hx_index) {
+			case 11:case 19:
+				return;
+			default:
+			}
+		}
+		this.whitespace(token,"around");
 	}
 	markIn(token) {
 		if(!tokentree_utils_TokenTreeCheckUtils.hasAtParent(token)) {
@@ -11665,7 +11872,7 @@ class formatter_marker_wrapping_MarkWrappingBase extends formatter_marker_Marker
 		this.wrappingQueue = [];
 	}
 	noWrap(open,close) {
-		let colon = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.is(open,tokentree_TokenTreeDef.BrOpen)),tokentree_TokenTreeDef.DblDot);
+		let colon = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.matches(open,tokentree_TokenTreeDef.BrOpen)),tokentree_TokenTreeDef.DblDot);
 		if(colon != null) {
 			let type = tokentree_utils_TokenTreeCheckUtils.getColonType(colon);
 			switch(type._hx_index) {
@@ -12313,10 +12520,10 @@ class formatter_marker_wrapping_MarkWrappingBase extends formatter_marker_Marker
 		if(body == null) {
 			return true;
 		}
-		if(body.is(tokentree_TokenTreeDef.DblDot)) {
+		if(body.tok._hx_index == 12) {
 			body = body.nextSibling;
 		}
-		while(body != null && body.is(tokentree_TokenTreeDef.At)) body = body.nextSibling;
+		while(body != null && body.tok._hx_index == 22) body = body.nextSibling;
 		if(body == null) {
 			return true;
 		}
@@ -12328,7 +12535,12 @@ class formatter_marker_wrapping_MarkWrappingBase extends formatter_marker_Marker
 			if(brClose == null) {
 				return false;
 			}
-			return brClose.is(tokentree_TokenTreeDef.BrClose);
+			if(brClose.tok._hx_index == 18) {
+				return true;
+			} else {
+				return false;
+			}
+			break;
 		default:
 			return false;
 		}
@@ -12410,7 +12622,7 @@ class formatter_marker_wrapping_MarkWrappingBase extends formatter_marker_Marker
 		switch(_g._hx_index) {
 		case 6:
 			if(_g.op._hx_index == 7) {
-				if(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(next.token),tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpLt)) != null) {
+				if(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(next.token),tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpLt)) != null) {
 					return endToken;
 				}
 				return this.findItemEnd(next.token);
@@ -13270,7 +13482,7 @@ class formatter_marker_wrapping_MarkWrapping extends formatter_marker_wrapping_M
 			}
 			return tokentree_FilterResult.GoDeeper;
 		});
-		let firstMethodCall = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.isCIdent(tokentree_TokenTreeAccessHelper.parent(chainStart))),tokentree_TokenTreeDef.Dot);
+		let firstMethodCall = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.isCIdent(tokentree_TokenTreeAccessHelper.parent(chainStart))),tokentree_TokenTreeDef.Dot);
 		if(firstMethodCall != null) {
 			chainedCalls.unshift(firstMethodCall);
 			chainStart = firstMethodCall;
@@ -17525,7 +17737,7 @@ class tokentree_TokenStream {
 		}
 	}
 	consumeTokenDef(tokenDef) {
-		if(this.is(tokenDef)) {
+		if(this.matches(tokenDef)) {
 			return this.consumeToken();
 		}
 		switch(tokentree_TokenStream.MODE._hx_index) {
@@ -17555,7 +17767,7 @@ class tokentree_TokenStream {
 		let pos = this.tokens[this.current].pos;
 		return new hxparse_Position(pos.file,pos.min,pos.max).format(this.bytes);
 	}
-	is(tokenDef) {
+	matches(tokenDef) {
 		if(this.current < 0 || this.current >= this.tokens.length) {
 			return false;
 		}
@@ -17634,6 +17846,12 @@ class tokentree_TokenStream {
 		}
 		return tokentree_ToTokenTreeDef.toTokenTreeDef(tokentree_ToTokenTreeDef.fromTokenDef(this.tokens[this.current].tok));
 	}
+	tokenForMatch() {
+		if(this.current < 0 || this.current >= this.tokens.length) {
+			return tokentree_TokenTreeDef.Root;
+		}
+		return tokentree_ToTokenTreeDef.toTokenTreeDef(tokentree_ToTokenTreeDef.fromTokenDef(this.tokens[this.current].tok));
+	}
 	peekNonCommentToken() {
 		if(this.current < 0 || this.current >= this.tokens.length) {
 			switch(tokentree_TokenStream.MODE._hx_index) {
@@ -17681,7 +17899,7 @@ class tokentree_TokenStream {
 		if(_g._hx_index == 6) {
 			switch(_g.op._hx_index) {
 			case 4:
-				let assignTok = this.consumeTokenDef(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign));
+				let assignTok = this.consumeToken();
 				return new tokentree_TokenTree(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpGte),tok.space + assignTok.space,{ file : tok.pos.file, min : tok.pos.min, max : assignTok.pos.max},tok.index);
 			case 7:
 				return this.consumeOpShr(tok);
@@ -17698,13 +17916,16 @@ class tokentree_TokenStream {
 		if(_g._hx_index == 6) {
 			switch(_g.op._hx_index) {
 			case 4:
-				let assignTok = this.consumeTokenDef(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign));
+				let assignTok = this.consumeToken();
 				return new tokentree_TokenTree(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssignOp(haxe_macro_Binop.OpShr)),assignTok.space,{ file : parent.pos.file, min : parent.pos.min, max : assignTok.pos.max},parent.index);
 			case 7:
-				let innerGt = this.consumeTokenDef(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpGt));
-				if(this.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign))) {
-					let assignTok = this.consumeTokenDef(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign));
-					return new tokentree_TokenTree(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssignOp(haxe_macro_Binop.OpUShr)),assignTok.space,{ file : parent.pos.file, min : parent.pos.min, max : assignTok.pos.max},parent.index);
+				let innerGt = this.consumeToken();
+				let _g1 = this.token();
+				if(_g1._hx_index == 6) {
+					if(_g1.op._hx_index == 4) {
+						let assignTok = this.consumeToken();
+						return new tokentree_TokenTree(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssignOp(haxe_macro_Binop.OpUShr)),assignTok.space,{ file : parent.pos.file, min : parent.pos.min, max : assignTok.pos.max},parent.index);
+					}
 				}
 				return new tokentree_TokenTree(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpUShr),innerGt.space,{ file : parent.pos.file, min : parent.pos.min, max : innerGt.pos.max},parent.index);
 			default:
@@ -17878,9 +18099,6 @@ class tokentree_TokenTree {
 		this.space = space;
 		this.tokenTypeCache = { };
 	}
-	is(tokenDef) {
-		return Type.enumEq(tokenDef,this.tok);
-	}
 	isCIdent() {
 		let _g = this.tok;
 		if(_g._hx_index == 2) {
@@ -17967,24 +18185,6 @@ class tokentree_TokenTree {
 		}
 		return fullPos;
 	}
-	filter(searchFor,mode,maxLevel) {
-		if(maxLevel == null) {
-			maxLevel = 9999;
-		}
-		return this.filterCallback(function(token,depth) {
-			if(depth > maxLevel) {
-				return tokentree_FilterResult.SkipSubtree;
-			}
-			if(token.matchesAny(searchFor)) {
-				if(mode == tokentree_TokenFilterMode.All) {
-					return tokentree_FilterResult.FoundGoDeeper;
-				}
-				return tokentree_FilterResult.FoundSkipSubtree;
-			} else {
-				return tokentree_FilterResult.GoDeeper;
-			}
-		});
-	}
 	filterCallback(callback) {
 		let results = [];
 		this.internalFilterCallback(callback,results,0);
@@ -18025,20 +18225,6 @@ class tokentree_TokenTree {
 			}
 		}
 	}
-	matchesAny(searchFor) {
-		if(searchFor == null || this.tok == tokentree_TokenTreeDef.Root) {
-			return false;
-		}
-		let _g = 0;
-		while(_g < searchFor.length) {
-			let search = searchFor[_g];
-			++_g;
-			if(Type.enumEq(this.tok,search)) {
-				return true;
-			}
-		}
-		return false;
-	}
 	toString() {
 		return tokentree_TokenTreeDefPrinter.toString(this.tok);
 	}
@@ -18058,10 +18244,6 @@ Object.assign(tokentree_TokenTree.prototype, {
 	,space: null
 	,tokenTypeCache: null
 });
-var tokentree_TokenFilterMode = $hxEnums["tokentree.TokenFilterMode"] = { __ename__ : true, __constructs__ : ["All","First"]
-	,All: {_hx_index:0,__enum__:"tokentree.TokenFilterMode",toString:$estr}
-	,First: {_hx_index:1,__enum__:"tokentree.TokenFilterMode",toString:$estr}
-};
 var tokentree_FilterResult = $hxEnums["tokentree.FilterResult"] = { __ename__ : true, __constructs__ : ["FoundSkipSubtree","FoundGoDeeper","SkipSubtree","GoDeeper"]
 	,FoundSkipSubtree: {_hx_index:0,__enum__:"tokentree.FilterResult",toString:$estr}
 	,FoundGoDeeper: {_hx_index:1,__enum__:"tokentree.FilterResult",toString:$estr}
@@ -18097,7 +18279,7 @@ class tokentree_TokenTreeAccessHelper {
 			return null;
 		}
 	}
-	static firstOf(this1,tokenDef) {
+	static firstOf(this1,token) {
 		if(this1 == null || this1.children == null) {
 			return null;
 		}
@@ -18106,13 +18288,13 @@ class tokentree_TokenTreeAccessHelper {
 		while(_g < _g1.length) {
 			let tok = _g1[_g];
 			++_g;
-			if(tok.is(tokenDef)) {
+			if(Type.enumEq(tok.tok,token)) {
 				return tok;
 			}
 		}
 		return null;
 	}
-	static lastOf(this1,tokenDef) {
+	static lastOf(this1,token) {
 		if(this1 == null || this1.children == null) {
 			return null;
 		}
@@ -18122,7 +18304,7 @@ class tokentree_TokenTreeAccessHelper {
 		while(_g < _g1.length) {
 			let tok = _g1[_g];
 			++_g;
-			if(tok.is(tokenDef)) {
+			if(Type.enumEq(tok.tok,token)) {
 				found = tok;
 			}
 		}
@@ -18135,8 +18317,8 @@ class tokentree_TokenTreeAccessHelper {
 			return null;
 		}
 	}
-	static is(this1,tokenDef) {
-		if(this1 != null && this1.is(tokenDef)) {
+	static matches(this1,tok) {
+		if(this1 != null && Type.enumEq(this1.tok,tok)) {
 			return this1;
 		} else {
 			return null;
@@ -18411,7 +18593,8 @@ class tokentree_utils_FieldUtils {
 		let visibility = defaultVisibility;
 		let isStatic = false;
 		let isInline = false;
-		let isFinal = field.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdFinal));
+		let _g = field.tok;
+		let isFinal = _g._hx_index == 1 && _g.k._hx_index == 41;
 		let isExtern = false;
 		if(access.children != null) {
 			let _g = 0;
@@ -18560,7 +18743,7 @@ class tokentree_utils_TokenTreeCheckUtils {
 		if(_g._hx_index == 6) {
 			switch(_g.op._hx_index) {
 			case 7:
-				return tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(token),tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpLt)) != null;
+				return tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(token),tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpLt)) != null;
 			case 9:
 				return tokentree_TokenTreeAccessHelper.firstOf(token,tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpGt)) != null;
 			default:
@@ -18574,7 +18757,7 @@ class tokentree_utils_TokenTreeCheckUtils {
 		let _g = token.tok;
 		if(_g._hx_index == 6) {
 			if(_g.op._hx_index == 7) {
-				return tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.isCIdent(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(token),tokentree_TokenTreeDef.BrOpen)),tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign))))),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTypedef)) != null;
+				return tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.isCIdent(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(token),tokentree_TokenTreeDef.BrOpen)),tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign))))),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTypedef)) != null;
 			} else {
 				return false;
 			}
@@ -18674,10 +18857,10 @@ class tokentree_utils_TokenTreeCheckUtils {
 		if(token == null) {
 			return false;
 		}
-		if(token.is(tokentree_TokenTreeDef.DblDot)) {
+		if(token.tok._hx_index == 12) {
 			return tokentree_utils_TokenTreeCheckUtils.isTernary(token.parent);
 		}
-		if(!token.is(tokentree_TokenTreeDef.Question)) {
+		if(token.tok._hx_index != 21) {
 			return false;
 		}
 		if(tokentree_TokenTreeAccessHelper.firstOf(token,tokentree_TokenTreeDef.DblDot) == null) {
@@ -18756,10 +18939,10 @@ class tokentree_utils_TokenTreeCheckUtils {
 				while(_g < _g1.length) {
 					let child = _g1[_g];
 					++_g;
-					if(!child.is(tokentree_TokenTreeDef.At)) {
+					if(child.tok._hx_index != 22) {
 						continue;
 					}
-					let enumTok = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.firstChild(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.firstChild(child),tokentree_TokenTreeDef.DblDot)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdEnum));
+					let enumTok = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.firstChild(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.firstChild(child),tokentree_TokenTreeDef.DblDot)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdEnum));
 					if(enumTok == null) {
 						continue;
 					}
@@ -18803,7 +18986,7 @@ class tokentree_utils_TokenTreeCheckUtils {
 		if(tokentree_utils_TokenTreeCheckUtils.isNameToken(nameToken)) {
 			return nameToken;
 		}
-		nameToken = tokentree_TokenTreeAccessHelper.firstChild(tokentree_TokenTreeAccessHelper.is(nameToken,tokentree_TokenTreeDef.Question));
+		nameToken = tokentree_TokenTreeAccessHelper.firstChild(tokentree_TokenTreeAccessHelper.matches(nameToken,tokentree_TokenTreeDef.Question));
 		if(tokentree_utils_TokenTreeCheckUtils.isNameToken(nameToken)) {
 			return nameToken;
 		}
@@ -19023,7 +19206,7 @@ class tokentree_utils_TokenTreeCheckUtils {
 					return tokentree_utils_BrOpenType.ObjectDecl;
 				}
 			}
-			if(token.children.length == 2 && token.getLastChild().is(tokentree_TokenTreeDef.Semicolon)) {
+			if(token.children.length == 2 && token.getLastChild().tok._hx_index == 10) {
 				let _g = token.parent.tok;
 				if(_g._hx_index == 1) {
 					let _g1 = _g.k;
@@ -19036,7 +19219,7 @@ class tokentree_utils_TokenTreeCheckUtils {
 		if(tokentree_TokenTreeAccessHelper.firstOf(token,tokentree_TokenTreeDef.Arrow) != null) {
 			return tokentree_utils_BrOpenType.AnonType;
 		}
-		if(token.nextSibling != null && token.nextSibling.is(tokentree_TokenTreeDef.Arrow)) {
+		if(token.nextSibling != null && token.nextSibling.tok._hx_index == 13) {
 			return tokentree_utils_BrOpenType.AnonType;
 		}
 		let onlyComment = true;
@@ -19053,14 +19236,14 @@ class tokentree_utils_TokenTreeCheckUtils {
 				case 2:
 					let _g4 = _g3.kind;
 					let _g5 = _g3.s;
-					if(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.firstChild(child),tokentree_TokenTreeDef.DblDot) == null) {
+					if(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.firstChild(child),tokentree_TokenTreeDef.DblDot) == null) {
 						return tokentree_utils_BrOpenType.Block;
 					}
 					onlyComment = false;
 					break;
 				case 3:
 					let _g6 = _g3.s;
-					if(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.firstChild(child),tokentree_TokenTreeDef.DblDot) == null) {
+					if(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.firstChild(child),tokentree_TokenTreeDef.DblDot) == null) {
 						return tokentree_utils_BrOpenType.Block;
 					}
 					onlyComment = false;
@@ -19212,7 +19395,7 @@ class tokentree_utils_TokenTreeCheckUtils {
 					}
 					break;
 				case 17:
-					if(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.parent(parent.parent)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdEnum)) != null) {
+					if(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.parent(tokentree_TokenTreeAccessHelper.parent(parent.parent)),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdEnum)) != null) {
 						return tokentree_utils_POpenType.Parameter;
 					}
 					return tokentree_utils_POpenType.Call;
@@ -19265,7 +19448,8 @@ class tokentree_utils_TokenTreeCheckUtils {
 		}
 		let parent = token;
 		while(parent.parent != null) {
-			if(parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdTypedef))) {
+			let _g = parent.tok;
+			if(_g._hx_index == 1 && _g.k._hx_index == 31) {
 				return true;
 			}
 			parent = parent.parent;
@@ -19325,7 +19509,7 @@ class tokentree_utils_TokenTreeCheckUtils {
 				break;
 			case 17:
 				let brClose = child.getFirstChild();
-				if(brClose.is(tokentree_TokenTreeDef.BrClose)) {
+				if(brClose.tok._hx_index == 18) {
 					return tokentree_utils_ArrowType.ArrowFunction;
 				}
 				let brType = tokentree_utils_TokenTreeCheckUtils.getBrOpenType(child);
@@ -19429,11 +19613,23 @@ class tokentree_utils_TokenTreeCheckUtils {
 		if(token.parent.isCIdent()) {
 			return tokentree_utils_ArrowType.ArrowFunction;
 		}
-		let childArrows = token.filter([tokentree_TokenTreeDef.Arrow],tokentree_TokenFilterMode.All);
+		let childArrows = token.filterCallback(function(token,index) {
+			if(token.tok._hx_index == 13) {
+				return tokentree_FilterResult.FoundSkipSubtree;
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		if(childArrows.length <= 0) {
 			return tokentree_utils_ArrowType.ArrowFunction;
 		}
-		let childArrows1 = token.filter([tokentree_TokenTreeDef.DblDot],tokentree_TokenFilterMode.All);
+		let childArrows1 = token.filterCallback(function(token,index) {
+			if(token.tok._hx_index == 12) {
+				return tokentree_FilterResult.FoundSkipSubtree;
+			} else {
+				return tokentree_FilterResult.GoDeeper;
+			}
+		});
 		if(childArrows1.length > 0) {
 			return tokentree_utils_ArrowType.NewFunctionType;
 		}
@@ -19733,10 +19929,20 @@ var tokentree_utils_ColonType = $hxEnums["tokentree.utils.ColonType"] = { __enam
 class tokentree_walk_WalkAbstract {
 	static walkAbstract(stream,parent) {
 		let typeTok = stream.consumeToken();
+		let _g = stream.token();
+		if(_g._hx_index == 1) {
+			switch(_g.k._hx_index) {
+			case 1:case 27:
+				stream.addToTempStore(typeTok);
+				tokentree_walk_WalkType.walkType(stream,parent);
+				return;
+			default:
+			}
+		}
 		parent.addChild(typeTok);
 		let name = tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,typeTok);
 		stream.applyTempStore(name);
-		if(stream.is(tokentree_TokenTreeDef.POpen)) {
+		if(stream.tokenForMatch()._hx_index == 19) {
 			tokentree_walk_WalkPOpen.walkPOpen(stream,name);
 		}
 		let typeParent = name;
@@ -19924,8 +20130,8 @@ class tokentree_walk_WalkAt {
 	static walkAt(stream) {
 		let atTok = stream.consumeTokenDef(tokentree_TokenTreeDef.At);
 		let parent = atTok;
-		if(stream.is(tokentree_TokenTreeDef.DblDot)) {
-			let dblDot = stream.consumeTokenDef(tokentree_TokenTreeDef.DblDot);
+		if(stream.tokenForMatch()._hx_index == 12) {
+			let dblDot = stream.consumeToken();
 			atTok.addChild(dblDot);
 			parent = dblDot;
 		}
@@ -20009,8 +20215,8 @@ $hxClasses["tokentree.walk.WalkBinopSub"] = tokentree_walk_WalkBinopSub;
 tokentree_walk_WalkBinopSub.__name__ = "tokentree.walk.WalkBinopSub";
 class tokentree_walk_WalkBlock {
 	static walkBlock(stream,parent) {
-		while(stream.is(tokentree_TokenTreeDef.At)) stream.addToTempStore(tokentree_walk_WalkAt.walkAt(stream));
-		if(stream.is(tokentree_TokenTreeDef.BrOpen)) {
+		while(stream.tokenForMatch()._hx_index == 22) stream.addToTempStore(tokentree_walk_WalkAt.walkAt(stream));
+		if(stream.tokenForMatch()._hx_index == 17) {
 			let openTok = stream.consumeTokenDef(tokentree_TokenTreeDef.BrOpen);
 			parent.addChild(openTok);
 			stream.applyTempStore(openTok);
@@ -20128,7 +20334,7 @@ class tokentree_walk_WalkClass {
 				case 2:
 					tokentree_walk_WalkVar.walkVar(stream,parent);
 					break;
-				case 17:case 18:case 19:case 25:case 30:case 32:case 34:case 40:
+				case 17:case 18:case 19:case 25:case 30:case 32:case 34:case 39:case 40:
 					stream.consumeToTempStore();
 					break;
 				case 41:
@@ -20211,11 +20417,11 @@ class tokentree_walk_WalkClass {
 		}
 	}
 	static walkClassContinueAfterSharp(stream,parent) {
-		let brOpen = tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.lastChild(tokentree_TokenTreeAccessHelper.firstChild(tokentree_TokenTreeAccessHelper.lastOf(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.lastChild(parent),tokentree_TokenTreeDef.Sharp("if")),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdFunction)))),tokentree_TokenTreeDef.BrOpen);
+		let brOpen = tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.lastChild(tokentree_TokenTreeAccessHelper.firstChild(tokentree_TokenTreeAccessHelper.lastOf(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.lastChild(parent),tokentree_TokenTreeDef.Sharp("if")),tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdFunction)))),tokentree_TokenTreeDef.BrOpen);
 		if(brOpen == null) {
 			return;
 		}
-		if(tokentree_TokenTreeAccessHelper.is(tokentree_TokenTreeAccessHelper.lastChild(brOpen),tokentree_TokenTreeDef.BrClose) != null) {
+		if(tokentree_TokenTreeAccessHelper.matches(tokentree_TokenTreeAccessHelper.lastChild(brOpen),tokentree_TokenTreeDef.BrClose) != null) {
 			return;
 		}
 		tokentree_walk_WalkBlock.walkBlockContinue(stream,parent);
@@ -20260,7 +20466,7 @@ class tokentree_walk_WalkComment {
 				comments.push(stream.consumeToken());
 				break;
 			default:
-				if(stream.is(expect)) {
+				if(stream.matches(expect)) {
 					let _g = 0;
 					while(_g < comments.length) {
 						let comment = comments[_g];
@@ -20288,7 +20494,7 @@ class tokentree_walk_WalkDoWhile {
 		doTok.addChild(whileTok);
 		tokentree_walk_WalkStatement.walkStatement(stream,whileTok);
 		tokentree_walk_WalkComment.walkComment(stream,whileTok);
-		if(stream.is(tokentree_TokenTreeDef.Semicolon)) {
+		if(stream.tokenForMatch()._hx_index == 10) {
 			whileTok.addChild(stream.consumeToken());
 		}
 	}
@@ -20298,7 +20504,8 @@ tokentree_walk_WalkDoWhile.__name__ = "tokentree.walk.WalkDoWhile";
 class tokentree_walk_WalkEnum {
 	static walkEnum(stream,parent) {
 		let typeTok = stream.consumeToken();
-		if(stream.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdAbstract))) {
+		let _g = stream.tokenForMatch();
+		if(_g._hx_index == 1 && _g.k._hx_index == 39) {
 			stream.addToTempStore(typeTok);
 			tokentree_walk_WalkAbstract.walkAbstract(stream,parent);
 			return;
@@ -20313,7 +20520,8 @@ $hxClasses["tokentree.walk.WalkEnum"] = tokentree_walk_WalkEnum;
 tokentree_walk_WalkEnum.__name__ = "tokentree.walk.WalkEnum";
 class tokentree_walk_WalkExtends {
 	static walkExtends(stream,parent) {
-		if(!stream.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdExtends))) {
+		let _g = stream.tokenForMatch();
+		if(!(_g._hx_index == 1 && _g.k._hx_index == 11)) {
 			return;
 		}
 		let parentType = stream.consumeTokenDef(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdExtends));
@@ -20380,12 +20588,13 @@ class tokentree_walk_WalkFieldDef {
 		}
 		let name = tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,parent);
 		stream.applyTempStore(name);
-		if(stream.is(tokentree_TokenTreeDef.DblDot)) {
+		if(stream.tokenForMatch()._hx_index == 12) {
 			let dblDot = stream.consumeTokenDef(tokentree_TokenTreeDef.DblDot);
 			name.addChild(dblDot);
 			tokentree_walk_WalkTypedefBody.walkTypedefBody(stream,dblDot);
 		}
-		if(stream.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign))) {
+		let _g = stream.tokenForMatch();
+		if(_g._hx_index == 6 && _g.op._hx_index == 4) {
 			tokentree_walk_WalkStatement.walkStatement(stream,name);
 		}
 		switch(stream.token()._hx_index) {
@@ -20561,7 +20770,7 @@ class tokentree_walk_WalkFinal {
 			}
 			tokentree_walk_WalkComment.walkComment(stream,parent);
 			let nameParent = finalTok;
-			if(stream.is(tokentree_TokenTreeDef.Question)) {
+			if(stream.tokenForMatch()._hx_index == 21) {
 				nameParent = stream.consumeToken();
 				finalTok.addChild(nameParent);
 			}
@@ -20595,26 +20804,27 @@ class tokentree_walk_WalkFinal {
 			}
 			stream.clearTempStore();
 			tokentree_walk_WalkComment.walkComment(stream,name);
-			if(stream.is(tokentree_TokenTreeDef.POpen)) {
+			if(stream.tokenForMatch()._hx_index == 19) {
 				tokentree_walk_WalkPOpen.walkPOpen(stream,name);
 			}
-			if(stream.is(tokentree_TokenTreeDef.DblDot)) {
-				let dblDot = stream.consumeTokenDef(tokentree_TokenTreeDef.DblDot);
+			if(stream.tokenForMatch()._hx_index == 12) {
+				let dblDot = stream.consumeToken();
 				name.addChild(dblDot);
 				tokentree_walk_WalkTypedefBody.walkTypedefAlias(stream,dblDot);
 			}
-			if(stream.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign))) {
+			let _g1 = stream.tokenForMatch();
+			if(_g1._hx_index == 6 && _g1.op._hx_index == 4) {
 				tokentree_walk_WalkStatement.walkStatement(stream,name);
 			}
-			if(stream.is(tokentree_TokenTreeDef.Comma)) {
-				let comma = stream.consumeTokenDef(tokentree_TokenTreeDef.Comma);
+			if(stream.tokenForMatch()._hx_index == 14) {
+				let comma = stream.consumeToken();
 				name.addChild(comma);
 				continue;
 			}
 			break;
 		}
-		if(stream.is(tokentree_TokenTreeDef.Semicolon)) {
-			name.addChild(stream.consumeTokenDef(tokentree_TokenTreeDef.Semicolon));
+		if(stream.tokenForMatch()._hx_index == 10) {
+			name.addChild(stream.consumeToken());
 		}
 	}
 }
@@ -20645,7 +20855,8 @@ class tokentree_walk_WalkFor {
 			pOpen.addChild(identifier);
 		}
 		tokentree_walk_WalkComment.walkComment(stream,identifier);
-		if(stream.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpArrow))) {
+		let _g1 = stream.tokenForMatch();
+		if(_g1._hx_index == 6 && _g1.op._hx_index == 22) {
 			let arrowTok = stream.consumeToken();
 			identifier.addChild(arrowTok);
 			let _g = stream.token();
@@ -20657,10 +20868,10 @@ class tokentree_walk_WalkFor {
 			}
 		}
 		let inTok = null;
-		let _g1 = stream.token();
-		switch(_g1._hx_index) {
+		let _g2 = stream.token();
+		switch(_g2._hx_index) {
 		case 6:
-			if(_g1.op._hx_index == 23) {
+			if(_g2.op._hx_index == 23) {
 				inTok = stream.consumeToken();
 				identifier.addChild(inTok);
 				tokentree_walk_WalkComment.walkComment(stream,inTok);
@@ -20671,7 +20882,7 @@ class tokentree_walk_WalkFor {
 			}
 			break;
 		case 20:
-			pOpen.addChild(stream.consumeTokenDef(tokentree_TokenTreeDef.PClose));
+			pOpen.addChild(stream.consumeToken());
 			tokentree_walk_WalkComment.walkComment(stream,parent);
 			return;
 		default:
@@ -20712,8 +20923,8 @@ class tokentree_walk_WalkFunction {
 		tokentree_walk_WalkComment.walkComment(stream,name);
 		tokentree_walk_WalkFunction.walkFunctionParameters(stream,name);
 		tokentree_walk_WalkComment.walkComment(stream,name);
-		if(stream.is(tokentree_TokenTreeDef.DblDot)) {
-			let dblDot = stream.consumeTokenDef(tokentree_TokenTreeDef.DblDot);
+		if(stream.tokenForMatch()._hx_index == 12) {
+			let dblDot = stream.consumeToken();
 			name.addChild(dblDot);
 			tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,dblDot);
 		}
@@ -20725,7 +20936,7 @@ class tokentree_walk_WalkFunction {
 		let progress = new tokentree_TokenStreamProgress(stream);
 		while(progress.streamHasChanged()) {
 			tokentree_walk_WalkComment.walkComment(stream,pOpen);
-			if(stream.is(tokentree_TokenTreeDef.PClose)) {
+			if(stream.tokenForMatch()._hx_index == 20) {
 				break;
 			}
 			tokentree_walk_WalkFieldDef.walkFieldDef(stream,pOpen);
@@ -20741,12 +20952,13 @@ class tokentree_walk_WalkIf {
 		parent.addChild(ifTok);
 		stream.applyTempStore(ifTok);
 		tokentree_walk_WalkStatement.walkStatement(stream,ifTok);
-		if(stream.is(tokentree_TokenTreeDef.DblDot)) {
+		if(stream.tokenForMatch()._hx_index == 12) {
 			return;
 		}
 		tokentree_walk_WalkBlock.walkBlock(stream,ifTok);
 		tokentree_walk_WalkComment.tryWalkComment(stream,ifTok,tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdElse));
-		if(stream.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdElse))) {
+		let _g = stream.tokenForMatch();
+		if(_g._hx_index == 1 && _g.k._hx_index == 4) {
 			let elseTok = stream.consumeTokenDef(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdElse));
 			ifTok.addChild(elseTok);
 			tokentree_walk_WalkBlock.walkBlock(stream,elseTok);
@@ -20757,7 +20969,8 @@ $hxClasses["tokentree.walk.WalkIf"] = tokentree_walk_WalkIf;
 tokentree_walk_WalkIf.__name__ = "tokentree.walk.WalkIf";
 class tokentree_walk_WalkImplements {
 	static walkImplements(stream,parent) {
-		if(!stream.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdImplements))) {
+		let _g = stream.tokenForMatch();
+		if(!(_g._hx_index == 1 && _g.k._hx_index == 12)) {
 			return;
 		}
 		let interfacePart = stream.consumeTokenDef(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdImplements));
@@ -20863,12 +21076,12 @@ class tokentree_walk_WalkLtGt {
 				}
 				break;
 			case 12:
-				let dblDot = stream.consumeTokenDef(tokentree_TokenTreeDef.DblDot);
+				let dblDot = stream.consumeToken();
 				ltTok.addChild(dblDot);
 				tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,ltTok);
 				break;
 			case 14:
-				let comma = stream.consumeTokenDef(tokentree_TokenTreeDef.Comma);
+				let comma = stream.consumeToken();
 				ltTok.addChild(comma);
 				tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,ltTok);
 				tokentree_walk_WalkFieldDef.walkFieldDef(stream,ltTok);
@@ -20900,7 +21113,7 @@ class tokentree_walk_WalkNew {
 		default:
 		}
 		tokentree_walk_WalkComment.walkComment(stream,name);
-		if(stream.is(tokentree_TokenTreeDef.Dot)) {
+		if(stream.tokenForMatch()._hx_index == 11) {
 			tokentree_walk_WalkStatement.walkStatement(stream,name);
 		}
 	}
@@ -21243,7 +21456,7 @@ Object.assign(tokentree_walk_SharpEndException.prototype, {
 class tokentree_walk_WalkStatement {
 	static walkStatement(stream,parent) {
 		tokentree_walk_WalkStatement.walkStatementWithoutSemicolon(stream,parent);
-		if(stream.is(tokentree_TokenTreeDef.Semicolon)) {
+		if(stream.tokenForMatch()._hx_index == 10) {
 			let semicolon = stream.consumeToken();
 			let lastChild = parent.getLastChild();
 			if(lastChild == null) {
@@ -21275,13 +21488,18 @@ class tokentree_walk_WalkStatement {
 		case 2:
 			let _g2 = _g.c;
 			if(_g2._hx_index == 3) {
-				if(_g2.s == "final") {
+				switch(_g2.s) {
+				case "final":
 					if(tokentree_walk_WalkStatement.walkKeyword(stream,parent)) {
 						wantMore = true;
 					} else {
 						return;
 					}
-				} else {
+					break;
+				case "is":
+					wantMore = true;
+					break;
+				default:
 					wantMore = false;
 				}
 			} else {
@@ -21297,7 +21515,7 @@ class tokentree_walk_WalkStatement {
 			let name = _g.s;
 			let dollarTok = stream.consumeToken();
 			parent.addChild(dollarTok);
-			if(stream.is(tokentree_TokenTreeDef.DblDot)) {
+			if(stream.tokenForMatch()._hx_index == 12) {
 				return;
 			}
 			tokentree_walk_WalkBlock.walkBlock(stream,dollarTok);
@@ -21329,7 +21547,7 @@ class tokentree_walk_WalkStatement {
 			case 9:
 				if(stream.isTypedParam()) {
 					tokentree_walk_WalkLtGt.walkLtGt(stream,parent);
-					if(stream.is(tokentree_TokenTreeDef.Arrow)) {
+					if(stream.tokenForMatch()._hx_index == 13) {
 						tokentree_walk_WalkStatement.walkStatementWithoutSemicolon(stream,parent);
 					}
 					return;
@@ -21364,7 +21582,7 @@ class tokentree_walk_WalkStatement {
 			wantMore = true;
 			break;
 		case 12:
-			if(parent.is(tokentree_TokenTreeDef.Dot)) {
+			if(parent.tok._hx_index == 11) {
 				return;
 			}
 			if(tokentree_walk_WalkQuestion.isTernary(parent)) {
@@ -21415,7 +21633,8 @@ class tokentree_walk_WalkStatement {
 			let _g1 = _g.s;
 			let currentPos = stream.getStreamIndex();
 			let commentTok = stream.consumeToken();
-			if(!stream.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdElse))) {
+			let _g2 = stream.tokenForMatch();
+			if(!(_g2._hx_index == 1 && _g2.k._hx_index == 4)) {
 				stream.rewindTo(currentPos);
 				return;
 			}
@@ -21428,8 +21647,16 @@ class tokentree_walk_WalkStatement {
 		}
 		let _g = stream.token();
 		switch(_g._hx_index) {
+		case 2:
+			let _g1 = _g.c;
+			if(_g1._hx_index == 3) {
+				if(_g1.s == "is") {
+					tokentree_walk_WalkStatement.walkStatementWithoutSemicolon(stream,parent);
+				}
+			}
+			break;
 		case 5:
-			let _g1 = _g.op;
+			let _g2 = _g.op;
 			if(parent.isCIdentOrCString()) {
 				tokentree_walk_WalkStatement.walkStatementWithoutSemicolon(stream,parent);
 			}
@@ -21447,7 +21674,7 @@ class tokentree_walk_WalkStatement {
 			}
 			break;
 		case 7:
-			let _g2 = _g.s;
+			let _g3 = _g.s;
 			let nextTokDef = stream.peekNonCommentToken();
 			if(nextTokDef == null) {
 				return;
@@ -21455,12 +21682,12 @@ class tokentree_walk_WalkStatement {
 			if(nextTokDef != null) {
 				switch(nextTokDef._hx_index) {
 				case 5:
-					let _g3 = nextTokDef.op;
+					let _g4 = nextTokDef.op;
 					tokentree_walk_WalkComment.walkComment(stream,parent);
 					tokentree_walk_WalkStatement.walkStatementContinue(stream,parent);
 					break;
 				case 6:
-					let _g4 = nextTokDef.op;
+					let _g5 = nextTokDef.op;
 					tokentree_walk_WalkComment.walkComment(stream,parent);
 					tokentree_walk_WalkStatement.walkStatementContinue(stream,parent);
 					break;
@@ -21473,7 +21700,7 @@ class tokentree_walk_WalkStatement {
 			}
 			break;
 		case 8:
-			let _g5 = _g.s;
+			let _g6 = _g.s;
 			let nextTokDef1 = stream.peekNonCommentToken();
 			if(nextTokDef1 == null) {
 				return;
@@ -21481,12 +21708,12 @@ class tokentree_walk_WalkStatement {
 			if(nextTokDef1 != null) {
 				switch(nextTokDef1._hx_index) {
 				case 5:
-					let _g6 = nextTokDef1.op;
+					let _g7 = nextTokDef1.op;
 					tokentree_walk_WalkComment.walkComment(stream,parent);
 					tokentree_walk_WalkStatement.walkStatementContinue(stream,parent);
 					break;
 				case 6:
-					let _g7 = nextTokDef1.op;
+					let _g8 = nextTokDef1.op;
 					tokentree_walk_WalkComment.walkComment(stream,parent);
 					tokentree_walk_WalkStatement.walkStatementContinue(stream,parent);
 					break;
@@ -21539,7 +21766,14 @@ class tokentree_walk_WalkStatement {
 				tokentree_walk_WalkIf.walkIf(stream,parent);
 				break;
 			case 5:
-				if(!parent.is(tokentree_TokenTreeDef.BrOpen) && parent.parent.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdDo))) {
+				let tmp;
+				if(parent.tok._hx_index != 17) {
+					let _g = parent.parent.tok;
+					tmp = _g._hx_index == 1 && _g.k._hx_index == 6;
+				} else {
+					tmp = false;
+				}
+				if(tmp) {
 					return false;
 				}
 				tokentree_walk_WalkWhile.walkWhile(stream,parent);
@@ -21558,7 +21792,7 @@ class tokentree_walk_WalkStatement {
 			case 15:
 				return false;
 			case 16:
-				if(parent.is(tokentree_TokenTreeDef.BrOpen)) {
+				if(parent.tok._hx_index == 17) {
 					return false;
 				}
 				return true;
@@ -21566,7 +21800,7 @@ class tokentree_walk_WalkStatement {
 				tokentree_walk_WalkTry.walkTry(stream,parent);
 				break;
 			case 22:
-				if(parent.is(tokentree_TokenTreeDef.Dot)) {
+				if(parent.tok._hx_index == 11) {
 					let newChild = stream.consumeToken();
 					parent.addChild(newChild);
 					tokentree_walk_WalkStatement.walkStatementContinue(stream,newChild);
@@ -21629,11 +21863,12 @@ class tokentree_walk_WalkStatement {
 		}
 		let dblDotTok = stream.consumeToken();
 		parent.addChild(dblDotTok);
-		if(parent.isCIdentOrCString() && parent.parent.is(tokentree_TokenTreeDef.BrOpen)) {
+		if(parent.isCIdentOrCString() && parent.parent.tok._hx_index == 17) {
 			tokentree_walk_WalkStatement.walkStatementWithoutSemicolon(stream,dblDotTok);
 			return;
 		}
-		if(stream.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdNew))) {
+		let _g = stream.tokenForMatch();
+		if(_g._hx_index == 1 && _g.k._hx_index == 22) {
 			tokentree_walk_WalkNew.walkNew(stream,dblDotTok);
 			return;
 		}
@@ -21641,10 +21876,11 @@ class tokentree_walk_WalkStatement {
 			return;
 		}
 		tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,dblDotTok);
-		if(stream.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign))) {
+		let _g1 = stream.tokenForMatch();
+		if(_g1._hx_index == 6 && _g1.op._hx_index == 4) {
 			tokentree_walk_WalkStatement.walkStatementWithoutSemicolon(stream,parent);
 		}
-		if(stream.is(tokentree_TokenTreeDef.Arrow)) {
+		if(stream.tokenForMatch()._hx_index == 13) {
 			tokentree_walk_WalkStatement.walkStatementWithoutSemicolon(stream,parent);
 		}
 	}
@@ -21774,7 +22010,7 @@ class tokentree_walk_WalkStatement {
 				token = parent;
 				break _hx_loop1;
 			case 19:
-				if(token.is(tokentree_TokenTreeDef.POpen)) {
+				if(token.tok._hx_index == 19) {
 					token = parent;
 				}
 				break _hx_loop1;
@@ -21863,8 +22099,8 @@ class tokentree_walk_WalkSwitch {
 			let _g1 = _g.s;
 			tokentree_walk_WalkSharp.walkSharp(stream,parent,tokentree_walk_WalkSwitch.walkSwitchCases);
 		}
-		if(stream.is(tokentree_TokenTreeDef.BrOpen)) {
-			let brOpen = stream.consumeTokenDef(tokentree_TokenTreeDef.BrOpen);
+		if(stream.tokenForMatch()._hx_index == 17) {
+			let brOpen = stream.consumeToken();
 			switchTok.addChild(brOpen);
 			tokentree_walk_WalkSwitch.walkSwitchCases(stream,brOpen);
 			brOpen.addChild(stream.consumeTokenDef(tokentree_TokenTreeDef.BrClose));
@@ -21971,7 +22207,8 @@ class tokentree_walk_WalkSwitch {
 			return;
 		}
 		let body = sharp.children[1];
-		if(body.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdCase))) {
+		let _g = body.tok;
+		if(_g._hx_index == 1 && _g.k._hx_index == 15) {
 			return;
 		}
 		parent.children.pop();
@@ -22092,7 +22329,7 @@ class tokentree_walk_WalkTypeNameDef {
 	static walkTypeNameDef(stream,parent) {
 		tokentree_walk_WalkComment.walkComment(stream,parent);
 		tokentree_walk_WalkAt.walkAts(stream);
-		if(stream.is(tokentree_TokenTreeDef.Question)) {
+		if(stream.tokenForMatch()._hx_index == 21) {
 			let questTok = stream.consumeTokenDef(tokentree_TokenTreeDef.Question);
 			parent.addChild(questTok);
 			parent = questTok;
@@ -22141,7 +22378,7 @@ class tokentree_walk_WalkTypeNameDef {
 			return parent.getFirstChild();
 		case 19:
 			name = tokentree_walk_WalkPOpen.walkPOpen(stream,parent);
-			if(stream.is(tokentree_TokenTreeDef.Question)) {
+			if(stream.tokenForMatch()._hx_index == 21) {
 				tokentree_walk_WalkQuestion.walkQuestion(stream,name);
 			}
 			bAdd = false;
@@ -22158,22 +22395,23 @@ class tokentree_walk_WalkTypeNameDef {
 	}
 	static walkTypeNameDefContinue(stream,parent) {
 		tokentree_walk_WalkTypeNameDef.walkTypeNameDefComment(stream,parent);
-		if(stream.is(tokentree_TokenTreeDef.Dot)) {
-			let dot = stream.consumeTokenDef(tokentree_TokenTreeDef.Dot);
+		if(stream.tokenForMatch()._hx_index == 11) {
+			let dot = stream.consumeToken();
 			parent.addChild(dot);
 			tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,dot);
 			return;
 		}
-		if(stream.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpLt))) {
+		let _g = stream.tokenForMatch();
+		if(_g._hx_index == 6 && _g.op._hx_index == 9) {
 			tokentree_walk_WalkLtGt.walkLtGt(stream,parent);
 		}
-		if(stream.is(tokentree_TokenTreeDef.Arrow)) {
-			let arrow = stream.consumeTokenDef(tokentree_TokenTreeDef.Arrow);
+		if(stream.tokenForMatch()._hx_index == 13) {
+			let arrow = stream.consumeToken();
 			parent.addChild(arrow);
 			tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,arrow);
 			return;
 		}
-		if(stream.is(tokentree_TokenTreeDef.BkOpen)) {
+		if(stream.tokenForMatch()._hx_index == 15) {
 			tokentree_walk_WalkArrayAccess.walkArrayAccess(stream,parent);
 		}
 		tokentree_walk_WalkTypeNameDef.walkTypeNameDefComment(stream,parent);
@@ -22225,7 +22463,8 @@ class tokentree_walk_WalkTypedef {
 		parent.addChild(typeTok);
 		let name = tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,typeTok);
 		stream.applyTempStore(name);
-		if(stream.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign))) {
+		let _g = stream.tokenForMatch();
+		if(_g._hx_index == 6 && _g.op._hx_index == 4) {
 			let assign = stream.consumeTokenDef(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign));
 			name.addChild(assign);
 			name = assign;
@@ -22237,20 +22476,21 @@ $hxClasses["tokentree.walk.WalkTypedef"] = tokentree_walk_WalkTypedef;
 tokentree_walk_WalkTypedef.__name__ = "tokentree.walk.WalkTypedef";
 class tokentree_walk_WalkTypedefBody {
 	static walkTypedefBody(stream,parent) {
-		if(stream.is(tokentree_TokenTreeDef.BrOpen)) {
-			let openTok = stream.consumeTokenDef(tokentree_TokenTreeDef.BrOpen);
+		if(stream.tokenForMatch()._hx_index == 17) {
+			let openTok = stream.consumeToken();
 			parent.addChild(openTok);
 			tokentree_walk_WalkTypedefBody.walkTypedefCurlyBody(stream,openTok);
 			openTok.addChild(stream.consumeTokenDef(tokentree_TokenTreeDef.BrClose));
 		} else {
 			tokentree_walk_WalkTypedefBody.walkTypedefAlias(stream,parent);
 		}
-		if(stream.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAnd))) {
+		let _g = stream.tokenForMatch();
+		if(_g._hx_index == 6 && _g.op._hx_index == 11) {
 			let and = stream.consumeTokenDef(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAnd));
 			parent.getLastChild().addChild(and);
 			tokentree_walk_WalkTypedefBody.walkTypedefBody(stream,parent);
 		}
-		if(stream.is(tokentree_TokenTreeDef.Arrow)) {
+		if(stream.tokenForMatch()._hx_index == 13) {
 			tokentree_walk_WalkStatement.walkStatement(stream,parent);
 		}
 	}
@@ -22330,18 +22570,18 @@ class tokentree_walk_WalkTypedefBody {
 	}
 	static walkTypedefAlias(stream,parent) {
 		let newParent;
-		if(stream.is(tokentree_TokenTreeDef.POpen)) {
+		if(stream.tokenForMatch()._hx_index == 19) {
 			newParent = tokentree_walk_WalkPOpen.walkPOpen(stream,parent);
 		} else {
 			newParent = tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,parent);
 		}
-		if(stream.is(tokentree_TokenTreeDef.Arrow)) {
-			let arrowTok = stream.consumeTokenDef(tokentree_TokenTreeDef.Arrow);
+		if(stream.tokenForMatch()._hx_index == 13) {
+			let arrowTok = stream.consumeToken();
 			newParent.addChild(arrowTok);
 			tokentree_walk_WalkTypedefBody.walkTypedefAlias(stream,arrowTok);
 		}
-		if(stream.is(tokentree_TokenTreeDef.Semicolon)) {
-			newParent.addChild(stream.consumeTokenDef(tokentree_TokenTreeDef.Semicolon));
+		if(stream.tokenForMatch()._hx_index == 10) {
+			newParent.addChild(stream.consumeToken());
 		}
 	}
 	static walkStructureExtension(stream,parent) {
@@ -22349,7 +22589,7 @@ class tokentree_walk_WalkTypedefBody {
 		parent.addChild(gt);
 		let name = tokentree_walk_WalkTypeNameDef.walkTypeNameDef(stream,parent);
 		gt.addChild(name);
-		if(stream.is(tokentree_TokenTreeDef.Comma)) {
+		if(stream.tokenForMatch()._hx_index == 14) {
 			name.addChild(stream.consumeToken());
 		}
 	}
@@ -22364,7 +22604,8 @@ class tokentree_walk_WalkVar {
 		tokentree_walk_WalkComment.walkComment(stream,parent);
 		let progress = new tokentree_TokenStreamProgress(stream);
 		while(progress.streamHasChanged()) {
-			if(stream.is(tokentree_TokenTreeDef.Kwd(haxeparser_Keyword.KwdVar))) {
+			let _g = stream.tokenForMatch();
+			if(_g._hx_index == 1 && _g.k._hx_index == 2) {
 				return;
 			}
 			tokentree_walk_WalkComment.walkComment(stream,parent);
@@ -22373,7 +22614,7 @@ class tokentree_walk_WalkVar {
 			}
 			tokentree_walk_WalkComment.walkComment(stream,parent);
 			let nameParent = varTok;
-			if(stream.is(tokentree_TokenTreeDef.Question)) {
+			if(stream.tokenForMatch()._hx_index == 21) {
 				nameParent = stream.consumeToken();
 				varTok.addChild(nameParent);
 			}
@@ -22381,26 +22622,27 @@ class tokentree_walk_WalkVar {
 			nameParent.addChild(name);
 			stream.applyTempStore(name);
 			tokentree_walk_WalkComment.walkComment(stream,name);
-			if(stream.is(tokentree_TokenTreeDef.POpen)) {
+			if(stream.tokenForMatch()._hx_index == 19) {
 				tokentree_walk_WalkPOpen.walkPOpen(stream,name);
 			}
-			if(stream.is(tokentree_TokenTreeDef.DblDot)) {
-				let dblDot = stream.consumeTokenDef(tokentree_TokenTreeDef.DblDot);
+			if(stream.tokenForMatch()._hx_index == 12) {
+				let dblDot = stream.consumeToken();
 				name.addChild(dblDot);
 				tokentree_walk_WalkTypedefBody.walkTypedefAlias(stream,dblDot);
 			}
-			if(stream.is(tokentree_TokenTreeDef.Binop(haxe_macro_Binop.OpAssign))) {
+			let _g1 = stream.tokenForMatch();
+			if(_g1._hx_index == 6 && _g1.op._hx_index == 4) {
 				tokentree_walk_WalkStatement.walkStatement(stream,name);
 			}
-			if(stream.is(tokentree_TokenTreeDef.Comma)) {
-				let comma = stream.consumeTokenDef(tokentree_TokenTreeDef.Comma);
+			if(stream.tokenForMatch()._hx_index == 14) {
+				let comma = stream.consumeToken();
 				name.addChild(comma);
 				continue;
 			}
 			break;
 		}
-		if(stream.is(tokentree_TokenTreeDef.Semicolon)) {
-			name.addChild(stream.consumeTokenDef(tokentree_TokenTreeDef.Semicolon));
+		if(stream.tokenForMatch()._hx_index == 10) {
+			name.addChild(stream.consumeToken());
 		}
 	}
 }
