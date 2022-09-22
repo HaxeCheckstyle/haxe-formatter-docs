@@ -35,7 +35,7 @@ class SampleBase {
 		currentCodeSample = codeSample;
 		codeWasModified = false;
 
-		var result:Result = Formatter.format(Code(codeSample), configFieldRegistry.currentConfig);
+		var result:Result = Formatter.format(Code(codeSample, Snippet), configFieldRegistry.currentConfig);
 		switch (result) {
 			case Success(formattedCode):
 				content += '<div id="codeSampleContainer"><textarea id="codeSample">$formattedCode</textarea></div>';
@@ -170,7 +170,7 @@ class SampleBase {
 		if (!codeWasModified) {
 			codeSample = currentCodeSample;
 		}
-		var result:Result = Formatter.format(Code(codeSample), configFieldRegistry.currentConfig);
+		var result:Result = Formatter.format(Code(codeSample, Snippet), configFieldRegistry.currentConfig);
 		switch (result) {
 			case Success(formattedCode):
 				codeElement.val(formattedCode);
