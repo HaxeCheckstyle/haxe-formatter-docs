@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "jquery": "",
-    "jquery-ui": ""
+    "jquery-ui": "^1.13.2"
   },
   "devDependencies": {
-    "lix": "^15.9.0",
+    "lix": "^15.12.0",
     "sass": ""
   },
   "homepage": "https://github.com/HaxeCheckstyle/formatter-docs#readme"
