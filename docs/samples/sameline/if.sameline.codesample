@@ -1,0 +1,39 @@
+`keep` tries to keep linebreaks from input source
+
+---
+
+{
+	"sameLine": {
+		"ifBody": "next",
+		"elseBody": "next",
+		"ifElse": "same",
+		"elseIf": "same",
+		"expressionIf": "same",
+		"expressionIfWithBlocks": false
+	}
+}
+
+---
+
+function test {
+	if (FlxG.keys.pressed.RIGHT) sprite.x++;
+	if (FlxG.keys.pressed.RIGHT) sprite.x++ else sprite.x--;
+
+	if (FlxG.keys.pressed.RIGHT) {
+		sprite.x++;
+	}
+
+	if (FlxG.keys.pressed.RIGHT) {
+		sprite.x++;
+	} else {
+		sprite.x--;
+	}
+
+	if (FlxG.keys.pressed.RIGHT) {
+		sprite.x++;
+	} else if (FlxG.keys.pressed.LEFT) {
+		sprite.x--;
+	}
+
+	var result = if (FlxG.keys.pressed.RIGHT) sprite.x else 0;
+}
