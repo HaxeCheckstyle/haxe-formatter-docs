@@ -15,25 +15,27 @@
 
 ---
 
-function test {
-	if (FlxG.keys.pressed.RIGHT) sprite.x++;
-	if (FlxG.keys.pressed.RIGHT) sprite.x++; else sprite.x--;
+class Main {
+	function test () {
+		if (FlxG.keys.pressed.RIGHT) sprite.x++;
+		if (FlxG.keys.pressed.RIGHT) sprite.x++; else sprite.x--;
 
-	if (FlxG.keys.pressed.RIGHT) {
-		sprite.x++;
+		if (FlxG.keys.pressed.RIGHT) {
+			sprite.x++;
+		}
+
+		if (FlxG.keys.pressed.RIGHT) {
+			sprite.x++;
+		} else {
+			sprite.x--;
+		}
+
+		if (FlxG.keys.pressed.RIGHT) {
+			sprite.x++;
+		} else if (FlxG.keys.pressed.LEFT) {
+			sprite.x--;
+		}
+
+		var result = if (FlxG.keys.pressed.RIGHT) sprite.x; else 0;
 	}
-
-	if (FlxG.keys.pressed.RIGHT) {
-		sprite.x++;
-	} else {
-		sprite.x--;
-	}
-
-	if (FlxG.keys.pressed.RIGHT) {
-		sprite.x++;
-	} else if (FlxG.keys.pressed.LEFT) {
-		sprite.x--;
-	}
-
-	var result = if (FlxG.keys.pressed.RIGHT) sprite.x; else 0;
 }
