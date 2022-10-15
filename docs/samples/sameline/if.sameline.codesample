@@ -17,7 +17,7 @@
 
 function test {
 	if (FlxG.keys.pressed.RIGHT) sprite.x++;
-	if (FlxG.keys.pressed.RIGHT) sprite.x++ else sprite.x--;
+	if (FlxG.keys.pressed.RIGHT) sprite.x++; else sprite.x--;
 
 	if (FlxG.keys.pressed.RIGHT) {
 		sprite.x++;
@@ -35,5 +35,5 @@ function test {
 		sprite.x--;
 	}
 
-	var result = if (FlxG.keys.pressed.RIGHT) sprite.x else 0;
+	var result = if (FlxG.keys.pressed.RIGHT) sprite.x; else 0;
 }
