@@ -3170,6 +3170,9 @@ class codesamples_WrappingSamples extends codesamples_SampleBase {
 	array_matrix_wrapping(container,configFieldRegistry) {
 		this.buildDocSamplePage(container,"array.matrix.wrapping","wrapping arrays in matrix layout\n\narray wrapping only works on arrays that have an equal number of elements per line, so your input source code should already have a matrix shape\n\n> **Note**: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"arrayMatrixWrap\": \"matrixWrapWithAlign\",\n\t\t\"arrayWrap\":  {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"afterLast\"\n\t\t},\n\t\t\"maxLineLength\": 100\n\t}\n}","","class Main {\n\tstatic function main() {\n\t\tsampleMapArray = [\n\t\t\t0, 1, 0, 1,\n\t\t\t1, 1, 1, 1,\n\t\t\t1, 0, 0, 1\n\t\t];\n\t\treturn [\n\t\t\t-1.0, -1.0, 0, 0,\n\t\t\t1.0, -1.0, 1, 0,\n\t\t\t-1.0,  1.0, 0, 1,\n\t\t\t1.0, -1.0, 1, 0,\n\t\t\t1.0,  1.0, 1, 1,\n\t\t\t-1.0,  1.0, 0, 1\n\t\t];\n\n\t\treturn [xAxis.x, yAxis.x, zAxis.x, 0,\n\t\t\txAxis.y, yAxis.y, zAxis.y, 0,\n\t\t\txAxis.z, yAxis.z, zAxis.z, 0,\n\t\t\t0,       0,       0,       1];\n\n\t\trotation =  [1, 0, 0, 0,\n\t\t\t0, Math.cos(alpha), -Math.sin(alpha),  0,\n\t\t\t0, Math.sin(alpha), Math.cos(alpha),   0,\n\t\t\t0, 0, 0, 1];\n\n\t\trotation =  [Math.cos(alpha), 0, Math.sin(alpha), 0,\n\t\t\t0, 1, 0,  0,\n\t\t\t-Math.sin(alpha), 0, Math.cos(alpha),   0,\n\t\t\t0, 0, 0, 1];\n\t}\n\n\tstatic var offsetAutoTile:Array<Int> =\n\t\t[\n\t\t\t0, 0, 0, 0, 2, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t11, 11, 0, 0, 13, 13, 0, 14, 0, 0, 0, 0, 18, 18, 0, 19,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t51, 51, 0, 0, 53, 53, 0, 54, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t62, 62, 0, 0, 64, 64, 0, 65, 0, 0, 0, 0, 69, 69, 0, 70,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t86, 86, 0, 0, 88, 88, 0, 89, 0, 0, 0, 0, 93, 93, 0, 94,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 159, 0, 0, 0, 162, 0, 163, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 172, 0, 0, 0, 175, 0, 176, 0, 0, 0, 0, 0, 181, 0, 182,\n\t\t\t0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\n\t\t\t0, 199, 0, 0, 0, 202, 0, 203, 0, 0, 0, 0, 0, 208, 0, 209\n\t\t];\n}\n",configFieldRegistry);
 	}
+	call_parameter_wrapping(container,configFieldRegistry) {
+		this.buildDocSamplePage(container,"call.parameter.wrapping","wrapping call parameters","{\n\t\"wrapping\": {\n\t\t\"callParameter\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"rules\": [\n\t\t\t\t{\n\t\t\t\t\t\"conditions\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"cond\": \"anyItemLength >= n\",\n\t\t\t\t\t\t\t\"value\": 60\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"type\": \"onePerLine\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}","","class Main {\n\tstatic function main() {\n\t\tbuilder.addComponents(new ButtonBuilder().setCustomId('snippet_left').setLabel('Prev').setStyle(Primary), new ButtonBuilder().setCustomId('snippet_right').setLabel('Next').setStyle(Primary));\n\t\tbuilder.addComponents(new ButtonBuilder().setCustomId('snippet_left'), new ButtonBuilder().setCustomId('snippet_right'), new ButtonBuilder().setCustomId('snippet_left'), new ButtonBuilder().setCustomId('snippet_right'));\n\t}\n}\n",configFieldRegistry);
+	}
 	case_pattern_wrapping(container,configFieldRegistry) {
 		this.buildDocSamplePage(container,"case.pattern.wrapping","wrapping large amounts of case patterns\n\n> **Note**: `equalNumber` is not implemented yet","{\n\t\"wrapping\": {\n\t\t\"casePattern\": {\n\t\t\t\"defaultWrap\": \"fillLine\",\n\t\t\t\"defaultLocation\": \"beforeLast\"\n\t\t},\n\t\t\"maxLineLength\": 100\n\t}\n}","","class Main {\n\tstatic function main() {\n\t\tswitch (part.toLowerCase()) {\n\t\t\tcase \"__halt_compiler\" | \"abstract\" | \"and\" | \"array\" | \"as\" | \"break\" | \"callable\" | \"case\" | \"catch\" | \"class\" | \"clone\" | \"const\"\n\t\t\t\t| \"continue\" | \"declare\" | \"default\" | \"die\" | \"do\" | \"echo\" | \"else\" | \"elseif\" | \"empty\" | \"enddeclare\" | \"endfor\" | \"endforeach\" | \"endif\"\n\t\t\t\t| \"endswitch\" | \"endwhile\" | \"eval\" | \"exit\" | \"extends\" | \"final\" | \"finally\" | \"for\" | \"foreach\" | \"function\" | \"global\" | \"goto\" | \"if\"\n\t\t\t\t| \"implements\" | \"include\" | \"include_once\" | \"instanceof\" | \"insteadof\" | \"interface\" | \"isset\" | \"list\" | \"namespace\" | \"new\" | \"or\"\n\t\t\t\t| \"print\" | \"private\" | \"protected\" | \"public\" | \"require\" | \"require_once\" | \"return\" | \"static\" | \"switch\" | \"throw\" | \"trait\" | \"try\"\n\t\t\t\t| \"unset\" | \"use\" | \"var\" | \"while\" | \"xor\" | \"yield\" | \"__class__\" | \"__dir__\" | \"__file__\" | \"__function__\" | \"__line__\" | \"__method__\"\n\t\t\t\t| \"__trait__\" | \"__namespace__\" | \"int\" | \"float\" | \"bool\" | \"string\" | \"true\" | \"false\" | \"null\" | \"parent\" | \"void\" | \"iterable\" | \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\", \"and\", \"array\", \"as\", \"break\", \"callable\", \"case\", \"catch\", \"class\", \"clone\", \"const\", \"continue\", \"declare\"\n\t\t\t\t, \"default\", \"die\", \"do\", \"echo\", \"else\", \"elseif\", \"empty\", \"enddeclare\", \"endfor\", \"endforeach\", \"endif\", \"endswitch\", \"endwhile\", \"eval\"\n\t\t\t\t, \"exit\", \"extends\", \"final\", \"finally\", \"for\", \"foreach\", \"function\", \"global\", \"goto\", \"if\", \"implements\", \"include\", \"include_once\"\n\t\t\t\t, \"instanceof\", \"insteadof\", \"interface\", \"isset\", \"list\", \"namespace\", \"new\", \"or\", \"print\", \"private\", \"protected\", \"public\", \"require\"\n\t\t\t\t, \"require_once\", \"return\", \"static\", \"switch\", \"throw\", \"trait\", \"try\", \"unset\", \"use\", \"var\", \"while\", \"xor\", \"yield\", \"__class__\"\n\t\t\t\t, \"__dir__\", \"__file__\", \"__function__\", \"__line__\", \"__method__\", \"__trait__\", \"__namespace__\", \"int\", \"float\", \"bool\", \"string\", \"true\"\n\t\t\t\t, \"false\", \"null\", \"parent\", \"void\", \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase \"__halt_compiler\", \"abstract\" | \"and\", \"array\" | \"as\", \"break\" | \"callable\", \"case\" | \"catch\", \"class\" | \"clone\", \"const\" | \"continue\"\n\t\t\t\t, \"declare\" | \"default\", \"die\" | \"do\", \"echo\" | \"else\", \"elseif\" | \"empty\", \"enddeclare\" | \"endfor\", \"endforeach\" | \"endif\", \"endswitch\"\n\t\t\t\t| \"endwhile\", \"eval\" | \"exit\", \"extends\" | \"final\", \"finally\" | \"for\", \"foreach\" | \"function\", \"global\" | \"goto\", \"if\" | \"implements\"\n\t\t\t\t, \"include\" | \"include_once\", \"instanceof\" | \"insteadof\", \"interface\" | \"isset\", \"list\" | \"namespace\", \"new\" | \"or\", \"print\" | \"private\"\n\t\t\t\t, \"protected\" | \"public\", \"require\" | \"require_once\", \"return\" | \"static\", \"switch\" | \"throw\", \"trait\" | \"try\", \"unset\" | \"use\", \"var\"\n\t\t\t\t| \"while\", \"xor\" | \"yield\", \"__class__\" | \"__dir__\", \"__file__\" | \"__function__\", \"__line__\" | \"__method__\", \"__trait__\" | \"__namespace__\"\n\t\t\t\t, \"int\" | \"float\", \"bool\" | \"string\", \"true\" | \"false\", \"null\" | \"parent\", \"void\" | \"iterable\", \"object\":\n\t\t\t\tpart += '_hx';\n\t\t\tcase _:\n\t\t}\n\t}\n}\n",configFieldRegistry);
 	}
@@ -9922,6 +9925,26 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 						if(lastChild == null) {
 							continue;
 						}
+						let next = this.getNextToken(lastChild);
+						if(next != null) {
+							let _g = next.token.tok;
+							switch(_g._hx_index) {
+							case 7:
+								let _g1 = _g.s;
+								if(this.parsedCode.isOriginalSameLine(lastChild,next.token)) {
+									this.lineEndAfter(next.token);
+									continue;
+								}
+								break;
+							case 8:
+								let _g2 = _g.s;
+								if(this.parsedCode.isOriginalSameLine(lastChild,next.token)) {
+									continue;
+								}
+								break;
+							default:
+							}
+						}
 						this.lineEndAfter(lastChild);
 					}
 					break;
@@ -9930,6 +9953,26 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 						let lastChild = tokentree_utils_TokenTreeCheckUtils.getLastToken(child);
 						if(lastChild == null) {
 							continue;
+						}
+						let next = this.getNextToken(lastChild);
+						if(next != null) {
+							let _g = next.token.tok;
+							switch(_g._hx_index) {
+							case 7:
+								let _g1 = _g.s;
+								if(this.parsedCode.isOriginalSameLine(lastChild,next.token)) {
+									this.lineEndAfter(next.token);
+									continue;
+								}
+								break;
+							case 8:
+								let _g2 = _g.s;
+								if(this.parsedCode.isOriginalSameLine(lastChild,next.token)) {
+									continue;
+								}
+								break;
+							default:
+							}
 						}
 						this.lineEndAfter(lastChild);
 					}
@@ -9952,6 +9995,26 @@ class formatter_marker_MarkLineEnds extends formatter_marker_MarkerBase {
 					let lastChild = tokentree_utils_TokenTreeCheckUtils.getLastToken(child);
 					if(lastChild == null) {
 						continue;
+					}
+					let next1 = this.getNextToken(lastChild);
+					if(next1 != null) {
+						let _g = next1.token.tok;
+						switch(_g._hx_index) {
+						case 7:
+							let _g1 = _g.s;
+							if(this.parsedCode.isOriginalSameLine(lastChild,next1.token)) {
+								this.lineEndAfter(next1.token);
+								continue;
+							}
+							break;
+						case 8:
+							let _g2 = _g.s;
+							if(this.parsedCode.isOriginalSameLine(lastChild,next1.token)) {
+								continue;
+							}
+							break;
+						default:
+						}
 					}
 					this.lineEndAfter(lastChild);
 					break;
@@ -11798,6 +11861,15 @@ class formatter_marker_MarkWhitespace extends formatter_marker_MarkerBase {
 			break;
 		case 1:
 			policy = this.config.whitespace.typeHintColonPolicy;
+			let parent = token.parent;
+			if(parent != null) {
+				let _g = parent.tok;
+				if(_g._hx_index == 1) {
+					if(_g.k._hx_index == 41) {
+						policy = formatter_config_WhitespacePolicy.add(policy,"before");
+					}
+				}
+			}
 			break;
 		case 2:
 			policy = this.config.whitespace.typeCheckColonPolicy;
@@ -23679,7 +23751,7 @@ codesamples_IndentationSamples.__meta__ = { obj : { sectionName : ["Indentation 
 codesamples_LineendsSamples.__meta__ = { obj : { sectionName : ["Lineends samples"]}};
 codesamples_SamelineSamples.__meta__ = { obj : { sectionName : ["Sameline samples"]}, fields : { blockless_function_body : { codeSampleName : ["blockless.function.body"], keywords : [["blockless","function","body","keep","tries","linebreaks","from","input","source","sameline","functionbody","same","anonfunctionbody"]]}, if_sameline : { codeSampleName : ["if.sameline"], keywords : [["sameline","keep","tries","linebreaks","from","input","source","ifbody","next","elsebody","ifelse","same","elseif","expressionif","expressionifwithblocks","false"]]}}};
 codesamples_WhitespaceSamples.__meta__ = { obj : { sectionName : ["Whitespace samples"]}, fields : { colon_whitespace : { codeSampleName : ["colon.whitespace"], keywords : [["colon","whitespace","note","policies","overruled","code","parts","preceeding","following","location","because","these","might","have","that","contradict","their","neighbours","colonpolicy","none","casecolonpolicy","onlyafter","objectfieldcolonpolicy","after","typehintcolonpolicy","typecheckcolonpolicy","around","ternarypolicy"]]}, conditional_parens_detailed : { codeSampleName : ["conditional.parens.detailed"], keywords : [["conditional","parens","detailed","following","whitespace","settings","were","added","version","childs","parenconfig","catchparens","catch","expr","ifconditionparens","sharpconditionparens","switchconditionparens","switch","whileconditionparens","while","same","structure","conditionparens","short","codesamples","whitespacesamples","conditional_parens_short","allow","finer","control","over","each","location","default","null","which","means","applies","locations","also","only","have","values","those","where","want","formatter","behave","differently","note","using","removeinnerwhenempty","technically","possible","since","code","with","empty","condtion","expression","doesn","make","sense","probably","compile","there","much","openingpolicy","onlyafter","closingpolicy","before"]]}, conditional_parens_short : { codeSampleName : ["conditional.parens.short"], keywords : [["conditional","parens","short","whitespace","policies","parenconfig","well","bracesconfig","curly","braces","data","structure","that","three","fields","each","their","locations","openingpolicy","policy","opening","closingpolicy","closing","removeinnerwhenempty","true","when","want","remove","inner","curlies","empty","following","element","being","either","none","before","after","nonebefore","never","onlybefore","only","noneafter","onlyafter","around","note","overruled","code","parts","preceeding","location","because","these","might","have","contradict","neighbours","conditionparens"]]}, function_parens : { codeSampleName : ["function.parens"], keywords : [["function","parens","conditional","short","codesamples","whitespacesamples","conditional_parens_short","details","about","structure","values","note","whitespace","policies","overruled","code","parts","preceeding","following","location","because","these","might","have","that","contradict","their","neighbours","parenconfig","funcparamparens","openingpolicy","before","closingpolicy","none","removeinnerwhenempty","true","anonfuncparamparens","onlyafter"]]}, function_types_and_arrows : { codeSampleName : ["function.types.and.arrows"], keywords : [["function","types","arrows","note","whitespace","policies","overruled","code","parts","preceeding","following","location","because","these","might","have","that","contradict","their","neighbours","arrowfunctionspolicy","around","functiontypehaxe3policy","none","functiontypehaxe4policy"]]}, type_parameter : { codeSampleName : ["type.parameter"], keywords : [["type","parameter","conditional","parens","short","codesamples","whitespacesamples","conditional_parens_short","details","about","values","note","whitespace","policies","overruled","code","parts","preceeding","following","location","because","these","might","have","that","contradict","their","neighbours","typeparamopenpolicy","after","typeparamclosepolicy","before"]]}}};
-codesamples_WrappingSamples.__meta__ = { obj : { sectionName : ["Wrapping samples"]}, fields : { array_matrix_wrapping : { codeSampleName : ["array.matrix.wrapping"], keywords : [["array","matrix","wrapping","arrays","layout","only","works","that","have","equal","number","elements","line","your","input","source","code","should","already","shape","note","equalnumber","implemented","arraymatrixwrap","matrixwrapwithalign","arraywrap","defaultwrap","fillline","defaultlocation","afterlast","maxlinelength"]]}, case_pattern_wrapping : { codeSampleName : ["case.pattern.wrapping"], keywords : [["case","pattern","wrapping","large","amounts","patterns","note","equalnumber","implemented","casepattern","defaultwrap","fillline","defaultlocation","beforelast","maxlinelength"]]}, method_chain_wrapping : { codeSampleName : ["method.chain.wrapping"], keywords : [["method","chain","wrapping","chains","calls","note","equalnumber","implemented","methodchain","defaultwrap","oneperline","defaultlocation","afterlast","rules","maxlinelength"]]}, operator_add_chain_wrapping : { codeSampleName : ["operator.add.chain.wrapping"], keywords : [["operator","chain","wrapping","chains","note","equalnumber","implemented","opaddsubchain","defaultwrap","fillline","defaultlocation","beforelast","rules","maxlinelength"]]}}};
+codesamples_WrappingSamples.__meta__ = { obj : { sectionName : ["Wrapping samples"]}, fields : { array_matrix_wrapping : { codeSampleName : ["array.matrix.wrapping"], keywords : [["array","matrix","wrapping","arrays","layout","only","works","that","have","equal","number","elements","line","your","input","source","code","should","already","shape","note","equalnumber","implemented","arraymatrixwrap","matrixwrapwithalign","arraywrap","defaultwrap","fillline","defaultlocation","afterlast","maxlinelength"]]}, call_parameter_wrapping : { codeSampleName : ["call.parameter.wrapping"], keywords : [["call","parameter","wrapping","parameters","callparameter","defaultwrap","fillline","rules","conditions","cond","anyitemlength","value","type","oneperline"]]}, case_pattern_wrapping : { codeSampleName : ["case.pattern.wrapping"], keywords : [["case","pattern","wrapping","large","amounts","patterns","note","equalnumber","implemented","casepattern","defaultwrap","fillline","defaultlocation","beforelast","maxlinelength"]]}, method_chain_wrapping : { codeSampleName : ["method.chain.wrapping"], keywords : [["method","chain","wrapping","chains","calls","note","equalnumber","implemented","methodchain","defaultwrap","oneperline","defaultlocation","afterlast","rules","maxlinelength"]]}, operator_add_chain_wrapping : { codeSampleName : ["operator.add.chain.wrapping"], keywords : [["operator","chain","wrapping","chains","note","equalnumber","implemented","opaddsubchain","defaultwrap","fillline","defaultlocation","beforelast","rules","maxlinelength"]]}}};
 doc_Docs.__meta__ = { obj : { sectionName : ["Documentation"]}, fields : { compile_dev_version : { docName : ["compile.dev.version"], keywords : [["compile","version","command","line","haxe","clone","https","github","haxecheckstyle","formatter","install","download","buildall","hxml","neko","nodejs","java","json","schema","buildcpp","haxe_libraries","haxe4_libraries","haxe3_libraries","language","server","vshaxe","languageserver","tokentree","build","target","vscode","extensions","nadako","vshaxe_version","replace","with","actual","assuming","have","installed","restart","note","will","whenever","there","marketplace","release","since","wipe","your","folder"]]}}};
 formatter_FormatStats.totalLinesOrig = 0;
 formatter_FormatStats.totalLinesFormatted = 0;
